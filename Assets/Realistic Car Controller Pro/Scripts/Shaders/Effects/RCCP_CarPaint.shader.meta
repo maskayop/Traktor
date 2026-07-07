@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 6f2223882df27fc41932357a4c53c180
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 178967
+  packageName: Realistic Car Controller Pro
+  packageVersion: 2.53.0.LTS
+  assetPath: Assets/Realistic Car Controller Pro/Scripts/Shaders/Effects/RCCP_CarPaint.shader
+  uploadId: 946096

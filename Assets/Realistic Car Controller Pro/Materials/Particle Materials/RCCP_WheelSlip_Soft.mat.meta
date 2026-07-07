@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a4a4747e4b62e8945be0dc6949e6735a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 178967
+  packageName: Realistic Car Controller Pro
+  packageVersion: 2.53.0.LTS
+  assetPath: Assets/Realistic Car Controller Pro/Materials/Particle Materials/RCCP_WheelSlip_Soft.mat
+  uploadId: 946096
