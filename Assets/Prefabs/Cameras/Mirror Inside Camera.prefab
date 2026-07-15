@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1565745194578898292
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 62808825224277412, guid: 574ab65ba5bfcce4da60e17edaee3839, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8400000, guid: fe26c48dcb41fa94ba3c1243f7096d38, type: 2}
+    - target: {fileID: 7934709968203895104, guid: 574ab65ba5bfcce4da60e17edaee3839, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934709968203895104, guid: 574ab65ba5bfcce4da60e17edaee3839, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934709968203895104, guid: 574ab65ba5bfcce4da60e17edaee3839, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934709968203895104, guid: 574ab65ba5bfcce4da60e17edaee3839, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934709968203895104, guid: 574ab65ba5bfcce4da60e17edaee3839, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934709968203895104, guid: 574ab65ba5bfcce4da60e17edaee3839, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934709968203895104, guid: 574ab65ba5bfcce4da60e17edaee3839, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934709968203895104, guid: 574ab65ba5bfcce4da60e17edaee3839, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934709968203895104, guid: 574ab65ba5bfcce4da60e17edaee3839, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934709968203895104, guid: 574ab65ba5bfcce4da60e17edaee3839, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290326894058771158, guid: 574ab65ba5bfcce4da60e17edaee3839, type: 3}
+      propertyPath: m_Name
+      value: Mirror Inside Camera
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 574ab65ba5bfcce4da60e17edaee3839, type: 3}
