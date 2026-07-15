@@ -205,6 +205,38 @@ When `repairNow` is set to `true`:
 
 The `repaired` flag is set to `true` once all vertices have returned to within a small tolerance (`0.002` units) of their original positions. If the repair is not complete in one frame, it continues on subsequent frames.
 
+## Damage Events (V2.51+)
+
+Three static events on `RCCP_Events` let gameplay code react to damage without polling the component:
+
+| Event | Signature | Fired When |
+|---|---|---|
+| `OnRCCPDamaged` | `onRCCPDamaged(RCCP_CarController rccp)` | A vehicle first takes deformation/collision damage after being intact. |
+| `OnRCCPRepaired` | `onRCCPRepaired(RCCP_CarController rccp)` | A vehicle finishes repairing (damage fully reset). |
+| `OnRCCPImpact` | `onRCCPImpact(RCCP_CarController rccp, float impulse)` | A debounced collision impact (per-vehicle cooldown + minimum impulse). |
+
+`OnRCCPImpact` is the one to use for gameplay reactions — sound stingers, score penalties, UI shake — because it will not spam you with one event per contact point. The raw `OnRCCPCollision` event still fires on every contact and remains the right hook for damage/particle work.
+
+```csharp
+void OnEnable() {
+    RCCP_Events.OnRCCPImpact += HandleImpact;
+    RCCP_Events.OnRCCPRepaired += HandleRepaired;
+}
+
+void OnDisable() {
+    RCCP_Events.OnRCCPImpact -= HandleImpact;
+    RCCP_Events.OnRCCPRepaired -= HandleRepaired;
+}
+
+void HandleImpact(RCCP_CarController vehicle, float impulse) {
+    Debug.Log(vehicle.name + " hit something with impulse " + impulse);
+}
+
+void HandleRepaired(RCCP_CarController vehicle) {
+    Debug.Log(vehicle.name + " is fully repaired.");
+}
+```
+
 ## Multithreading
 
 When `RCCP_SceneManager.multithreadingSupported` is `true`, mesh deformation and repair operations use `Task.Run()` to offload vertex calculations to background threads. This prevents frame drops on vehicles with high-polygon meshes. The system uses a `CancellationTokenSource` to safely cancel async operations when the component is destroyed or disabled.

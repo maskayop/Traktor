@@ -257,6 +257,7 @@ public class RCCP_WelcomeWindowController {
             AddIfNew(demoScenes.path_demo_Customization);
             AddIfNew(demoScenes.path_demo_OverrideInputs);
             AddIfNew(demoScenes.path_demo_Transport);
+            AddIfNew(demoScenes.path_demo_FeatureLab);
 #endif
 
 #if BCG_RTRC

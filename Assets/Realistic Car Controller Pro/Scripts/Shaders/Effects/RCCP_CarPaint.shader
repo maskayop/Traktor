@@ -2,7 +2,7 @@
 // LAYERED model: paint-tinted metallic reflection + UNTINTED dielectric clearcoat reflection (Schlick Fresnel, F0=0.04),
 // fresnel flip-flop color, base spec, sharper clearcoat highlight, flake sparkle, skybox/ambient SH diffuse.
 // Optional tangent-space NORMAL map and SPECULAR/GLOSS map (RGB spec tint, A smoothness), keyword-gated.
-// ForwardBase (main light + shadows + ambient + reflection) + ForwardAdd (per-pixel extra lights) + ShadowCaster, fog.
+// ForwardBase (main light + shadows + ambient + box-projected/blended reflection probes) + ForwardAdd (per-pixel extra lights) + ShadowCaster, fog.
 // URP variant ships separately as 'BoneCracker Games/RCCP/Effects/CarPaint_URP' (delivered via the URP shader package +
 // applied by the RCCP Render Pipeline Converter) so a pure Built-in project never references URP package includes.
 Shader "BoneCracker Games/RCCP/Effects/CarPaint"
@@ -23,7 +23,7 @@ Shader "BoneCracker Games/RCCP/Effects/CarPaint"
         [Header(Surface Maps)]
         [Toggle(_NORMALMAP)] _UseNormalMap ("Use Normal Map", Float) = 0
         [Normal] _BumpMap ("Normal Map", 2D) = "bump" {}
-        _BumpScale ("Normal Strength", Range(0,3)) = 0
+        _BumpScale ("Normal Strength", Range(0,3)) = 1
         [Toggle(_SPECGLOSSMAP)] _UseSpecGloss ("Use Specular Gloss Map", Float) = 0
         _SpecGlossMap ("Specular (RGB) Smoothness (A)", 2D) = "white" {}
         [Header(Metal Flakes)]
@@ -47,6 +47,7 @@ Shader "BoneCracker Games/RCCP/Effects/CarPaint"
             Tags { "LightMode"="ForwardBase" }
             Cull Back
             CGPROGRAM
+            #pragma target 3.0   // UnityStandardConfig #undefs UNITY_SPECCUBE_BOX_PROJECTION/_BLENDING below SM3.0
             #pragma vertex vert
             #pragma fragment frag
             #pragma shader_feature_local _NORMALMAP
@@ -56,6 +57,7 @@ Shader "BoneCracker Games/RCCP/Effects/CarPaint"
             #include "UnityCG.cginc"
             #include "Lighting.cginc"
             #include "AutoLight.cginc"
+            #include "UnityStandardUtils.cginc"   // BoxProjectedCubemapDirection
 
             float4 _BaseColor, _FlipColor, _MainTex_ST, _ClearcoatColor, _FlakeColor;
             sampler2D _MainTex, _BumpMap, _SpecGlossMap, _FlakeMap;
@@ -70,9 +72,10 @@ Shader "BoneCracker Games/RCCP/Effects/CarPaint"
                 float2 uv : TEXCOORD0;
                 float3 normalWS : TEXCOORD1;
                 float3 viewWS : TEXCOORD2;
-                float4 tangentWS : TEXCOORD3;
-                SHADOW_COORDS(4)
-                UNITY_FOG_COORDS(5)
+                float3 worldPos : TEXCOORD3;
+                float4 tangentWS : TEXCOORD4;
+                SHADOW_COORDS(5)
+                UNITY_FOG_COORDS(6)
             };
 
             v2f vert (appdata v)
@@ -82,6 +85,7 @@ Shader "BoneCracker Games/RCCP/Effects/CarPaint"
                 o.uv  = TRANSFORM_TEX(v.uv, _MainTex);
                 o.normalWS = UnityObjectToWorldNormal(v.normal);
                 o.tangentWS = float4(UnityObjectToWorldDir(v.tangent.xyz), v.tangent.w * unity_WorldTransformParams.w);
+                o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
                 o.viewWS   = WorldSpaceViewDir(v.vertex);   // normalized per-fragment
                 TRANSFER_SHADOW(o)
                 UNITY_TRANSFER_FOG(o, o.pos);
@@ -136,11 +140,30 @@ Shader "BoneCracker Games/RCCP/Effects/CarPaint"
                 half  flake    = pow(saturate(flakeTex * ndh), _FlakeSharpness) * _FlakeStrength;
 
                 // ---- LAYERED ENVIRONMENT REFLECTION ----
+                // Box projection + two-probe blending mirror UnityGlobalIllumination.cginc; both compile out
+                // (plain reflDir, probe0 only) when the Graphics Tier Settings disable them.
                 half3 reflDir = reflect(-Vd, N);
                 half mipBase = (1.0 - smooth) * 6.0;               // UNITY_SPECCUBE_LOD_STEPS = 6
                 half mipCoat = (1.0 - _ClearcoatSmoothness) * 6.0;
-                half3 envBase = DecodeHDR(UNITY_SAMPLE_TEXCUBE_LOD(unity_SpecCube0, reflDir, mipBase), unity_SpecCube0_HDR);
-                half3 envCoat = DecodeHDR(UNITY_SAMPLE_TEXCUBE_LOD(unity_SpecCube0, reflDir, mipCoat), unity_SpecCube0_HDR);
+                half3 dir0 = reflDir;
+                #ifdef UNITY_SPECCUBE_BOX_PROJECTION
+                    dir0 = BoxProjectedCubemapDirection(reflDir, i.worldPos, unity_SpecCube0_ProbePosition, unity_SpecCube0_BoxMin, unity_SpecCube0_BoxMax);
+                #endif
+                half3 envBase = DecodeHDR(UNITY_SAMPLE_TEXCUBE_LOD(unity_SpecCube0, dir0, mipBase), unity_SpecCube0_HDR);
+                half3 envCoat = DecodeHDR(UNITY_SAMPLE_TEXCUBE_LOD(unity_SpecCube0, dir0, mipCoat), unity_SpecCube0_HDR);
+                #ifdef UNITY_SPECCUBE_BLENDING
+                    half probeBlend = unity_SpecCube0_BoxMin.w;    // 1 = probe0 only
+                    UNITY_BRANCH
+                    if (probeBlend < 0.99999)
+                    {
+                        half3 dir1 = reflDir;
+                        #ifdef UNITY_SPECCUBE_BOX_PROJECTION
+                            dir1 = BoxProjectedCubemapDirection(reflDir, i.worldPos, unity_SpecCube1_ProbePosition, unity_SpecCube1_BoxMin, unity_SpecCube1_BoxMax);
+                        #endif
+                        envBase = lerp(DecodeHDR(UNITY_SAMPLE_TEXCUBE_SAMPLER_LOD(unity_SpecCube1, unity_SpecCube0, dir1, mipBase), unity_SpecCube1_HDR), envBase, probeBlend);
+                        envCoat = lerp(DecodeHDR(UNITY_SAMPLE_TEXCUBE_SAMPLER_LOD(unity_SpecCube1, unity_SpecCube0, dir1, mipCoat), unity_SpecCube1_HDR), envCoat, probeBlend);
+                    }
+                #endif
                 half3 metalRefl = paint * _Metallic * envBase * _ReflectionStrength;
                 half  om = 1.0 - ndv;
                 half  fresCoat = 0.04 + 0.96 * (om * om * om * om);
@@ -150,7 +173,7 @@ Shader "BoneCracker Games/RCCP/Effects/CarPaint"
                           + metalRefl
                           + coatRefl
                           + directSpec
-                          + _FlakeColor.rgb * flakeHue * flake * ndl;
+                          + _FlakeColor.rgb * flakeHue * flake * (ndl * shadow);   // shadowed like the other main-light terms
                 UNITY_APPLY_FOG(i.fogCoord, rgb);
                 return fixed4(rgb, 1.0);
             }

@@ -99,7 +99,7 @@ This guide covers the most common issues you may encounter when using Realistic 
 |---------|-------|----------|
 | Unrealistic drifting on every turn | Drift mode enabled in behavior preset | Check the active behavior preset in **RCCP_Settings**. Set `driftMode = false` if you want realistic grip driving. |
 | Vehicle jitters or vibrates at low speed | Physics timestep too large | Lower `fixedTimeStep` in **RCCP_Settings**. Try 0.01 instead of the default 0.02. Do not go below 0.005 as this severely impacts performance. |
-| Vehicle flies off ramps unrealistically | Max angular velocity too high | Lower `maxAngularVelocity` in **RCCP_Settings**. The default is 6. Try values between 4-7 for realistic behavior. |
+| Vehicle flies off ramps unrealistically | Max angular velocity too high | Enable `applyMaxAngularVelocity` in **RCCP_Settings**, then lower `maxAngularVelocity`. The default is 6 and only applies while the toggle is on (before V2.57 this value had no effect). Try values between 4-7 for realistic behavior. |
 | Wheels clip through the ground | Wheel collider mass too low or fixed colliders disabled | Enable `useFixedWheelColliders` in **RCCP_Settings**. This uses higher-mass wheel colliders that resist sinking. |
 | Car spins out too easily | Rear friction too low or stability aids disabled | Enable ESP/TCS in the behavior preset. Increase rear sideways friction values. Check the **RCCP_Stability** component settings. |
 
@@ -316,7 +316,7 @@ This table lists the most frequently seen error and warning messages, what they 
 ### General
 
 **Q: What Unity versions does RCCP support?**
-A: RCCP V2.50.0 requires Unity 6000.0 (Unity 6) or newer.
+A: RCCP V2.57.0 requires Unity 6000.0 (Unity 6) or newer.
 
 **Q: Which render pipelines are supported?**
 A: Built-in, URP, and HDRP are all supported. You need to import the matching shader package for URP or HDRP. See [Render Pipelines](18_render_pipelines.md).
@@ -407,7 +407,7 @@ If you suspect drift, open `ProjectSettings/ScriptExecutionOrder.asset` and conf
 If you cannot resolve the issue, contact us with the following information:
 
 - Your Unity version (e.g., Unity 6000.0.49f1)
-- RCCP version (V2.50.0)
+- RCCP version (V2.57.0)
 - Your render pipeline (Built-in, URP, or HDRP)
 - The full error message copied from Console
 - Steps to reproduce the issue

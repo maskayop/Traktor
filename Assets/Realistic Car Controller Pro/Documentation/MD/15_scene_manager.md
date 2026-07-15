@@ -75,6 +75,8 @@ If `registerLastVehicleAsPlayer` is enabled (the default), every vehicle that sp
 
 If you are managing multiple vehicles and want manual control over which one the player drives, set `registerLastVehicleAsPlayer` to false and call `RCCP.RegisterPlayerVehicle()` yourself.
 
+Since V2.51, spawning with `RCCP.SpawnRCC(..., registerAsPlayerVehicle: false, ...)` is honored even while `registerLastVehicleAsPlayer` is on: such a vehicle is permanently excluded from automatic registration, so spawned traffic or NPC vehicles can no longer steal the player slot and camera. (Earlier versions auto-registered every spawned vehicle regardless of the parameter.)
+
 ---
 
 ## Transport (Teleport)

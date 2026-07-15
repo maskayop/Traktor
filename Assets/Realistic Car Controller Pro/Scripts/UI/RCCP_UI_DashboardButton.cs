@@ -47,16 +47,19 @@ public class RCCP_UI_DashboardButton : RCCP_UIComponent, IPointerClickHandler {
         /// <summary>Toggle right turn indicator.</summary>
         RightIndicator,
 
-        /// <summary>Set audio quality to low.</summary>
+        /// <summary>[Dead since RCCP Pro] Audio quality switching is not part of RCCP Pro. Kept only to preserve serialized enum indices in existing prefabs.</summary>
+        [System.Obsolete("Audio quality switching is not part of RCCP Pro; this button type does nothing. Kept to preserve serialized enum indices.")]
         Low,
 
-        /// <summary>Set audio quality to medium.</summary>
+        /// <summary>[Dead since RCCP Pro] Audio quality switching is not part of RCCP Pro. Kept only to preserve serialized enum indices in existing prefabs.</summary>
+        [System.Obsolete("Audio quality switching is not part of RCCP Pro; this button type does nothing. Kept to preserve serialized enum indices.")]
         Med,
 
-        /// <summary>Set audio quality to high.</summary>
+        /// <summary>[Dead since RCCP Pro] Audio quality switching is not part of RCCP Pro. Kept only to preserve serialized enum indices in existing prefabs.</summary>
+        [System.Obsolete("Audio quality switching is not part of RCCP Pro; this button type does nothing. Kept to preserve serialized enum indices.")]
         High,
 
-        /// <summary>Toggle steering helper assistance.</summary>
+        /// <summary>Toggle steering helper assistance. Legacy alias of <see cref="SteeringHelper"/>.</summary>
         SH,
 
         /// <summary>Shift gear up (manual transmission).</summary>
@@ -80,7 +83,8 @@ public class RCCP_UI_DashboardButton : RCCP_UIComponent, IPointerClickHandler {
         /// <summary>Toggle angular drag helper to dampen rotational velocity.</summary>
         AngularDragHelper,
 
-        /// <summary>Toggle turn helper assistance.</summary>
+        /// <summary>[Dead since RCCP Pro] No TurnHelper system exists in RCCP Pro. Kept only to preserve serialized enum indices in existing prefabs.</summary>
+        [System.Obsolete("No TurnHelper system exists in RCCP Pro; this button type does nothing. Kept to preserve serialized enum indices.")]
         TurnHelper,
 
         /// <summary>Attach or detach the connected trailer.</summary>
@@ -184,6 +188,7 @@ public class RCCP_UI_DashboardButton : RCCP_UIComponent, IPointerClickHandler {
                 RCCP_InputManager.Instance.ChangeCamera();
                 break;
 
+            case ButtonType.SH:
             case ButtonType.SteeringHelper:
                 RCCP_InputManager.Instance.SteeringHelper();
                 break;
@@ -196,7 +201,12 @@ public class RCCP_UI_DashboardButton : RCCP_UIComponent, IPointerClickHandler {
                 RCCP_InputManager.Instance.AngularDragHelper();
                 break;
 
-            case ButtonType.TurnHelper:
+            case ButtonType.TrailAttachDetach:
+
+                //  V2.57 (T2-8): detach used to live in CheckImage(), which also runs on OnEnable and
+                //  on vehicle change — detaching trailers without a click. It belongs to the click.
+                if (RCCPSceneManager.activePlayerVehicle && RCCPSceneManager.activePlayerVehicle.OtherAddonsManager && RCCPSceneManager.activePlayerVehicle.OtherAddonsManager.TrailAttacher && RCCPSceneManager.activePlayerVehicle.OtherAddonsManager.TrailAttacher.attachedTrailer != null)
+                    RCCPSceneManager.activePlayerVehicle.OtherAddonsManager.TrailAttacher.attachedTrailer.DetachTrailer();
 
                 break;
 
@@ -288,6 +298,7 @@ public class RCCP_UI_DashboardButton : RCCP_UIComponent, IPointerClickHandler {
 
                 break;
 
+            case ButtonType.SH:
             case ButtonType.SteeringHelper:
 
                 if (RCCPSceneManager.activePlayerVehicle.Stability)
@@ -309,18 +320,10 @@ public class RCCP_UI_DashboardButton : RCCP_UIComponent, IPointerClickHandler {
 
                 break;
 
-            case ButtonType.TurnHelper:
-
-                break;
-
             case ButtonType.TrailAttachDetach:
 
-                if (RCCPSceneManager.activePlayerVehicle.OtherAddonsManager && RCCPSceneManager.activePlayerVehicle.OtherAddonsManager.TrailAttacher) {
-
-                    if (RCCPSceneManager.activePlayerVehicle.OtherAddonsManager.TrailAttacher.attachedTrailer != null)
-                        RCCPSceneManager.activePlayerVehicle.OtherAddonsManager.TrailAttacher.attachedTrailer.DetachTrailer();
-
-                }
+                if (RCCPSceneManager.activePlayerVehicle.OtherAddonsManager && RCCPSceneManager.activePlayerVehicle.OtherAddonsManager.TrailAttacher)
+                    imageOn.SetActive(RCCPSceneManager.activePlayerVehicle.OtherAddonsManager.TrailAttacher.attachedTrailer != null);
 
                 break;
 

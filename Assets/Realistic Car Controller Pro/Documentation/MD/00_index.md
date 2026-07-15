@@ -1,10 +1,12 @@
 # Realistic Car Controller Pro - Documentation
 
-**Version:** 2.50.0  
+**Version:** 2.57.0  
 **Unity:** 6000.0 and above  
 **Publisher:** BoneCracker Games
 
 Welcome to the official documentation for Realistic Car Controller Pro (RCCP). This guide covers everything you need to get started, configure vehicles, and integrate RCCP into your project.
+
+![RCCP in Play Mode — dashboard HUD, camera controls, and a demo vehicle on the Feature Lab proving ground](../Images/gameplay_hud.png)
 
 ## Quick Start
 
@@ -75,6 +77,7 @@ Welcome to the official documentation for Realistic Car Controller Pro (RCCP). T
 | # | Document | Description |
 |---|----------|-------------|
 | 25 | [Troubleshooting](25_troubleshooting.md) | Common issues, error messages, and solutions |
+| 26 | [Feature Lab](26_feature_lab.md) | 130 live-tunable features in one panel, plus a purpose-built proving ground demo scene |
 
 ## Support
 

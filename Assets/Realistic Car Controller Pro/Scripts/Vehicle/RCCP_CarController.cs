@@ -553,6 +553,12 @@ public class RCCP_CarController : RCCP_MainComponent {
     /// </summary>
     private void Start() {
 
+        //  V2.57 (T3-1): maxAngularVelocity existed in RCCP_Settings but was never applied to any
+        //  rigidbody. Opt-in only — capping angular velocity on existing projects would silently
+        //  change flip/spin behavior.
+        if (RCCPSettings.applyMaxAngularVelocity)
+            Rigid.maxAngularVelocity = RCCPSettings.maxAngularVelocity;
+
         if (RCCPSettings.useFixedWheelColliders)
             ConfigureWheelSubsteps();
 

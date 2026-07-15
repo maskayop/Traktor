@@ -51,6 +51,7 @@ public class RCCP_SettingsEditor : Editor {
     SerializedProperty prop_overrideFixedTimeStep;
     SerializedProperty prop_fixedTimeStep;
     SerializedProperty prop_overrideFPS;
+    SerializedProperty prop_applyMaxAngularVelocity;
     SerializedProperty prop_maxAngularVelocity;
     SerializedProperty prop_maxFPS;
     SerializedProperty prop_useFixedWheelColliders;
@@ -177,6 +178,7 @@ public class RCCP_SettingsEditor : Editor {
         prop_overrideFixedTimeStep = serializedObject.FindProperty("overrideFixedTimeStep");
         prop_fixedTimeStep = serializedObject.FindProperty("fixedTimeStep");
         prop_overrideFPS = serializedObject.FindProperty("overrideFPS");
+        prop_applyMaxAngularVelocity = serializedObject.FindProperty("applyMaxAngularVelocity");
         prop_maxAngularVelocity = serializedObject.FindProperty("maxAngularVelocity");
         prop_maxFPS = serializedObject.FindProperty("maxFPS");
         prop_useFixedWheelColliders = serializedObject.FindProperty("useFixedWheelColliders");
@@ -376,7 +378,11 @@ public class RCCP_SettingsEditor : Editor {
             if (RCCSettingsAsset.overrideFPS)
                 EditorGUILayout.PropertyField(prop_maxFPS, new GUIContent("Maximum FPS"));
 
+            EditorGUILayout.PropertyField(prop_applyMaxAngularVelocity, new GUIContent("Apply Maximum Angular Velocity", "Applies the value below to every vehicle rigidbody on spawn. Off = value is inert (pre-V2.57 behavior)."));
+
+            EditorGUI.BeginDisabledGroup(!prop_applyMaxAngularVelocity.boolValue);
             EditorGUILayout.PropertyField(prop_maxAngularVelocity, new GUIContent("Maximum Angular Velocity (rad/s)"));
+            EditorGUI.EndDisabledGroup();
 
             EditorGUILayout.HelpBox("These settings affect all RCCP vehicles globally. Per-vehicle overrides can be set on each RCCP_CarController component.", MessageType.Info);
 

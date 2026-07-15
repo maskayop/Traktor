@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 6853277956331832112}
   - component: {fileID: 6853277956331832126}
   - component: {fileID: 6853277956331832127}
-  - component: {fileID: 7338494973315009216}
+  - component: {fileID: 4292979389279183688}
   m_Layer: 0
   m_Name: Animation
   m_TagString: Untagged
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FOV: 30
---- !u!114 &7338494973315009216
+--- !u!114 &4292979389279183688
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

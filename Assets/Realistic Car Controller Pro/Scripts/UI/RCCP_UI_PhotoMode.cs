@@ -167,6 +167,10 @@ public class RCCP_UI_PhotoMode : RCCP_UIComponent {
 
         if (!pm.InPhotoMode) {
 
+            //  V2.57 (TS-02): external exits (RCCP.ExitPhotoMode(), auto-exit when the target vehicle
+            //  is destroyed) bypass TogglePhotoMode — restore the HUD/overlay here too, or the HUD
+            //  stays hidden and the photo overlay stays latched on screen.
+            SetPhotoUIActive(false);
             feedingTouch = false;
             return;
 

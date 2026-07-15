@@ -107,6 +107,14 @@ public class RCCP_Settings : ScriptableObject {
     [Range(.5f, 20f)] public float maxAngularVelocity = 6;
 
     /// <summary>
+    /// Applies maxAngularVelocity to each vehicle rigidbody on spawn. Ships disabled: the value was
+    /// historically shown in the inspector but never applied, so existing projects keep their
+    /// uncapped rotation behavior unless they opt in.
+    /// </summary>
+    [Tooltip("Apply Maximum Angular Velocity to vehicle rigidbodies on spawn. Off by default — enabling caps rotation speed for ALL vehicles and changes flip/spin feel.")]
+    public bool applyMaxAngularVelocity = false;
+
+    /// <summary>
     /// Maximum FPS.
     /// </summary>
     [Tooltip("Target frame rate when overrideFPS is enabled.")]

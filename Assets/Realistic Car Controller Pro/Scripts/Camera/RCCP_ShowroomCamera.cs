@@ -109,8 +109,10 @@ public class RCCP_ShowroomCamera : RCCP_GenericComponent {
         }
 
         // If auto orbiting is enabled, increase orbitX slowly with orbitSpeed factor.
+        //  V2.57 (TS-04): unscaled time to match the smoothing below — the showroom is menu UX and
+        //  must keep turning while the game is paused/frozen.
         if (orbitingNow)
-            orbitX += Time.deltaTime * orbitSpeed;
+            orbitX += Time.unscaledDeltaTime * orbitSpeed;
 
         //  Clamping orbit Y.
         orbitY = ClampAngle(orbitY, minY, maxY);

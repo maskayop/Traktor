@@ -460,8 +460,7 @@ public class RCCP_CarControllerEditor : Editor {
         if (!EditorApplication.isPlaying)
             DrawValidationPanel();
 
-        if (!EditorApplication.isPlaying)
-            Repaint();
+        RCCP_DesignSystem.RepaintInspectorIfHovered(this);
 
     }
 

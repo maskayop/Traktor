@@ -17,6 +17,8 @@ There are two ways to install the demo content:
 3. Click **Import Demo Content**.
 4. Confirm the import dialog.
 
+![The Welcome Window Demos tab — with demo assets installed, every demo scene gets an Open Scene button plus a one-click Add Demo Scenes to Build Settings](../Images/welcome_window_demos.png)
+
 ### Method 2: Manual Import
 
 1. Navigate to `Assets/Realistic Car Controller Pro/Addons/Installers/` in your Project window.

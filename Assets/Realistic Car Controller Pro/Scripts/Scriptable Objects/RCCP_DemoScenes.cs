@@ -109,6 +109,12 @@ public class RCCP_DemoScenes : ScriptableObject {
     public Object demo_StabilityTest;
 
     /// <summary>
+    /// Scene asset reference for the Feature Lab demo scene.
+    /// </summary>
+    [Tooltip("Scene asset for the Feature Lab demo scene.")]
+    public Object demo_FeatureLab;
+
+    /// <summary>
     /// Build path for the prototype testing scene.
     /// </summary>
     [Tooltip("Cached build-settings path for the prototype scene.")]
@@ -187,6 +193,12 @@ public class RCCP_DemoScenes : ScriptableObject {
     public string path_demo_StabilityTest;
 
     /// <summary>
+    /// Build path for the Feature Lab demo scene.
+    /// </summary>
+    [Tooltip("Cached build-settings path for the Feature Lab scene.")]
+    public string path_demo_FeatureLab;
+
+    /// <summary>
     /// Resolves and caches the build-settings path for each assigned demo scene asset.
     /// </summary>
     public void GetPaths() {
@@ -256,6 +268,11 @@ public class RCCP_DemoScenes : ScriptableObject {
         else
             path_demo_StabilityTest = "";
 
+        if (demo_FeatureLab != null)
+            path_demo_FeatureLab = RCCP_GetAssetPath.GetAssetPath(demo_FeatureLab);
+        else
+            path_demo_FeatureLab = "";
+
     }
 
     /// <summary>
@@ -275,6 +292,7 @@ public class RCCP_DemoScenes : ScriptableObject {
         demo_CityWithTraffic = null;
         demo_City_AI = null;
         demo_StabilityTest = null;
+        demo_FeatureLab = null;
 
         path_demo_protototype = "";
         path_city_AIO = "";
@@ -289,6 +307,7 @@ public class RCCP_DemoScenes : ScriptableObject {
         path_demo_CityWithTraffic = "";
         path_demo_CityWithAI = "";
         path_demo_StabilityTest = "";
+        path_demo_FeatureLab = "";
 
     }
 

@@ -18,12 +18,24 @@ hr { border: none; border-top: 1px solid #ddd; margin: 2em 0; }
 </style></head><body>
 <div class='content'>
 <h1 id='section-0'>Realistic Car Controller Pro - Documentation</h1>
-<div class='toc'><h3>Table of Contents</h3><ul><li style='margin-left:0px'><a href='#section-0'>Realistic Car Controller Pro - Documentation</a></li><li style='margin-left:20px'><a href='#section-1'>Quick Start</a></li><li style='margin-left:20px'><a href='#section-2'>Documentation Index</a></li><li style='margin-left:40px'><a href='#section-3'>Getting Started</a></li><li style='margin-left:40px'><a href='#section-4'>Input and Controls</a></li><li style='margin-left:40px'><a href='#section-5'>Vehicle Systems</a></li><li style='margin-left:40px'><a href='#section-6'>Management and API</a></li><li style='margin-left:40px'><a href='#section-7'>Render Pipelines and Demo Content</a></li><li style='margin-left:40px'><a href='#section-8'>Integration Guides</a></li><li style='margin-left:40px'><a href='#section-9'>Help</a></li><li style='margin-left:20px'><a href='#section-10'>Support</a></li></ul></div>
-
-<p><strong>Version:</strong> 2.50.0<br>
-<strong>Unity:</strong> 6000.0 and above<br>
-<strong>Publisher:</strong> BoneCracker Games</p>
+<div class='toc'><h3>Table of Contents</h3><ul>
+<li style='margin-left:0px'><a href='#section-0'>Realistic Car Controller Pro - Documentation</a></li>
+<li style='margin-left:20px'><a href='#section-1'>Quick Start</a></li>
+<li style='margin-left:20px'><a href='#section-2'>Documentation Index</a></li>
+<li style='margin-left:40px'><a href='#section-3'>Getting Started</a></li>
+<li style='margin-left:40px'><a href='#section-4'>Input and Controls</a></li>
+<li style='margin-left:40px'><a href='#section-5'>Vehicle Systems</a></li>
+<li style='margin-left:40px'><a href='#section-6'>Management and API</a></li>
+<li style='margin-left:40px'><a href='#section-7'>Render Pipelines and Demo Content</a></li>
+<li style='margin-left:40px'><a href='#section-8'>Integration Guides</a></li>
+<li style='margin-left:40px'><a href='#section-9'>Help</a></li>
+<li style='margin-left:20px'><a href='#section-10'>Support</a></li>
+</ul></div>
+<p><strong>Version:</strong> 2.57.0  </p>
+<p><strong>Unity:</strong> 6000.0 and above  </p>
+<p><strong>Publisher:</strong> BoneCracker Games</p>
 <p>Welcome to the official documentation for Realistic Car Controller Pro (RCCP). This guide covers everything you need to get started, configure vehicles, and integrate RCCP into your project.</p>
+<p><img src='../Images/gameplay_hud.png' alt='RCCP in Play Mode — dashboard HUD, camera controls, and a demo vehicle on the Feature Lab proving ground' style='max-width:100%;height:auto;border-radius:6px;border:1px solid #ddd;'></p>
 <h2 id='section-1'>Quick Start</h2>
 <ol>
 <li>Import RCCP from the Unity Asset Store via Package Manager</li>
@@ -35,218 +47,62 @@ hr { border: none; border-top: 1px solid #ddd; margin: 2em 0; }
 <h2 id='section-2'>Documentation Index</h2>
 <h3 id='section-3'>Getting Started</h3>
 <table>
-<thead>
-<tr>
-<th>#</th>
-<th>Document</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>01</td>
-<td><a href="01_installation.html">Installation</a></td>
-<td>Importing, layer setup, Input System, addon packages</td>
-</tr>
-<tr>
-<td>02</td>
-<td><a href="02_architecture.html">Architecture Overview</a></td>
-<td>Component hierarchy, drivetrain chain, events, behaviors</td>
-</tr>
-<tr>
-<td>03</td>
-<td><a href="03_vehicle_setup.html">Vehicle Setup</a></td>
-<td>Setup Wizard walkthrough and manual vehicle setup</td>
-</tr>
-<tr>
-<td>04</td>
-<td><a href="04_settings.html">Settings</a></td>
-<td>RCCP Settings: behaviors, physics, mobile, layers, audio</td>
-</tr>
-</tbody>
+<tr><th>#</th><th>Document</th><th>Description</th></tr>
+<tr><td>01</td><td><a href='01_installation.html'>Installation</a></td><td>Importing, layer setup, Input System, addon packages</td></tr>
+<tr><td>02</td><td><a href='02_architecture.html'>Architecture Overview</a></td><td>Component hierarchy, drivetrain chain, events, behaviors</td></tr>
+<tr><td>03</td><td><a href='03_vehicle_setup.html'>Vehicle Setup</a></td><td>Setup Wizard walkthrough and manual vehicle setup</td></tr>
+<tr><td>04</td><td><a href='04_settings.html'>Settings</a></td><td>RCCP Settings: behaviors, physics, mobile, layers, audio</td></tr>
 </table>
 <h3 id='section-4'>Input and Controls</h3>
 <table>
-<thead>
-<tr>
-<th>#</th>
-<th>Document</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>05</td>
-<td><a href="05_inputs.html">Inputs</a></td>
-<td>Keyboard and gamepad controls, input rebinding</td>
-</tr>
-<tr>
-<td>06</td>
-<td><a href="06_overriding_inputs.html">Overriding Inputs</a></td>
-<td>External vehicle control via code (AI, cutscenes, networking)</td>
-</tr>
-<tr>
-<td>07</td>
-<td><a href="07_mobile.html">Mobile</a></td>
-<td>Touch, gyro, steering wheel, and joystick controls</td>
-</tr>
-<tr>
-<td>08</td>
-<td><a href="08_logitech_steering_wheels.html">Logitech Steering Wheels</a></td>
-<td>Logitech hardware wheel setup and force feedback</td>
-</tr>
-</tbody>
+<tr><th>#</th><th>Document</th><th>Description</th></tr>
+<tr><td>05</td><td><a href='05_inputs.html'>Inputs</a></td><td>Keyboard and gamepad controls, input rebinding</td></tr>
+<tr><td>06</td><td><a href='06_overriding_inputs.html'>Overriding Inputs</a></td><td>External vehicle control via code (AI, cutscenes, networking)</td></tr>
+<tr><td>07</td><td><a href='07_mobile.html'>Mobile</a></td><td>Touch, gyro, steering wheel, and joystick controls</td></tr>
+<tr><td>08</td><td><a href='08_logitech_steering_wheels.html'>Logitech Steering Wheels</a></td><td>Logitech hardware wheel setup and force feedback</td></tr>
 </table>
 <h3 id='section-5'>Vehicle Systems</h3>
 <table>
-<thead>
-<tr>
-<th>#</th>
-<th>Document</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>09</td>
-<td><a href="09_camera_system.html">Camera System</a></td>
-<td>7 camera modes, orbit controls, showroom camera</td>
-</tr>
-<tr>
-<td>10</td>
-<td><a href="10_ground_materials.html">Ground Materials</a></td>
-<td>Surface physics, terrain support, skidmarks</td>
-</tr>
-<tr>
-<td>11</td>
-<td><a href="11_damage_system.html">Damage System</a></td>
-<td>Mesh deformation, detachable parts, wheel and light damage</td>
-</tr>
-<tr>
-<td>12</td>
-<td><a href="12_customization.html">Customization</a></td>
-<td>Paint, wheels, spoilers, decals, neons, performance upgrades</td>
-</tr>
-<tr>
-<td>13</td>
-<td><a href="13_ai_vehicles.html">AI Vehicles</a></td>
-<td>AI navigation, waypoints, brake zones, obstacle avoidance</td>
-</tr>
-<tr>
-<td>14</td>
-<td><a href="14_recording_playback.html">Recording and Playback</a></td>
-<td>Record and replay vehicle sessions</td>
-</tr>
-</tbody>
+<tr><th>#</th><th>Document</th><th>Description</th></tr>
+<tr><td>09</td><td><a href='09_camera_system.html'>Camera System</a></td><td>7 camera modes, orbit controls, showroom camera</td></tr>
+<tr><td>10</td><td><a href='10_ground_materials.html'>Ground Materials</a></td><td>Surface physics, terrain support, skidmarks</td></tr>
+<tr><td>11</td><td><a href='11_damage_system.html'>Damage System</a></td><td>Mesh deformation, detachable parts, wheel and light damage</td></tr>
+<tr><td>12</td><td><a href='12_customization.html'>Customization</a></td><td>Paint, wheels, spoilers, decals, neons, performance upgrades</td></tr>
+<tr><td>13</td><td><a href='13_ai_vehicles.html'>AI Vehicles</a></td><td>AI navigation, waypoints, brake zones, obstacle avoidance</td></tr>
+<tr><td>14</td><td><a href='14_recording_playback.html'>Recording and Playback</a></td><td>Record and replay vehicle sessions</td></tr>
 </table>
 <h3 id='section-6'>Management and API</h3>
 <table>
-<thead>
-<tr>
-<th>#</th>
-<th>Document</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>15</td>
-<td><a href="15_scene_manager.html">Scene Manager</a></td>
-<td>Vehicle tracking, transport, runtime behavior switching</td>
-</tr>
-<tr>
-<td>16</td>
-<td><a href="16_api_reference.html">API Reference</a></td>
-<td>All public methods: spawn, register, control, repair, events</td>
-</tr>
-<tr>
-<td>17</td>
-<td><a href="17_telemetry_debug.html">Telemetry and Debug</a></td>
-<td>Real-time telemetry overlay and debug tools</td>
-</tr>
-</tbody>
+<tr><th>#</th><th>Document</th><th>Description</th></tr>
+<tr><td>15</td><td><a href='15_scene_manager.html'>Scene Manager</a></td><td>Vehicle tracking, transport, runtime behavior switching</td></tr>
+<tr><td>16</td><td><a href='16_api_reference.html'>API Reference</a></td><td>All public methods: spawn, register, control, repair, events</td></tr>
+<tr><td>17</td><td><a href='17_telemetry_debug.html'>Telemetry and Debug</a></td><td>Real-time telemetry overlay and debug tools</td></tr>
 </table>
 <h3 id='section-7'>Render Pipelines and Demo Content</h3>
 <table>
-<thead>
-<tr>
-<th>#</th>
-<th>Document</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>18</td>
-<td><a href="18_render_pipelines.html">Render Pipelines</a></td>
-<td>Built-in, URP, and HDRP setup with shader packages</td>
-</tr>
-<tr>
-<td>19</td>
-<td><a href="19_demo_content.html">Demo Content</a></td>
-<td>Demo scenes, vehicles, and environmental objects</td>
-</tr>
-</tbody>
+<tr><th>#</th><th>Document</th><th>Description</th></tr>
+<tr><td>18</td><td><a href='18_render_pipelines.html'>Render Pipelines</a></td><td>Built-in, URP, and HDRP setup with shader packages</td></tr>
+<tr><td>19</td><td><a href='19_demo_content.html'>Demo Content</a></td><td>Demo scenes, vehicles, and environmental objects</td></tr>
 </table>
 <h3 id='section-8'>Integration Guides</h3>
 <table>
-<thead>
-<tr>
-<th>#</th>
-<th>Document</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>20</td>
-<td><a href="20_integration_enter_exit.html">Enter-Exit Vehicle</a></td>
-<td>BCG Shared Assets: character enter/exit vehicles</td>
-</tr>
-<tr>
-<td>21</td>
-<td><a href="21_integration_photon.html">Photon PUN 2</a></td>
-<td>Multiplayer vehicle sync with Photon</td>
-</tr>
-<tr>
-<td>22</td>
-<td><a href="22_integration_mirror.html">Mirror Networking</a></td>
-<td>Multiplayer vehicle sync with Mirror</td>
-</tr>
-<tr>
-<td>23</td>
-<td><a href="23_integration_proflares.html">ProFlares</a></td>
-<td>Enhanced lens flare effects for vehicle lights</td>
-</tr>
-<tr>
-<td>24</td>
-<td><a href="24_integration_traffic.html">Traffic Controller</a></td>
-<td>Integration with Realistic Traffic Controller</td>
-</tr>
-</tbody>
+<tr><th>#</th><th>Document</th><th>Description</th></tr>
+<tr><td>20</td><td><a href='20_integration_enter_exit.html'>Enter-Exit Vehicle</a></td><td>BCG Shared Assets: character enter/exit vehicles</td></tr>
+<tr><td>21</td><td><a href='21_integration_photon.html'>Photon PUN 2</a></td><td>Multiplayer vehicle sync with Photon</td></tr>
+<tr><td>22</td><td><a href='22_integration_mirror.html'>Mirror Networking</a></td><td>Multiplayer vehicle sync with Mirror</td></tr>
+<tr><td>23</td><td><a href='23_integration_proflares.html'>ProFlares</a></td><td>Enhanced lens flare effects for vehicle lights</td></tr>
+<tr><td>24</td><td><a href='24_integration_traffic.html'>Traffic Controller</a></td><td>Integration with Realistic Traffic Controller</td></tr>
 </table>
 <h3 id='section-9'>Help</h3>
 <table>
-<thead>
-<tr>
-<th>#</th>
-<th>Document</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>25</td>
-<td><a href="25_troubleshooting.html">Troubleshooting</a></td>
-<td>Common issues, error messages, and solutions</td>
-</tr>
-</tbody>
+<tr><th>#</th><th>Document</th><th>Description</th></tr>
+<tr><td>25</td><td><a href='25_troubleshooting.html'>Troubleshooting</a></td><td>Common issues, error messages, and solutions</td></tr>
+<tr><td>26</td><td><a href='26_feature_lab.html'>Feature Lab</a></td><td>130 live-tunable features in one panel, plus a purpose-built proving ground demo scene</td></tr>
 </table>
 <h2 id='section-10'>Support</h2>
 <ul>
 <li><strong>Email:</strong> bonecrackergames@gmail.com</li>
-<li><strong>Website:</strong> <a href="https://www.bonecrackergames.com">www.bonecrackergames.com</a></li>
+<li><strong>Website:</strong> <a href='https://www.bonecrackergames.com'>www.bonecrackergames.com</a></li>
 </ul>
 <p>When reporting an issue, please include your Unity version, RCCP version, render pipeline, and any console error messages.</p>
-</div>
-</body></html>
+</div></body></html>

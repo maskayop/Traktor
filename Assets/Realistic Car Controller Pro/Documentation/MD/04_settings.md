@@ -12,6 +12,8 @@ There are three ways to open and work with RCCP Settings:
 - **From code (editor or initialization):** `RCCP_Settings.Instance`
 - **File location on disk:** `Assets/Realistic Car Controller Pro/Resources/RCCP_Settings.asset`
 
+![The RCCP_Settings asset in the Inspector — General, Behavior, and Controller sections with the four shipped behavior presets](../Images/settings_inspector.png)
+
 ### Runtime Clone (Important)
 
 At runtime, RCCP automatically creates a clone of the Settings asset so that any changes made during play mode do not overwrite your saved configuration. All built-in RCCP components already use this clone internally.
@@ -37,7 +39,16 @@ These settings affect every vehicle in your project.
 | Max FPS | int | 120 | The target frame rate when Override FPS is enabled. Higher values give smoother visuals but require more CPU/GPU power. |
 | Override Fixed Timestep | bool | true | When enabled, overrides Unity's fixed timestep with the value below. |
 | Fixed Timestep | float | 0.02 | The interval (in seconds) between physics updates. 0.02 means 50 physics updates per second. Lower values (like 0.01) give more accurate physics but cost more CPU. For most games, 0.02 is the sweet spot. |
-| Max Angular Velocity | float | 6 | Maximum rotation speed for vehicle rigidbodies, range 0.5 to 20. If your vehicles do not spin fast enough during crashes or flips, increase this value. |
+| Max Angular Velocity | float | 6 | Maximum rotation speed for vehicle rigidbodies, range 0.5 to 20. Only applied while **Apply Max Angular Velocity** (below) is enabled -- before V2.57 this value was shown in the inspector but never applied. |
+| Apply Max Angular Velocity | bool | false | V2.57+: applies **Max Angular Velocity** to every vehicle rigidbody on spawn. Off by default, so existing projects keep their uncapped rotation behavior. Enabling it caps rotation speed for ALL vehicles and changes flip/spin feel. |
+
+---
+
+## Logging
+
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+| Verbose Console Logs | bool | true | V2.51+: when off, routine `Debug.Log` success messages (vehicle spawned, behavior changed, record saved, damage save/load, etc.) are suppressed. Warnings and errors are never gated by this flag and always log. Turn it off for a quiet console in production projects; turn it back on when diagnosing an issue. |
 
 ---
 
@@ -159,6 +170,34 @@ Behavior presets in V2.31.1 carry two suspension multipliers that scale each veh
 | Suspension Damper Multiplier | 0.25 – 3 | 1.0 | Multiplies each wheel's authored base damper rate. 1× = vehicle default. |
 
 All four shipped behavior presets ship at 1.0× / 1.0× — i.e. they do not modify suspension. Customize the multipliers per preset to give each driving mode a distinct ride feel. Because the multipliers scale the authored values rather than replacing them, the same preset works correctly across vehicles of very different masses and ride heights.
+
+### Inertia Tensor Scaling (V2.53+)
+
+The inertia tensor is the Rigidbody's rotational resistance per axis — it decides how eagerly a vehicle pitches, yaws, and rolls independently of its mass. Since V2.53, behavior presets can scale it per axis, which is how the shipped presets give the Drift preset its eager turn-in and the Arcade preset its light, flickable feel without touching mass or suspension.
+
+**Per-preset fields (on `BehaviorType`):**
+
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+| Apply Inertia Scale | bool | false | When enabled, the preset pushes **Inertia Scale** into each vehicle's `RCCP_AeroDynamics` inertia-tensor override (Multiplier mode). When off, the preset leaves the vehicle's inertia tensor untouched. |
+| Inertia Scale | Vector3 | (1, 1, 1) | Per-axis multiplier on the auto-computed inertia tensor: X = Pitch, Y = Yaw, Z = Roll. 1 = stock. Lower Yaw makes the car rotate into turns more eagerly (drift/arcade); higher values feel heavier and more planted. Scale-invariant — it multiplies the auto-computed base, so the same preset works across vehicles of different masses. |
+
+All four shipped presets enable **Apply Inertia Scale**. Balanced ships at identity (1, 1, 1), so it changes nothing; the others ship with tuned multipliers (Drift 0.85 / 1.05 / 1.15, Race 0.85 / 1.15 / 0.85, Arcade 0.75 / 0.75 / 0.75, as of V2.57).
+
+**Per-vehicle override (on `RCCP_AeroDynamics`):**
+
+The behavior preset writes into the vehicle's `RCCP_AeroDynamics` inertia-tensor override, which you can also drive directly per vehicle:
+
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+| Override Inertia Tensor | bool | false | Takes control of the Rigidbody inertia tensor. When off (default), Unity's automatic tensor is used — identical to stock behavior. |
+| Inertia Tensor Mode | enum | Multiplier | `Multiplier` scales the auto-computed tensor per axis (recommended, works on any vehicle). `AbsoluteOverride` freezes exact kg·m² principal moments (advanced). |
+| Inertia Tensor Scale | Vector3 | (1, 1, 1) | Per-axis multiplier used in Multiplier mode (X = Pitch, Y = Yaw, Z = Roll). |
+| Inertia Tensor Absolute | Vector3 | (2000, 2030, 400) | Absolute principal moments in kg·m², used only in AbsoluteOverride mode. |
+
+While the override is active the tensor is **frozen** — it is not recomputed automatically when the vehicle changes shape. Call `RCCP_AeroDynamics.RecomputeInertia()` after colliders or the center of mass change (damage detaches a part, a trailer attaches, etc.) to refresh it. Setting **Override Inertia Tensor** back to false hands control back to Unity's automatic tensor.
+
+Switching from a preset that applies inertia scaling to one that does not will NOT revert the tensor — the last applied values remain until you disable the override or apply another preset that writes new ones.
 
 ### Drift Mode Settings
 

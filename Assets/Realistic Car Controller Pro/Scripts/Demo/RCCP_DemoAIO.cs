@@ -24,6 +24,15 @@ public class RCCP_DemoAIO : RCCP_GenericComponent {
     /// </summary>
     public static RCCP_DemoAIO Instance;
 
+    //  Statics survive a disabled domain reload (Enter Play Mode Options), so clear the stale instance
+    //  on play-mode entry (matches the static-reset convention in RCCP_CarController / RCCP_Customizer).
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void ResetStatics() {
+
+        Instance = null;
+
+    }
+
     /// <summary>Main content panel showing the demo scene selection menu.</summary>
     [Tooltip("Main content panel showing the demo scene selection menu.")]
     public GameObject content;
@@ -179,6 +188,18 @@ public class RCCP_DemoAIO : RCCP_GenericComponent {
             back.SetActive(false);
 
 #endif
+
+    }
+
+    private void OnDestroy() {
+
+        //  SceneManager.activeSceneChanged is a static event — without this unsubscribe, a disabled
+        //  domain reload keeps the destroyed instance's handler alive across play sessions
+        //  (MissingReferenceException on scene change + the loading screen never hides).
+        SceneManager.activeSceneChanged -= SceneManager_activeSceneChanged;
+
+        if (Instance == this)
+            Instance = null;
 
     }
 

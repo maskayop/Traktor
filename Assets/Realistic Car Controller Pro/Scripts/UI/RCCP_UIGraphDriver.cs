@@ -146,6 +146,10 @@ public class RCCP_UIGraphDriver : RCCP_UIComponent {
 
         if (_cachedRigidbody == null) return 0f;
 
+        //  V2.57 (TS-03): deltaTime is 0 while the game is frozen (photo mode) — bail before
+        //  dividing, or the graph is fed Infinity/NaN instead of holding its last value.
+        if (Time.deltaTime <= 0f) return 0f;
+
         Vector3 currentVelocity = _cachedRigidbody.linearVelocity;
         Vector3 acceleration = (currentVelocity - _previousVelocity) / Time.deltaTime;
         _previousVelocity = currentVelocity;

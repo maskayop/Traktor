@@ -907,6 +907,12 @@ public class RCCP_Audio : RCCP_Component {
 
         audioStatesBeforeDisabling = new bool[0];
 
+        //  Re-collect at disable time. The startup snapshot misses sources created later (flat tire,
+        //  runtime-enabled turbo/NOS) and is still empty when something disables this component on
+        //  the spawn frame (RCCP_Lod on distant vehicles) — either way loops would keep playing
+        //  unmanaged. Transient one-shots (RCCP_AudioSourceAutoDestroy) self-destroy on deactivation.
+        allAudioSources = GetComponentsInChildren<AudioSource>(true);
+
         if (allAudioSources == null || allAudioSources.Length < 1)
             return;
 
@@ -1064,15 +1070,21 @@ public class RCCP_Audio : RCCP_Component {
         if (targetPitch < PITCH_DEADZONE)
             targetPitch = 0f;
 
-        // Smooth interpolation for natural transitions
-        src.volume = Mathf.Lerp(src.volume, targetVol, Time.deltaTime * 80f);
-        src.pitch = Mathf.Lerp(src.pitch, targetPitch, Time.deltaTime * 60f);
+        // Smooth interpolation for natural transitions. Exponential form keeps the smoothing
+        // framerate-independent (a raw 'deltaTime * rate' factor saturates above 1 at low FPS and
+        // behaves differently at high refresh rates). Scaled deltaTime is intentional: the volume
+        // and pitch targets are driven by physics state, which slows down with Time.timeScale too.
+        src.volume = Mathf.Lerp(src.volume, targetVol, 1f - Mathf.Exp(-80f * Time.deltaTime));
+        src.pitch = Mathf.Lerp(src.pitch, targetPitch, 1f - Mathf.Exp(-60f * Time.deltaTime));
 
-        // Apply deadzone to final values
-        if (src.volume < AUDIO_DEADZONE)
+        // Snap only completed fade-outs to hard zero. Snapping unconditionally would also
+        // catch the first step of a fade-in whenever targetVol * lerpFactor < AUDIO_DEADZONE
+        // (high framerate + low Time.timeScale shrink the step), turning volume 0 into an
+        // absorbing state: layers fading in during slow motion would stay muted.
+        if (targetVol == 0f && src.volume < AUDIO_DEADZONE)
             src.volume = 0f;
 
-        if (src.pitch < PITCH_DEADZONE)
+        if (targetPitch == 0f && src.pitch < PITCH_DEADZONE)
             src.pitch = 0f;
 
     }
@@ -1230,11 +1242,10 @@ public class RCCP_Audio : RCCP_Component {
 
                     } else {
 
-                        // Other sounds fade out beyond their range
-                        float fadeDistance = 500f;
-                        float excessRPM = rpm - es.maxRPM;
-                        float fadeFactor = Mathf.Clamp01(1f - (excessRPM / fadeDistance));
-                        baseVolume = es.maxVolume * fadeFactor;
+                        // The bell curve already fades this layer to zero at maxRPM. Re-raising it
+                        // here would jump the volume from 0 back to near-full at the range edge;
+                        // RPM above this range belongs to the next layer (ranges should overlap).
+                        baseVolume = 0f;
 
                     }
 
@@ -1430,7 +1441,7 @@ public class RCCP_Audio : RCCP_Component {
                 float avgRPM = (leftRPM + rightRPM) / 2f;
 
                 // Brake sound is louder with more brake force and wheel rotation
-                float brakeIntensity = Mathf.Clamp01(totalBrake / maxBrake);
+                float brakeIntensity = maxBrake > 0f ? Mathf.Clamp01(totalBrake / maxBrake) : 0f;
                 float wheelMotion = Mathf.Clamp01(avgRPM / 50f);
                 float volume = brakeIntensity * wheelMotion * brakeSound.maxVolume;
 
@@ -1628,7 +1639,7 @@ public class RCCP_Audio : RCCP_Component {
             } else {
 
                 // Wind volume increases with speed
-                float volume = Mathf.InverseLerp(0f, 200f, CarController.absoluteSpeed) * windSound.maxVolume * 0.2f;
+                float volume = Mathf.InverseLerp(0f, 200f, CarController.absoluteSpeed) * windSound.maxVolume;
                 windSound.audioSource.volume = volume < AUDIO_DEADZONE ? 0f : volume;
 
             }

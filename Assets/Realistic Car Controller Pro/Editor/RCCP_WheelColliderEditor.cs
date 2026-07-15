@@ -324,6 +324,8 @@ public class RCCP_WheelColliderEditor : Editor {
             EditorUtility.SetDirty(prop);
         }
 
+        RCCP_DesignSystem.RepaintInspectorIfHovered(this);
+
     }
 
 }

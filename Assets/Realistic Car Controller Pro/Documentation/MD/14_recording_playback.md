@@ -139,9 +139,21 @@ if (allRecords.Count > 0) {
 }
 ```
 
-### Note on Persistence
+### Persistence in Builds (RCCP_RecordIO, V2.51+)
 
-`RCCP_Records` is a ScriptableObject asset. In the Unity Editor, recordings saved during Play Mode will persist to the asset file. In a built game, ScriptableObject data does not persist between sessions unless you implement your own serialization. For runtime persistence in builds, consider serializing the `RecordedClip` data to JSON or binary files.
+`RCCP_Records` is a ScriptableObject asset. In the Unity Editor, recordings saved during Play Mode will persist to the asset file — but in a built game, ScriptableObject data does not persist between sessions.
+
+Since V2.51 the static `RCCP_RecordIO` class provides build-safe persistence: it writes each clip as JSON to `Application.persistentDataPath/Replays/` and reads them back.
+
+```csharp
+// Save a recorded clip to disk (overwrites a clip with the same recordName)
+RCCP_RecordIO.Save(clip);
+
+// Load every persisted clip back from disk
+List<RCCP_Recorder.RecordedClip> savedClips = RCCP_RecordIO.LoadAll();
+```
+
+`Save()` never throws — a failed write logs a warning so saving a replay cannot break gameplay. `LoadAll()` returns an empty list if the folder is absent or unreadable. File names are derived from `recordName` with illegal characters stripped.
 
 
 ## Complete Example

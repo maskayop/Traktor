@@ -78,8 +78,9 @@ public class RCCP_UI_Informer : RCCP_UIComponent {
 
     private void Update() {
 
-        //  Timer.
-        time -= Time.deltaTime;
+        //  Timer. V2.57 (TS-05): unscaled time — a toast shown while the game is paused/frozen
+        //  must still time out instead of stranding on screen.
+        time -= Time.unscaledDeltaTime;
 
         //  Limiting the timer.
         if (time < 0)

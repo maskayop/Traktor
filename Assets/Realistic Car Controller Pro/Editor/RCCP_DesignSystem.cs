@@ -139,6 +139,25 @@ public static class RCCP_DesignSystem {
 
     }
 
+    /// <summary>
+    /// Hover-gated repaint for inspectors that display live values (runtime statistics,
+    /// inputs, RPM, etc.). Call as the LAST line of OnInspectorGUI. Repaints only while
+    /// the cursor is over the Inspector, so unviewed panels never burn editor CPU — a
+    /// bare Repaint() self-loops OnInspectorGUI every editor tick and re-dirties the
+    /// target each pass (visible as field flicker in other windows bound to it).
+    /// </summary>
+    public static void RepaintInspectorIfHovered(Editor editor) {
+
+        if (editor == null)
+            return;
+
+        EditorWindow mouseWindow = EditorWindow.mouseOverWindow;
+
+        if (mouseWindow != null && mouseWindow.GetType().Name == "InspectorWindow")
+            editor.Repaint();
+
+    }
+
     #endregion
 
     #region Scoped Helpers

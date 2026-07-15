@@ -328,6 +328,7 @@ public class RCCP_WelcomeTab_Welcome : IRCCP_WelcomeTabContent {
             demos.path_demo_Customization,
             demos.path_demo_OverrideInputs,
             demos.path_demo_Transport,
+            demos.path_demo_FeatureLab,
         };
 
         int total = 0;

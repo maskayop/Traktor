@@ -54,6 +54,8 @@ Once compilation finishes with no errors, RCCP is ready to configure.
 
 The first time you import RCCP, a **Welcome Window** opens automatically. If it does not appear, you can open it manually from **Tools > BoneCracker Games > Realistic Car Controller Pro > Welcome Window**.
 
+![The RCCP Welcome Window — Getting Started steps, quick start guide, and the tab sidebar](../Images/welcome_window.png)
+
 The Welcome Window has several tabs that help you get started:
 
 | Tab | Purpose |

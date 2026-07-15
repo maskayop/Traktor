@@ -962,7 +962,9 @@ public class RCCP_SetupWizardController {
     /// <summary>Checks if the scene contains a static collider that could serve as ground.</summary>
     public bool SceneHasGroundCollider() {
 
+#pragma warning disable CS0618
         Collider[] colliders = UnityEngine.Object.FindObjectsByType<Collider>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+#pragma warning restore CS0618
 
         foreach (Collider col in colliders) {
 

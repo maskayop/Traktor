@@ -10,6 +10,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 using System;
 
 /// <summary>
@@ -63,6 +64,7 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
     // Action Names for Replay Map
     private const string ACTION_RECORD = "Record";
     private const string ACTION_REPLAY = "Replay";
+    private const string ACTION_FEATURE_LAB = "Feature Lab";
 
     /// <summary>
     /// Current input values received from the active input device
@@ -86,6 +88,37 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
     private InputActionMap drivingMap;
     private InputActionMap cameraMap;
     private InputActionMap replayMap;
+
+    /// <summary>
+    /// True while a uGUI input field (TMP or legacy) has keyboard focus. While typing,
+    /// keystrokes are text — driving inputs are zeroed and keyboard-triggered vehicle
+    /// events (camera, lights, gears, record/replay, engine start) are suppressed.
+    /// </summary>
+    public static bool IsTypingInInputField {
+
+        get {
+
+            EventSystem eventSystem = EventSystem.current;
+
+            if (eventSystem == null)
+                return false;
+
+            GameObject selected = eventSystem.currentSelectedGameObject;
+
+            if (selected == null)
+                return false;
+
+            if (selected.TryGetComponent(out TMPro.TMP_InputField tmpField))
+                return tmpField.isFocused;
+
+            if (selected.TryGetComponent(out UnityEngine.UI.InputField legacyField))
+                return legacyField.isFocused;
+
+            return false;
+
+        }
+
+    }
 
     // Events - Gear related
     /// <summary>
@@ -251,6 +284,12 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
     public static event onOptions OnOptions;
 
     /// <summary>
+    /// Event triggered when the Feature Lab panel toggle is requested
+    /// </summary>
+    public delegate void onFeatureLab();
+    public static event onFeatureLab OnFeatureLab;
+
+    /// <summary>
     /// Awake is called when the script instance is being loaded
     /// </summary>
     private void Awake() {
@@ -407,6 +446,18 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
                 inputs = GetKeyboardInputs();
             else
                 inputs = GetMobileInputs();
+
+            //  Typing in a UI input field — keystrokes are text, not driving inputs.
+            if (IsTypingInInputField) {
+
+                inputs.throttleInput = 0f;
+                inputs.brakeInput = 0f;
+                inputs.steerInput = 0f;
+                inputs.handbrakeInput = 0f;
+                inputs.nosInput = 0f;
+                inputs.clutchInput = 0f;
+
+            }
 
         }
 
@@ -758,12 +809,24 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
 
     }
 
+    /// <summary>
+    /// Triggers Feature Lab panel toggle event
+    /// </summary>
+    public void FeatureLab() {
+
+        OnFeatureLab?.Invoke();
+
+    }
+
     // Input System Callbacks
 
     /// <summary>
     /// Callback for gear shift up input
     /// </summary>
     private void GearShiftUp_performed(InputAction.CallbackContext ctx) {
+
+        if (IsTypingInInputField)
+            return;
 
         GearShiftUp();
 
@@ -774,6 +837,9 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
     /// </summary>
     private void GearShiftDown_performed(InputAction.CallbackContext ctx) {
 
+        if (IsTypingInInputField)
+            return;
+
         GearShiftDown();
 
     }
@@ -782,6 +848,9 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
     /// Callback for neutral gear input
     /// </summary>
     private void NGear_performed(InputAction.CallbackContext ctx) {
+
+        if (IsTypingInInputField)
+            return;
 
         GearShiftToN();
 
@@ -792,6 +861,9 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
     /// </summary>
     private void _1stGear_performed(InputAction.CallbackContext ctx) {
 
+        if (IsTypingInInputField)
+            return;
+
         OnGearShiftedTo?.Invoke(0);
 
     }
@@ -800,6 +872,9 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
     /// Callback for 2nd gear input
     /// </summary>
     private void _2ndGear_performed(InputAction.CallbackContext ctx) {
+
+        if (IsTypingInInputField)
+            return;
 
         OnGearShiftedTo?.Invoke(1);
 
@@ -810,6 +885,9 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
     /// </summary>
     private void _3rdGear_performed(InputAction.CallbackContext ctx) {
 
+        if (IsTypingInInputField)
+            return;
+
         OnGearShiftedTo?.Invoke(2);
 
     }
@@ -818,6 +896,9 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
     /// Callback for 4th gear input
     /// </summary>
     private void _4thGear_performed(InputAction.CallbackContext ctx) {
+
+        if (IsTypingInInputField)
+            return;
 
         OnGearShiftedTo?.Invoke(3);
 
@@ -828,6 +909,9 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
     /// </summary>
     private void _5thGear_performed(InputAction.CallbackContext ctx) {
 
+        if (IsTypingInInputField)
+            return;
+
         OnGearShiftedTo?.Invoke(4);
 
     }
@@ -836,6 +920,9 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
     /// Callback for 6th gear input
     /// </summary>
     private void _6thGear_performed(InputAction.CallbackContext ctx) {
+
+        if (IsTypingInInputField)
+            return;
 
         OnGearShiftedTo?.Invoke(5);
 
@@ -846,6 +933,9 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
     /// </summary>
     private void _RGear_performed(InputAction.CallbackContext ctx) {
 
+        if (IsTypingInInputField)
+            return;
+
         OnGearShiftedTo?.Invoke(-1);
 
     }
@@ -854,6 +944,9 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
     /// Callback for trailer detach input
     /// </summary>
     private void TrailDetach_performed(InputAction.CallbackContext ctx) {
+
+        if (IsTypingInInputField)
+            return;
 
         TrailDetach();
 
@@ -864,6 +957,9 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
     /// </summary>
     private void ChangeCamera_performed(InputAction.CallbackContext ctx) {
 
+        if (IsTypingInInputField)
+            return;
+
         ChangeCamera();
 
     }
@@ -872,6 +968,9 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
     /// Callback for look back camera pressed
     /// </summary>
     private void LookBackCamera_performed(InputAction.CallbackContext ctx) {
+
+        if (IsTypingInInputField)
+            return;
 
         LookBackCamera(true);
 
@@ -891,6 +990,9 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
     /// </summary>
     private void HoldOrbitCamera_performed(InputAction.CallbackContext ctx) {
 
+        if (IsTypingInInputField)
+            return;
+
         HoldOrbitCamera(true);
 
     }
@@ -909,6 +1011,9 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
     /// </summary>
     private void StartEngine_performed(InputAction.CallbackContext ctx) {
 
+        if (IsTypingInInputField)
+            return;
+
         StartEngine();
 
     }
@@ -917,6 +1022,9 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
     /// Callback for low beam lights input
     /// </summary>
     private void LowBeamHeadlights_performed(InputAction.CallbackContext ctx) {
+
+        if (IsTypingInInputField)
+            return;
 
         LowBeamHeadlights();
 
@@ -927,6 +1035,9 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
     /// </summary>
     private void HighBeamHeadlights_performed(InputAction.CallbackContext ctx) {
 
+        if (IsTypingInInputField)
+            return;
+
         HighBeamHeadlights();
 
     }
@@ -935,6 +1046,9 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
     /// Callback for left indicator lights input
     /// </summary>
     private void IndicatorLeftlights_performed(InputAction.CallbackContext ctx) {
+
+        if (IsTypingInInputField)
+            return;
 
         IndicatorLeftlights();
 
@@ -945,6 +1059,9 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
     /// </summary>
     private void IndicatorRightlights_performed(InputAction.CallbackContext ctx) {
 
+        if (IsTypingInInputField)
+            return;
+
         IndicatorRightlights();
 
     }
@@ -953,6 +1070,9 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
     /// Callback for hazard lights input
     /// </summary>
     private void Indicatorlights_performed(InputAction.CallbackContext ctx) {
+
+        if (IsTypingInInputField)
+            return;
 
         Indicatorlights();
 
@@ -963,6 +1083,9 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
     /// </summary>
     private void Record_performed(InputAction.CallbackContext ctx) {
 
+        if (IsTypingInInputField)
+            return;
+
         Record();
 
     }
@@ -972,7 +1095,22 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
     /// </summary>
     private void Replay_performed(InputAction.CallbackContext ctx) {
 
+        if (IsTypingInInputField)
+            return;
+
         Replay();
+
+    }
+
+    /// <summary>
+    /// Callback for Feature Lab panel toggle input
+    /// </summary>
+    private void FeatureLab_performed(InputAction.CallbackContext ctx) {
+
+        if (IsTypingInInputField)
+            return;
+
+        FeatureLab();
 
     }
 
@@ -1287,6 +1425,10 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
             if (replayAction != null)
                 replayAction.performed += Replay_performed;
 
+            var featureLabAction = replayMap.FindAction(ACTION_FEATURE_LAB);
+            if (featureLabAction != null)
+                featureLabAction.performed += FeatureLab_performed;
+
         } catch (Exception e) {
 
             Debug.LogError($"Failed to subscribe to replay map events: {e.Message}");
@@ -1315,6 +1457,10 @@ public class RCCP_InputManager : RCCP_Singleton<RCCP_InputManager> {
             var replayAction = replayMap.FindAction(ACTION_REPLAY);
             if (replayAction != null)
                 replayAction.performed -= Replay_performed;
+
+            var featureLabAction = replayMap.FindAction(ACTION_FEATURE_LAB);
+            if (featureLabAction != null)
+                featureLabAction.performed -= FeatureLab_performed;
 
         } catch (Exception e) {
 

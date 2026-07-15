@@ -236,6 +236,8 @@ public class RCCP_GearboxEditor : Editor {
         if (GUI.changed)
             EditorUtility.SetDirty(prop);
 
+        RCCP_DesignSystem.RepaintInspectorIfHovered(this);
+
     }
 
     private void AddListener() {

@@ -17,7 +17,8 @@ MonoBehaviour:
   overrideFPS: 0
   overrideFixedTimeStep: 0
   fixedTimeStep: 0.02
-  maxAngularVelocity: 8
+  maxAngularVelocity: 6
+  applyMaxAngularVelocity: 0
   maxFPS: 300
   defaultSteeringCurve:
     serializedVersion: 2

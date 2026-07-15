@@ -1126,13 +1126,25 @@ public class RCCP_WheelCollider : RCCP_Component {
 
                 if (CarController.Rigid.linearVelocity.magnitude > .1f) {
 
-                    skidAudioSource.volume = Mathf.Lerp(skidAudioSource.volume, Mathf.Lerp(0f, skidVolume, TotalSlip - cachedGroundMaterials.frictions[groundIndex].slip), Time.fixedDeltaTime * 10f);
+                    float targetSkidVolume = Mathf.Lerp(0f, skidVolume, TotalSlip - cachedGroundMaterials.frictions[groundIndex].slip);
+
+                    skidAudioSource.volume = Mathf.Lerp(skidAudioSource.volume, targetSkidVolume, Time.fixedDeltaTime * 10f);
                     skidAudioSource.pitch = Mathf.Lerp(skidAudioSource.pitch, Mathf.Lerp(.7f, 1f, TotalSlip - cachedGroundMaterials.frictions[groundIndex].slip), Time.fixedDeltaTime * 10f);
+
+                    //  V2.57 (TS-01): deadzone snap only on completed fade-outs. The snap used to run
+                    //  unconditionally after this lerp, so every ramp-in toward a quiet target
+                    //  (target < threshold / lerp step) was re-zeroed each tick — light skids stayed
+                    //  permanently muted. 0 must never absorb a fade-in (same class as 62d8d2e2).
+                    if (targetSkidVolume <= 0f && skidAudioSource.volume < SKID_VOLUME_THRESHOLD)
+                        skidAudioSource.volume = 0f;
 
                 } else {
 
                     skidAudioSource.volume = Mathf.Lerp(skidAudioSource.volume, 0f, Time.fixedDeltaTime * 10f);
                     skidAudioSource.pitch = Mathf.Lerp(skidAudioSource.pitch, 1f, Time.fixedDeltaTime * 10f);
+
+                    if (skidAudioSource.volume < SKID_VOLUME_THRESHOLD)
+                        skidAudioSource.volume = 0f;
 
                 }
 
@@ -1141,13 +1153,13 @@ public class RCCP_WheelCollider : RCCP_Component {
                 skidAudioSource.volume = Mathf.Lerp(skidAudioSource.volume, 0f, Time.fixedDeltaTime * 10f);
                 skidAudioSource.pitch = Mathf.Lerp(skidAudioSource.pitch, 1f, Time.fixedDeltaTime * 10f);
 
+                if (skidAudioSource.volume < SKID_VOLUME_THRESHOLD)
+                    skidAudioSource.volume = 0f;
+
                 if (skidAudioSource.volume <= MIN_AUDIO_VOLUME_TO_STOP && skidAudioSource.isPlaying)
                     skidAudioSource.Stop();
 
             }
-
-            if (skidAudioSource.volume < SKID_VOLUME_THRESHOLD)
-                skidAudioSource.volume = 0f;
 
         }
 

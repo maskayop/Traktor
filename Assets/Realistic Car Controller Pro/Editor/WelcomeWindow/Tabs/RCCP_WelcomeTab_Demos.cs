@@ -162,6 +162,10 @@ public class RCCP_WelcomeTab_Demos : IRCCP_WelcomeTabContent {
             "Vehicle plus trailer towing demo",
             () => OpenDemoScene(d => d.path_demo_Transport, "Transport")));
 
+        coreRow.Add(RCCP_WelcomeWindowUI.CreateSceneCard("Feature Lab",
+            "130 live-tunable features on a purpose-built proving ground",
+            () => OpenDemoScene(d => d.path_demo_FeatureLab, "Feature Lab")));
+
         coreWrapper.Add(coreRow);
         root.Add(coreWrapper);
 

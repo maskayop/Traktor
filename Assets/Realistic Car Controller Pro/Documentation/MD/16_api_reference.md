@@ -344,9 +344,14 @@ Freezes the simulation and orbits a temporary camera around the player vehicle f
 public static void EnterPhotoMode()
 public static void ExitPhotoMode()
 public static string CapturePhoto()
+public static void SetPhotoCameraMode(RCCP_PhotoMode.PhotoCameraMode mode)
+public static void CyclePhotoCameraMode()
+public static void SetPhotoFieldOfView(float fieldOfView)
 ```
 
 `EnterPhotoMode` freezes `Time.timeScale`, pauses audio, hides the RCCP camera, and spawns an orbit camera seeded from the current view (mouse orbits, scroll wheel zooms). `ExitPhotoMode` restores timescale, audio, and the RCCP camera. `CapturePhoto` writes a super-size screenshot to `Application.persistentDataPath/Photos` and returns the file path.
+
+The photo camera has three modes — `Orbit`, `FreeCam`, and `AutoOrbit` (`RCCP_PhotoMode.PhotoCameraMode`). `SetPhotoCameraMode` selects one directly, `CyclePhotoCameraMode` steps through them in that order, and `SetPhotoFieldOfView` sets the photo camera's FOV in degrees.
 
 ```csharp
 // Toggle photo mode from a UI button
@@ -465,6 +470,23 @@ RCCP.SetBehavior("Drift");
 ```
 
 If no preset with the given name is found, a warning is logged to the console and no change is made.
+
+### ClearBehavior (V2.51+)
+
+Turns the global behavior override (`RCCP_Settings.overrideBehavior`) back off, so global preset changes no longer affect vehicles. This is the counterpart to `SetBehavior`.
+
+```csharp
+public static void ClearBehavior()
+```
+
+Takes no parameters.
+
+**Important:** vehicles RETAIN whatever values are currently applied — this does not revert a preset that has already been baked into their components. To restore a vehicle's original feel, re-apply your own values or reload the vehicle.
+
+```csharp
+// Stop the global preset from overriding vehicles
+RCCP.ClearBehavior();
+```
 
 ### GetBehaviorIndexByName
 
@@ -615,6 +637,17 @@ public static void StopRecordReplay(RCCP_CarController vehicle)
 RCCP.StopRecordReplay(playerCar);
 ```
 
+### Persisting Recordings in Builds (RCCP_RecordIO, V2.51+)
+
+The `RCCP_Records` ScriptableObject only persists recordings in the Unity Editor. For built games, the static `RCCP_RecordIO` class saves clips as JSON under `Application.persistentDataPath/Replays/` and loads them back.
+
+```csharp
+public static void Save(RCCP_Recorder.RecordedClip clip)
+public static List<RCCP_Recorder.RecordedClip> LoadAll()
+```
+
+`Save` overwrites a clip with the same `recordName` and never throws (failures log a warning). `LoadAll` returns an empty list if the folder is absent or unreadable. See [Recording and Playback](14_recording_playback.md) for a full example.
+
 ---
 
 ## Maintenance
@@ -742,6 +775,11 @@ public class MyGameManager : MonoBehaviour {
 | `OnBehaviorChanged` | `onBehaviorChanged()` | The global behavior preset is changed via `RCCP.SetBehavior()`. |
 | `OnVehicleChanged` | `onVehicleChanged()` | The registered player vehicle changes (no vehicle reference). |
 | `OnVehicleChangedToVehicle` | `onVehicleChangedToVehicle(RCCP_CarController carController)` | The registered player vehicle changes (includes the new vehicle reference). |
+| `OnRCCPImpact` (V2.51+) | `onRCCPImpact(RCCP_CarController rccp, float impulse)` | A debounced collision impact (per-vehicle cooldown + minimum impulse). |
+| `OnRCCPRepaired` (V2.51+) | `onRCCPRepaired(RCCP_CarController rccp)` | A vehicle finishes repairing (damage fully reset). |
+| `OnRCCPDamaged` (V2.51+) | `onRCCPDamaged(RCCP_CarController rccp)` | A vehicle first takes deformation/collision damage after being intact. |
+| `OnRCCPFuelEmpty` (V2.51+) | `onRCCPFuelEmpty(RCCP_CarController rccp)` | Fires once when the fuel tank reaches empty (re-armed on refill). |
+| `OnRCCPNosEmpty` (V2.51+) | `onRCCPNosEmpty(RCCP_CarController rccp)` | Fires once when the NOS/boost tank depletes to empty (re-armed on regeneration). |
 
 ### Event Details
 
@@ -752,6 +790,10 @@ public class MyGameManager : MonoBehaviour {
 **OnVehicleChanged vs OnVehicleChangedToVehicle** -- Both fire when the player vehicle changes. `OnVehicleChanged` takes no parameters (useful when you just need to refresh UI). `OnVehicleChangedToVehicle` passes the new vehicle reference (useful when you need to read data from the new vehicle).
 
 **OnRCCPUIInformer** -- Subscribe to this event to display informational messages in your own custom UI. RCCP fires this when it wants to show a message to the player (e.g., "Engine Started").
+
+**OnRCCPImpact vs OnRCCPCollision** -- `OnRCCPCollision` fires on every contact and is the right hook for damage and particle work. `OnRCCPImpact` (V2.51+) is debounced with a per-vehicle cooldown and a minimum-impulse threshold, so it fires once per meaningful hit — use it for gameplay reactions like sound stingers, score penalties, or UI shake.
+
+**OnRCCPFuelEmpty / OnRCCPNosEmpty** -- One-shot events: each fires once when the tank empties and is re-armed when fuel is refilled or NOS regenerates, so you will not receive it every frame while the tank stays empty.
 
 ---
 
@@ -1065,11 +1107,15 @@ A summary of every method in the `RCCP` class for quick lookup.
 | `EnterPhotoMode` | (none) | `void` | Freeze + orbit camera for screenshots (opt-in). |
 | `ExitPhotoMode` | (none) | `void` | Exit photo mode, restore the simulation. |
 | `CapturePhoto` | (none) | `string` | Save a super-size screenshot; returns the path. |
+| `SetPhotoCameraMode` | mode | `void` | Set the photo camera mode (Orbit / FreeCam / AutoOrbit). |
+| `CyclePhotoCameraMode` | (none) | `void` | Cycle Orbit -> FreeCam -> AutoOrbit. |
+| `SetPhotoFieldOfView` | fieldOfView (float) | `void` | Set the photo camera FOV in degrees. |
 | `Transport` | position, rotation | `void` | Teleport the player vehicle. |
 | `Transport` | vehicle, position, rotation | `void` | Teleport a specific vehicle. |
 | `Transport` | vehicle, position, rotation, resetVelocity | `void` | Teleport with optional velocity reset. |
 | `SetBehavior` | behaviorIndex (int) | `void` | Apply behavior preset by index. |
 | `SetBehavior` | behaviorName (string) | `void` | Apply behavior preset by name. |
+| `ClearBehavior` | (none) | `void` | Turn the global behavior override off (V2.51+). |
 | `GetBehaviorIndexByName` | behaviorName | `int` | Get preset index (-1 if not found). |
 | `GetBehaviorByName` | behaviorName | `BehaviorType` | Get preset object (null if not found). |
 | `SetMobileController` | mobileController | `void` | Change mobile input method. |

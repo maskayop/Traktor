@@ -121,6 +121,8 @@ public class RCCP_DifferentialEditor : Editor {
         if (GUI.changed)
             EditorUtility.SetDirty(prop);
 
+        RCCP_DesignSystem.RepaintInspectorIfHovered(this);
+
     }
 
     /// <summary>

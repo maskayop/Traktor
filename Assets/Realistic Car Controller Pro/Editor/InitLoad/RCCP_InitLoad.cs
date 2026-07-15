@@ -87,15 +87,13 @@ public class RCCP_InitLoad {
     }
 
     /// <summary>
-    /// Initializes purchase verification: records first-seen date and auto-registers with server.
-    /// Registration is non-blocking — no UI is forced open.
+    /// Initializes purchase verification: auto-registers with the server in the background.
+    /// Registration is non-blocking — no UI is forced open. (V2.57/D1: first-seen tracking removed
+    /// with the grace-period dead code — verification is nag-only.)
     /// </summary>
     public static void InitializeVerification() {
 
-        // Record first-seen date (survives reimport via EditorPrefs/registry)
-        RCCP_CoreServerProxy.EnsureFirstSeenDate();
-
-        // Auto-register with server in background (gets server-side created_at for anti-tamper)
+        // Auto-register with server in background
         if (!RCCP_CoreServerProxy.IsRegistered && !RCCP_CoreServerProxy.IsVerified) {
 
             RCCP_CoreServerProxy.RegisterDevice(RCCP_Settings.Instance, (success, message) => { });

@@ -154,6 +154,26 @@ public class RCCP_LightSetupWizard : EditorWindow {
         DrawOptions();
         DrawPlacementPreviewToggle();
         DrawFooter();
+
+        //  Scene preview handles depend on the options above — repaint scene views only
+        //  when a value actually changed this pass, not unconditionally every editor tick.
+        if (GUI.changed)
+            SceneView.RepaintAll();
+
+        //  Hover-gated repaint: an unconditional Repaint() here self-loops OnGUI at full
+        //  editor tick rate for as long as the wizard is open.
+        if (EditorWindow.mouseOverWindow == this)
+            Repaint();
+
+    }
+
+    /// <summary>
+    /// The vehicle field auto-follows the active selection, so refresh the window and
+    /// the scene preview when the selection changes outside of this window's events.
+    /// </summary>
+    private void OnSelectionChange() {
+
+        AttemptCacheSelection();
         Repaint();
         SceneView.RepaintAll();
 
@@ -570,6 +590,10 @@ public class RCCP_LightSetupWizard : EditorWindow {
                 string warnMessaage = "This vehicle already has lights, creating new lights through this wizard will make them double. Remove all lights in RCCP_Lights component of your vehicle to use this quick lights setup wizard.";
                 EditorUtility.DisplayDialog("Vehicle Already Has Lights", warnMessaage, "Ok");
                 Debug.LogWarning(warnMessaage);
+
+                //  OnSceneGUI performs the deferred Close(); nudge the scene views so it
+                //  runs now that OnGUI no longer repaints them unconditionally.
+                SceneView.RepaintAll();
 
             }
 

@@ -145,6 +145,8 @@ public class RCCP_InputEditor : Editor {
         if (GUI.changed)
             EditorUtility.SetDirty(prop);
 
+        RCCP_DesignSystem.RepaintInspectorIfHovered(this);
+
     }
 
 

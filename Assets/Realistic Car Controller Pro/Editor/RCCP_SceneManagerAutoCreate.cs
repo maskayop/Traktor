@@ -90,7 +90,9 @@ public static class RCCP_SceneManagerAutoCreate {
 
         // One manager across ALL loaded scenes — a second would double-register every vehicle and fight over
         // the camera/UI binding at runtime. If one already exists, that's the singleton-like result.
+#pragma warning disable CS0618
         RCCP_SceneManager[] existing = Object.FindObjectsByType<RCCP_SceneManager>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+#pragma warning restore CS0618
 
         if (existing.Length > 0) {
 
@@ -101,7 +103,9 @@ public static class RCCP_SceneManagerAutoCreate {
 
         }
 
+#pragma warning disable CS0618
         RCCP_CarController[] vehicles = Object.FindObjectsByType<RCCP_CarController>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+#pragma warning restore CS0618
 
         if (requireVehicle && vehicles.Length == 0)
             return null; // no vehicle → nothing to manage

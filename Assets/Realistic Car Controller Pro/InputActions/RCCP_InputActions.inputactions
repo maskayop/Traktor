@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "RCCP_InputActions",
     "maps": [
         {
@@ -1478,6 +1479,15 @@
                     "processors": "",
                     "interactions": "Press",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Feature Lab",
+                    "type": "Button",
+                    "id": "1f85225d-fe8b-4280-ab33-baf8aac39db1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1500,6 +1510,17 @@
                     "processors": "",
                     "groups": "Keyboard Mouse",
                     "action": "Replay",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a0ecc094-c0b9-4372-95e8-ee9387d8e022",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard Mouse",
+                    "action": "Feature Lab",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

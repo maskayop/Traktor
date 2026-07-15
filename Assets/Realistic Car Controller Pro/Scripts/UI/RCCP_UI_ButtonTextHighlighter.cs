@@ -86,11 +86,13 @@ public class RCCP_UI_ButtonTextHighlighter : RCCP_UIComponent, IPointerEnterHand
     /// </summary>
     private void Update() {
 
-        // If hovering, lerp the text color to target color, otherwise lerp to default color
+        // If hovering, lerp the text color to target color, otherwise lerp to default color.
+        //  V2.57 (TS-05): unscaled time — UI hover feedback must keep animating while the game is
+        //  frozen (photo mode overlay buttons) or in slow motion.
         if (hovering)
-            text.color = Color.Lerp(text.color, targetTextColor, Time.deltaTime * speed);
+            text.color = Color.Lerp(text.color, targetTextColor, Time.unscaledDeltaTime * speed);
         else
-            text.color = Color.Lerp(text.color, defaultTextColor, Time.deltaTime * speed);
+            text.color = Color.Lerp(text.color, defaultTextColor, Time.unscaledDeltaTime * speed);
 
     }
 

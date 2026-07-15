@@ -217,8 +217,7 @@ public class RCCP_OtherAddonsEditor : Editor {
         if (GUI.changed)
             EditorUtility.SetDirty(prop);
 
-        if (!EditorApplication.isPlaying)
-            Repaint();
+        RCCP_DesignSystem.RepaintInspectorIfHovered(this);
 
     }
 

@@ -18,6 +18,8 @@ You can open the wizard from two menu paths:
 
 The wizard window appears with a progress bar at the top and Back/Next buttons at the bottom. You can move freely between steps before clicking Finish.
 
+![The RCCP Setup Wizard — 7 steps from Basic Settings to Finalize, starting with Target Vehicle assignment](../Images/setup_wizard.png)
+
 ## Preparing Your 3D Model
 
 Before running the wizard (or setting up manually), your vehicle model needs to meet a few requirements. Getting these right saves a lot of troubleshooting later.
@@ -273,6 +275,8 @@ Your vehicle is now ready to drive. Press Play and test it.
 ## Manual Vehicle Setup (Without Wizard)
 
 If you prefer full control or have an unusual vehicle configuration, you can set everything up by hand. This is also useful for understanding what the wizard does behind the scenes.
+
+![A finished RCCP vehicle prefab in the Inspector — Rigidbody plus the RCCP Car Controller component](../Images/carcontroller_inspector.png)
 
 ### Step-by-Step Manual Setup
 

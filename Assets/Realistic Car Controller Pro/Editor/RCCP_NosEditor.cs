@@ -70,6 +70,8 @@ public class RCCP_NosEditor : Editor {
         if (GUI.changed)
             EditorUtility.SetDirty(prop);
 
+        RCCP_DesignSystem.RepaintInspectorIfHovered(this);
+
     }
 
 }

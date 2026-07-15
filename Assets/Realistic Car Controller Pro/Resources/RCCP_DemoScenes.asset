@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b8969ab774470a4b8fea6300a05f203, type: 3}
   m_Name: RCCP_DemoScenes
   m_EditorClassIdentifier: 
-  instanceId: 1
+  instanceId: 0
   demo_protototype: {fileID: 102900000, guid: c9065e9aaa96de74883b539dd3fb518f, type: 3}
   city_AIO: {fileID: 102900000, guid: 3050e4c8e74bdba44824c4d411926486, type: 3}
   demo_City: {fileID: 102900000, guid: dcf704fd90693194bb0f78092d1ae4ee, type: 3}
@@ -25,22 +25,17 @@ MonoBehaviour:
   demo_Transport: {fileID: 102900000, guid: 6b57f50152a346043a7a8de256c1a4e4, type: 3}
   demo_City_AI: {fileID: 102900000, guid: 027daeb76767a314ea08b1a99a646d0e, type: 3}
   demo_CityWithTraffic: {fileID: 102900000, guid: d9cedac3b1da325439ced9b15d4b779e, type: 3}
+  demo_StabilityTest: {fileID: 0}
   path_demo_protototype: Assets/Realistic Car Controller Pro/Scenes/RCCP_Scene_Blank_Prototype.unity
-  path_city_AIO: Assets/Realistic Car Controller Pro/Addons/Installed/Demo Content/Scenes/RCCP_Scene_CityNew_AIO.unity
-  path_demo_City: Assets/Realistic Car Controller Pro/Addons/Installed/Demo Content/Scenes/RCCP_Scene_CityNew.unity
-  path_demo_CarSelection: Assets/Realistic Car Controller Pro/Addons/Installed/Demo
-    Content/Scenes/RCCP_Scene_CityNew_SelectVehicle.unity
-  path_demo_APIBlank: Assets/Realistic Car Controller Pro/Addons/Installed/Demo Content/Scenes/RCCP_Scene_Blank_API.unity
-  path_demo_BlankMobile: Assets/Realistic Car Controller Pro/Addons/Installed/Demo
-    Content/Scenes/RCCP_Scene_Blank.unity
-  path_demo_Damage: Assets/Realistic Car Controller Pro/Addons/Installed/Demo Content/Scenes/RCCP_Scene_Damage.unity
-  path_demo_Customization: Assets/Realistic Car Controller Pro/Addons/Installed/Demo
-    Content/Scenes/RCCP_Scene_Blank_Customization.unity
-  path_demo_OverrideInputs: Assets/Realistic Car Controller Pro/Addons/Installed/Demo
-    Content/Scenes/RCCP_Scene_Blank_OverrideInputs.unity
-  path_demo_Transport: Assets/Realistic Car Controller Pro/Addons/Installed/Demo
-    Content/Scenes/RCCP_Scene_Blank_Transport.unity
-  path_demo_CityWithTraffic: Assets/Realistic Car Controller Pro/Addons/Installed/Realistic
-    Traffic Controller/Scenes/RCCP_Scene_CityNew_RTC.unity
-  path_demo_CityWithAI: Assets/Realistic Car Controller Pro/Addons/Installed/Demo
-    Content/Scenes/RCCP_Scene_CityNew_AI.unity
+  path_city_AIO: 
+  path_demo_City: 
+  path_demo_CarSelection: 
+  path_demo_APIBlank: 
+  path_demo_BlankMobile: 
+  path_demo_Damage: 
+  path_demo_Customization: 
+  path_demo_OverrideInputs: 
+  path_demo_Transport: 
+  path_demo_CityWithTraffic: 
+  path_demo_CityWithAI: 
+  path_demo_StabilityTest: 

@@ -37,7 +37,7 @@ The InputActionAsset contains three action maps:
 |---|---|---|
 | **Vehicle** | Driving controls | Throttle, Brake, Steering, Handbrake, NOS, Clutch, Engine, Lights, Indicators, Gears, Trail Detach |
 | **Camera** | Camera control | MouseInput, Change Camera, Look Back, Zoom, Hold (orbit) |
-| **Optional** | Recording and replay | Record, Replay |
+| **Optional** | Recording, replay, and demo panels | Record, Replay, Feature Lab |
 
 All three maps are enabled simultaneously at runtime. The RCCP_InputManager caches references to each map on initialization for performance.
 
@@ -103,6 +103,7 @@ Button-press actions (engine start, lights, gear shifts, etc.) are not carried i
 |---|---|---|
 | Record | R | Start/stop recording vehicle state |
 | Replay | P | Start/stop replaying recorded state |
+| Feature Lab | Tab | Toggle the [Feature Lab](26_feature_lab.md) demo panel |
 
 ## Default Gamepad Bindings
 
@@ -311,6 +312,7 @@ The RCCP_InputManager fires static events for all button-press actions. These ev
 | `OnRecord` | `void()` | Recording toggled |
 | `OnReplay` | `void()` | Replay toggled |
 | `OnOptions` | `void()` | Options menu requested |
+| `OnFeatureLab` | `void()` | Feature Lab panel toggle requested |
 
 ### Subscribing to Events
 

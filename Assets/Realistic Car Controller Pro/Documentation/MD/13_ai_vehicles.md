@@ -89,6 +89,7 @@ Drag a `RCCP_AIWaypointsContainer` from your scene into the `waypointsContainer`
 |---|---|---|---|
 | `waypointReachThreshold` | float | 25 | Distance in meters at which a waypoint is considered reached |
 | `raceLookAhead` | float | 36 | Additional look-ahead distance in meters for RaceWaypoints mode |
+| `stopAtEnd` | bool | false | V2.51+: when true, the AI stops at the last waypoint instead of looping back to the first. Useful for one-shot routes and finish lines. |
 
 ### Steering Look-ahead
 
@@ -257,8 +258,9 @@ RCCP_AI ai = aiVehicle.OtherAddonsManager.AI;
 ai.behaviour = RCCP_AI.BehaviourType.FollowTarget;
 ai.target = playerVehicle.transform;
 
-// Force stop
-ai.stopNow = true;
+// Command the AI to stop (brakes, no throttle) and resume later (V2.51+)
+ai.Stop();
+ai.Resume();
 
 // Reset the AI state
 ai.Reload();

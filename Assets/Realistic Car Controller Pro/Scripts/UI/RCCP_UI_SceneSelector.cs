@@ -77,7 +77,10 @@ public class RCCP_UI_SceneSelector : RCCP_UIComponent {
         CityAI,
 
         /// <summary>Blank scene for automated stability system testing.</summary>
-        StabilityTest
+        StabilityTest,
+
+        /// <summary>Feature Lab live-tuning demo scene with 130 tunable entries.</summary>
+        FeatureLab
 
     }
     /// <summary>
@@ -229,6 +232,11 @@ public class RCCP_UI_SceneSelector : RCCP_UIComponent {
                 RCCP_DemoAIO.Instance.LoadScene(RCCP_DemoScenes.Instance.path_demo_StabilityTest);
                 break;
 
+            case DemoScene.FeatureLab:
+
+                RCCP_DemoAIO.Instance.LoadScene(RCCP_DemoScenes.Instance.path_demo_FeatureLab);
+                break;
+
         }
 
     }
@@ -317,6 +325,13 @@ public class RCCP_UI_SceneSelector : RCCP_UIComponent {
                 case DemoScene.StabilityTest:
 
                     if (allScenes[i].path == RCCP_DemoScenes.Instance.path_demo_StabilityTest)
+                        foundScene = true;
+
+                    break;
+
+                case DemoScene.FeatureLab:
+
+                    if (allScenes[i].path == RCCP_DemoScenes.Instance.path_demo_FeatureLab)
                         foundScene = true;
 
                     break;

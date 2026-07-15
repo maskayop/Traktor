@@ -293,6 +293,8 @@ public class RCCP_EngineEditor : Editor {
         if (GUI.changed)
             EditorUtility.SetDirty(prop);
 
+        RCCP_DesignSystem.RepaintInspectorIfHovered(this);
+
     }
 
     private void AddListener() {

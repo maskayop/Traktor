@@ -82,8 +82,11 @@ public class RCCP_AudioSource {
 
         if (destroyAfterFinished) {
 
+            //  Delayed Object.Destroy runs on scaled time while audio plays in realtime, which
+            //  truncates one-shots at Time.timeScale > 1 and leaks them at timeScale = 0. The
+            //  helper component destroys based on actual playback state instead.
             if (audioClip)
-                Object.Destroy(audioSourceObject, audioClip.length);
+                audioSourceObject.AddComponent<RCCP_AudioSourceAutoDestroy>();
             else
                 Object.Destroy(audioSourceObject);
 
@@ -154,8 +157,11 @@ public class RCCP_AudioSource {
 
         if (destroyAfterFinished) {
 
+            //  Delayed Object.Destroy runs on scaled time while audio plays in realtime, which
+            //  truncates one-shots at Time.timeScale > 1 and leaks them at timeScale = 0. The
+            //  helper component destroys based on actual playback state instead.
             if (audioClip)
-                Object.Destroy(audioSourceObject, audioClip.length);
+                audioSourceObject.AddComponent<RCCP_AudioSourceAutoDestroy>();
             else
                 Object.Destroy(audioSourceObject);
 
@@ -194,6 +200,72 @@ public class RCCP_AudioSource {
 
         AudioLowPassFilter lowFilter = source.gameObject.AddComponent<AudioLowPassFilter>();
         lowFilter.cutoffFrequency = freq;
+
+    }
+
+}
+
+/// <summary>
+/// Destroys a transient one-shot audio source GameObject once playback has actually finished.
+/// Runtime-created by RCCP_AudioSource.NewAudioSource for destroyAfterFinished sources; not meant
+/// to be added manually. Tracks realtime playback state instead of a scaled-time Destroy delay, so
+/// one-shots are neither cut off at Time.timeScale > 1 nor kept alive forever at timeScale = 0.
+/// </summary>
+[AddComponentMenu("")]
+public class RCCP_AudioSourceAutoDestroy : MonoBehaviour {
+
+    private AudioSource source;
+    private bool hasPlayed = false;
+    private float spawnRealtime = 0f;
+    private bool quitting = false;
+
+    private void Awake() {
+
+        source = GetComponent<AudioSource>();
+        spawnRealtime = Time.realtimeSinceStartup;
+
+    }
+
+    private void Update() {
+
+        if (!source) {
+
+            Destroy(gameObject);
+            return;
+
+        }
+
+        //  Global audio pause suspends playback without finishing it. Don't reap while paused.
+        if (AudioListener.pause)
+            return;
+
+        if (source.isPlaying) {
+
+            hasPlayed = true;
+            return;
+
+        }
+
+        //  Finished playing, or never started within the legacy clip-length lifetime window.
+        float lifetime = source.clip ? source.clip.length : 0f;
+
+        if (hasPlayed || Time.realtimeSinceStartup - spawnRealtime >= lifetime)
+            Destroy(gameObject);
+
+    }
+
+    private void OnApplicationQuit() {
+
+        quitting = true;
+
+    }
+
+    //  Fire-and-forget one-shots are garbage once deactivated: Update no longer runs (would leak),
+    //  and playOnAwake would replay the clip on reactivation. Reap immediately instead.
+    private void OnDisable() {
+
+        if (!quitting)
+            Destroy(gameObject);
 
     }
 

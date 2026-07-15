@@ -16,7 +16,7 @@ using System.Collections.Generic;
 /// </summary>
 public class RCCP_Version {
 
-    /// <summary>Current version string of Realistic Car Controller Pro (e.g., "V2.55.0").</summary>
-    public const string version = "V2.55.0";
+    /// <summary>Current version string of Realistic Car Controller Pro (e.g., "V2.57.0").</summary>
+    public const string version = "V2.57.0";
 
 }

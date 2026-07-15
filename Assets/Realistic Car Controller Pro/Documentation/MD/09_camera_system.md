@@ -130,6 +130,12 @@ The camera tilts along the Z axis based on lateral velocity, creating a leaning 
 
 When `TPSShake` is `true` (the default), the camera applies subtle Perlin noise-based positional and rotational shake that increases with vehicle speed. Maximum shake occurs around 260 km/h.
 
+Since V2.51 you can also trigger a one-shot impact jolt from code: `RCCP_Camera.TriggerCollisionShake(float intensity)` pushes the camera pivot briefly backward and upward with a randomized rotation kick. RCCP uses it internally for exhaust backfire and NOS jolts; call it from your own scripts for any custom VFX impulse (explosions, landings, scripted hits).
+
+```csharp
+RCCP_SceneManager.Instance.activePlayerCamera.TriggerCollisionShake(1.5f);
+```
+
 ### Free Fall Behavior
 
 When `TPSFreeFall` is `true` (the default), the camera rotation damping drops to near zero while the vehicle is airborne. This means the camera holds its orientation in the air rather than tracking the vehicle's tumbling.
@@ -288,7 +294,7 @@ The `occlusionLayerMask` controls which layers are checked. By default, it inclu
 
 ## Auto-Change Camera
 
-When `useAutoChangeCamera` is enabled, the camera automatically cycles to the next available mode every 10 seconds. The `autoChangeCameraTimer` property tracks the current countdown. This is useful for demo scenes and attract modes.
+When `useAutoChangeCamera` is enabled, the camera automatically cycles to the next available mode on a fixed interval. Since V2.51 the interval is configurable via `autoChangeCameraInterval` (default 10 seconds, minimum 0.1 — the default matches the previously hardcoded value). The `autoChangeCameraTimer` property tracks the current countdown. This is useful for demo scenes and attract modes.
 
 ---
 
