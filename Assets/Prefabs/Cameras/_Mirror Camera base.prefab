@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7934709968203895104}
   - component: {fileID: 62808825224277412}
   - component: {fileID: 3807823351953055139}
+  - component: {fileID: -3208083593510687507}
   m_Layer: 0
   m_Name: _Mirror Camera base
   m_TagString: Untagged
@@ -65,7 +66,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.05
-  far clip plane: 100
+  far clip plane: 50
   field of view: 50
   orthographic: 0
   orthographic size: 5
@@ -96,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
-  m_RenderShadows: 0
+  m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
@@ -128,3 +129,18 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &-3208083593510687507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8290326894058771158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297561b44d9345d498067c7b39b0a085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Vopere.Common.CameraFPSLimiter
+  targetFPS: 15
+  renderOnStart: 1
+  interval: 0
