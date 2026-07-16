@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3591970909531453252}
   - component: {fileID: 2828592183994793429}
   - component: {fileID: 5202315374652341227}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: _Indicator Arrow base
   m_TagString: Untagged
   m_Icon: {fileID: 0}

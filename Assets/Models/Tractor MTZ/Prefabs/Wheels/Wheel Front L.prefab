@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4728259351749217918
+--- !u!1 &4270571325780778269
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8991209744102984782}
-  - component: {fileID: 4814977289698084815}
-  - component: {fileID: 5695246865352874250}
-  - component: {fileID: 877866762831772969}
-  m_Layer: 14
-  m_Name: Clutch Pedal
+  - component: {fileID: 7419466565156578667}
+  - component: {fileID: 8375567869260401718}
+  - component: {fileID: 2897235516416574666}
+  - component: {fileID: 3585778111958779011}
+  m_Layer: 8
+  m_Name: Wheel Front L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8991209744102984782
+--- !u!4 &7419466565156578667
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4728259351749217918}
+  m_GameObject: {fileID: 4270571325780778269}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -34,21 +34,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4814977289698084815
+--- !u!33 &8375567869260401718
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4728259351749217918}
-  m_Mesh: {fileID: 6853654819146709403, guid: 84d3da04f7964b844810b716a701066b, type: 3}
---- !u!23 &5695246865352874250
+  m_GameObject: {fileID: 4270571325780778269}
+  m_Mesh: {fileID: -8686934853536331645, guid: 84d3da04f7964b844810b716a701066b, type: 3}
+--- !u!23 &2897235516416574666
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4728259351749217918}
+  m_GameObject: {fileID: 4270571325780778269}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d2e239014107d194bbdd815ff1ae8c05, type: 2}
+  - {fileID: 2100000, guid: b9de38babf5c6b54b8dd64813d3daa2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -91,23 +91,23 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!205 &877866762831772969
+--- !u!205 &3585778111958779011
 LODGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4728259351749217918}
+  m_GameObject: {fileID: 4270571325780778269}
   serializedVersion: 3
-  m_LocalReferencePoint: {x: 0.015567262, y: 0.1856851, z: 0.23522115}
-  m_Size: 0.5201029
+  m_LocalReferencePoint: {x: 0.0031446218, y: -0.00006240606, z: -0.000050365925}
+  m_Size: 0.96917033
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.08
+  - screenRelativeHeight: 0.015
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 5695246865352874250}
+    - renderer: {fileID: 2897235516416574666}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0

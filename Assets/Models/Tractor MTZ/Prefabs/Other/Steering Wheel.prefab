@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 256639842005450349}
   - component: {fileID: 1941931103188679451}
   - component: {fileID: -1292395044252252833}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Steering Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
   m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
+  m_MeshLodSelectionBias: 0.9
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

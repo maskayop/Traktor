@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3640599166662766246}
   - component: {fileID: 8471631229394940050}
   - component: {fileID: -7980364814804262787}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Emergency Alarm Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
