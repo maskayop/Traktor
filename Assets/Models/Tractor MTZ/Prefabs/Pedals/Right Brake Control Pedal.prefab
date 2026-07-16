@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2918883976496268255}
   - component: {fileID: 2721584721402159169}
   - component: {fileID: -920692531702643370}
-  m_Layer: 14
+  m_Layer: 8
   m_Name: Right Brake Control Pedal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ LODGroup:
   m_GameObject: {fileID: 3714165862832639515}
   serializedVersion: 3
   m_LocalReferencePoint: {x: 0.013625596, y: 0.19317146, z: 0.24483559}
-  m_Size: 0.5008743
+  m_Size: 0.5008753
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7689464051950432627}
   - component: {fileID: 6731966669514812032}
   - component: {fileID: 1914768033584575038}
-  m_Layer: 14
+  m_Layer: 8
   m_Name: Left Brake Control Pedal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ LODGroup:
   m_GameObject: {fileID: 1280735987792810838}
   serializedVersion: 3
   m_LocalReferencePoint: {x: -0.044630297, y: 0.19244209, z: 0.24483559}
-  m_Size: 0.5008743
+  m_Size: 0.5008754
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6441962564170685392}
   - component: {fileID: 1465881431285442311}
   - component: {fileID: -5650638768873694317}
-  m_Layer: 14
+  m_Layer: 8
   m_Name: Front Handrails Lights Switch
   m_TagString: Untagged
   m_Icon: {fileID: 0}

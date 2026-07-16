@@ -204,7 +204,7 @@ MonoBehaviour:
     clutchInput: 0
     nosInput: 0
     mouseInput: {x: 0, y: 0}
-  calculateCenterPosition: 0
+  calculateCenterPosition: 1
   cameraMode: 0
   useInteriorAudioMuffle: 0
   interiorLowPassCutoff: 2200

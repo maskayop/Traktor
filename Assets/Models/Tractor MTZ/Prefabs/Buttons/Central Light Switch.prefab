@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8770202119045735246}
   - component: {fileID: 6979496692135842071}
   - component: {fileID: -8820732893687371048}
-  m_Layer: 14
+  m_Layer: 8
   m_Name: Central Light Switch
   m_TagString: Untagged
   m_Icon: {fileID: 0}

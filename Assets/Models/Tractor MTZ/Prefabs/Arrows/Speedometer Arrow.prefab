@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8320329686249519702}
   - component: {fileID: 6888216136078188779}
   - component: {fileID: -6578329621937613787}
-  m_Layer: 14
+  m_Layer: 8
   m_Name: Speedometer Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4814977289698084815}
   - component: {fileID: 5695246865352874250}
   - component: {fileID: 877866762831772969}
-  m_Layer: 14
+  m_Layer: 8
   m_Name: Clutch Pedal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ LODGroup:
   m_GameObject: {fileID: 4728259351749217918}
   serializedVersion: 3
   m_LocalReferencePoint: {x: 0.015567262, y: 0.1856851, z: 0.23522115}
-  m_Size: 0.5201029
+  m_Size: 0.52010393
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 256639842005450349}
   - component: {fileID: 1941931103188679451}
   - component: {fileID: -1292395044252252833}
-  m_Layer: 14
+  m_Layer: 8
   m_Name: Steering Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ LODGroup:
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.05
+  - screenRelativeHeight: 0.04
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 1941931103188679451}

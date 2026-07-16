@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2415397568927109513}
   - component: {fileID: 5595202402503988534}
   - component: {fileID: 3875834849073913083}
-  m_Layer: 14
+  m_Layer: 8
   m_Name: Clutch Pedal Lever
   m_TagString: Untagged
   m_Icon: {fileID: 0}
