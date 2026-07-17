@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 1cf317fb225401544af36ece7844c596
+AssetOrigin:
+  serializedVersion: 1
+  productId: 178967
+  packageName: Realistic Car Controller Pro
+  packageVersion: 2.57.0.LTS
+  assetPath: Assets/Realistic Car Controller Pro/Scripts/Vehicle/RCCP_Gearbox.cs
+  uploadId: 950656
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -9,10 +16,3 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 178967
-  packageName: Realistic Car Controller Pro
-  packageVersion: 2.57.0.LTS
-  assetPath: Assets/Realistic Car Controller Pro/Scripts/Vehicle/RCCP_Gearbox.cs
-  uploadId: 950656

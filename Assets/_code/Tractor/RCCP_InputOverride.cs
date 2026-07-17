@@ -28,27 +28,23 @@ namespace Tractor
         [SerializeField] Slider brakeSlider;
         [SerializeField] TextMeshProUGUI brakeSliderValueText;
 
-        RCCP_CarController vehicle;
-        RCCP_Input vehicleInput;
+        [Header("Info")]
+        [SerializeField] TextMeshProUGUI infoText;
+
+        public RCCP_CarController vehicle;
+        public RCCP_Input vehicleInput;
 
         void Start()
         {
-            vehicle = FindAnyObjectByType<RCCP_CarController>();
-            vehicleInput = vehicle.Inputs;
-
-            // Tell RCCP_Input to stop reading from keyboard/gamepad
-            if (overrideInputs)
-                vehicleInput.overridePlayerInputs = true;
-
+            FindVehicle();
             UseOverrides(overrideInputs);
         }
 
         void Update()
         {
-            if (!vehicleInput)
-                return;
+            ShowInfo();
 
-            if (!overrideInputs)
+            if (!vehicleInput || !overrideInputs)
                 return;
 
             SetInputs();
@@ -59,15 +55,19 @@ namespace Tractor
             // Always restore normal input when done
             if (vehicleInput)
                 vehicleInput.overridePlayerInputs = false;
+
+            if (vehicle)
+                RCCP.SetExternalControl(vehicle, false);
+        }
+
+        void FindVehicle()
+        {
+            vehicle = FindAnyObjectByType<RCCP_CarController>();
+            vehicleInput = vehicle.Inputs;
         }
 
         void SetInputs()
         {
-            // Write your desired values every frame
-            //vehicleInput.inputs.throttleInput = 0.8f;  // 80% throttle
-            //vehicleInput.inputs.steerInput = -0.5f;     // Turn left
-            //vehicleInput.inputs.brakeInput = 0f;         // No brake
-
             vehicleInput.inputs.steerInput = steerSlider.value;
             steerSliderValueText.text = steerSlider.value.ToString("F4");
 
@@ -80,15 +80,39 @@ namespace Tractor
 
         public void UseOverrides(bool state)
         {
+            FindVehicle();
+
             overrideInputs = state;
+
+            RCCP.SetExternalControl(vehicle, overrideInputs);
+            vehicleInput.overridePlayerInputs = overrideInputs;
 
             useOverridesButtonOn.SetActive(state);
             useOverridesButtonOff.SetActive(!state);
 
             if (state)
+            {
                 slidersCanvasGroup.alpha = 1.0f;
+                slidersCanvasGroup.interactable = true;
+            }
             else
+            {
                 slidersCanvasGroup.alpha = slidersGroupDisabledAlpha;
+                slidersCanvasGroup.interactable = false;
+            }
+        }
+
+        void ShowInfo()
+        {
+            if (!infoText)
+                return;
+
+            infoText.text = "";
+            infoText.text += "RCCP_CarController vehicle = " + vehicle + "\n";
+            infoText.text += "Vehicle Position = " + vehicle.transform.position + "\n";
+            infoText.text += "RCCP_Input vehicleInput = " + vehicleInput + "\n";
+            infoText.text += "overrideInputs = " + overrideInputs + "\n";
+            infoText.text += "RCCP_Input overridePlayerInputs = " + vehicleInput.overridePlayerInputs + "\n";
         }
     }
 }

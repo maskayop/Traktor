@@ -8,9 +8,8 @@ namespace Vopere.Common
 
         [SerializeField] int defaultGraphicsLevel = 0;
 
-        [SerializeField] bool initialize = false;
-
-        public bool IsInitialized { get { return initialize; } }
+        bool initialized = false;
+        public bool IsInitialized { get { return initialized; } }
 
         int graphicsLevel = 0;
         Vector2Int defaultScreenResolution = Vector2Int.zero;
@@ -31,6 +30,9 @@ namespace Vopere.Common
 
         public void Init()
         {
+            if (!DataSaveLoad.Instance)
+                return;
+
             defaultScreenResolution.x = DataSaveLoad.Instance.GetSavedInt("DefaultScreenResolutionWidth");
 
             if (defaultScreenResolution.x == -1)
