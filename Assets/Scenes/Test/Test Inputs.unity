@@ -456,6 +456,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1410371601163029319, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
+      propertyPath: m_MinValue
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_text
       value: "\u0414\u0438\u0430\u043F\u0430\u0437\u043E\u043D"
@@ -465,11 +469,23 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2331554584956327196, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2331554584956327196, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4678389696196287328, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678389696196287328, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678389696196287328, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6117925432420221512, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
@@ -1239,7 +1255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_text
-      value: "\u041F\u0435\u0440\u0435\u0434\u0430\u0447\u0438 1/2"
+      value: "\u0412\u043F\u0440\u0430\u0432\u043E"
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_fontSize
@@ -1617,7 +1633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_text
-      value: "\u041F\u0435\u0440\u0435\u0434\u0430\u0447\u0438 1/2R"
+      value: "\u0412\u043B\u0435\u0432\u043E"
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_fontSize
@@ -1746,7 +1762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_text
-      value: "\u0414\u0438\u0430\u043F\u0430\u0437\u043E\u043D II"
+      value: "\u041D\u0430\u0437\u0430\u0434"
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_fontSize
@@ -1943,7 +1959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_text
-      value: "\u041F\u0435\u0440\u0435\u0434\u0430\u0447\u0438 1/2R"
+      value: "\u0412\u043B\u0435\u0432\u043E"
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_fontSize
@@ -3098,6 +3114,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1410371601163029319, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
+      propertyPath: m_MinValue
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_text
       value: "\u0414\u0438\u0430\u043F\u0430\u0437\u043E\u043D"
@@ -3107,11 +3127,23 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2331554584956327196, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2331554584956327196, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4678389696196287328, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678389696196287328, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678389696196287328, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6117925432420221512, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
@@ -3229,7 +3261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_text
-      value: "\u0414\u0438\u0430\u043F\u0430\u0437\u043E\u043D I"
+      value: "\u0412\u043F\u0435\u0440\u0451\u0434"
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_fontSize
@@ -3529,7 +3561,7 @@ GameObject:
   - component: {fileID: 648341320}
   - component: {fileID: 648341319}
   m_Layer: 5
-  m_Name: View Sliders Group
+  m_Name: Lights Sliders Group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3861,7 +3893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_text
-      value: "\u041F\u0435\u0440\u0435\u0434\u0430\u0447\u0438 1/2"
+      value: "\u0412\u043F\u0440\u0430\u0432\u043E"
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_fontSize
@@ -4824,7 +4856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_text
-      value: "\u041C\u0430\u0441\u0441\u0430"
+      value: "\u0411\u043B\u0438\u0436\u043D\u0438\u0439 \u0441\u0432\u0435\u0442"
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_fontSize
@@ -4840,7 +4872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6117925432420221512, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_Name
-      value: Slider Mirrors
+      value: Slider Headlights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4953,7 +4985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_text
-      value: "\u0414\u0438\u0430\u043F\u0430\u0437\u043E\u043D I"
+      value: "\u0412\u043F\u0435\u0440\u0451\u0434"
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_fontSize
@@ -5219,7 +5251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_text
-      value: "\u0417\u0430\u0436\u0438\u0433\u0430\u043D\u0438\u0435"
+      value: "\u0410\u0432\u0430\u0440\u0438\u0439\u043A\u0430"
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_fontSize
@@ -5235,7 +5267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6117925432420221512, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_Name
-      value: Slider Cabin
+      value: Slider Alarm
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5477,7 +5509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_text
-      value: "\u0414\u0438\u0430\u043F\u0430\u0437\u043E\u043D II"
+      value: "\u041D\u0430\u0437\u0430\u0434"
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_fontSize
@@ -6584,7 +6616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_text
-      value: "\u0421\u0442\u0430\u0440\u0442\u0435\u0440"
+      value: "\u0413\u0430\u0431\u0430\u0440\u0438\u0442\u043A\u0438"
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_fontSize
@@ -6600,7 +6632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6117925432420221512, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_Name
-      value: Slider Back
+      value: Slider Parking Lights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7108,7 +7140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_text
-      value: "\u0414\u0438\u0430\u043F\u0430\u0437\u043E\u043D I"
+      value: "\u0412\u043F\u0435\u0440\u0451\u0434"
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_fontSize
@@ -7333,7 +7365,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041E\u0431\u0437\u043E\u0440"
+  m_text: "\u041B\u0430\u043C\u043F\u043E\u0447\u043A\u0438"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d51ead3d0529f144eb4f9f8e6f5d3869, type: 2}
   m_sharedMaterial: {fileID: 1492261687881324058, guid: d51ead3d0529f144eb4f9f8e6f5d3869, type: 2}
@@ -7503,7 +7535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_text
-      value: "\u041F\u0435\u0440\u0435\u0434\u0430\u0447\u0438 1/2"
+      value: "\u0412\u043F\u0440\u0430\u0432\u043E"
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_fontSize
@@ -8156,7 +8188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_text
-      value: "\u0414\u0438\u0430\u043F\u0430\u0437\u043E\u043D II"
+      value: "\u041D\u0430\u0437\u0430\u0434"
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_fontSize
@@ -8283,6 +8315,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1410371601163029319, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
+      propertyPath: m_MinValue
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_text
       value: "\u0420\u0443\u043B\u044C"
@@ -8292,11 +8328,23 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2331554584956327196, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2331554584956327196, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4678389696196287328, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678389696196287328, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678389696196287328, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6117925432420221512, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
@@ -8551,7 +8599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_text
-      value: "\u041F\u0435\u0440\u0435\u0434\u0430\u0447\u0438 1/2R"
+      value: "\u0412\u043B\u0435\u0432\u043E"
       objectReference: {fileID: 0}
     - target: {fileID: 1775099566824712016, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_fontSize
@@ -8703,11 +8751,11 @@ MonoBehaviour:
     slider: {fileID: 1924622247}
   - inputName: Handbrake
     slider: {fileID: 1866912904}
-  - inputName: Camera Cabin
+  - inputName: Alarm
     slider: {fileID: 1117390453}
-  - inputName: Camera Back
+  - inputName: Parking Lights
     slider: {fileID: 1491562574}
-  - inputName: Camera Mirrors
+  - inputName: Headlights
     slider: {fileID: 999232671}
   analogInputs:
   - inputName: Positional Regulation

@@ -3,6 +3,794 @@
     "name": "Tractor MTZ InputActions",
     "maps": [
         {
+            "name": "Custom Inputs",
+            "id": "9fcfbbe5-64a8-4792-b881-445e91300120",
+            "actions": [
+                {
+                    "name": "Gear 1",
+                    "type": "Button",
+                    "id": "562a0136-bf3a-4cf2-b0e6-d6ea58898da4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Gear 2",
+                    "type": "Button",
+                    "id": "cf0eb413-6385-463c-b7ce-e5a7f95133b8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Gear 3",
+                    "type": "Button",
+                    "id": "03404c3b-1cf9-4c0c-aef6-d1c0af9d6876",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Gear 4",
+                    "type": "Button",
+                    "id": "5142fff8-8529-4841-8710-7147f316acf1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Gear Range I",
+                    "type": "Button",
+                    "id": "3432a779-3746-45c9-8625-b9324961682b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Gear Range II",
+                    "type": "Button",
+                    "id": "644f5807-910c-4329-a78e-87d7e7cc9bad",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Gear Range 1/2R",
+                    "type": "Button",
+                    "id": "f5934cc3-6542-427d-8df4-151e2f577180",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Gear Range 1/2",
+                    "type": "Button",
+                    "id": "5fe113e2-da09-436d-9b06-f912edf14d54",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Gear Range 3/4",
+                    "type": "Button",
+                    "id": "8d2aad1f-867a-4882-8029-580b2b8cf5d8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Hydro Right Back - F",
+                    "type": "Button",
+                    "id": "b085fa43-a819-477c-bdfb-0533ad304fec",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Hydro Right Back - B",
+                    "type": "Button",
+                    "id": "c7777df0-adf9-4fe9-97fb-f505508f1b57",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Hydro Right Back - L",
+                    "type": "Button",
+                    "id": "9cecad9f-68cd-4597-8561-c901f2f8d573",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Hydro Right Back - R",
+                    "type": "Button",
+                    "id": "91054d41-9e31-4a49-ab9f-6305008d77c4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Hydro Right Side - F",
+                    "type": "Button",
+                    "id": "1460ec74-6d3f-4fbd-a076-314506bb5f4e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Hydro Right Side - B",
+                    "type": "Button",
+                    "id": "9f3c1dc0-ec38-451f-89e0-65f57cffd6f9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Hydro Right Side - L",
+                    "type": "Button",
+                    "id": "a43a9e95-9c2e-4f60-8d8c-38057884d109",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Hydro Right Side - R",
+                    "type": "Button",
+                    "id": "ff055060-e99d-4b01-9616-0e43b56348a4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Hydro Left Back - F",
+                    "type": "Button",
+                    "id": "0999059f-6e95-44be-a4dd-2fc493eefbfe",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Hydro Left Back - B",
+                    "type": "Button",
+                    "id": "41774d89-36c7-4d82-928f-2cab88d1c739",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Hydro Left Back - L",
+                    "type": "Button",
+                    "id": "7cb4fb32-1103-4db1-9eb5-4fdd65d08c65",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Hydro Left Back - R",
+                    "type": "Button",
+                    "id": "e877cfac-193c-4a96-afea-084e03ad595f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BOM L",
+                    "type": "Button",
+                    "id": "7477bc3b-ca84-478f-9f2e-895e2701c5aa",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BOM R",
+                    "type": "Button",
+                    "id": "afa9931e-b479-4f80-abf4-1af239f14ed1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Turn Left",
+                    "type": "Button",
+                    "id": "0b86b3e1-376b-410e-bcfb-b6f5ce5d3f28",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Turn RIght",
+                    "type": "Button",
+                    "id": "01f5a3d7-6957-4022-a6b1-8a5006013c30",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Sound Signal",
+                    "type": "Button",
+                    "id": "cf73820c-13f5-42ab-a930-b6bc478d24da",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ignition",
+                    "type": "Button",
+                    "id": "b9c1623d-e682-4abb-bb18-b382c4ed3b0d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Starter",
+                    "type": "Button",
+                    "id": "beb7f5dd-2a29-442f-825c-e2db6e4a4401",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Mass",
+                    "type": "Button",
+                    "id": "8021c64d-b324-41fa-a900-d2d159b65310",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Handbrake",
+                    "type": "Button",
+                    "id": "99be94f0-d1f0-437a-96cb-5b8025427336",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Alarm",
+                    "type": "Button",
+                    "id": "47a8b299-927d-4798-95cf-df4f9f1ac292",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Parking Lights",
+                    "type": "Button",
+                    "id": "986c9517-6a41-49c1-9dab-3564526b0a1d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Headlights",
+                    "type": "Button",
+                    "id": "59534f9d-daed-40e9-aeec-81ec0cb54d62",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Positional Regulation",
+                    "type": "Value",
+                    "id": "bd56e435-b35d-4634-9e46-279d5c48eb7f",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Force Regulation",
+                    "type": "Value",
+                    "id": "dd1bacb1-f7dd-4da9-8bb4-06a7c81e335c",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Steering Wheel",
+                    "type": "Value",
+                    "id": "85c727e9-e41e-4b31-ade0-e6ec9e6e4437",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Accelerator",
+                    "type": "Value",
+                    "id": "487d1195-e20c-4cfb-bc6c-67b68fd3295e",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Brake",
+                    "type": "Value",
+                    "id": "c427feae-28b9-4a66-98d4-291a1334e95b",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Clutch",
+                    "type": "Value",
+                    "id": "77ad3b30-3635-4a32-8984-8248696d88cc",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "08b79453-b4eb-436f-8bd0-db3f211f1ede",
+                    "path": "<HID::ZSC ODDOR-GEAR>/button2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear 1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "70fff3e8-922d-4717-b989-55040f14ea2e",
+                    "path": "<HID::ZSC ODDOR-GEAR>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear 2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "026b05ee-3e82-41b4-8a4a-1eb03430dd84",
+                    "path": "<HID::ZSC ODDOR-GEAR>/button6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear 3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4bc9f609-5612-402f-843f-957025eebe3e",
+                    "path": "<HID::ZSC ODDOR-GEAR>/button5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear 4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e753572e-cb14-45ca-bec2-fdf5f88460ff",
+                    "path": "<HID::ZSC SIMAKER Shifter>/button6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear Range I",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ad78d8fb-e47a-4b57-899b-ed1e8b7e3b61",
+                    "path": "<HID::ZSC SIMAKER Shifter>/button5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear Range II",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1c036beb-ea70-43a1-99cf-a2b1a753642e",
+                    "path": "<HID::ZSC SIMAKER Shifter>/button4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear Range 1/2R",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bf87b88c-84d6-444e-b18e-186dc88d644e",
+                    "path": "<HID::ZSC SIMAKER Shifter>/button3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear Range 1/2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a72be57a-d70e-436e-96aa-ea03bc6f11b5",
+                    "path": "<HID::ZSC SIMAKER Shifter>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear Range 3/4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "de9b1600-f4cf-4fc7-97b1-7c62c3501f56",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hydro Right Back - F",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "078db5cc-2955-45fb-8d2c-153af8dcf8e2",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hydro Right Back - B",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c4ab456a-6dd8-4698-b161-cb83c06e4902",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hydro Right Back - L",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d02c95e9-6f90-4682-a257-bb174122f526",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hydro Right Back - R",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e4aee4bd-f156-4f66-bcf3-2f1b7a0adbc0",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hydro Right Side - F",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6f6cf210-5d77-43bf-a3db-086937bfdc6d",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hydro Right Side - B",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f2da4f95-4302-4a75-baf2-1e8e739926b7",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hydro Right Side - L",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "507fefdd-32f1-4bcd-a635-e36332359f87",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hydro Right Side - R",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "567050bd-39de-45b6-bcfb-01a7b692d97b",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button10",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hydro Left Back - F",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3b24df96-f307-4e4e-a57a-c24b2c842f2f",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hydro Left Back - B",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a738c29f-d11a-4ebd-9fc6-8cc7afcdbf76",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button11",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hydro Left Back - L",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3c25a1da-98ab-4304-8c07-d1e0a3c47abb",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button12",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hydro Left Back - R",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f5c6800f-7f69-4103-89a3-7ccdd1f51cae",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button13",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BOM L",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "60b76965-114e-4e50-9f95-f678c11318b3",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button14",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BOM R",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3cd0ba39-785e-4923-8f15-e5cdbb10e5cb",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button15",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Turn Left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "86491eb7-7b54-4e27-9bd0-a6a9e84bf276",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button16",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Turn RIght",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5f2fa40a-9774-4823-845b-4d032d26d16c",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button17",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sound Signal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f1a5ab5e-326f-4cd0-ad09-389afe986778",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button18",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ignition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d78c5d13-5e4f-487e-b53f-36b5b83cd458",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button19",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Starter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "373b9405-8729-4ea5-853e-39acf8139b3b",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button20",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mass",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a06f8494-a3fa-4ae2-aa0c-e39944078a3b",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button21",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Handbrake",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e88ad713-edbe-4f8d-8ca1-a7695163a272",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button22",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Alarm",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "97c5fe1f-3010-47ac-a733-02f0ce8473f2",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button23",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Parking Lights",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c9bf761c-1d63-4646-9844-6a56a6fe5c5b",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button24",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Headlights",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2fce2077-0ab2-4bb9-a550-1512aefb07b4",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/stick/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Positional Regulation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "23c85e13-1d23-46f8-b117-d470a09c0d7a",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/stick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Force Regulation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f18d5a39-ba9d-43cd-b32d-45360f509c78",
+                    "path": "<HID::Gudsen MOZA R9 Base>/stick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Steering Wheel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dda905f3-407c-4a37-b315-126e71ebca8a",
+                    "path": "<HID::Gudsen MOZA R9 Base>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerator",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d1a7e875-3bd4-484c-a499-148d038b25a1",
+                    "path": "<HID::Gudsen MOZA R9 Base>/rz",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Brake",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6aaa3e1f-462b-4ba8-b8aa-819066cb8668",
+                    "path": "<HID::Gudsen MOZA R9 Base>/slider",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Clutch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "Vehicle",
             "id": "dab82b1c-787e-4a36-b968-b40e68121a11",
             "actions": [
@@ -1521,194 +2309,6 @@
                     "processors": "",
                     "groups": "Keyboard Mouse",
                     "action": "Feature Lab",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Custom Gearbox",
-            "id": "9fcfbbe5-64a8-4792-b881-445e91300120",
-            "actions": [
-                {
-                    "name": "Gear 1",
-                    "type": "Button",
-                    "id": "562a0136-bf3a-4cf2-b0e6-d6ea58898da4",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Gear 2",
-                    "type": "Button",
-                    "id": "cf0eb413-6385-463c-b7ce-e5a7f95133b8",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Gear 3",
-                    "type": "Button",
-                    "id": "03404c3b-1cf9-4c0c-aef6-d1c0af9d6876",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Gear 4",
-                    "type": "Button",
-                    "id": "5142fff8-8529-4841-8710-7147f316acf1",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Gear Range I",
-                    "type": "Button",
-                    "id": "3432a779-3746-45c9-8625-b9324961682b",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Gear Range II",
-                    "type": "Button",
-                    "id": "644f5807-910c-4329-a78e-87d7e7cc9bad",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Gear Range 1/2R",
-                    "type": "Button",
-                    "id": "f5934cc3-6542-427d-8df4-151e2f577180",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Gear Range 1/2",
-                    "type": "Button",
-                    "id": "5fe113e2-da09-436d-9b06-f912edf14d54",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Gear Range 3/4",
-                    "type": "Button",
-                    "id": "8d2aad1f-867a-4882-8029-580b2b8cf5d8",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "08b79453-b4eb-436f-8bd0-db3f211f1ede",
-                    "path": "<HID::ZSC ODDOR-GEAR>/button2",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Gear 1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "70fff3e8-922d-4717-b989-55040f14ea2e",
-                    "path": "<Joystick>/trigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Gear 2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "026b05ee-3e82-41b4-8a4a-1eb03430dd84",
-                    "path": "<HID::ZSC ODDOR-GEAR>/button6",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Gear 3",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4bc9f609-5612-402f-843f-957025eebe3e",
-                    "path": "<HID::ZSC ODDOR-GEAR>/button5",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Gear 4",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e753572e-cb14-45ca-bec2-fdf5f88460ff",
-                    "path": "<HID::ZSC ODDOR-GEAR>/button6",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Gear Range I",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ad78d8fb-e47a-4b57-899b-ed1e8b7e3b61",
-                    "path": "<HID::ZSC ODDOR-GEAR>/button5",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Gear Range II",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1c036beb-ea70-43a1-99cf-a2b1a753642e",
-                    "path": "<HID::ZSC ODDOR-GEAR>/button4",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Gear Range 1/2R",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "bf87b88c-84d6-444e-b18e-186dc88d644e",
-                    "path": "<HID::ZSC ODDOR-GEAR>/button3",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Gear Range 1/2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a72be57a-d70e-436e-96aa-ea03bc6f11b5",
-                    "path": "<Joystick>/trigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Gear Range 3/4",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
