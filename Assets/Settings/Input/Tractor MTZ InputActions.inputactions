@@ -304,6 +304,24 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "High Beam Light Constant",
+                    "type": "Button",
+                    "id": "20689bee-638b-43bb-aa62-ebaef27b7133",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "High Beam Light",
+                    "type": "Button",
+                    "id": "59c65df8-69af-4d13-ba6c-06e4f3b09784",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Positional Regulation",
                     "type": "Value",
                     "id": "bd56e435-b35d-4634-9e46-279d5c48eb7f",
@@ -719,6 +737,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Headlights",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a626f48d-1efa-4595-bfd6-a9b539cdf717",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button25",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "High Beam Light Constant",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b099455f-a09f-488c-ad72-d11ef571bd60",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button26",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "High Beam Light",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
