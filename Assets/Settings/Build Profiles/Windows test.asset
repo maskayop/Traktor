@@ -20,9 +20,12 @@ MonoBehaviour:
     rid: 676683831248945152
   m_OverrideGlobalSceneList: 1
   m_Scenes:
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: Assets/Scenes/Test/Test Tractor City.unity
     m_guid: 455da24a848723940a1358e8fa0d4014
+  - m_enabled: 1
+    m_path: Assets/Scenes/Test/Test Inputs.unity
+    m_guid: c63f7bcdb0163ad429eb1d021b480902
   m_HasScriptingDefines: 0
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
