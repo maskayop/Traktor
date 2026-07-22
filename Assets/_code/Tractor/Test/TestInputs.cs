@@ -48,6 +48,50 @@ namespace Tractor
         }
     }
 
+    [Serializable]
+    public class CustomAnalogInput
+    {
+        public string inputName;
+        public Slider slider;
+        public bool useDeadzone = true;
+        public float deadzone = 0.05f;
+
+        InputAction on_InputAction;
+
+        public void InitializeInputAction(InputActionMap INactionMap)
+        {
+            on_InputAction = INactionMap.FindAction(inputName);
+        }
+
+        public void EnableInputActions()
+        {
+            if (on_InputAction != null)
+            {
+                on_InputAction.performed += OnValueChanged;
+                on_InputAction.canceled += OnValueChanged;
+            }
+        }
+
+        public void DisableInputActions()
+        {
+            if (on_InputAction != null)
+            {
+                on_InputAction.performed -= OnValueChanged;
+                on_InputAction.canceled -= OnValueChanged;
+            }
+        }
+
+        void OnValueChanged(InputAction.CallbackContext context)
+        {
+            float value = context.ReadValue<float>();
+
+            if (useDeadzone && Mathf.Abs(value) < deadzone)
+                value = 0f;
+
+            slider.value = value;
+        }
+    }
+
     public class TestInputs : MonoBehaviour
     {
         [Header("Input System")]
@@ -56,6 +100,7 @@ namespace Tractor
 
         [Header("Inputs")]
         [SerializeField] List<CustomInput> inputs = new List<CustomInput>();
+        [SerializeField] List<CustomAnalogInput> analogInputs = new List<CustomAnalogInput>();
 
         InputActionMap actionMap;
         bool isInitialized = false;
@@ -94,6 +139,9 @@ namespace Tractor
             for (int i = 0; i < inputs.Count; i++)
                 inputs[i].InitializeInputAction(actionMap);
 
+            for (int i = 0; i < analogInputs.Count; i++)
+                analogInputs[i].InitializeInputAction(actionMap);
+
             isInitialized = true;
 
             if (gameObject.activeInHierarchy && enabled)
@@ -107,6 +155,9 @@ namespace Tractor
 
             for (int i = 0; i < inputs.Count; i++)
                 inputs[i].EnableInputActions();
+
+            for (int i = 0; i < analogInputs.Count; i++)
+                analogInputs[i].EnableInputActions();
         }
 
         void DisableInputActions()
@@ -116,6 +167,9 @@ namespace Tractor
 
             for (int i = 0; i < inputs.Count; i++)
                 inputs[i].DisableInputActions();
+
+            for (int i = 0; i < analogInputs.Count; i++)
+                analogInputs[i].DisableInputActions();
         }
     }
 }
