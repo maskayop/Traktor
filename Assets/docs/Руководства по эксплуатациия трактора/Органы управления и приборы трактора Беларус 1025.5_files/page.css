@@ -1,0 +1,1 @@
+h1, h1 b, h2, h2 b, h3, h3 b, h4, h4 b { font-weight: normal; } .list-group-item .bg-light { color: #6c757d !important; background-color: #f8f9fa !important; } .pagination { justify-content: flex-start; } .pagination .page-link { color: #000; text-decoration: none; } .pagination .active .page-link:hover { color: #fff; } .pagination li:last-child { margin-bottom: .3846153846rem; }
