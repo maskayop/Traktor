@@ -12,7 +12,7 @@ namespace Tractor
         public bool useDeadzone = false;
         public float deadzone = 0.05f;
 
-        float inputValue;
+        public float inputValue;
         public float InputValue { get { return inputValue; } set { inputValue = value; } }
 
         InputAction on_InputAction;
@@ -59,6 +59,8 @@ namespace Tractor
         [SerializeField] InputActionAsset inputActionsAsset;
         [SerializeField] string inputActionMapName;
 
+        public bool overrideInputs = false;
+
         [Header("Inputs")]
         [SerializeField] List<CustomInput> inputs = new List<CustomInput>();
 
@@ -75,23 +77,17 @@ namespace Tractor
             }
 
             Instance = this;
-
-            Init();
         }
 
         void Start()
         {
-            InitializeInputActions();
-        }
-
-        void Update()
-        {
+            Init();
 
         }
 
         public void Init()
         {
-
+            InitializeInputActions();
         }
 
         void OnEnable()

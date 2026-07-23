@@ -796,37 +796,15 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "1D Axis",
-                    "id": "da37b767-d7a7-47b2-a295-4f2579b8619e",
-                    "path": "1DAxis",
+                    "name": "",
+                    "id": "1aa62cbf-991c-4f30-966a-6eeccaa78816",
+                    "path": "<Gamepad>/leftStick/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Steering Wheel",
-                    "isComposite": true,
+                    "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "9badac9d-3536-4e49-a8d4-c4f650643363",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Steering Wheel",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "1d2e873b-e768-4ecb-a1ac-a4ba6b4126ae",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Steering Wheel",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 },
                 {
                     "name": "",
@@ -841,8 +819,30 @@
                 },
                 {
                     "name": "",
+                    "id": "962e763e-4d5c-47fb-96ff-d4ade6a76162",
+                    "path": "<Gamepad>/rightStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerator",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d1a7e875-3bd4-484c-a499-148d038b25a1",
                     "path": "<HID::Gudsen MOZA R9 Base>/rz",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Brake",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "44c01c74-6215-4a6d-aa09-aa703512c450",
+                    "path": "<Gamepad>/rightStick/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
