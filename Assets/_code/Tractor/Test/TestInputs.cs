@@ -98,6 +98,12 @@ namespace Tractor.Test
         [SerializeField] InputActionAsset inputActionsAsset;
         [SerializeField] string inputActionMapName;
 
+
+        [Header("Overrides")]
+        [SerializeField] bool overrideInputs = false;
+        [SerializeField] GameObject useOverridesButtonOn;
+        [SerializeField] GameObject useOverridesButtonOff;
+
         [Header("Inputs")]
         [SerializeField] List<CustomInput> inputs = new List<CustomInput>();
         [SerializeField] List<CustomAnalogInput> analogInputs = new List<CustomAnalogInput>();
@@ -105,8 +111,14 @@ namespace Tractor.Test
         InputActionMap actionMap;
         bool isInitialized = false;
 
+        InputController inputController;
+
         void Start()
         {
+            inputController = InputController.Instance;
+            overrideInputs = inputController.overrideInputs;
+
+            UseOverrides(overrideInputs);
             InitializeInputActions();
         }
 
@@ -170,6 +182,15 @@ namespace Tractor.Test
 
             for (int i = 0; i < analogInputs.Count; i++)
                 analogInputs[i].DisableInputActions();
+        }
+
+        public void UseOverrides(bool state)
+        {
+            overrideInputs = state;
+            inputController.overrideInputs = overrideInputs;
+
+            useOverridesButtonOn.SetActive(state);
+            useOverridesButtonOff.SetActive(!state);
         }
     }
 }
