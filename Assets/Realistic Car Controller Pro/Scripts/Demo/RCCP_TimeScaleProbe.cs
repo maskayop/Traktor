@@ -19,7 +19,8 @@ using UnityEngine;
 /// and recovery after unfreezing. Writes a JSON report to persistentDataPath/RCCP_TimeScaleProbe/.
 /// Test harness — not wired into any scene; attach at runtime and call RunAll() (reflection-friendly).
 /// </summary>
-public class RCCP_TimeScaleProbe : MonoBehaviour {
+public class RCCP_TimeScaleProbe : MonoBehaviour
+{
 
     /// <summary>Realtime seconds of driving per timescale phase.</summary>
     public float driveSeconds = 8f;
@@ -31,7 +32,8 @@ public class RCCP_TimeScaleProbe : MonoBehaviour {
     public float probeSteer = .5f;
 
     [System.Serializable]
-    public class PhaseResult {
+    public class PhaseResult
+    {
         public float timescale;
         public int ticks;
         public int engineAudibleEligibleTicks;
@@ -48,7 +50,8 @@ public class RCCP_TimeScaleProbe : MonoBehaviour {
     }
 
     [System.Serializable]
-    public class ProbeReport {
+    public class ProbeReport
+    {
         public string vehicleName;
         public List<PhaseResult> phases = new List<PhaseResult>();
         public bool allPass;
@@ -59,17 +62,20 @@ public class RCCP_TimeScaleProbe : MonoBehaviour {
     private static readonly FieldInfo skidSourceField = typeof(RCCP_WheelCollider).GetField("skidAudioSource", BindingFlags.NonPublic | BindingFlags.Instance);
 
     /// <summary>Reflection-friendly entry point. Runs the full timescale matrix and writes the report.</summary>
-    public void RunAll() {
+    public void RunAll()
+    {
 
         StartCoroutine(RunAllRoutine());
 
     }
 
-    private IEnumerator RunAllRoutine() {
+    private IEnumerator RunAllRoutine()
+    {
 
-        car = FindFirstObjectByType<RCCP_CarController>();
+        car = FindAnyObjectByType<RCCP_CarController>();
 
-        if (!car) {
+        if (!car)
+        {
 
             Debug.LogError("RCCP_TimeScaleProbe: no RCCP_CarController in the scene.");
             yield break;
@@ -96,7 +102,8 @@ public class RCCP_TimeScaleProbe : MonoBehaviour {
 
         float[] scales = new float[] { 1f, 2f, .2f, .02f };
 
-        for (int i = 0; i < scales.Length; i++) {
+        for (int i = 0; i < scales.Length; i++)
+        {
 
             PhaseResult r = null;
             IEnumerator phase = DrivePhase(scales[i], res => r = res);
@@ -135,7 +142,8 @@ public class RCCP_TimeScaleProbe : MonoBehaviour {
 
     }
 
-    private IEnumerator DrivePhase(float scale, System.Action<PhaseResult> done) {
+    private IEnumerator DrivePhase(float scale, System.Action<PhaseResult> done)
+    {
 
         PhaseResult r = new PhaseResult { timescale = scale };
         Time.timeScale = scale;
@@ -145,7 +153,8 @@ public class RCCP_TimeScaleProbe : MonoBehaviour {
         float settleUntil = 2f;    //  Realtime settle window before sampling: spawn drop + engine spin-up.
         float recoveryProbe = -1f;
 
-        while (elapsed < driveSeconds) {
+        while (elapsed < driveSeconds)
+        {
 
             elapsed += Time.unscaledDeltaTime;
 
@@ -158,7 +167,8 @@ public class RCCP_TimeScaleProbe : MonoBehaviour {
             if (carInput)
                 carInput.OverrideInputs(inputs);
 
-            if (elapsed > settleUntil) {
+            if (elapsed > settleUntil)
+            {
 
                 r.ticks++;
                 SampleEngineAudio(r);
@@ -174,7 +184,8 @@ public class RCCP_TimeScaleProbe : MonoBehaviour {
         //  Post-phase residue check on a realtime clock at timeScale 1.
         Time.timeScale = 1f;
 
-        if (carInput) {
+        if (carInput)
+        {
 
             inputs.throttleInput = 0f;
             inputs.steerInput = 0f;
@@ -184,7 +195,8 @@ public class RCCP_TimeScaleProbe : MonoBehaviour {
 
         float wait = 0f;
 
-        while (wait < 3f) {
+        while (wait < 3f)
+        {
 
             wait += Time.unscaledDeltaTime;
             yield return null;
@@ -206,7 +218,8 @@ public class RCCP_TimeScaleProbe : MonoBehaviour {
 
     }
 
-    private IEnumerator FreezePhase(System.Action<PhaseResult> done) {
+    private IEnumerator FreezePhase(System.Action<PhaseResult> done)
+    {
 
         PhaseResult r = new PhaseResult { timescale = 0f };
 
@@ -216,7 +229,8 @@ public class RCCP_TimeScaleProbe : MonoBehaviour {
         float elapsed = 0f;
         int oneShotAtFreeze = CountOneShots();
 
-        while (elapsed < freezeSeconds) {
+        while (elapsed < freezeSeconds)
+        {
 
             elapsed += Time.unscaledDeltaTime;
             r.ticks++;
@@ -237,7 +251,8 @@ public class RCCP_TimeScaleProbe : MonoBehaviour {
 
         float recovery = 0f;
 
-        while (recovery < 5f) {
+        while (recovery < 5f)
+        {
 
             recovery += Time.unscaledDeltaTime;
 
@@ -257,7 +272,8 @@ public class RCCP_TimeScaleProbe : MonoBehaviour {
 
     }
 
-    private void SampleEngineAudio(PhaseResult r) {
+    private void SampleEngineAudio(PhaseResult r)
+    {
 
         float rpm = car.Engine ? car.Engine.engineRPM : 0f;
 
@@ -272,12 +288,14 @@ public class RCCP_TimeScaleProbe : MonoBehaviour {
 
     }
 
-    private float MaxVehicleVolume() {
+    private float MaxVehicleVolume()
+    {
 
         float max = 0f;
         AudioSource[] sources = car.GetComponentsInChildren<AudioSource>(false);
 
-        for (int i = 0; i < sources.Length; i++) {
+        for (int i = 0; i < sources.Length; i++)
+        {
 
             if (sources[i] && sources[i].isPlaying && sources[i].clip != null && sources[i].volume > max)
                 max = sources[i].volume;
@@ -288,13 +306,15 @@ public class RCCP_TimeScaleProbe : MonoBehaviour {
 
     }
 
-    private int CountOneShots() {
+    private int CountOneShots()
+    {
 
-        return FindObjectsByType<RCCP_AudioSourceAutoDestroy>(FindObjectsSortMode.None).Length;
+        return FindObjectsByType<RCCP_AudioSourceAutoDestroy>().Length;
 
     }
 
-    private void SampleOneShots(PhaseResult r) {
+    private void SampleOneShots(PhaseResult r)
+    {
 
         int count = CountOneShots();
 
@@ -303,7 +323,8 @@ public class RCCP_TimeScaleProbe : MonoBehaviour {
 
     }
 
-    private void SampleSkid(PhaseResult r) {
+    private void SampleSkid(PhaseResult r)
+    {
 
         if (skidSourceField == null || !RCCP_GroundMaterials.Instance || RCCP_GroundMaterials.Instance.frictions == null || RCCP_GroundMaterials.Instance.frictions.Length == 0)
             return;
@@ -314,7 +335,8 @@ public class RCCP_TimeScaleProbe : MonoBehaviour {
         float maxSlipExcess = 0f;
         float maxSkidVol = 0f;
 
-        for (int i = 0; i < wheels.Length; i++) {
+        for (int i = 0; i < wheels.Length; i++)
+        {
 
             float excess = wheels[i].TotalSlip - slipThreshold;
 
@@ -333,7 +355,8 @@ public class RCCP_TimeScaleProbe : MonoBehaviour {
 
         //  Light-slip window: slipping past the ground threshold, but gently — the TS-01 absorbing
         //  trap re-zeroes targets below SKID_VOLUME_THRESHOLD / lerp step (= 0.1 at defaults).
-        if (maxSlipExcess > .02f && maxSlipExcess < .35f) {
+        if (maxSlipExcess > .02f && maxSlipExcess < .35f)
+        {
 
             r.lightSlipTicks++;
 

@@ -796,6 +796,39 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "1D Axis",
+                    "id": "da37b767-d7a7-47b2-a295-4f2579b8619e",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Steering Wheel",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "9badac9d-3536-4e49-a8d4-c4f650643363",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Steering Wheel",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "1d2e873b-e768-4ecb-a1ac-a4ba6b4126ae",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Steering Wheel",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "dda905f3-407c-4a37-b315-126e71ebca8a",
                     "path": "<HID::Gudsen MOZA R9 Base>/z",

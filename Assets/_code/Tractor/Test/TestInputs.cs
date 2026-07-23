@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-namespace Tractor
+namespace Tractor.Test
 {
     [Serializable]
     public class CustomInput

@@ -3369,7 +3369,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press Q
+  m_text: "Press \u0419"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7690,6 +7690,8 @@ MonoBehaviour:
   brakeSlider: {fileID: 2941073188425424408}
   brakeSliderValueText: {fileID: 723490156174281581}
   infoText: {fileID: 3743792398540414343}
+  vehicle: {fileID: 0}
+  vehicleInput: {fileID: 0}
 --- !u!1 &739971442416931238
 GameObject:
   m_ObjectHideFlags: 0
@@ -17006,7 +17008,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A/D
+  m_text: "\u0424/\u0412"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -25015,7 +25017,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: W
+  m_text: "\u0426"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -36342,7 +36344,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press K
+  m_text: "Press \u041B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -36691,7 +36693,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press N
+  m_text: "Press \u0422"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -39899,7 +39901,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: S
+  m_text: "\u042B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -40036,7 +40038,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press F
+  m_text: "Press \u0410"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -43636,7 +43638,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press E
+  m_text: "Press \u0423"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -59310,7 +59312,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press I
+  m_text: "Press \u0428"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -70951,7 +70953,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press Z
+  m_text: "Press \u042F"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -71814,7 +71816,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press C
+  m_text: "Press \u0421"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -74674,7 +74676,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
@@ -89755,7 +89757,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press B
+  m_text: "Press \u0418"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -91622,7 +91624,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press L
+  m_text: "Press \u0414"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
