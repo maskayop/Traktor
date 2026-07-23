@@ -113,7 +113,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: -5385855143332831773, guid: 84d3da04f7964b844810b716a701066b, type: 3}
+  m_Mesh: {fileID: -8774077253485161229, guid: 2736559bb67866e45afb63bdc4338b8b, type: 3}
 --- !u!205 &7979115875691170118
 LODGroup:
   m_ObjectHideFlags: 0
@@ -122,8 +122,8 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333217173682111314}
   serializedVersion: 3
-  m_LocalReferencePoint: {x: 0.16575813, y: -0.05032879, z: 0.22859225}
-  m_Size: 0.8643142
+  m_LocalReferencePoint: {x: 0.16575819, y: -0.05035934, z: 0.22859228}
+  m_Size: 0.86431444
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
