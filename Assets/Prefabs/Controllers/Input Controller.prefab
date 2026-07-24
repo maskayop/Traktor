@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InputController
   inputActionsAsset: {fileID: -944628639613478452, guid: 18f34b0f398a01e4cb4c9f2c905ec905, type: 3}
   inputActionMapName: Custom Inputs
-  overrideInputs: 0
+  overrideInputs: 1
   inputs:
   - inputName: Gear 1
     useDeadzone: 0
