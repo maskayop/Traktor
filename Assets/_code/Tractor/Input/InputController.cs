@@ -10,6 +10,7 @@ namespace Tractor
     {
         public string inputName;
         public bool useDeadzone = false;
+        public bool normalize = false;
         public float deadzone = 0.05f;
 
         public float inputValue;
@@ -47,7 +48,10 @@ namespace Tractor
             if (useDeadzone && Mathf.Abs(value) < deadzone)
                 value = 0f;
 
-            inputValue = value;
+            if (normalize)
+                inputValue = (value + 1) / 2;
+            else
+                inputValue = value;
         }
     }
 

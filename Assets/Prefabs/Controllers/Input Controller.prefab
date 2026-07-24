@@ -46,121 +46,210 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InputController
   inputActionsAsset: {fileID: -944628639613478452, guid: 18f34b0f398a01e4cb4c9f2c905ec905, type: 3}
   inputActionMapName: Custom Inputs
+  overrideInputs: 0
   inputs:
   - inputName: Gear 1
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Gear 2
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Gear 3
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Gear 4
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Gear Range I
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Gear Range II
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Gear Range 1/2R
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Gear Range 1/2
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Gear Range 3/4
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Hydro Right Back - F
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Hydro Right Back - B
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Hydro Right Back - L
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Hydro Right Back - R
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Hydro Right Side - F
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Hydro Right Side - B
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Hydro Right Side - L
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Hydro Right Side - R
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Hydro Left Back - F
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Hydro Left Back - B
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Hydro Left Back - L
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Hydro Left Back - R
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: BOM L
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: BOM R
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Turn Left
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Turn Right
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Sound Signal
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Ignition
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Starter
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Mass
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Handbrake
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Alarm
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Parking Lights
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
   - inputName: Headlights
     useDeadzone: 0
+    normalize: 0
     deadzone: 0
+    inputValue: 0
+  - inputName: High Beam Light Constant
+    useDeadzone: 0
+    normalize: 0
+    deadzone: 0
+    inputValue: 0
+  - inputName: High Beam Light
+    useDeadzone: 0
+    normalize: 0
+    deadzone: 0
+    inputValue: 0
   - inputName: Positional Regulation
     useDeadzone: 1
-    deadzone: 0.05
+    normalize: 0
+    deadzone: 0.01
+    inputValue: 0
   - inputName: Force Regulation
     useDeadzone: 1
-    deadzone: 0.05
+    normalize: 0
+    deadzone: 0.01
+    inputValue: 0
   - inputName: Steering Wheel
-    useDeadzone: 1
-    deadzone: 0.05
+    useDeadzone: 0
+    normalize: 0
+    deadzone: 0.01
+    inputValue: 0
   - inputName: Accelerator
     useDeadzone: 1
-    deadzone: 0.05
+    normalize: 1
+    deadzone: 0.01
+    inputValue: 0
   - inputName: Brake
     useDeadzone: 1
-    deadzone: 0.05
+    normalize: 1
+    deadzone: 0.01
+    inputValue: 0
   - inputName: Clutch
     useDeadzone: 1
-    deadzone: 0.05
+    normalize: 1
+    deadzone: 0.01
+    inputValue: 0
