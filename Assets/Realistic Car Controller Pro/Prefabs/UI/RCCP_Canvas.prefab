@@ -3413,7 +3413,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Press \u0419"
+  m_text: Press Q
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17112,7 +17112,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0424/\u0412"
+  m_text: A/D
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -25480,7 +25480,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0426"
+  m_text: W
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -37004,7 +37004,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Press \u041B"
+  m_text: Press K
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -37353,7 +37353,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Press \u0422"
+  m_text: Press N
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -40955,7 +40955,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u042B"
+  m_text: S
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -41092,7 +41092,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Press \u0410"
+  m_text: Press F
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -44656,7 +44656,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Press \u0423"
+  m_text: Press E
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -60905,7 +60905,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Press \u0428"
+  m_text: Press I
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -69894,9 +69894,9 @@ MonoBehaviour:
     slider: {fileID: 231568974296913785}
   - inputName: Gear 4
     slider: {fileID: 7735368101974198205}
-  - inputName: Gear Range I
+  - inputName: Gear Level I
     slider: {fileID: 1684193228605592730}
-  - inputName: Gear Range II
+  - inputName: Gear Level II
     slider: {fileID: 4465538746991052615}
   - inputName: Gear Range 1/2R
     slider: {fileID: 8259450238084226301}
@@ -72464,7 +72464,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Press \u042F"
+  m_text: Press Z
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -73447,7 +73447,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Press \u0421"
+  m_text: Press C
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -91068,7 +91068,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Press \u0418"
+  m_text: Press B
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -93072,7 +93072,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Press \u0414"
+  m_text: Press L
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca3290e2800773e4ab9ad47362b3a7a0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -99052,11 +99052,23 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2331554584956327196, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2331554584956327196, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4678389696196287328, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678389696196287328, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678389696196287328, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6117925432420221512, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
@@ -100475,11 +100487,23 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2331554584956327196, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2331554584956327196, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4678389696196287328, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678389696196287328, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678389696196287328, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6117925432420221512, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
@@ -101914,11 +101938,23 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2331554584956327196, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2331554584956327196, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4678389696196287328, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678389696196287328, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678389696196287328, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6117925432420221512, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}

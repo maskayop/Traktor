@@ -43,7 +43,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Gear Range I",
+                    "name": "Gear Level I",
                     "type": "Button",
                     "id": "3432a779-3746-45c9-8625-b9324961682b",
                     "expectedControlType": "",
@@ -52,7 +52,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Gear Range II",
+                    "name": "Gear Level II",
                     "type": "Button",
                     "id": "644f5807-910c-4329-a78e-87d7e7cc9bad",
                     "expectedControlType": "",
@@ -390,8 +390,30 @@
                 },
                 {
                     "name": "",
+                    "id": "a8c015e4-2117-43f6-a6fe-3bcb498be055",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear 1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "70fff3e8-922d-4717-b989-55040f14ea2e",
                     "path": "<HID::ZSC ODDOR-GEAR>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear 2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "872253b7-63fa-4f38-9679-2ac39a2d0f00",
+                    "path": "<Keyboard>/2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -412,8 +434,30 @@
                 },
                 {
                     "name": "",
+                    "id": "8defa5b5-18f9-4359-8b02-48c4f0a1489b",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear 3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "4bc9f609-5612-402f-843f-957025eebe3e",
                     "path": "<HID::ZSC ODDOR-GEAR>/button5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear 4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e295ced9-5706-4c48-a64b-4f34ac2404e7",
+                    "path": "<Keyboard>/4",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -428,7 +472,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Gear Range I",
+                    "action": "Gear Level I",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -439,7 +483,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Gear Range II",
+                    "action": "Gear Level II",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -807,11 +851,44 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "1D Axis",
+                    "id": "3503244e-aabd-4b15-a95d-9449ab51a56b",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Steering Wheel",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "cf58e5a1-3bdc-4bb2-a901-4a63cd64aa5a",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Steering Wheel",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "97a6fb73-0f3e-4952-858c-4cf580956224",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Steering Wheel",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "dda905f3-407c-4a37-b315-126e71ebca8a",
                     "path": "<HID::Gudsen MOZA R9 Base>/z",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "Normalize(max=1)",
                     "groups": "",
                     "action": "Accelerator",
                     "isComposite": false,
@@ -830,10 +907,21 @@
                 },
                 {
                     "name": "",
+                    "id": "3e76d669-652f-4b0d-a197-6a505bcb3b2b",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerator",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d1a7e875-3bd4-484c-a499-148d038b25a1",
                     "path": "<HID::Gudsen MOZA R9 Base>/rz",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "Normalize(max=1)",
                     "groups": "",
                     "action": "Brake",
                     "isComposite": false,
@@ -852,8 +940,30 @@
                 },
                 {
                     "name": "",
+                    "id": "c183afa3-f54d-4da0-9193-b49f4ac80b42",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Brake",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "6aaa3e1f-462b-4ba8-b8aa-819066cb8668",
                     "path": "<HID::Gudsen MOZA R9 Base>/slider",
+                    "interactions": "",
+                    "processors": "Normalize(max=1)",
+                    "groups": "",
+                    "action": "Clutch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ce750af7-6a50-46e3-8273-dc27cd9012e4",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
