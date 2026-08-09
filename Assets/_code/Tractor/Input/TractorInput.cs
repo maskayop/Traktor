@@ -5,6 +5,7 @@ namespace Tractor
     public class TractorInput : MonoBehaviour
     {
         [Header("Механизмы")]
+        [SerializeField] TractorMain tractorMain;
         [SerializeField] TractorGearbox tractorGearbox;
 
         [Header("Руль")]
@@ -85,6 +86,7 @@ namespace Tractor
             UseOverrides();
 
             tractorGearbox.Init(this);
+            tractorMain.Init(this);
         }
 
         void Update()

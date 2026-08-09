@@ -143,4 +143,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Vopere.Common.CameraFPSLimiter
   targetFPS: 15
   renderOnStart: 1
-  interval: 0

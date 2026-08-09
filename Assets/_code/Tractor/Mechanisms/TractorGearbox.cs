@@ -9,7 +9,7 @@ namespace Tractor
     {
         public string name;
         public float maxSpeed;
-        public float gearRatiosMultiplier;
+        public float[] finalDriveOverrides;
     }
 
     public class TractorGearbox : MonoBehaviour
@@ -43,20 +43,34 @@ namespace Tractor
             ChangeGearLevel(true);
             gearbox.ShiftToGear(0);
             currentGear = 1;
+            ChangeGearRange(1);
         }
 
         public void ShiftToGear(float input, int value)
         {
+            currentGear = value;
+            UpdateGearRatios();
+
+            if (currentRange < 0)
+                return;
+
             if (input >= 0.5f)
                 gearbox.ShiftToGear(value - 1);
-
-            currentGear = value;
         }
 
         public void ChangeGearLevel(bool isFirstLevel)
         {
             isGearLevel1 = isFirstLevel;
-            ChangeGearRange(1);
+
+            if (currentRange < 0)
+                ChangeGearRange(-1);
+            else
+            {
+                if (currentRange == 1 || currentRange == 2)
+                    ChangeGearRange(1);
+                else if (currentRange == 3 || currentRange == 4)
+                    ChangeGearRange(2);
+            }
         }
 
         public void ChangeGearRange(int value)
@@ -106,6 +120,14 @@ namespace Tractor
                 currentGearModification = 0;
             }
 
+            if (currentRange < 0)
+                gearbox.forceToRGear = true;
+            else
+            {
+                gearbox.forceToRGear = false;
+                gearbox.ShiftToGear(currentGear - 1);
+            }
+
             UpdateGearRatios();
         }
 
@@ -114,28 +136,12 @@ namespace Tractor
             float mSpeed = gearModifications[currentGearModification].maxSpeed;
 
             if (mSpeed < 0)
-            {
-                gearbox.forceToRGear = true;
                 engine.maximumSpeed = -gearModifications[currentGearModification].maxSpeed;
-                /*
-                foreach (var d in differentials)
-                {
-                    float finalDrive = d.finalDriveRatio;
-
-                    d.overrideDifferential = true;
-                    d.finalDriveRatio = finalDrive * gearModifications[currentGearModification].gearRatiosMultiplier;
-                }
-                */
-            }
             else
-            {
-                gearbox.forceToRGear = false;
                 engine.maximumSpeed = gearModifications[currentGearModification].maxSpeed;
-            }
 
-            for (int i = 0; i < gearbox.gearRatios.Length; i++)
-                gearbox.gearRatios[i] =
-                    defaultGearRatios[i] * gearModifications[currentGearModification].gearRatiosMultiplier;
+            foreach (var d in differentials)
+                d.finalDriveRatio = gearModifications[currentGearModification].finalDriveOverrides[currentGear - 1];
         }
     }
 }
