@@ -165,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RCCP_Differential
   completeSetup: 1
   checkedSetup: 0
-  overrideDifferential: 0
+  overrideDifferential: 1
   differentialType: 1
   limitedSlipRatio: 80
   finalDriveRatio: 35.33069
@@ -3360,6 +3360,30 @@ MonoBehaviour:
   isGearLevel1: 1
   currentRange: 0
   currentGear: 0
+  defaultGearRatios:
+  - 1.43
+  - 0.81
+  - 0.5
+  - 0.36
+  gearModifications:
+  - name: Gear Range 1
+    maxSpeed: 5
+    gearRatiosMultiplier: 1
+  - name: Gear Range 2
+    maxSpeed: 10
+    gearRatiosMultiplier: 0.6
+  - name: Gear Range 3
+    maxSpeed: 16
+    gearRatiosMultiplier: 1
+  - name: Gear Range 4
+    maxSpeed: 40
+    gearRatiosMultiplier: 0.65
+  - name: Gear Range -1
+    maxSpeed: -8
+    gearRatiosMultiplier: 1
+  - name: Gear Range -2
+    maxSpeed: -17
+    gearRatiosMultiplier: 0.5
 --- !u!1 &621751923
 GameObject:
   m_ObjectHideFlags: 0
@@ -5048,7 +5072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RCCP_Differential
   completeSetup: 1
   checkedSetup: 0
-  overrideDifferential: 0
+  overrideDifferential: 1
   differentialType: 1
   limitedSlipRatio: 80
   finalDriveRatio: 35.33069
@@ -5469,7 +5493,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 10
+  far clip plane: 100
   field of view: 60
   orthographic: 0
   orthographic size: 5
