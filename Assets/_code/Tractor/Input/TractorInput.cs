@@ -4,6 +4,9 @@ namespace Tractor
 {
     public class TractorInput : MonoBehaviour
     {
+        [Header("Механизмы")]
+        [SerializeField] TractorGearbox tractorGearbox;
+
         [Header("Руль")]
         [SerializeField] string steerInputName;
         CustomInput steerInput;
@@ -31,9 +34,27 @@ namespace Tractor
         [SerializeField] string gear4InputName;
         CustomInput gear4_Input;
 
+        [Header("Уровни")]
+        [SerializeField] string level1InputName;
+        CustomInput level1_Input;
+
+        [SerializeField] string level2InputName;
+        CustomInput level2_Input;
+
+        [Header("Диапазоны")]
+        [SerializeField] string range12InputName;
+        CustomInput range12_Input;
+
+        [SerializeField] string range34InputName;
+        CustomInput range34_Input;
+
+        [SerializeField] string rangeRInputName;
+        CustomInput rangeR_Input;
+
         RCCP_CarController vehicle;
+        public RCCP_CarController RCCP_Vehicle { get { return vehicle; } }
+
         RCCP_Input vehicleInput;
-        RCCP_Gearbox gearbox;
 
         InputController inputController;
         bool overrideInputs = false;
@@ -53,7 +74,17 @@ namespace Tractor
             gear3_Input = inputController?.GetInputByName(gear3InputName);
             gear4_Input = inputController?.GetInputByName(gear4InputName);
 
+            level1_Input = inputController?.GetInputByName(level1InputName);
+            level2_Input = inputController?.GetInputByName(level2InputName);
+
+            range12_Input = inputController?.GetInputByName(range12InputName);
+            range34_Input = inputController?.GetInputByName(range34InputName);
+            rangeR_Input = inputController?.GetInputByName(rangeRInputName);
+
+            FindVehicle();
             UseOverrides();
+
+            tractorGearbox.Init(this);
         }
 
         void Update()
@@ -79,7 +110,6 @@ namespace Tractor
         {
             vehicle = FindAnyObjectByType<RCCP_CarController>();
             vehicleInput = vehicle.Inputs;
-            gearbox = vehicle.Gearbox;
         }
 
         void SetInputs()
@@ -97,28 +127,44 @@ namespace Tractor
                 vehicleInput.inputs.clutchInput = clutchInput.inputValue;
 
             if (gear1_Input != null)
-                ShiftToGear(gear1_Input.inputValue, 1);
+                if (gear1_Input.inputValue != 0)
+                    tractorGearbox?.ShiftToGear(gear1_Input.inputValue, 1);
 
             if (gear2_Input != null)
-                ShiftToGear(gear2_Input.inputValue, 2);
+                if (gear2_Input.inputValue != 0)
+                    tractorGearbox?.ShiftToGear(gear2_Input.inputValue, 2);
 
             if (gear3_Input != null)
-                ShiftToGear(gear3_Input.inputValue, 3);
+                if (gear3_Input.inputValue != 0)
+                    tractorGearbox?.ShiftToGear(gear3_Input.inputValue, 3);
 
             if (gear4_Input != null)
-                ShiftToGear(gear4_Input.inputValue, 4);
-        }
+                if (gear4_Input.inputValue != 0)
+                    tractorGearbox?.ShiftToGear(gear4_Input.inputValue, 4);
 
-        void ShiftToGear(float input, int value)
-        {
-            if (input >= 0.5f)
-                gearbox.ShiftToGear(value - 1);
+            if (level1_Input != null)
+                if (level1_Input.inputValue != 0)
+                    tractorGearbox?.ChangeGearLevel(true);
+
+            if (level2_Input != null)
+                if (level2_Input.inputValue != 0)
+                    tractorGearbox?.ChangeGearLevel(false);
+
+            if (range12_Input != null)
+                if (range12_Input.inputValue != 0)
+                    tractorGearbox?.ChangeGearRange(1);
+
+            if (range34_Input != null)
+                if (range34_Input.inputValue != 0)
+                    tractorGearbox?.ChangeGearRange(2);
+
+            if (rangeR_Input != null)
+                if (rangeR_Input.inputValue != 0)
+                    tractorGearbox?.ChangeGearRange(-1);
         }
 
         public void UseOverrides()
         {
-            FindVehicle();
-
             RCCP.SetExternalControl(vehicle, overrideInputs);
             vehicleInput.overridePlayerInputs = overrideInputs;
         }

@@ -478,8 +478,30 @@
                 },
                 {
                     "name": "",
+                    "id": "d79a19ed-e19d-4b8b-b323-fed6bbf4d4dd",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear Level I",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "ad78d8fb-e47a-4b57-899b-ed1e8b7e3b61",
                     "path": "<HID::ZSC SIMAKER Shifter>/button5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear Level II",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d5ca5cb3-845d-44d5-8701-cd5c12e2627a",
+                    "path": "<Keyboard>/t",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -500,6 +522,17 @@
                 },
                 {
                     "name": "",
+                    "id": "e7764487-6ba8-4106-b892-42626c4b170e",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear Range 1/2R",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "bf87b88c-84d6-444e-b18e-186dc88d644e",
                     "path": "<HID::ZSC SIMAKER Shifter>/button3",
                     "interactions": "",
@@ -511,8 +544,30 @@
                 },
                 {
                     "name": "",
+                    "id": "a5d0c417-372d-4e0e-b3d7-7a258af5000d",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear Range 1/2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "a72be57a-d70e-436e-96aa-ea03bc6f11b5",
                     "path": "<HID::ZSC SIMAKER Shifter>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear Range 3/4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5f9c3aff-6c24-4281-b818-769814a709cf",
+                    "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

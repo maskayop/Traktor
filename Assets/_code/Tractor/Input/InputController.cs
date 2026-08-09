@@ -82,7 +82,6 @@ namespace Tractor
         void Start()
         {
             Init();
-
         }
 
         public void Init()

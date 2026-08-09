@@ -3186,6 +3186,7 @@ GameObject:
   - component: {fileID: 621499552}
   - component: {fileID: 621499551}
   - component: {fileID: 621499554}
+  - component: {fileID: 621499555}
   m_Layer: 8
   m_Name: Tractor MTZ
   m_TagString: Untagged
@@ -3330,6 +3331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d1d5513b5e1fc4da128ea9b80a7690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.TractorInput
+  tractorGearbox: {fileID: 621499555}
   steerInputName: Steering Wheel
   throttleInputName: Accelerator
   brakeInputName: Brake
@@ -3338,6 +3340,26 @@ MonoBehaviour:
   gear2InputName: Gear 2
   gear3InputName: Gear 3
   gear4InputName: Gear 4
+  level1InputName: Gear Level I
+  level2InputName: Gear Level II
+  range12InputName: Gear Range 1/2
+  range34InputName: Gear Range 3/4
+  rangeRInputName: Gear Range 1/2R
+--- !u!114 &621499555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621499550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d962fe735bca0c44fa52d829f33f2d1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tractor.TractorGearbox
+  isGearLevel1: 1
+  currentRange: 0
+  currentGear: 0
 --- !u!1 &621751923
 GameObject:
   m_ObjectHideFlags: 0
@@ -4153,10 +4175,10 @@ MonoBehaviour:
   engineRPM: 0
   minEngineRPM: 800
   maxEngineRPM: 2200
-  engineAccelerationRate: 0.75
-  enableDynamicAcceleration: 1
+  engineAccelerationRate: 0.25
+  enableDynamicAcceleration: 0
   engineCouplingToWheelsRate: 0.5
-  engineDecelerationRate: 0.35
+  engineDecelerationRate: 0.5
   NMCurve:
     serializedVersion: 2
     m_Curve:
@@ -5447,7 +5469,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 100
+  far clip plane: 10
   field of view: 60
   orthographic: 0
   orthographic size: 5
