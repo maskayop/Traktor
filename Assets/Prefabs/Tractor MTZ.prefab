@@ -5458,6 +5458,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tractor Reflection Probe
       objectReference: {fileID: 0}
+    - target: {fileID: 8947751958052508853, guid: e808cb24211d4054ea06d0218a37cb6f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
