@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8825389328476885688}
   m_Layer: 0
-  m_Name: Rectangle 1 Post
+  m_Name: Sign on Post base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
