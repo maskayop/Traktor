@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Birch Small
       objectReference: {fileID: 0}
+    - target: {fileID: 1516057731949428924, guid: 032fdc05e0e75c245b53c06d1281ee8d, type: 3}
+      propertyPath: m_ForceMeshLod
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8649943633771727955, guid: 032fdc05e0e75c245b53c06d1281ee8d, type: 3}
       propertyPath: m_CastShadows
       value: 0
@@ -86,7 +90,7 @@ LODGroup:
   m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.2
+  - screenRelativeHeight: 0.25
     fadeTransitionWidth: 0.5
     renderers:
     - renderer: {fileID: 4097078621636259975}

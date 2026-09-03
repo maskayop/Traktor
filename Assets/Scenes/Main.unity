@@ -25894,6 +25894,11 @@ Transform:
   - {fileID: 1446615431}
   m_Father: {fileID: 1116929046}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!4 &1217283644 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7066416737537490935, guid: d757c359728b40848bb75a159f9e5105, type: 3}
+  m_PrefabInstance: {fileID: 1371417902681913862}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1218133782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28975,6 +28980,7 @@ Transform:
   m_Children:
   - {fileID: 7302127102717983923}
   - {fileID: 9013646295324112521}
+  - {fileID: 1217283644}
   - {fileID: 1116929046}
   - {fileID: 1158844290}
   - {fileID: 3527764}
@@ -44477,6 +44483,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 030c1fbfaba18e94fa0ebb144c32fffb, type: 3}
+--- !u!1001 &1371417902681913862
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1401611216}
+    m_Modifications:
+    - target: {fileID: 7066416737537490935, guid: d757c359728b40848bb75a159f9e5105, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066416737537490935, guid: d757c359728b40848bb75a159f9e5105, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066416737537490935, guid: d757c359728b40848bb75a159f9e5105, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066416737537490935, guid: d757c359728b40848bb75a159f9e5105, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066416737537490935, guid: d757c359728b40848bb75a159f9e5105, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066416737537490935, guid: d757c359728b40848bb75a159f9e5105, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066416737537490935, guid: d757c359728b40848bb75a159f9e5105, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066416737537490935, guid: d757c359728b40848bb75a159f9e5105, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066416737537490935, guid: d757c359728b40848bb75a159f9e5105, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066416737537490935, guid: d757c359728b40848bb75a159f9e5105, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591701427475162445, guid: d757c359728b40848bb75a159f9e5105, type: 3}
+      propertyPath: m_Name
+      value: Autodrom Road Helper
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d757c359728b40848bb75a159f9e5105, type: 3}
 --- !u!1001 &1642741718070289896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44642,6 +44705,10 @@ PrefabInstance:
     - target: {fileID: 1957853787683440118, guid: b01c44c393448554398f0d1b73d64cbc, type: 3}
       propertyPath: m_Name
       value: Ring Road Markings
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957853787683440118, guid: b01c44c393448554398f0d1b73d64cbc, type: 3}
+      propertyPath: m_TagString
+      value: EditorOnly
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -45135,6 +45202,10 @@ PrefabInstance:
     - target: {fileID: 3921664922723391378, guid: 3af79ebac279fe44c994318f1478800f, type: 3}
       propertyPath: m_Name
       value: Small Ring Road
+      objectReference: {fileID: 0}
+    - target: {fileID: 3921664922723391378, guid: 3af79ebac279fe44c994318f1478800f, type: 3}
+      propertyPath: m_TagString
+      value: EditorOnly
       objectReference: {fileID: 0}
     - target: {fileID: 4406593928702840104, guid: 3af79ebac279fe44c994318f1478800f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -45766,6 +45837,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ring Road
       objectReference: {fileID: 0}
+    - target: {fileID: 8980870813015145330, guid: 55ae3d3fcaba4b946bdc2e39e617b6f9, type: 3}
+      propertyPath: m_TagString
+      value: EditorOnly
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -46132,6 +46207,10 @@ PrefabInstance:
     - target: {fileID: 332316541015839789, guid: 7af8a5911fc79e14bb81fa66e2f59af0, type: 3}
       propertyPath: m_Name
       value: Small Ring Road Markings
+      objectReference: {fileID: 0}
+    - target: {fileID: 332316541015839789, guid: 7af8a5911fc79e14bb81fa66e2f59af0, type: 3}
+      propertyPath: m_TagString
+      value: EditorOnly
       objectReference: {fileID: 0}
     - target: {fileID: 1141504788946226839, guid: 7af8a5911fc79e14bb81fa66e2f59af0, type: 3}
       propertyPath: m_LocalPosition.x

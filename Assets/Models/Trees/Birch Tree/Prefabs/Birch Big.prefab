@@ -65,9 +65,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7156129480023273810, guid: 59898002582ae8f4ea31bcedb7f9e004, type: 3}
+      propertyPath: m_ForceMeshLod
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156129480023273810, guid: 59898002582ae8f4ea31bcedb7f9e004, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: e8d4bd2ea650acb4a954dab70ede4a82, type: 2}
+    - target: {fileID: 8649943633771727955, guid: 59898002582ae8f4ea31bcedb7f9e004, type: 3}
+      propertyPath: m_ForceMeshLod
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2063524308175803288, guid: 59898002582ae8f4ea31bcedb7f9e004, type: 3}
@@ -99,7 +107,7 @@ LODGroup:
   m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.5
+  - screenRelativeHeight: 0.6
     fadeTransitionWidth: 0.5
     renderers:
     - renderer: {fileID: 5326053965165345408}

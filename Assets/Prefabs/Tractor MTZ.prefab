@@ -532,6 +532,7 @@ GameObject:
   - component: {fileID: 6909384308401504491}
   - component: {fileID: 4245159035061371396}
   - component: {fileID: 5510360152096047968}
+  - component: {fileID: 3385472217592471738}
   m_Layer: 8
   m_Name: Tractor MTZ
   m_TagString: Untagged
@@ -767,6 +768,23 @@ MonoBehaviour:
     - 40
     - 28.5
     - 20.7
+--- !u!114 &3385472217592471738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813409246852421867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa0f6e16cb2e734699147ed06407de7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tractor.RoadDetector
+  wheelRaycasts:
+  - {fileID: 1543788550091478853}
+  - {fileID: 5046453934749939842}
+  - {fileID: 4347008353918544447}
+  - {fileID: 1597626806077981887}
 --- !u!1 &2014435452676515496
 GameObject:
   m_ObjectHideFlags: 0
@@ -3113,6 +3131,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fca9c5fcbd73664d829c4e637b291ff, type: 3}
+--- !u!114 &4347008353918544447 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2773441875256239432, guid: 2fca9c5fcbd73664d829c4e637b291ff, type: 3}
+  m_PrefabInstance: {fileID: 1886607617660227447}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b7c5c354bbe8d44ba23398320b782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WheelRaycast
 --- !u!4 &8996413209386986012 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7419466565156578667, guid: 2fca9c5fcbd73664d829c4e637b291ff, type: 3}
@@ -3361,6 +3390,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d4da9f594f51ab4d8a0ea23c766f029, type: 3}
+--- !u!114 &1543788550091478853 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -8422237129915903325, guid: 9d4da9f594f51ab4d8a0ea23c766f029, type: 3}
+  m_PrefabInstance: {fileID: 2193974803919357414}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b7c5c354bbe8d44ba23398320b782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WheelRaycast
 --- !u!4 &1951007892041965139 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 387818790129261493, guid: 9d4da9f594f51ab4d8a0ea23c766f029, type: 3}
@@ -5252,6 +5292,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9132554029495965844, guid: a6ee5da9be1c83647b71d75ad1fb3c25, type: 3}
   m_PrefabInstance: {fileID: 7916526087966116070}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5046453934749939842 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3158639162868969572, guid: a6ee5da9be1c83647b71d75ad1fb3c25, type: 3}
+  m_PrefabInstance: {fileID: 7916526087966116070}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b7c5c354bbe8d44ba23398320b782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WheelRaycast
 --- !u!1001 &8449490382523923082
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5309,6 +5360,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f295fff6117efaa4a89140f3a68033f0, type: 3}
+--- !u!114 &1597626806077981887 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -2059983817472377291, guid: f295fff6117efaa4a89140f3a68033f0, type: 3}
+  m_PrefabInstance: {fileID: 8449490382523923082}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b7c5c354bbe8d44ba23398320b782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WheelRaycast
 --- !u!4 &3661729200332250530 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5157622072382351144, guid: f295fff6117efaa4a89140f3a68033f0, type: 3}

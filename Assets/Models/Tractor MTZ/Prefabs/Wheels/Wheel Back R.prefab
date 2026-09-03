@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 186327532697661472}
   - component: {fileID: 5347060508948532505}
   - component: {fileID: 6440840971388259585}
+  - component: {fileID: 3158639162868969572}
   m_Layer: 8
   m_Name: Wheel Back R
   m_TagString: Untagged
@@ -111,3 +112,23 @@ LODGroup:
     - renderer: {fileID: 5347060508948532505}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &3158639162868969572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4811115016179064794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b7c5c354bbe8d44ba23398320b782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WheelRaycast
+  wheelIndex: 3
+  raycastDistance: 5
+  roadLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  roadHalflaneMaterialProperty: _IsOddHalfLane
+  roadLaneNumberMaterialProperty: _LaneNumber
+  showDebugRay: 1
