@@ -129,7 +129,7 @@ MonoBehaviour:
   roadLayer:
     serializedVersion: 2
     m_Bits: 64
-  roadHalflaneMaterialProperty: _IsEvenHalfLane
+  roadHalflaneMaterialProperty: _HalfLane_Id
   roadLaneNumberMaterialProperty: _LaneNumber
   showDebugRay: 1
-  updateDelay: 0.5
+  updateDelay: 0.2

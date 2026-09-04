@@ -130,7 +130,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Sign_Metallic: 0
+    - _Sign_Metallic: 0.5
     - _Sign_Smoothness: 0.5
     - _Smoothness: 1
     - _SmoothnessTextureChannel: 0

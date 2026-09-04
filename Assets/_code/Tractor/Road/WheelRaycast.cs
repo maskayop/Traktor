@@ -12,7 +12,7 @@ namespace Tractor
         [Header("Рейкаст")]
         [SerializeField] float raycastDistance = 5f;
         [SerializeField] LayerMask roadLayer;
-        [SerializeField] string roadHalflaneMaterialProperty = "_IsOddHalfLane";
+        [SerializeField] string roadHalflaneMaterialProperty = "_HalfLane_Id";
         [SerializeField] string roadLaneNumberMaterialProperty = "_LaneNumber";
 
         [Header("Визуализация")]

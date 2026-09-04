@@ -785,7 +785,7 @@ MonoBehaviour:
   - {fileID: 5046453934749939842}
   - {fileID: 4347008353918544447}
   - {fileID: 1597626806077981887}
-  updateDelay: 0.5
+  updateDelay: 0.2
   onRoad: 1
   wrongDirection: 0
   onLane: 0

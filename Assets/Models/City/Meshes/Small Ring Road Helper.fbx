@@ -9,10 +9,10 @@ FBXHeaderExtension:  {
 		Year: 2026
 		Month: 9
 		Day: 4
-		Hour: 9
-		Minute: 31
-		Second: 26
-		Millisecond: 548
+		Hour: 15
+		Minute: 9
+		Second: 41
+		Millisecond: 659
 	}
 	Creator: "FBX SDK/FBX Plugins version 2020.0.1"
 	SceneInfo: "SceneInfo::GlobalInfo", "UserData" {
@@ -34,13 +34,13 @@ FBXHeaderExtension:  {
 			P: "Original|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "Original|ApplicationName", "KString", "", "", "3ds Max"
 			P: "Original|ApplicationVersion", "KString", "", "", "2021"
-			P: "Original|DateTime_GMT", "DateTime", "", "", "04/09/2026 06:31:26.545"
+			P: "Original|DateTime_GMT", "DateTime", "", "", "04/09/2026 12:09:41.658"
 			P: "Original|FileName", "KString", "", "", "E:\__myProjects\Tractor Simulator\Assets\Models\City\Meshes\Small Ring Road Helper.fbx"
 			P: "LastSaved", "Compound", "", ""
 			P: "LastSaved|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "LastSaved|ApplicationName", "KString", "", "", "3ds Max"
 			P: "LastSaved|ApplicationVersion", "KString", "", "", "2021"
-			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "04/09/2026 06:31:26.545"
+			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "04/09/2026 12:09:41.658"
 			P: "Original|ApplicationActiveProject", "KString", "", "", "C:\Users\maska\Documents\3ds Max 2021"
 			P: "Original|ApplicationNativeFile", "KString", "", "", "E:\__myProjects\Tractor Simulator\Assets\Models\City\City.max"
 		}
@@ -77,7 +77,7 @@ GlobalSettings:  {
 
 Documents:  {
 	Count: 1
-	Document: 2177575497856, "", "Scene" {
+	Document: 2312614801968, "", "Scene" {
 		Properties70:  {
 			P: "SourceObject", "object", "", ""
 			P: "ActiveAnimStackName", "KString", "", "", ""
@@ -238,7 +238,7 @@ Definitions:  {
 ;------------------------------------------------------------------
 
 Objects:  {
-	Geometry: 2177837333856, "Geometry::", "Mesh" {
+	Geometry: 2310826507440, "Geometry::", "Mesh" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.894117647058824,0.83921568627451,0.6
 		}
@@ -7935,7 +7935,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 2178147749248, "Model::Small Ring Road Helper", "Mesh" {
+	Model: 2312058783920, "Model::Small Ring Road Helper", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "PreRotation", "Vector3D", "Vector", "",-90,-0,0
@@ -7944,6 +7944,7 @@ Objects:  {
 			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
 			P: "GeometricRotation", "Vector3D", "Vector", "",-90,-0,0
 			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Freeze", "bool", "", "",1
 			P: "Lcl Translation", "Lcl Translation", "", "A",0,-10,-0
 			P: "Lcl Rotation", "Lcl Rotation", "", "A",90.0000025044781,-0,0
 			P: "MaxHandle", "int", "Integer", "UH",132
@@ -7951,7 +7952,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Material: 2177567617408, "Material::Lane 1 odd", "" {
+	Material: 2312509721664, "Material::Lane 1 R", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -7973,7 +7974,7 @@ Objects:  {
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 2177567624608, "Material::Lane 1 even", "" {
+	Material: 2312509730304, "Material::Lane 1 L", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -7995,7 +7996,7 @@ Objects:  {
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 2177567628928, "Material::Lane 2 odd", "" {
+	Material: 2312509718784, "Material::Lane 2 R", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -8017,7 +8018,7 @@ Objects:  {
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 2177567625088, "Material::Lane 2 even", "" {
+	Material: 2312509731264, "Material::Lane 2 L", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -8039,7 +8040,7 @@ Objects:  {
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 2177567625568, "Material::Lane 3 odd", "" {
+	Material: 2312509727424, "Material::Lane 3 R", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -8061,7 +8062,7 @@ Objects:  {
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 2177567622208, "Material::Lane 3 even", "" {
+	Material: 2312509715424, "Material::Lane 3 L", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -8083,7 +8084,7 @@ Objects:  {
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 2177567618368, "Material::Lane 4 odd", "" {
+	Material: 2312509733184, "Material::Lane 4 R", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -8105,7 +8106,7 @@ Objects:  {
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 2177567629408, "Material::Lane 4 even", "" {
+	Material: 2312509717824, "Material::Lane 4 L", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -8127,7 +8128,7 @@ Objects:  {
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 2177567613568, "Material::Lane 5 odd", "" {
+	Material: 2312509732224, "Material::Lane 5 R", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -8149,7 +8150,7 @@ Objects:  {
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 2177567623168, "Material::Lane 5 even", "" {
+	Material: 2312509723104, "Material::Lane 5 L", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -8171,7 +8172,7 @@ Objects:  {
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 2177567630848, "Material::Lane odd Central", "" {
+	Material: 2312509725984, "Material::Lane R Central", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -8193,7 +8194,7 @@ Objects:  {
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 2177567631808, "Material::Lane even Central", "" {
+	Material: 2312509719744, "Material::Lane L Central", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -8215,75 +8216,75 @@ Objects:  {
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 2177567618848, "Material::Road Cross", "" {
+	Material: 2312509720704, "Material::Road Cross", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
 		Properties70:  {
 			P: "ShadingModel", "KString", "", "", "phong"
 			P: "EmissiveFactor", "Number", "", "A",0
-			P: "AmbientColor", "Color", "", "A",0.635294139385223,0.439215689897537,0.788235306739807
-			P: "DiffuseColor", "Color", "", "A",0.635294139385223,0.439215689897537,0.788235306739807
+			P: "AmbientColor", "Color", "", "A",0.501960813999176,0.501960813999176,0.501960813999176
+			P: "DiffuseColor", "Color", "", "A",0.501960813999176,0.501960813999176,0.501960813999176
 			P: "TransparentColor", "Color", "", "A",1,1,1
 			P: "SpecularColor", "Color", "", "A",0.899999976158142,0.899999976158142,0.899999976158142
 			P: "SpecularFactor", "Number", "", "A",0
 			P: "ShininessExponent", "Number", "", "A",2
 			P: "Emissive", "Vector3D", "Vector", "",0,0,0
-			P: "Ambient", "Vector3D", "Vector", "",0.635294139385223,0.439215689897537,0.788235306739807
-			P: "Diffuse", "Vector3D", "Vector", "",0.635294139385223,0.439215689897537,0.788235306739807
+			P: "Ambient", "Vector3D", "Vector", "",0.501960813999176,0.501960813999176,0.501960813999176
+			P: "Diffuse", "Vector3D", "Vector", "",0.501960813999176,0.501960813999176,0.501960813999176
 			P: "Specular", "Vector3D", "Vector", "",0,0,0
 			P: "Shininess", "double", "Number", "",2
 			P: "Opacity", "double", "Number", "",1
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	CollectionExclusive: 2177971498240, "DisplayLayer::Land", "DisplayLayer" {
+	CollectionExclusive: 2310826381200, "DisplayLayer::Land", "DisplayLayer" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.768627450980392,0.345098039215686,0.882352941176471
 			P: "Show", "bool", "", "",0
 		}
 	}
-	CollectionExclusive: 2177971492288, "DisplayLayer::Roads", "DisplayLayer" {
+	CollectionExclusive: 2310826376016, "DisplayLayer::Roads", "DisplayLayer" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.894117647058824,0.83921568627451,0.6
 		}
 	}
-	CollectionExclusive: 2177971492480, "DisplayLayer::Roads Splines", "DisplayLayer" {
+	CollectionExclusive: 2310826382352, "DisplayLayer::Roads Splines", "DisplayLayer" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.223529411764706,0.0313725490196078,0.533333333333333
 			P: "Show", "bool", "", "",0
 		}
 	}
-	CollectionExclusive: 2177971495936, "DisplayLayer::_helpers", "DisplayLayer" {
+	CollectionExclusive: 2310826374096, "DisplayLayer::_helpers", "DisplayLayer" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.0235294117647059,0.529411764705882,0.0235294117647059
 			P: "Show", "bool", "", "",0
 		}
 	}
-	CollectionExclusive: 2176592956016, "DisplayLayer::Roads Dimensions", "DisplayLayer" {
+	CollectionExclusive: 2310826382544, "DisplayLayer::Roads Dimensions", "DisplayLayer" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.56078431372549,0.882352941176471,0.341176470588235
 			P: "Show", "bool", "", "",0
 		}
 	}
-	CollectionExclusive: 2177995687632, "DisplayLayer::Big Ring Road dim", "DisplayLayer" {
+	CollectionExclusive: 2310826376208, "DisplayLayer::Big Ring Road dim", "DisplayLayer" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.341176470588235,0.882352941176471,0.341176470588235
 			P: "Show", "bool", "", "",0
 		}
 	}
-	CollectionExclusive: 2177995678032, "DisplayLayer::Main Big Road dim", "DisplayLayer" {
+	CollectionExclusive: 2310826383888, "DisplayLayer::Main Big Road dim", "DisplayLayer" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.529411764705882,0.431372549019608,0.0313725490196078
 			P: "Show", "bool", "", "",0
 		}
 	}
-	CollectionExclusive: 2177995684560, "DisplayLayer::Autodrom", "DisplayLayer" {
+	CollectionExclusive: 2310826376400, "DisplayLayer::Autodrom", "DisplayLayer" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.56078431372549,0.882352941176471,0.341176470588235
 		}
 	}
-	CollectionExclusive: 2177995682640, "DisplayLayer::Autodrom splines", "DisplayLayer" {
+	CollectionExclusive: 2310826382736, "DisplayLayer::Autodrom splines", "DisplayLayer" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.0313725490196078,0.0313725490196078,0.533333333333333
 			P: "Show", "bool", "", "",0
@@ -8297,50 +8298,50 @@ Objects:  {
 Connections:  {
 	
 	;Model::Small Ring Road Helper, Model::RootNode
-	C: "OO",2178147749248,0
+	C: "OO",2312058783920,0
 	
 	;Geometry::, Model::Small Ring Road Helper
-	C: "OO",2177837333856,2178147749248
+	C: "OO",2310826507440,2312058783920
 	
-	;Material::Lane 1 odd, Model::Small Ring Road Helper
-	C: "OO",2177567617408,2178147749248
+	;Material::Lane 1 R, Model::Small Ring Road Helper
+	C: "OO",2312509721664,2312058783920
 	
-	;Material::Lane 1 even, Model::Small Ring Road Helper
-	C: "OO",2177567624608,2178147749248
+	;Material::Lane 1 L, Model::Small Ring Road Helper
+	C: "OO",2312509730304,2312058783920
 	
-	;Material::Lane 2 odd, Model::Small Ring Road Helper
-	C: "OO",2177567628928,2178147749248
+	;Material::Lane 2 R, Model::Small Ring Road Helper
+	C: "OO",2312509718784,2312058783920
 	
-	;Material::Lane 2 even, Model::Small Ring Road Helper
-	C: "OO",2177567625088,2178147749248
+	;Material::Lane 2 L, Model::Small Ring Road Helper
+	C: "OO",2312509731264,2312058783920
 	
-	;Material::Lane 3 odd, Model::Small Ring Road Helper
-	C: "OO",2177567625568,2178147749248
+	;Material::Lane 3 R, Model::Small Ring Road Helper
+	C: "OO",2312509727424,2312058783920
 	
-	;Material::Lane 3 even, Model::Small Ring Road Helper
-	C: "OO",2177567622208,2178147749248
+	;Material::Lane 3 L, Model::Small Ring Road Helper
+	C: "OO",2312509715424,2312058783920
 	
-	;Material::Lane 4 odd, Model::Small Ring Road Helper
-	C: "OO",2177567618368,2178147749248
+	;Material::Lane 4 R, Model::Small Ring Road Helper
+	C: "OO",2312509733184,2312058783920
 	
-	;Material::Lane 4 even, Model::Small Ring Road Helper
-	C: "OO",2177567629408,2178147749248
+	;Material::Lane 4 L, Model::Small Ring Road Helper
+	C: "OO",2312509717824,2312058783920
 	
-	;Material::Lane 5 odd, Model::Small Ring Road Helper
-	C: "OO",2177567613568,2178147749248
+	;Material::Lane 5 R, Model::Small Ring Road Helper
+	C: "OO",2312509732224,2312058783920
 	
-	;Material::Lane 5 even, Model::Small Ring Road Helper
-	C: "OO",2177567623168,2178147749248
+	;Material::Lane 5 L, Model::Small Ring Road Helper
+	C: "OO",2312509723104,2312058783920
 	
-	;Material::Lane odd Central, Model::Small Ring Road Helper
-	C: "OO",2177567630848,2178147749248
+	;Material::Lane R Central, Model::Small Ring Road Helper
+	C: "OO",2312509725984,2312058783920
 	
-	;Material::Lane even Central, Model::Small Ring Road Helper
-	C: "OO",2177567631808,2178147749248
+	;Material::Lane L Central, Model::Small Ring Road Helper
+	C: "OO",2312509719744,2312058783920
 	
 	;Material::Road Cross, Model::Small Ring Road Helper
-	C: "OO",2177567618848,2178147749248
+	C: "OO",2312509720704,2312058783920
 	
 	;Model::Small Ring Road Helper, DisplayLayer::Roads
-	C: "OO",2178147749248,2177971492288
+	C: "OO",2312058783920,2310826376016
 }

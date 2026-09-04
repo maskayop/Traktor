@@ -7,10 +7,10 @@
             "m_Id": "bb7980f5b5744b48859e2370bbc465cb"
         },
         {
-            "m_Id": "a20574e2bc3e4edeaa753982a40c2218"
+            "m_Id": "35666a20dc5743639cf21b1691053ec3"
         },
         {
-            "m_Id": "a4607afe6f9844438b55815bc3e6e8af"
+            "m_Id": "a20574e2bc3e4edeaa753982a40c2218"
         }
     ],
     "m_Keywords": [],
@@ -111,6 +111,50 @@
     "m_KeepLightingVariants": false,
     "m_DefaultDecalBlending": false,
     "m_DefaultSSAO": false
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "35666a20dc5743639cf21b1691053ec3",
+    "m_Guid": {
+        "m_GuidSerialized": "e0a643bb-0628-4f0e-b008-8f160dc60694"
+    },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
+    "m_Name": "Half-Lane Id",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Half-Lane Id",
+    "m_DefaultReferenceName": "_Half_Lane_Id",
+    "m_OverrideReferenceName": "_HalfLane_Id",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
+    "m_Value": 0.0,
+    "m_FloatType": 2,
+    "m_LiteralFloatMode": false,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    },
+    "m_SliderType": 0,
+    "m_SliderPower": 3.0,
+    "m_EnumType": 0,
+    "m_CSharpEnumString": "",
+    "m_EnumNames": [
+        "Default"
+    ],
+    "m_EnumValues": [
+        0
+    ]
 }
 
 {
@@ -336,50 +380,6 @@
 }
 
 {
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
-    "m_ObjectId": "a4607afe6f9844438b55815bc3e6e8af",
-    "m_Guid": {
-        "m_GuidSerialized": "5e86a7ba-a5a3-4141-9434-9df1f8ff4f3a"
-    },
-    "promotedFromAssetID": "",
-    "promotedFromCategoryName": "",
-    "promotedOrdering": -1,
-    "m_Name": "Is Even Half-Lane",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Is Even Half-Lane",
-    "m_DefaultReferenceName": "_Is_Even_Half_Lane",
-    "m_OverrideReferenceName": "_IsEvenHalfLane",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_PerRendererData": false,
-    "m_customAttributes": [],
-    "m_Value": 0.0,
-    "m_FloatType": 2,
-    "m_LiteralFloatMode": false,
-    "m_RangeValues": {
-        "x": 0.0,
-        "y": 1.0
-    },
-    "m_SliderType": 0,
-    "m_SliderPower": 3.0,
-    "m_EnumType": 0,
-    "m_CSharpEnumString": "",
-    "m_EnumNames": [
-        "Default"
-    ],
-    "m_EnumValues": [
-        0
-    ]
-}
-
-{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.BlockNode",
     "m_ObjectId": "a73d215e797e46439473e21f69ec4a95",
@@ -512,7 +512,7 @@
             "m_Id": "bb7980f5b5744b48859e2370bbc465cb"
         },
         {
-            "m_Id": "a4607afe6f9844438b55815bc3e6e8af"
+            "m_Id": "35666a20dc5743639cf21b1691053ec3"
         },
         {
             "m_Id": "a20574e2bc3e4edeaa753982a40c2218"
