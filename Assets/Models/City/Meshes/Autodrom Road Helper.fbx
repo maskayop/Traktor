@@ -8,11 +8,11 @@ FBXHeaderExtension:  {
 		Version: 1000
 		Year: 2026
 		Month: 9
-		Day: 3
-		Hour: 18
-		Minute: 20
-		Second: 35
-		Millisecond: 31
+		Day: 4
+		Hour: 9
+		Minute: 32
+		Second: 19
+		Millisecond: 368
 	}
 	Creator: "FBX SDK/FBX Plugins version 2020.0.1"
 	SceneInfo: "SceneInfo::GlobalInfo", "UserData" {
@@ -34,13 +34,13 @@ FBXHeaderExtension:  {
 			P: "Original|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "Original|ApplicationName", "KString", "", "", "3ds Max"
 			P: "Original|ApplicationVersion", "KString", "", "", "2021"
-			P: "Original|DateTime_GMT", "DateTime", "", "", "03/09/2026 15:20:35.027"
+			P: "Original|DateTime_GMT", "DateTime", "", "", "04/09/2026 06:32:19.367"
 			P: "Original|FileName", "KString", "", "", "E:\__myProjects\Tractor Simulator\Assets\Models\City\Meshes\Autodrom Road Helper.fbx"
 			P: "LastSaved", "Compound", "", ""
 			P: "LastSaved|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "LastSaved|ApplicationName", "KString", "", "", "3ds Max"
 			P: "LastSaved|ApplicationVersion", "KString", "", "", "2021"
-			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "03/09/2026 15:20:35.027"
+			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "04/09/2026 06:32:19.367"
 			P: "Original|ApplicationActiveProject", "KString", "", "", "C:\Users\maska\Documents\3ds Max 2021"
 			P: "Original|ApplicationNativeFile", "KString", "", "", "E:\__myProjects\Tractor Simulator\Assets\Models\City\City.max"
 		}
@@ -77,7 +77,7 @@ GlobalSettings:  {
 
 Documents:  {
 	Count: 1
-	Document: 1900109319536, "", "Scene" {
+	Document: 2177575496320, "", "Scene" {
 		Properties70:  {
 			P: "SourceObject", "object", "", ""
 			P: "ActiveAnimStackName", "KString", "", "", ""
@@ -97,7 +97,7 @@ References:  {
 
 Definitions:  {
 	Version: 100
-	Count: 21
+	Count: 25
 	ObjectType: "GlobalSettings" {
 		Count: 1
 	}
@@ -193,7 +193,7 @@ Definitions:  {
 		}
 	}
 	ObjectType: "Material" {
-		Count: 9
+		Count: 13
 		PropertyTemplate: "FbxSurfacePhong" {
 			Properties70:  {
 				P: "ShadingModel", "KString", "", "", "Phong"
@@ -238,7 +238,7 @@ Definitions:  {
 ;------------------------------------------------------------------
 
 Objects:  {
-	Geometry: 1900080244224, "Geometry::", "Mesh" {
+	Geometry: 2177837353120, "Geometry::", "Mesh" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.894117647058824,0.83921568627451,0.6
 		}
@@ -350,7 +350,7 @@ Objects:  {
 			MappingInformationType: "ByPolygon"
 			ReferenceInformationType: "IndexToDirect"
 			Materials: *48 {
-				a: 0,0,0,5,5,5,1,1,1,4,4,4,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8
+				a: 0,0,0,5,5,5,1,1,1,4,4,4,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12
 			} 
 		}
 		Layer: 0 {
@@ -381,7 +381,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 1896409259888, "Model::Autodrom Road Helper", "Mesh" {
+	Model: 2178000786672, "Model::Autodrom Road Helper", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "PreRotation", "Vector3D", "Vector", "",-90,-0,0
@@ -397,252 +397,340 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Material: 1900109585584, "Material::Road odd Lane odd", "" {
+	Material: 2177567624608, "Material::Lane 1 odd", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
 		Properties70:  {
 			P: "ShadingModel", "KString", "", "", "phong"
 			P: "EmissiveFactor", "Number", "", "A",0
-			P: "AmbientColor", "Color", "", "A",0.494117647409439,0.105882354080677,0.105882354080677
-			P: "DiffuseColor", "Color", "", "A",0.494117647409439,0.105882354080677,0.105882354080677
+			P: "AmbientColor", "Color", "", "A",0.501960813999176,0.250980406999588,0.250980406999588
+			P: "DiffuseColor", "Color", "", "A",0.501960813999176,0.250980406999588,0.250980406999588
 			P: "TransparentColor", "Color", "", "A",1,1,1
 			P: "SpecularColor", "Color", "", "A",0.899999976158142,0.899999976158142,0.899999976158142
 			P: "SpecularFactor", "Number", "", "A",0
 			P: "ShininessExponent", "Number", "", "A",2
 			P: "Emissive", "Vector3D", "Vector", "",0,0,0
-			P: "Ambient", "Vector3D", "Vector", "",0.494117647409439,0.105882354080677,0.105882354080677
-			P: "Diffuse", "Vector3D", "Vector", "",0.494117647409439,0.105882354080677,0.105882354080677
+			P: "Ambient", "Vector3D", "Vector", "",0.501960813999176,0.250980406999588,0.250980406999588
+			P: "Diffuse", "Vector3D", "Vector", "",0.501960813999176,0.250980406999588,0.250980406999588
 			P: "Specular", "Vector3D", "Vector", "",0,0,0
 			P: "Shininess", "double", "Number", "",2
 			P: "Opacity", "double", "Number", "",1
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 1900109572624, "Material::Road odd Lane even", "" {
+	Material: 2177567618848, "Material::Lane 1 even", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
 		Properties70:  {
 			P: "ShadingModel", "KString", "", "", "phong"
 			P: "EmissiveFactor", "Number", "", "A",0
-			P: "AmbientColor", "Color", "", "A",0.10196078568697,0.517647087574005,0.0941176488995552
-			P: "DiffuseColor", "Color", "", "A",0.10196078568697,0.517647087574005,0.0941176488995552
+			P: "AmbientColor", "Color", "", "A",1,0.470588237047195,0
+			P: "DiffuseColor", "Color", "", "A",1,0.470588237047195,0
 			P: "TransparentColor", "Color", "", "A",1,1,1
 			P: "SpecularColor", "Color", "", "A",0.899999976158142,0.899999976158142,0.899999976158142
 			P: "SpecularFactor", "Number", "", "A",0
 			P: "ShininessExponent", "Number", "", "A",2
 			P: "Emissive", "Vector3D", "Vector", "",0,0,0
-			P: "Ambient", "Vector3D", "Vector", "",0.10196078568697,0.517647087574005,0.0941176488995552
-			P: "Diffuse", "Vector3D", "Vector", "",0.10196078568697,0.517647087574005,0.0941176488995552
+			P: "Ambient", "Vector3D", "Vector", "",1,0.470588237047195,0
+			P: "Diffuse", "Vector3D", "Vector", "",1,0.470588237047195,0
 			P: "Specular", "Vector3D", "Vector", "",0,0,0
 			P: "Shininess", "double", "Number", "",2
 			P: "Opacity", "double", "Number", "",1
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 1900109587024, "Material::Road even Lane odd", "" {
+	Material: 2177567625088, "Material::Lane 2 odd", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
 		Properties70:  {
 			P: "ShadingModel", "KString", "", "", "phong"
 			P: "EmissiveFactor", "Number", "", "A",0
-			P: "AmbientColor", "Color", "", "A",0.517647087574005,0.43529412150383,0.105882354080677
-			P: "DiffuseColor", "Color", "", "A",0.517647087574005,0.43529412150383,0.105882354080677
+			P: "AmbientColor", "Color", "", "A",0.501960813999176,0.486274510622025,0.250980406999588
+			P: "DiffuseColor", "Color", "", "A",0.501960813999176,0.486274510622025,0.250980406999588
 			P: "TransparentColor", "Color", "", "A",1,1,1
 			P: "SpecularColor", "Color", "", "A",0.899999976158142,0.899999976158142,0.899999976158142
 			P: "SpecularFactor", "Number", "", "A",0
 			P: "ShininessExponent", "Number", "", "A",2
 			P: "Emissive", "Vector3D", "Vector", "",0,0,0
-			P: "Ambient", "Vector3D", "Vector", "",0.517647087574005,0.43529412150383,0.105882354080677
-			P: "Diffuse", "Vector3D", "Vector", "",0.517647087574005,0.43529412150383,0.105882354080677
+			P: "Ambient", "Vector3D", "Vector", "",0.501960813999176,0.486274510622025,0.250980406999588
+			P: "Diffuse", "Vector3D", "Vector", "",0.501960813999176,0.486274510622025,0.250980406999588
 			P: "Specular", "Vector3D", "Vector", "",0,0,0
 			P: "Shininess", "double", "Number", "",2
 			P: "Opacity", "double", "Number", "",1
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 1900109580784, "Material::Road even Lane even", "" {
+	Material: 2177567622208, "Material::Lane 2 even", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
 		Properties70:  {
 			P: "ShadingModel", "KString", "", "", "phong"
 			P: "EmissiveFactor", "Number", "", "A",0
-			P: "AmbientColor", "Color", "", "A",0.0941176488995552,0.423529416322708,0.494117647409439
-			P: "DiffuseColor", "Color", "", "A",0.0941176488995552,0.423529416322708,0.494117647409439
+			P: "AmbientColor", "Color", "", "A",0.588235318660736,1,0
+			P: "DiffuseColor", "Color", "", "A",0.588235318660736,1,0
 			P: "TransparentColor", "Color", "", "A",1,1,1
 			P: "SpecularColor", "Color", "", "A",0.899999976158142,0.899999976158142,0.899999976158142
 			P: "SpecularFactor", "Number", "", "A",0
 			P: "ShininessExponent", "Number", "", "A",2
 			P: "Emissive", "Vector3D", "Vector", "",0,0,0
-			P: "Ambient", "Vector3D", "Vector", "",0.0941176488995552,0.423529416322708,0.494117647409439
-			P: "Diffuse", "Vector3D", "Vector", "",0.0941176488995552,0.423529416322708,0.494117647409439
+			P: "Ambient", "Vector3D", "Vector", "",0.588235318660736,1,0
+			P: "Diffuse", "Vector3D", "Vector", "",0.588235318660736,1,0
 			P: "Specular", "Vector3D", "Vector", "",0,0,0
 			P: "Shininess", "double", "Number", "",2
 			P: "Opacity", "double", "Number", "",1
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 1900109570704, "Material::Road odd Lane odd Central", "" {
+	Material: 2177567622688, "Material::Lane 3 odd", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
 		Properties70:  {
 			P: "ShadingModel", "KString", "", "", "phong"
 			P: "EmissiveFactor", "Number", "", "A",0
-			P: "AmbientColor", "Color", "", "A",1,0.329411774873734,0
-			P: "DiffuseColor", "Color", "", "A",1,0.329411774873734,0
+			P: "AmbientColor", "Color", "", "A",0.278431385755539,0.501960813999176,0.250980406999588
+			P: "DiffuseColor", "Color", "", "A",0.278431385755539,0.501960813999176,0.250980406999588
 			P: "TransparentColor", "Color", "", "A",1,1,1
 			P: "SpecularColor", "Color", "", "A",0.899999976158142,0.899999976158142,0.899999976158142
 			P: "SpecularFactor", "Number", "", "A",0
 			P: "ShininessExponent", "Number", "", "A",2
 			P: "Emissive", "Vector3D", "Vector", "",0,0,0
-			P: "Ambient", "Vector3D", "Vector", "",1,0.329411774873734,0
-			P: "Diffuse", "Vector3D", "Vector", "",1,0.329411774873734,0
+			P: "Ambient", "Vector3D", "Vector", "",0.278431385755539,0.501960813999176,0.250980406999588
+			P: "Diffuse", "Vector3D", "Vector", "",0.278431385755539,0.501960813999176,0.250980406999588
 			P: "Specular", "Vector3D", "Vector", "",0,0,0
 			P: "Shininess", "double", "Number", "",2
 			P: "Opacity", "double", "Number", "",1
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 1900109587984, "Material::Road odd Lane even Central", "" {
+	Material: 2177567625568, "Material::Lane 3 even", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
 		Properties70:  {
 			P: "ShadingModel", "KString", "", "", "phong"
 			P: "EmissiveFactor", "Number", "", "A",0
-			P: "AmbientColor", "Color", "", "A",0,1,0.400000005960464
-			P: "DiffuseColor", "Color", "", "A",0,1,0.400000005960464
+			P: "AmbientColor", "Color", "", "A",0,1,0.352941185235977
+			P: "DiffuseColor", "Color", "", "A",0,1,0.352941185235977
 			P: "TransparentColor", "Color", "", "A",1,1,1
 			P: "SpecularColor", "Color", "", "A",0.899999976158142,0.899999976158142,0.899999976158142
 			P: "SpecularFactor", "Number", "", "A",0
 			P: "ShininessExponent", "Number", "", "A",2
 			P: "Emissive", "Vector3D", "Vector", "",0,0,0
-			P: "Ambient", "Vector3D", "Vector", "",0,1,0.400000005960464
-			P: "Diffuse", "Vector3D", "Vector", "",0,1,0.400000005960464
+			P: "Ambient", "Vector3D", "Vector", "",0,1,0.352941185235977
+			P: "Diffuse", "Vector3D", "Vector", "",0,1,0.352941185235977
 			P: "Specular", "Vector3D", "Vector", "",0,0,0
 			P: "Shininess", "double", "Number", "",2
 			P: "Opacity", "double", "Number", "",1
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 1900109572144, "Material::Road even Lane odd Central", "" {
+	Material: 2177567618368, "Material::Lane 4 odd", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
 		Properties70:  {
 			P: "ShadingModel", "KString", "", "", "phong"
 			P: "EmissiveFactor", "Number", "", "A",0
-			P: "AmbientColor", "Color", "", "A",0.941176474094391,1,0
-			P: "DiffuseColor", "Color", "", "A",0.941176474094391,1,0
+			P: "AmbientColor", "Color", "", "A",0.250980406999588,0.501960813999176,0.458823531866074
+			P: "DiffuseColor", "Color", "", "A",0.250980406999588,0.501960813999176,0.458823531866074
 			P: "TransparentColor", "Color", "", "A",1,1,1
 			P: "SpecularColor", "Color", "", "A",0.899999976158142,0.899999976158142,0.899999976158142
 			P: "SpecularFactor", "Number", "", "A",0
 			P: "ShininessExponent", "Number", "", "A",2
 			P: "Emissive", "Vector3D", "Vector", "",0,0,0
-			P: "Ambient", "Vector3D", "Vector", "",0.941176474094391,1,0
-			P: "Diffuse", "Vector3D", "Vector", "",0.941176474094391,1,0
+			P: "Ambient", "Vector3D", "Vector", "",0.250980406999588,0.501960813999176,0.458823531866074
+			P: "Diffuse", "Vector3D", "Vector", "",0.250980406999588,0.501960813999176,0.458823531866074
 			P: "Specular", "Vector3D", "Vector", "",0,0,0
 			P: "Shininess", "double", "Number", "",2
 			P: "Opacity", "double", "Number", "",1
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 1900109588944, "Material::Road even Lane even Central", "" {
+	Material: 2177567613568, "Material::Lane 4 even", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
 		Properties70:  {
 			P: "ShadingModel", "KString", "", "", "phong"
 			P: "EmissiveFactor", "Number", "", "A",0
-			P: "AmbientColor", "Color", "", "A",0.0156862754374743,0.133333340287209,1
-			P: "DiffuseColor", "Color", "", "A",0.0156862754374743,0.133333340287209,1
+			P: "AmbientColor", "Color", "", "A",0,0.705882370471954,1
+			P: "DiffuseColor", "Color", "", "A",0,0.705882370471954,1
 			P: "TransparentColor", "Color", "", "A",1,1,1
 			P: "SpecularColor", "Color", "", "A",0.899999976158142,0.899999976158142,0.899999976158142
 			P: "SpecularFactor", "Number", "", "A",0
 			P: "ShininessExponent", "Number", "", "A",2
 			P: "Emissive", "Vector3D", "Vector", "",0,0,0
-			P: "Ambient", "Vector3D", "Vector", "",0.0156862754374743,0.133333340287209,1
-			P: "Diffuse", "Vector3D", "Vector", "",0.0156862754374743,0.133333340287209,1
+			P: "Ambient", "Vector3D", "Vector", "",0,0.705882370471954,1
+			P: "Diffuse", "Vector3D", "Vector", "",0,0.705882370471954,1
 			P: "Specular", "Vector3D", "Vector", "",0,0,0
 			P: "Shininess", "double", "Number", "",2
 			P: "Opacity", "double", "Number", "",1
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 1900109589424, "Material::Road Cross", "" {
+	Material: 2177567632288, "Material::Lane 5 odd", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
 		Properties70:  {
 			P: "ShadingModel", "KString", "", "", "phong"
 			P: "EmissiveFactor", "Number", "", "A",0
-			P: "AmbientColor", "Color", "", "A",0.635294139385223,0.439215689897537,0.788235306739807
-			P: "DiffuseColor", "Color", "", "A",0.635294139385223,0.439215689897537,0.788235306739807
+			P: "AmbientColor", "Color", "", "A",0.250980406999588,0.309803932905197,0.501960813999176
+			P: "DiffuseColor", "Color", "", "A",0.250980406999588,0.309803932905197,0.501960813999176
 			P: "TransparentColor", "Color", "", "A",1,1,1
 			P: "SpecularColor", "Color", "", "A",0.899999976158142,0.899999976158142,0.899999976158142
 			P: "SpecularFactor", "Number", "", "A",0
 			P: "ShininessExponent", "Number", "", "A",2
 			P: "Emissive", "Vector3D", "Vector", "",0,0,0
-			P: "Ambient", "Vector3D", "Vector", "",0.635294139385223,0.439215689897537,0.788235306739807
-			P: "Diffuse", "Vector3D", "Vector", "",0.635294139385223,0.439215689897537,0.788235306739807
+			P: "Ambient", "Vector3D", "Vector", "",0.250980406999588,0.309803932905197,0.501960813999176
+			P: "Diffuse", "Vector3D", "Vector", "",0.250980406999588,0.309803932905197,0.501960813999176
 			P: "Specular", "Vector3D", "Vector", "",0,0,0
 			P: "Shininess", "double", "Number", "",2
 			P: "Opacity", "double", "Number", "",1
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	CollectionExclusive: 1896525558320, "DisplayLayer::Land", "DisplayLayer" {
+	Material: 2177567620288, "Material::Lane 5 even", "" {
+		Version: 102
+		ShadingModel: "phong"
+		MultiLayer: 0
+		Properties70:  {
+			P: "ShadingModel", "KString", "", "", "phong"
+			P: "EmissiveFactor", "Number", "", "A",0
+			P: "AmbientColor", "Color", "", "A",0.235294118523598,0,1
+			P: "DiffuseColor", "Color", "", "A",0.235294118523598,0,1
+			P: "TransparentColor", "Color", "", "A",1,1,1
+			P: "SpecularColor", "Color", "", "A",0.899999976158142,0.899999976158142,0.899999976158142
+			P: "SpecularFactor", "Number", "", "A",0
+			P: "ShininessExponent", "Number", "", "A",2
+			P: "Emissive", "Vector3D", "Vector", "",0,0,0
+			P: "Ambient", "Vector3D", "Vector", "",0.235294118523598,0,1
+			P: "Diffuse", "Vector3D", "Vector", "",0.235294118523598,0,1
+			P: "Specular", "Vector3D", "Vector", "",0,0,0
+			P: "Shininess", "double", "Number", "",2
+			P: "Opacity", "double", "Number", "",1
+			P: "Reflectivity", "double", "Number", "",0
+		}
+	}
+	Material: 2177567628928, "Material::Lane odd Central", "" {
+		Version: 102
+		ShadingModel: "phong"
+		MultiLayer: 0
+		Properties70:  {
+			P: "ShadingModel", "KString", "", "", "phong"
+			P: "EmissiveFactor", "Number", "", "A",0
+			P: "AmbientColor", "Color", "", "A",0.427450984716415,0.250980406999588,0.501960813999176
+			P: "DiffuseColor", "Color", "", "A",0.427450984716415,0.250980406999588,0.501960813999176
+			P: "TransparentColor", "Color", "", "A",1,1,1
+			P: "SpecularColor", "Color", "", "A",0.899999976158142,0.899999976158142,0.899999976158142
+			P: "SpecularFactor", "Number", "", "A",0
+			P: "ShininessExponent", "Number", "", "A",2
+			P: "Emissive", "Vector3D", "Vector", "",0,0,0
+			P: "Ambient", "Vector3D", "Vector", "",0.427450984716415,0.250980406999588,0.501960813999176
+			P: "Diffuse", "Vector3D", "Vector", "",0.427450984716415,0.250980406999588,0.501960813999176
+			P: "Specular", "Vector3D", "Vector", "",0,0,0
+			P: "Shininess", "double", "Number", "",2
+			P: "Opacity", "double", "Number", "",1
+			P: "Reflectivity", "double", "Number", "",0
+		}
+	}
+	Material: 2177567630848, "Material::Lane even Central", "" {
+		Version: 102
+		ShadingModel: "phong"
+		MultiLayer: 0
+		Properties70:  {
+			P: "ShadingModel", "KString", "", "", "phong"
+			P: "EmissiveFactor", "Number", "", "A",0
+			P: "AmbientColor", "Color", "", "A",1,0,0.823529422283173
+			P: "DiffuseColor", "Color", "", "A",1,0,0.823529422283173
+			P: "TransparentColor", "Color", "", "A",1,1,1
+			P: "SpecularColor", "Color", "", "A",0.899999976158142,0.899999976158142,0.899999976158142
+			P: "SpecularFactor", "Number", "", "A",0
+			P: "ShininessExponent", "Number", "", "A",2
+			P: "Emissive", "Vector3D", "Vector", "",0,0,0
+			P: "Ambient", "Vector3D", "Vector", "",1,0,0.823529422283173
+			P: "Diffuse", "Vector3D", "Vector", "",1,0,0.823529422283173
+			P: "Specular", "Vector3D", "Vector", "",0,0,0
+			P: "Shininess", "double", "Number", "",2
+			P: "Opacity", "double", "Number", "",1
+			P: "Reflectivity", "double", "Number", "",0
+		}
+	}
+	Material: 2177567631808, "Material::Road Cross", "" {
+		Version: 102
+		ShadingModel: "phong"
+		MultiLayer: 0
+		Properties70:  {
+			P: "ShadingModel", "KString", "", "", "phong"
+			P: "EmissiveFactor", "Number", "", "A",0
+			P: "AmbientColor", "Color", "", "A",0.501960813999176,0.501960813999176,0.501960813999176
+			P: "DiffuseColor", "Color", "", "A",0.501960813999176,0.501960813999176,0.501960813999176
+			P: "TransparentColor", "Color", "", "A",1,1,1
+			P: "SpecularColor", "Color", "", "A",0.899999976158142,0.899999976158142,0.899999976158142
+			P: "SpecularFactor", "Number", "", "A",0
+			P: "ShininessExponent", "Number", "", "A",2
+			P: "Emissive", "Vector3D", "Vector", "",0,0,0
+			P: "Ambient", "Vector3D", "Vector", "",0.501960813999176,0.501960813999176,0.501960813999176
+			P: "Diffuse", "Vector3D", "Vector", "",0.501960813999176,0.501960813999176,0.501960813999176
+			P: "Specular", "Vector3D", "Vector", "",0,0,0
+			P: "Shininess", "double", "Number", "",2
+			P: "Opacity", "double", "Number", "",1
+			P: "Reflectivity", "double", "Number", "",0
+		}
+	}
+	CollectionExclusive: 2176872822576, "DisplayLayer::Land", "DisplayLayer" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.768627450980392,0.345098039215686,0.882352941176471
 			P: "Show", "bool", "", "",0
 		}
 	}
-	CollectionExclusive: 1896525560624, "DisplayLayer::Roads", "DisplayLayer" {
+	CollectionExclusive: 2176872818160, "DisplayLayer::Roads", "DisplayLayer" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.894117647058824,0.83921568627451,0.6
 			P: "Show", "bool", "", "",0
 		}
 	}
-	CollectionExclusive: 1896525562928, "DisplayLayer::Roads Splines", "DisplayLayer" {
+	CollectionExclusive: 2176872813168, "DisplayLayer::Roads Splines", "DisplayLayer" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.223529411764706,0.0313725490196078,0.533333333333333
 			P: "Show", "bool", "", "",0
 		}
 	}
-	CollectionExclusive: 1896525563120, "DisplayLayer::_helpers", "DisplayLayer" {
+	CollectionExclusive: 2176872823152, "DisplayLayer::_helpers", "DisplayLayer" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.0235294117647059,0.529411764705882,0.0235294117647059
 			P: "Show", "bool", "", "",0
 		}
 	}
-	CollectionExclusive: 1896525557168, "DisplayLayer::Roads Dimensions", "DisplayLayer" {
+	CollectionExclusive: 2176872823728, "DisplayLayer::Roads Dimensions", "DisplayLayer" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.56078431372549,0.882352941176471,0.341176470588235
 			P: "Show", "bool", "", "",0
 		}
 	}
-	CollectionExclusive: 1896525557936, "DisplayLayer::Big Ring Road dim", "DisplayLayer" {
+	CollectionExclusive: 2176872814896, "DisplayLayer::Big Ring Road dim", "DisplayLayer" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.341176470588235,0.882352941176471,0.341176470588235
 			P: "Show", "bool", "", "",0
 		}
 	}
-	CollectionExclusive: 1896525560240, "DisplayLayer::Main Big Road dim", "DisplayLayer" {
+	CollectionExclusive: 2176872817392, "DisplayLayer::Main Big Road dim", "DisplayLayer" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.529411764705882,0.431372549019608,0.0313725490196078
 			P: "Show", "bool", "", "",0
 		}
 	}
-	CollectionExclusive: 1896525561392, "DisplayLayer::Autodrom", "DisplayLayer" {
+	CollectionExclusive: 2176872821424, "DisplayLayer::Autodrom", "DisplayLayer" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.56078431372549,0.882352941176471,0.341176470588235
 		}
 	}
-	CollectionExclusive: 1896525561968, "DisplayLayer::Autodrom splines", "DisplayLayer" {
+	CollectionExclusive: 2176872819696, "DisplayLayer::Autodrom splines", "DisplayLayer" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.0313725490196078,0.0313725490196078,0.533333333333333
 			P: "Show", "bool", "", "",0
@@ -656,38 +744,50 @@ Objects:  {
 Connections:  {
 	
 	;Model::Autodrom Road Helper, Model::RootNode
-	C: "OO",1896409259888,0
+	C: "OO",2178000786672,0
 	
 	;Geometry::, Model::Autodrom Road Helper
-	C: "OO",1900080244224,1896409259888
+	C: "OO",2177837353120,2178000786672
 	
-	;Material::Road odd Lane odd, Model::Autodrom Road Helper
-	C: "OO",1900109585584,1896409259888
+	;Material::Lane 1 odd, Model::Autodrom Road Helper
+	C: "OO",2177567624608,2178000786672
 	
-	;Material::Road odd Lane even, Model::Autodrom Road Helper
-	C: "OO",1900109572624,1896409259888
+	;Material::Lane 1 even, Model::Autodrom Road Helper
+	C: "OO",2177567618848,2178000786672
 	
-	;Material::Road even Lane odd, Model::Autodrom Road Helper
-	C: "OO",1900109587024,1896409259888
+	;Material::Lane 2 odd, Model::Autodrom Road Helper
+	C: "OO",2177567625088,2178000786672
 	
-	;Material::Road even Lane even, Model::Autodrom Road Helper
-	C: "OO",1900109580784,1896409259888
+	;Material::Lane 2 even, Model::Autodrom Road Helper
+	C: "OO",2177567622208,2178000786672
 	
-	;Material::Road odd Lane odd Central, Model::Autodrom Road Helper
-	C: "OO",1900109570704,1896409259888
+	;Material::Lane 3 odd, Model::Autodrom Road Helper
+	C: "OO",2177567622688,2178000786672
 	
-	;Material::Road odd Lane even Central, Model::Autodrom Road Helper
-	C: "OO",1900109587984,1896409259888
+	;Material::Lane 3 even, Model::Autodrom Road Helper
+	C: "OO",2177567625568,2178000786672
 	
-	;Material::Road even Lane odd Central, Model::Autodrom Road Helper
-	C: "OO",1900109572144,1896409259888
+	;Material::Lane 4 odd, Model::Autodrom Road Helper
+	C: "OO",2177567618368,2178000786672
 	
-	;Material::Road even Lane even Central, Model::Autodrom Road Helper
-	C: "OO",1900109588944,1896409259888
+	;Material::Lane 4 even, Model::Autodrom Road Helper
+	C: "OO",2177567613568,2178000786672
+	
+	;Material::Lane 5 odd, Model::Autodrom Road Helper
+	C: "OO",2177567632288,2178000786672
+	
+	;Material::Lane 5 even, Model::Autodrom Road Helper
+	C: "OO",2177567620288,2178000786672
+	
+	;Material::Lane odd Central, Model::Autodrom Road Helper
+	C: "OO",2177567628928,2178000786672
+	
+	;Material::Lane even Central, Model::Autodrom Road Helper
+	C: "OO",2177567630848,2178000786672
 	
 	;Material::Road Cross, Model::Autodrom Road Helper
-	C: "OO",1900109589424,1896409259888
+	C: "OO",2177567631808,2178000786672
 	
 	;Model::Autodrom Road Helper, DisplayLayer::Autodrom
-	C: "OO",1896409259888,1896525561392
+	C: "OO",2178000786672,2176872821424
 }

@@ -18,13 +18,24 @@ namespace Tractor
         [Header("Визуализация")]
         [SerializeField] bool showDebugRay = true;
 
+        [Header("Частота обновления")]
+        [SerializeField] float updateDelay = 1.0f;
+
         int halfLane = 0;
         int laneNumber = 0;
         string materialName;
 
+        float currentTime = 0;
+
         void Update()
         {
-            DoRaycast();
+            currentTime -= Time.deltaTime;
+
+            if (currentTime < 0)
+            {
+                DoRaycast();
+                currentTime = updateDelay;
+            }
         }
 
         void DoRaycast()
@@ -51,7 +62,7 @@ namespace Tractor
                 }
                 else
                 {
-                    laneNumber = -1;
+                    laneNumber = -9;
                     materialName = "";
                 }
             }
@@ -60,7 +71,7 @@ namespace Tractor
                 if (showDebugRay)
                     Debug.DrawRay(transform.position, Vector3.down * raycastDistance, Color.red);
 
-                laneNumber = -1;
+                laneNumber = -9;
                 materialName = "";
             }
         }

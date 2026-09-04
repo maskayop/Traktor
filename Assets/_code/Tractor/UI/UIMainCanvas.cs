@@ -15,8 +15,13 @@ namespace Tractor
         [SerializeField] TextMeshProUGUI gearboxRangeText;
         [SerializeField] TextMeshProUGUI gearboxGearText;
 
+        [Header("Определитель дороги")]
+        [SerializeField] TextMeshProUGUI roadStatusText;
+        [SerializeField] TextMeshProUGUI directionText;
+
         TractorMain tractorMain;
         TractorGearbox tractorGearbox;
+        RoadDetector roadDetector;
 
         void Awake()
         {
@@ -44,6 +49,7 @@ namespace Tractor
         {
             tractorGearbox = FindAnyObjectByType<TractorGearbox>();
             tractorMain = FindAnyObjectByType<TractorMain>();
+            roadDetector = FindAnyObjectByType<RoadDetector>();
         }
 
         void UpdateTexts()
@@ -60,6 +66,19 @@ namespace Tractor
 
             gearboxRangeText.text = tractorGearbox.currentRange.ToString();
             gearboxGearText.text = tractorGearbox.currentGear.ToString();
+
+            roadStatusText.text = roadDetector.laneStatus;
+
+            if (roadDetector.wrongDirection)
+            {
+                directionText.color = Color.red;
+                directionText.text = "-1";
+            }
+            else
+            {
+                directionText.color = Color.green;
+                directionText.text = "1";
+            }
         }
     }
 }

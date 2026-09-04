@@ -785,6 +785,14 @@ MonoBehaviour:
   - {fileID: 5046453934749939842}
   - {fileID: 4347008353918544447}
   - {fileID: 1597626806077981887}
+  updateDelay: 0.5
+  onRoad: 1
+  wrongDirection: 0
+  onLane: 0
+  onCross: 0
+  laneStatus: 
+  halfLanes: {x: 0, y: 0, z: 0, w: 0}
+  laneNumbers: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &2014435452676515496
 GameObject:
   m_ObjectHideFlags: 0
