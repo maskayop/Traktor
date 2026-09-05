@@ -4,10 +4,6 @@ namespace Tractor
 {
     public class TractorInput : MonoBehaviour
     {
-        [Header("Механизмы")]
-        [SerializeField] TractorMain tractorMain;
-        [SerializeField] TractorGearbox tractorGearbox;
-
         [Header("Руль")]
         [SerializeField] string steerInputName;
         CustomInput steerInput;
@@ -23,6 +19,8 @@ namespace Tractor
         CustomInput clutchInput;
 
         [Header("Передачи")]
+        [SerializeField] string gearNInputName;
+        CustomInput gearN_Input;
         [SerializeField] string gear1InputName;
         CustomInput gear1_Input;
 
@@ -60,6 +58,8 @@ namespace Tractor
         InputController inputController;
         bool overrideInputs = false;
 
+        TractorGearbox tractorGearbox;
+
         void Start()
         {
             inputController = InputController.Instance;
@@ -70,6 +70,7 @@ namespace Tractor
             brakeInput = inputController?.GetInputByName(brakeInputName);
             clutchInput = inputController?.GetInputByName(clutchInputName);
 
+            gearN_Input = inputController?.GetInputByName(gearNInputName);
             gear1_Input = inputController?.GetInputByName(gear1InputName);
             gear2_Input = inputController?.GetInputByName(gear2InputName);
             gear3_Input = inputController?.GetInputByName(gear3InputName);
@@ -81,12 +82,17 @@ namespace Tractor
             range12_Input = inputController?.GetInputByName(range12InputName);
             range34_Input = inputController?.GetInputByName(range34InputName);
             rangeR_Input = inputController?.GetInputByName(rangeRInputName);
+        }
+
+        public void Init(TractorGearbox INtractorGearbox)
+        {
+            if (INtractorGearbox == null)
+                return;
+
+            tractorGearbox = INtractorGearbox;
 
             FindVehicle();
             UseOverrides();
-
-            tractorGearbox.Init(this);
-            tractorMain.Init(this);
         }
 
         void Update()
@@ -143,6 +149,18 @@ namespace Tractor
             if (gear4_Input != null)
                 if (gear4_Input.inputValue != 0)
                     tractorGearbox?.ShiftToGear(gear4_Input.inputValue, 4);
+
+            if (gearN_Input != null)
+            {
+                if (gearN_Input.inputValue != 0)
+                    tractorGearbox?.SetNeutralGear();
+            }
+            else if (gear1_Input != null && gear2_Input != null && gear3_Input != null && gear4_Input != null)
+            {
+                if (gear1_Input.inputValue == 0 && gear2_Input.inputValue == 0 &&
+                    gear3_Input.inputValue == 0 && gear4_Input.inputValue == 0)
+                    tractorGearbox?.SetNeutralGear();
+            }
 
             if (level1_Input != null)
                 if (level1_Input.inputValue != 0)

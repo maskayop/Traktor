@@ -21,6 +21,7 @@ namespace Tractor
         [Header("Модификаторы Передач")]
         [SerializeField] List<float> defaultGearRatios = new List<float>();
         [SerializeField] List<GearModification> gearModifications = new List<GearModification>();
+        [SerializeField] float defaultFinalDrive = 0;
 
         int currentGearModification = 0;
 
@@ -40,9 +41,8 @@ namespace Tractor
             for (int i = 0; i < gearbox.gearRatios.Length; i++)
                 defaultGearRatios[i] = gearbox.gearRatios[i];
 
+            SetNeutralGear();
             ChangeGearLevel(true);
-            gearbox.ShiftToGear(0);
-            currentGear = 1;
             ChangeGearRange(1);
         }
 
@@ -52,10 +52,24 @@ namespace Tractor
             UpdateGearRatios();
 
             if (currentRange < 0)
+            {
+                gearbox.forceToRGear = true;
                 return;
+            }
 
             if (input >= 0.5f)
                 gearbox.ShiftToGear(value - 1);
+        }
+
+        public void SetNeutralGear()
+        {
+            currentGear = 0;
+            gearbox.forceToRGear = false;
+
+            foreach (var d in differentials)
+                d.finalDriveRatio = defaultFinalDrive;
+
+            gearbox.ShiftToN();
         }
 
         public void ChangeGearLevel(bool isFirstLevel)
@@ -120,12 +134,15 @@ namespace Tractor
                 currentGearModification = 0;
             }
 
-            if (currentRange < 0)
-                gearbox.forceToRGear = true;
-            else
+            if (currentGear != 0)
             {
-                gearbox.forceToRGear = false;
-                gearbox.ShiftToGear(currentGear - 1);
+                if (currentRange < 0)
+                    gearbox.forceToRGear = true;
+                else
+                {
+                    gearbox.forceToRGear = false;
+                    gearbox.ShiftToGear(currentGear - 1);
+                }
             }
 
             UpdateGearRatios();
@@ -133,6 +150,9 @@ namespace Tractor
 
         void UpdateGearRatios()
         {
+            if (currentGear == 0)
+                return;
+
             float mSpeed = gearModifications[currentGearModification].maxSpeed;
 
             if (mSpeed < 0)

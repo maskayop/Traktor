@@ -65,7 +65,11 @@ namespace Tractor
                 gearboxLevelText.text = "2";
 
             gearboxRangeText.text = tractorGearbox.currentRange.ToString();
-            gearboxGearText.text = tractorGearbox.currentGear.ToString();
+
+            if (tractorGearbox.currentGear == 0)
+                gearboxGearText.text = "N";
+            else
+                gearboxGearText.text = tractorGearbox.currentGear.ToString();
 
             roadStatusText.text = roadDetector.laneStatus;
 

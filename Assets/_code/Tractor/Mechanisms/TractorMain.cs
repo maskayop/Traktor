@@ -4,9 +4,25 @@ namespace Tractor
 {
     public class TractorMain : MonoBehaviour
     {
+        [Header("Механизмы")]
+        [SerializeField] TractorInput tractorInput;
+        [SerializeField] TractorGearbox tractorGearbox;
+        [SerializeField] TractorEngine tractorEngine;
+
+
+        [Header("Инфо")]
         public float speed;
 
         RCCP_CarController carController;
+
+        void Start()
+        {
+            tractorInput.Init(tractorGearbox);
+            tractorGearbox.Init(tractorInput);
+            tractorEngine.Init(tractorInput, tractorGearbox);
+
+            carController = tractorInput.RCCP_Vehicle;
+        }
 
         void Update()
         {
@@ -14,14 +30,6 @@ namespace Tractor
                 return;
 
             speed = carController.speed;
-        }
-
-        public void Init(TractorInput tractorInput)
-        {
-            if (!tractorInput)
-                return;
-
-            carController = tractorInput.RCCP_Vehicle;
         }
     }
 }

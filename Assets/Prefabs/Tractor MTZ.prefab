@@ -58,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 260467337402860945}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7207031, y: 0.7883943, z: -1.0217285}
+  m_LocalPosition: {x: 0.7207031, y: 0.78839433, z: -1.0217285}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -176,7 +176,7 @@ Transform:
   m_GameObject: {fileID: 833967582947079785}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.77563477, y: 0.54032904, z: 1.3977051}
+  m_LocalPosition: {x: -0.77563477, y: 0.5403291, z: 1.3977051}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -319,7 +319,7 @@ MonoBehaviour:
   engineRPM: 0
   minEngineRPM: 800
   maxEngineRPM: 2200
-  engineAccelerationRate: 0.25
+  engineAccelerationRate: 0.5
   enableDynamicAcceleration: 0
   engineCouplingToWheelsRate: 0.5
   engineDecelerationRate: 0.5
@@ -529,9 +529,10 @@ GameObject:
   - component: {fileID: 6657069847412001070}
   - component: {fileID: 2784218650116032355}
   - component: {fileID: 2903280411406403512}
-  - component: {fileID: 6909384308401504491}
   - component: {fileID: 4245159035061371396}
+  - component: {fileID: 6909384308401504491}
   - component: {fileID: 5510360152096047968}
+  - component: {fileID: 683907502795099115}
   - component: {fileID: 3385472217592471738}
   m_Layer: 8
   m_Name: Tractor MTZ
@@ -665,33 +666,6 @@ MonoBehaviour:
   indicatorsLeftLights: 0
   indicatorsRightLights: 0
   indicatorsAllLights: 0
---- !u!114 &6909384308401504491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1813409246852421867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7d1d5513b5e1fc4da128ea9b80a7690, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Tractor.TractorInput
-  tractorMain: {fileID: 4245159035061371396}
-  tractorGearbox: {fileID: 5510360152096047968}
-  steerInputName: Steering Wheel
-  throttleInputName: Accelerator
-  brakeInputName: Brake
-  clutchInputName: Clutch
-  gear1InputName: Gear 1
-  gear2InputName: Gear 2
-  gear3InputName: Gear 3
-  gear4InputName: Gear 4
-  level1InputName: Gear Level I
-  level2InputName: Gear Level II
-  range12InputName: Gear Range 1/2
-  range34InputName: Gear Range 3/4
-  rangeRInputName: Gear Range 1/2R
 --- !u!114 &4245159035061371396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -704,7 +678,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdec6b750e9fd1840ac42719f73aa863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.TractorMain
+  tractorInput: {fileID: 6909384308401504491}
+  tractorGearbox: {fileID: 5510360152096047968}
+  tractorEngine: {fileID: 683907502795099115}
   speed: 0
+--- !u!114 &6909384308401504491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813409246852421867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7d1d5513b5e1fc4da128ea9b80a7690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tractor.TractorInput
+  steerInputName: Steering Wheel
+  throttleInputName: Accelerator
+  brakeInputName: Brake
+  clutchInputName: Clutch
+  gearNInputName: Gear N
+  gear1InputName: Gear 1
+  gear2InputName: Gear 2
+  gear3InputName: Gear 3
+  gear4InputName: Gear 4
+  level1InputName: Gear Level I
+  level2InputName: Gear Level II
+  range12InputName: Gear Range 1/2
+  range34InputName: Gear Range 3/4
+  rangeRInputName: Gear Range 1/2R
 --- !u!114 &5510360152096047968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -768,6 +771,23 @@ MonoBehaviour:
     - 40
     - 28.5
     - 20.7
+  defaultFinalDrive: 35
+--- !u!114 &683907502795099115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813409246852421867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3029e064c09636b44b922d35a1ac05e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tractor.TractorEngine
+  neutralAccelerationRate: 1
+  driveAccelerationRate: 0.25
+  engine: {fileID: 0}
+  tractorGearbox: {fileID: 0}
 --- !u!114 &3385472217592471738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1713,7 +1733,7 @@ Transform:
   m_GameObject: {fileID: 5266074535454211200}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.71240234, y: 0.7883943, z: -1.0217285}
+  m_LocalPosition: {x: -0.71240234, y: 0.78839433, z: -1.0217285}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
