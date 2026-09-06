@@ -5,9 +5,9 @@ namespace Tractor
     public class TractorMain : MonoBehaviour
     {
         [Header("Механизмы")]
-        [SerializeField] TractorInput tractorInput;
-        [SerializeField] TractorGearbox tractorGearbox;
-        [SerializeField] TractorEngine tractorEngine;
+        public TractorInput tractorInput;
+        public TractorGearbox tractorGearbox;
+        public TractorEngine tractorEngine;
 
 
         [Header("Инфо")]
@@ -17,7 +17,7 @@ namespace Tractor
 
         void Start()
         {
-            tractorInput.Init(tractorGearbox);
+            tractorInput.Init(tractorGearbox, tractorEngine);
             tractorGearbox.Init(tractorInput);
             tractorEngine.Init(tractorInput, tractorGearbox);
 

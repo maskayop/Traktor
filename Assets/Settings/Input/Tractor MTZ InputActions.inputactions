@@ -43,6 +43,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Gear N",
+                    "type": "Button",
+                    "id": "e54c36bd-7b0e-4554-aa80-6685586ce61f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Gear Level I",
                     "type": "Button",
                     "id": "3432a779-3746-45c9-8625-b9324961682b",
@@ -259,9 +268,45 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Starter On",
+                    "type": "Button",
+                    "id": "56458e98-f3ef-474b-9955-e5d40c48c55b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Starter Off",
+                    "type": "Button",
+                    "id": "a0e73428-5a49-4343-b8cc-fa63b0255a1b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Mass",
                     "type": "Button",
                     "id": "8021c64d-b324-41fa-a900-d2d159b65310",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Mass On",
+                    "type": "Button",
+                    "id": "7557400d-0962-46b1-ab9e-dbef54b64e2c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Mass Off",
+                    "type": "Button",
+                    "id": "90ceb8e4-e8d5-4717-b1d7-ad09f417ae43",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -462,6 +507,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Gear 4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "182f4a9f-55e8-4b6c-8e9e-4542330c26cc",
+                    "path": "<Keyboard>/backquote",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear N",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -775,12 +831,45 @@
                 },
                 {
                     "name": "",
+                    "id": "7fd4c22a-4028-4e48-8cdf-ce4aec32d978",
+                    "path": "<Keyboard>/m",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ignition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d78c5d13-5e4f-487e-b53f-36b5b83cd458",
                     "path": "<HID::Arduino LLC Arduino Leonardo>/button19",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Starter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c724bbbe-f485-4ba5-b956-32160eb7d70f",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Starter On",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d9a4e1c0-ba25-4e6e-97ca-c2935100de1f",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Starter Off",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -794,6 +883,72 @@
                     "action": "Mass",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bc09a1dd-446b-470c-a99f-dc765555367f",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mass On",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "b32e4a9b-417d-4187-a67a-306efd1d7159",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mass On",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "positive",
+                    "id": "25fa7277-2f00-40d5-8c67-1f63f2a9d1e6",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button20",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mass On",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "c4a99eed-a4bc-4720-b717-8a4a4ae571ba",
+                    "path": "<Keyboard>/u",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mass Off",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "0e863a93-c425-4fc4-8c8a-fc673a7557d6",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mass Off",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Negative",
+                    "id": "1357c8fd-4ae7-484d-b48a-e19ce023d721",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button20",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mass Off",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 },
                 {
                     "name": "",
@@ -1072,7 +1227,7 @@
                     "name": "Start/Stop Engine",
                     "type": "Button",
                     "id": "665ce79b-380f-460c-954c-a66e8d7f6868",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "Press",
                     "initialStateCheck": false
@@ -1081,7 +1236,7 @@
                     "name": "Low Beam Lights",
                     "type": "Button",
                     "id": "372f474d-e084-434c-8671-5dde678119fc",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "Press",
                     "initialStateCheck": false

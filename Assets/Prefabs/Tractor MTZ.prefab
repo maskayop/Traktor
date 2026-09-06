@@ -311,10 +311,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2f0c9985a5bdb4ea7e1096e48b725d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RCCP_Engine
-  completeSetup: 0
+  completeSetup: 1
   checkedSetup: 0
   overrideEngineRPM: 0
-  engineRunning: 1
+  engineRunning: 0
   engineStarting: 0
   engineRPM: 0
   minEngineRPM: 800
@@ -327,63 +327,54 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 800
-      value: 0.38
-      inSlope: 0.00008571429
-      outSlope: 0.00008571429
+      time: 500
+      value: 0.01
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 2200
-      value: 0.5
-      inSlope: 0.00048730156
-      outSlope: 0.00048730156
+      time: 800
+      value: 0.3
+      inSlope: 0.0015214146
+      outSlope: 0.0015214146
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.17130147
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 2560
-      value: 0.82
-      inSlope: 0.00044444442
-      outSlope: 0.00044444442
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 3190
-      value: 0.82
-      inSlope: 0.00011111111
-      outSlope: 0.00011111111
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 4000
+      time: 1600
       value: 1
-      inSlope: 0.00022222222
-      outSlope: 0.00022222222
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 2200
+      value: 0.75
+      inSlope: -0.00041666668
+      outSlope: -0.00041666668
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  autoCreateNMCurve: 1
+  autoCreateNMCurve: 0
   maximumTorqueAsNM: 500
-  peakRPM: 4000
+  peakRPM: 1600
   engineRevLimiter: 1
   cutFuel: 0
   revLimiterCutFrequency: 15
   launchControlEnabled: 0
-  launchControlRPM: 4500
+  launchControlRPM: 1200
   launchControlMaxSpeed: 5
-  launchControlMinThrottle: 0.75
+  launchControlMinThrottle: 0.5
   launchControlActive: 0
   turboCharged: 0
   turboChargePsi: 0
@@ -391,7 +382,7 @@ MonoBehaviour:
   turboChargerCoEfficient: 1.25
   turboBlowOut: 0
   engineFriction: 0.2
-  engineInertia: 0.2
+  engineInertia: 0.1
   engineLoad: 0
   producedTorqueAsNM: 0
   fuelInput: 0
@@ -410,7 +401,7 @@ MonoBehaviour:
   engineBrakingMinRPMFactor: 0.15
   engineBrakingThrottleCutoff: 0.05
   overRevEngineBrakingMultiplier: 2.5
-  autoCalculateDifferentialRatio: 1
+  autoCalculateDifferentialRatio: 0
   maximumSpeed: 40
   maximumSpeed_Old: 240
   outputEvent:
@@ -567,7 +558,6 @@ Transform:
   - {fileID: 6669516753013425299}
   - {fileID: 1059401326626620825}
   - {fileID: 8338027592731791850}
-  - {fileID: 7350855852772252492}
   - {fileID: 5732157765574417704}
   - {fileID: 2554465729203045569}
   m_Father: {fileID: 0}
@@ -708,6 +698,13 @@ MonoBehaviour:
   range12InputName: Gear Range 1/2
   range34InputName: Gear Range 3/4
   rangeRInputName: Gear Range 1/2R
+  massInputName: Mass
+  massOnInputName: Mass On
+  massOffInputName: Mass Off
+  starterInputName: Starter
+  starterOnInputName: Starter On
+  starterOffInputName: Starter Off
+  ignitionInputName: Ignition
 --- !u!114 &5510360152096047968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -786,8 +783,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.TractorEngine
   neutralAccelerationRate: 1
   driveAccelerationRate: 0.25
-  engine: {fileID: 0}
-  tractorGearbox: {fileID: 0}
 --- !u!114 &3385472217592471738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1267,9 +1262,9 @@ MonoBehaviour:
   poweredAxles: []
   steeringAxles: []
   brakedAxles: []
-  ABS: 1
-  ESP: 1
-  TCS: 1
+  ABS: 0
+  ESP: 0
+  TCS: 0
   engageABSThreshold: 0.5
   espDeadband: 6
   espMode: 1
@@ -1302,7 +1297,7 @@ MonoBehaviour:
   debugActiveWheelIndex: -1
   debugIsOversteer: 0
   steeringHelper: 1
-  tractionHelper: 1
+  tractionHelper: 0
   angularDragHelper: 1
   driftAngleLimiter: 0
   maxDriftAngle: 30
@@ -2181,7 +2176,7 @@ MonoBehaviour:
   forceToPressClutch: 0
   pressClutchWhileShiftingGears: 1
   pressClutchWhileHandbraking: 1
-  engageRPM: 1200
+  engageRPM: 1000
   receivedTorqueAsNM: 0
   producedTorqueAsNM: 0
   outputEvent:
@@ -2721,7 +2716,7 @@ MonoBehaviour:
   cruiseTargetSpeed: 80
   cruiseThrottleGain: 0.25
   applyBrakeOnDisable: 0
-  applyHandBrakeOnDisable: 1
+  applyHandBrakeOnDisable: 0
   steeringDeadzone: 0.05
   throttleDeadzone: 0.05
   brakeDeadzone: 0.05
@@ -5496,72 +5491,6 @@ MonoBehaviour:
     useDeadzone: 0
     deadzone: 0.05
     inputValue: 0
---- !u!1001 &8840774935709860553
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 6657069847412001070}
-    m_Modifications:
-    - target: {fileID: 2068209431769684357, guid: e808cb24211d4054ea06d0218a37cb6f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2068209431769684357, guid: e808cb24211d4054ea06d0218a37cb6f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2068209431769684357, guid: e808cb24211d4054ea06d0218a37cb6f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2068209431769684357, guid: e808cb24211d4054ea06d0218a37cb6f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2068209431769684357, guid: e808cb24211d4054ea06d0218a37cb6f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2068209431769684357, guid: e808cb24211d4054ea06d0218a37cb6f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2068209431769684357, guid: e808cb24211d4054ea06d0218a37cb6f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2068209431769684357, guid: e808cb24211d4054ea06d0218a37cb6f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2068209431769684357, guid: e808cb24211d4054ea06d0218a37cb6f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2068209431769684357, guid: e808cb24211d4054ea06d0218a37cb6f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8947751958052508853, guid: e808cb24211d4054ea06d0218a37cb6f, type: 3}
-      propertyPath: m_Name
-      value: Tractor Reflection Probe
-      objectReference: {fileID: 0}
-    - target: {fileID: 8947751958052508853, guid: e808cb24211d4054ea06d0218a37cb6f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e808cb24211d4054ea06d0218a37cb6f, type: 3}
---- !u!4 &7350855852772252492 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2068209431769684357, guid: e808cb24211d4054ea06d0218a37cb6f, type: 3}
-  m_PrefabInstance: {fileID: 8840774935709860553}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8954041385663936506
 PrefabInstance:
   m_ObjectHideFlags: 0

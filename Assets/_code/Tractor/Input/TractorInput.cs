@@ -50,6 +50,28 @@ namespace Tractor
         [SerializeField] string rangeRInputName;
         CustomInput rangeR_Input;
 
+        [Header("Зажигание")]
+        [SerializeField] string massInputName;
+        CustomInput mass_Input;
+
+        [SerializeField] string massOnInputName;
+        CustomInput massOn_Input;
+
+        [SerializeField] string massOffInputName;
+        CustomInput massOff_Input;
+
+        [SerializeField] string starterInputName;
+        CustomInput starter_Input;
+
+        [SerializeField] string starterOnInputName;
+        CustomInput starterOn_Input;
+
+        [SerializeField] string starterOffInputName;
+        CustomInput starterOff_Input;
+
+        [SerializeField] string ignitionInputName;
+        CustomInput ignition_Input;
+
         RCCP_CarController vehicle;
         public RCCP_CarController RCCP_Vehicle { get { return vehicle; } }
 
@@ -59,6 +81,7 @@ namespace Tractor
         bool overrideInputs = false;
 
         TractorGearbox tractorGearbox;
+        TractorEngine tractorEngine;
 
         void Start()
         {
@@ -82,14 +105,23 @@ namespace Tractor
             range12_Input = inputController?.GetInputByName(range12InputName);
             range34_Input = inputController?.GetInputByName(range34InputName);
             rangeR_Input = inputController?.GetInputByName(rangeRInputName);
+
+            mass_Input = inputController?.GetInputByName(massInputName);
+            massOn_Input = inputController?.GetInputByName(massOnInputName);
+            massOff_Input = inputController?.GetInputByName(massOffInputName);
+            starter_Input = inputController?.GetInputByName(starterInputName);
+            starterOn_Input = inputController?.GetInputByName(starterOnInputName);
+            starterOff_Input = inputController?.GetInputByName(starterOffInputName);
+            ignition_Input = inputController?.GetInputByName(ignitionInputName);
         }
 
-        public void Init(TractorGearbox INtractorGearbox)
+        public void Init(TractorGearbox INtractorGearbox, TractorEngine INtractorEngine)
         {
-            if (INtractorGearbox == null)
+            if (INtractorGearbox == null || INtractorEngine == null)
                 return;
 
             tractorGearbox = INtractorGearbox;
+            tractorEngine = INtractorEngine;
 
             FindVehicle();
             UseOverrides();
@@ -181,6 +213,30 @@ namespace Tractor
             if (rangeR_Input != null)
                 if (rangeR_Input.inputValue != 0)
                     tractorGearbox?.ChangeGearRange(-1);
+
+            if (massOn_Input != null)
+                if (massOn_Input.inputValue != 0)
+                    tractorEngine.MassTurnOn();
+
+            if (massOff_Input != null)
+                if (massOff_Input.inputValue != 0)
+                    tractorEngine.MassTurnOff();
+
+            if (starterOn_Input != null)
+                if (starterOn_Input.inputValue != 0)
+                    tractorEngine.Starter = true;
+
+            if (starterOff_Input != null)
+                if (starterOff_Input.inputValue != 0)
+                    tractorEngine.StarterOff();
+
+            if (ignition_Input != null)
+            {
+                if (ignition_Input.inputValue != 0)
+                    tractorEngine.StarterOn();
+                else
+                    tractorEngine.Ignition = false;
+            }
         }
 
         public void UseOverrides()

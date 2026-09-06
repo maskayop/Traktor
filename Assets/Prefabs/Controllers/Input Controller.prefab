@@ -164,7 +164,23 @@ MonoBehaviour:
     useDeadzone: 0
     deadzone: 0
     inputValue: 0
+  - inputName: Starter On
+    useDeadzone: 0
+    deadzone: 0
+    inputValue: 0
+  - inputName: Starter Off
+    useDeadzone: 0
+    deadzone: 0
+    inputValue: 0
   - inputName: Mass
+    useDeadzone: 0
+    deadzone: 0
+    inputValue: 0
+  - inputName: Mass On
+    useDeadzone: 0
+    deadzone: 0
+    inputValue: 0
+  - inputName: Mass Off
     useDeadzone: 0
     deadzone: 0
     inputValue: 0

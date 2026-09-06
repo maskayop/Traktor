@@ -7,7 +7,7 @@ namespace Tractor
     {
         public static UIMainCanvas Instance;
 
-        [Header("Трактор")]
+        [Header("Основное")]
         [SerializeField] TextMeshProUGUI speedText;
 
         [Header("Коробка передач")]
@@ -15,12 +15,18 @@ namespace Tractor
         [SerializeField] TextMeshProUGUI gearboxRangeText;
         [SerializeField] TextMeshProUGUI gearboxGearText;
 
+        [Header("Зажигание")]
+        [SerializeField] TextMeshProUGUI massText;
+        [SerializeField] TextMeshProUGUI starterText;
+        [SerializeField] TextMeshProUGUI ignitionText;
+
         [Header("Определитель дороги")]
         [SerializeField] TextMeshProUGUI roadStatusText;
         [SerializeField] TextMeshProUGUI directionText;
 
         TractorMain tractorMain;
         TractorGearbox tractorGearbox;
+        TractorEngine tractorEngine;
         RoadDetector roadDetector;
 
         void Awake()
@@ -47,18 +53,22 @@ namespace Tractor
 
         public void Init()
         {
-            tractorGearbox = FindAnyObjectByType<TractorGearbox>();
             tractorMain = FindAnyObjectByType<TractorMain>();
+            tractorGearbox = tractorMain.tractorGearbox;
+            tractorEngine = tractorMain.tractorEngine;
+
             roadDetector = FindAnyObjectByType<RoadDetector>();
         }
 
         void UpdateTexts()
         {
-            if (!tractorGearbox || !tractorMain)
+            if (!tractorGearbox || !tractorMain || !tractorEngine)
                 return;
 
+            //Основное
             speedText.text = tractorMain.speed.ToString("F2");
 
+            //Коробка передач
             if (tractorGearbox.isGearLevel1)
                 gearboxLevelText.text = "1";
             else
@@ -71,6 +81,17 @@ namespace Tractor
             else
                 gearboxGearText.text = tractorGearbox.currentGear.ToString();
 
+            //Зажигание
+            massText.text = tractorEngine.Mass.ToString();
+            ColorBoolText(massText, tractorEngine.Mass);
+
+            starterText.text = tractorEngine.Starter.ToString();
+            ColorBoolText(starterText, tractorEngine.Starter);
+
+            ignitionText.text = tractorEngine.Ignition.ToString();
+            ColorBoolText(ignitionText, tractorEngine.Ignition);
+
+            //Определитель дороги
             roadStatusText.text = roadDetector.laneStatus;
 
             if (roadDetector.wrongDirection)
@@ -83,6 +104,14 @@ namespace Tractor
                 directionText.color = Color.green;
                 directionText.text = "1";
             }
+        }
+
+        void ColorBoolText(TextMeshProUGUI INtext, bool value)
+        {
+            if (value)
+                INtext.color = Color.green;
+            else
+                INtext.color = Color.red;
         }
     }
 }
