@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1516057731949428924, guid: 9a59d90537df61744a4c09dd02fa8dad, type: 3}
       propertyPath: m_ForceMeshLod
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7156129480023273810, guid: 9a59d90537df61744a4c09dd02fa8dad, type: 3}
       propertyPath: m_CastShadows

@@ -164,7 +164,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e8d4bd2ea650acb4a954dab70ede4a82, type: 2}
     - target: {fileID: 8649943633771727955, guid: 59898002582ae8f4ea31bcedb7f9e004, type: 3}
       propertyPath: m_ForceMeshLod
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
