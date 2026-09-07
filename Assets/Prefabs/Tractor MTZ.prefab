@@ -672,6 +672,8 @@ MonoBehaviour:
   tractorGearbox: {fileID: 5510360152096047968}
   tractorEngine: {fileID: 683907502795099115}
   speed: 0
+  RPM: 0
+  isHandbrake: 0
 --- !u!114 &6909384308401504491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -688,6 +690,7 @@ MonoBehaviour:
   throttleInputName: Accelerator
   brakeInputName: Brake
   clutchInputName: Clutch
+  handbrakeInputName: Handbrake
   gearNInputName: Gear N
   gear1InputName: Gear 1
   gear2InputName: Gear 2
@@ -960,7 +963,7 @@ MonoBehaviour:
   isHandbrake: 0
   powerMultiplier: 1
   steerMultiplier: 1
-  brakeMultiplier: 1
+  brakeMultiplier: 0.5
   handbrakeMultiplier: 1
   throttleInput: 0
   brakeInput: 0
@@ -2301,7 +2304,7 @@ MonoBehaviour:
   isHandbrake: 1
   powerMultiplier: 1
   steerMultiplier: 1
-  brakeMultiplier: 0.65
+  brakeMultiplier: 0.1
   handbrakeMultiplier: 1
   throttleInput: 0
   brakeInput: 0
@@ -2310,7 +2313,7 @@ MonoBehaviour:
   steerAngle: 0
   steerSpeed: 1
   isGrounded: 0
-  maxBrakeTorque: 5000
+  maxBrakeTorque: 100000
   maxSteerAngle: 40
   tractionHelpedSidewaysStiffness: 1
   producedMotorTorqueNM_Left: 0
@@ -2704,8 +2707,8 @@ MonoBehaviour:
   steeringLimiter: 1
   counterSteering: 1
   counterSteerFactor: 0.5
-  autoReverse: 1
-  inverseThrottleBrakeOnReverse: 1
+  autoReverse: 0
+  inverseThrottleBrakeOnReverse: 0
   cutThrottleWhenShifting: 1
   hillStartAssist: 0
   hillStartMinSlope: 2

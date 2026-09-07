@@ -18,6 +18,10 @@ namespace Tractor
         [SerializeField] string clutchInputName;
         CustomInput clutchInput;
 
+        [Header("Ручник")]
+        [SerializeField] string handbrakeInputName;
+        CustomInput handbrakeInput;
+
         [Header("Передачи")]
         [SerializeField] string gearNInputName;
         CustomInput gearN_Input;
@@ -80,6 +84,7 @@ namespace Tractor
         InputController inputController;
         bool overrideInputs = false;
 
+        TractorMain tractorMain;
         TractorGearbox tractorGearbox;
         TractorEngine tractorEngine;
 
@@ -92,6 +97,7 @@ namespace Tractor
             throttleInput = inputController?.GetInputByName(throttleInputName);
             brakeInput = inputController?.GetInputByName(brakeInputName);
             clutchInput = inputController?.GetInputByName(clutchInputName);
+            handbrakeInput = inputController?.GetInputByName(handbrakeInputName);
 
             gearN_Input = inputController?.GetInputByName(gearNInputName);
             gear1_Input = inputController?.GetInputByName(gear1InputName);
@@ -115,11 +121,12 @@ namespace Tractor
             ignition_Input = inputController?.GetInputByName(ignitionInputName);
         }
 
-        public void Init(TractorGearbox INtractorGearbox, TractorEngine INtractorEngine)
+        public void Init(TractorMain INtractorMain, TractorGearbox INtractorGearbox, TractorEngine INtractorEngine)
         {
-            if (INtractorGearbox == null || INtractorEngine == null)
+            if (INtractorMain == null || INtractorGearbox == null || INtractorEngine == null)
                 return;
 
+            tractorMain = INtractorMain;
             tractorGearbox = INtractorGearbox;
             tractorEngine = INtractorEngine;
 
@@ -165,6 +172,14 @@ namespace Tractor
 
             if (clutchInput != null)
                 vehicleInput.inputs.clutchInput = clutchInput.inputValue;
+
+            if (handbrakeInput != null)
+            {
+                if (handbrakeInput.inputValue != 0)
+                    tractorMain.SetHandbrake(true);
+                else
+                    tractorMain.SetHandbrake(false);
+            }
 
             if (gear1_Input != null)
                 if (gear1_Input.inputValue != 0)
