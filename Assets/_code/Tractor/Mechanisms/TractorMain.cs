@@ -12,6 +12,7 @@ namespace Tractor
 
         [Header("Инфо")]
         public float speed;
+        public float RPM;
 
         RCCP_CarController carController;
 
@@ -30,6 +31,7 @@ namespace Tractor
                 return;
 
             speed = carController.speed;
+            RPM = carController.engineRPM;
         }
     }
 }

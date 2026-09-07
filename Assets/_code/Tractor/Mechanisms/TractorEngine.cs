@@ -24,6 +24,15 @@ namespace Tractor
             if (engine == null)
                 return;
 
+            if (engine.engineRunning || engine.engineStarting)
+            {
+                if (mass == false || starter == false)
+                {
+                    engine.StopEngine();
+                    return;
+                }
+            }
+
             if (tractorGearbox.currentGear == 0)
                 engine.engineAccelerationRate = neutralAccelerationRate;
             else

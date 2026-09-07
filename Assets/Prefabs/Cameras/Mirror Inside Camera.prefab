@@ -9,6 +9,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 62808825224277412, guid: 574ab65ba5bfcce4da60e17edaee3839, type: 3}
+      propertyPath: field of view
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 62808825224277412, guid: 574ab65ba5bfcce4da60e17edaee3839, type: 3}
+      propertyPath: far clip plane
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 62808825224277412, guid: 574ab65ba5bfcce4da60e17edaee3839, type: 3}
       propertyPath: m_TargetTexture
       value: 
       objectReference: {fileID: 8400000, guid: fe26c48dcb41fa94ba3c1243f7096d38, type: 2}

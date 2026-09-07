@@ -337,7 +337,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 800
-      value: 0.3
+      value: 0.2
       inSlope: 0.0015214146
       outSlope: 0.0015214146
       tangentMode: 0
@@ -382,7 +382,7 @@ MonoBehaviour:
   turboChargerCoEfficient: 1.25
   turboBlowOut: 0
   engineFriction: 0.2
-  engineInertia: 0.1
+  engineInertia: 0.2
   engineLoad: 0
   producedTorqueAsNM: 0
   fuelInput: 0
@@ -2176,7 +2176,7 @@ MonoBehaviour:
   forceToPressClutch: 0
   pressClutchWhileShiftingGears: 1
   pressClutchWhileHandbraking: 1
-  engageRPM: 1000
+  engageRPM: 900
   receivedTorqueAsNM: 0
   producedTorqueAsNM: 0
   outputEvent:

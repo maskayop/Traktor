@@ -9,6 +9,7 @@ namespace Tractor
 
         [Header("Основное")]
         [SerializeField] TextMeshProUGUI speedText;
+        [SerializeField] TextMeshProUGUI RPMText;
 
         [Header("Коробка передач")]
         [SerializeField] TextMeshProUGUI gearboxLevelText;
@@ -67,6 +68,7 @@ namespace Tractor
 
             //Основное
             speedText.text = tractorMain.speed.ToString("F2");
+            RPMText.text = tractorMain.RPM.ToString("F0");
 
             //Коробка передач
             if (tractorGearbox.isGearLevel1)
