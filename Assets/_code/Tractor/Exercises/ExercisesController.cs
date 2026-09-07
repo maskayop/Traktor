@@ -1,0 +1,64 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Tractor
+{
+    public class ExercisesController : MonoBehaviour
+    {
+        public static ExercisesController Instance;
+
+        public List<Exercise> exercises = new List<Exercise>();
+
+        Exercise currentExercise;
+        ExerciseStep currentExerciseStep;
+        int currentStep;
+
+        void Awake()
+        {
+            if (Instance != null)
+            {
+                Debug.LogWarning("Cannot create ExercisesController");
+                Destroy(gameObject);
+                return;
+            }
+
+            Instance = this;
+        }
+
+        void Start()
+        {
+            Init();
+        }
+
+        public void Init()
+        {
+            exercises.Clear();
+        }
+
+        public void AddExercise(Exercise exercise)
+        {
+            for (int i = 0; i <= exercise.id; i++)
+            {
+                if (exercises.Count < exercise.id)
+                    exercises.Add(null);
+            }
+
+            exercises[exercise.id - 1] = exercise;
+        }
+
+        public void SelectExercise(Exercise exercise)
+        {
+            currentExercise = exercise;
+        }
+
+        public void StartExercise()
+        {
+            currentStep = 0;
+        }
+
+        public void NextSTep()
+        {
+            currentStep++;
+        }
+    }
+}

@@ -56,6 +56,10 @@ namespace Tractor
         public void Init()
         {
             tractorMain = FindAnyObjectByType<TractorMain>();
+
+            if (!tractorMain)
+                return;
+
             tractorGearbox = tractorMain.tractorGearbox;
             tractorEngine = tractorMain.tractorEngine;
 
