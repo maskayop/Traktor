@@ -10,7 +10,7 @@ namespace Tractor
         public List<Exercise> exercises = new List<Exercise>();
 
         Exercise currentExercise;
-        int currentExerciseId;
+        int currentExerciseId = -1;
 
         void Awake()
         {
@@ -62,6 +62,12 @@ namespace Tractor
         public Exercise GetCurrentExercise()
         {
             return currentExercise;
+        }
+
+        public void ExerciseForceExit()
+        {
+            currentExercise = null;
+            currentExerciseId = -1;
         }
     }
 }

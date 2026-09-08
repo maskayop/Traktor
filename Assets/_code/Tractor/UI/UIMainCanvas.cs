@@ -1,7 +1,8 @@
 using TMPro;
 using UnityEngine;
+using Vopere.Common;
 
-namespace Tractor
+namespace Tractor.UI
 {
     public class UIMainCanvas : MonoBehaviour
     {
@@ -121,6 +122,11 @@ namespace Tractor
                 INtext.color = Color.green;
             else
                 INtext.color = Color.red;
+        }
+
+        public void ExitGame()
+        {
+            App.Instance?.ExitGame();
         }
     }
 }
