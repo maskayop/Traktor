@@ -12,7 +12,7 @@ namespace Tractor
         public float[] finalDriveOverrides;
     }
 
-    public class TractorGearbox : MonoBehaviour
+    public class TractorGearbox : MonoBehaviour, ICheckable
     {
         public bool isGearLevel1 = true;
         public int currentRange = 0;
@@ -28,6 +28,30 @@ namespace Tractor
         RCCP_Gearbox gearbox;
         RCCP_Engine engine;
         RCCP_Differential[] differentials;
+
+        public float GetVariableValue(string conditionName)
+        {
+            switch (conditionName)
+            {
+                case "gearLevel":
+                    if (isGearLevel1)
+                        return 1;
+                    else
+                        return 2;
+                case "isGearLevel1":
+                    if (isGearLevel1)
+                        return 1;
+                    else
+                        return 2;
+                case "currentRange":
+                    return currentRange;
+                case "currentGear":
+                    return currentGear;
+                default:
+                    Debug.LogWarning($"Неизвестное условие: {conditionName}");
+                    return 0;
+            }
+        }
 
         public void Init(TractorInput tractorInput)
         {

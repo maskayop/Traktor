@@ -26,7 +26,7 @@ namespace Tractor
         [SerializeField] TextMeshProUGUI roadStatusText;
         [SerializeField] TextMeshProUGUI directionText;
 
-        TractorMain tractorMain;
+        TractorController tractorMain;
         TractorGearbox tractorGearbox;
         TractorEngine tractorEngine;
         RoadDetector roadDetector;
@@ -55,20 +55,19 @@ namespace Tractor
 
         public void Init()
         {
-            tractorMain = FindAnyObjectByType<TractorMain>();
+            tractorMain = FindAnyObjectByType<TractorController>();
 
             if (!tractorMain)
                 return;
 
             tractorGearbox = tractorMain.tractorGearbox;
             tractorEngine = tractorMain.tractorEngine;
-
-            roadDetector = FindAnyObjectByType<RoadDetector>();
+            roadDetector = tractorMain.roadDetector;
         }
 
         void UpdateTexts()
         {
-            if (!tractorGearbox || !tractorMain || !tractorEngine)
+            if (!tractorGearbox || !tractorMain || !tractorEngine || !roadDetector)
                 return;
 
             //Основное

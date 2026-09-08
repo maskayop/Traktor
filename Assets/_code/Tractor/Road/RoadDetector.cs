@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Tractor
 {
-    public class RoadDetector : MonoBehaviour
+    public class RoadDetector : MonoBehaviour, ICheckable
     {
         [SerializeField] WheelRaycast[] wheelRaycasts = new WheelRaycast[4];
 
@@ -24,6 +24,16 @@ namespace Tractor
         Vector4 notOnRoadVector = new Vector4(-9, -9, -9, -9);
 
         float currentTime = 0;
+
+        public float GetVariableValue(string conditionName)
+        {
+            switch (conditionName)
+            {
+                default:
+                    Debug.LogWarning($"Неизвестное условие: {conditionName}");
+                    return 0;
+            }
+        }
 
         void Update()
         {

@@ -84,7 +84,7 @@ namespace Tractor
         InputController inputController;
         bool overrideInputs = false;
 
-        TractorMain tractorMain;
+        TractorController tractorMain;
         TractorGearbox tractorGearbox;
         TractorEngine tractorEngine;
 
@@ -121,7 +121,7 @@ namespace Tractor
             ignition_Input = inputController?.GetInputByName(ignitionInputName);
         }
 
-        public void Init(TractorMain INtractorMain, TractorGearbox INtractorGearbox, TractorEngine INtractorEngine)
+        public void Init(TractorController INtractorMain, TractorGearbox INtractorGearbox, TractorEngine INtractorEngine)
         {
             if (INtractorMain == null || INtractorGearbox == null || INtractorEngine == null)
                 return;

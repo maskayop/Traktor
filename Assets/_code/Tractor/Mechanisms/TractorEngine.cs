@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Tractor
 {
-    public class TractorEngine : MonoBehaviour
+    public class TractorEngine : MonoBehaviour, ICheckable
     {
         [SerializeField] float neutralAccelerationRate = 1.0f;
         [SerializeField] float driveAccelerationRate = 0.5f;
@@ -18,6 +18,31 @@ namespace Tractor
 
         RCCP_Engine engine;
         TractorGearbox tractorGearbox;
+
+        public float GetVariableValue(string conditionName)
+        {
+            switch (conditionName)
+            {
+                case "mass":
+                    if (mass)
+                        return 1;
+                    else
+                        return 0;
+                case "starter":
+                    if (starter)
+                        return 1;
+                    else
+                        return 0;
+                case "ignition":
+                    if (ignition)
+                        return 1;
+                    else
+                        return 0;
+                default:
+                    Debug.LogWarning($"Неизвестное условие: {conditionName}");
+                    return 0;
+            }
+        }
 
         void Update()
         {

@@ -665,12 +665,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1813409246852421867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdec6b750e9fd1840ac42719f73aa863, type: 3}
+  m_Script: {fileID: 11500000, guid: 99e5aa34a55d6f64cb20a9148d267a9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.TractorMain
   tractorInput: {fileID: 6909384308401504491}
   tractorGearbox: {fileID: 5510360152096047968}
   tractorEngine: {fileID: 683907502795099115}
+  roadDetector: {fileID: 3385472217592471738}
   speed: 0
   RPM: 0
   isHandbrake: 0
