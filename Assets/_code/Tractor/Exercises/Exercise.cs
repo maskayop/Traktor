@@ -50,11 +50,15 @@ namespace Tractor
             if (currentStepId < steps.Count)
                 currentStep = steps[currentStepId];
             else
-            {
-                currentStep = null;
-                currentStepId = -1;
-                return;
-            }
+                CompleteExercise();
+        }
+
+        public void CompleteExercise()
+        {
+            currentStep = null;
+            currentStepId = -1;
+
+            exercisesController.CompleteExercise();
         }
 
         public ExerciseStep GetCurrentExerciseStep()

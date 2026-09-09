@@ -670,7 +670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6800218599672790065, guid: 8c926e190d08f9d43b6fbbad47e7e9ac, type: 3}
       propertyPath: m_Name
-      value: Exit Button
+      value: Exit Game Button
       objectReference: {fileID: 0}
     - target: {fileID: 9083563433980225646, guid: 8c926e190d08f9d43b6fbbad47e7e9ac, type: 3}
       propertyPath: m_Pivot.x

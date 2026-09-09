@@ -23,6 +23,9 @@ namespace Tractor.UI
         [SerializeField] RectTransform exerciseStepTextsContainer;
         List<UIExerciseStepText> exerciseStepTexts = new List<UIExerciseStepText>();
 
+        [Header("Окно завершения задания")]
+        [SerializeField] GameObject exerciseCompleteWindow;
+
         bool preparingWindowIsOpen = false;
         public bool PreparingWindowIsOpen { get { return preparingWindowIsOpen; } }
 
@@ -54,6 +57,9 @@ namespace Tractor.UI
 
         void Update()
         {
+            if (exercisesController.IsCompleted)
+                OpenExerciseCompleteWindow();
+
             if (!exercisesController.IsExercise())
                 return;
 
@@ -84,6 +90,9 @@ namespace Tractor.UI
 
             CloseCurrentExerciseWindow();
             ClosePreparingWindow();
+
+            currentStep = 0;
+            previousStep = -1;
         }
 
         public void OpenPreparingWindow()
@@ -92,6 +101,7 @@ namespace Tractor.UI
             preparingWindow.SetActive(true);
 
             CloseCurrentExerciseWindow();
+            CloseExerciseCompleteWindow();
             HideShowStartExerciseButton();
 
             if (exercisesController.GetCurrentExercise() == null)
@@ -110,6 +120,7 @@ namespace Tractor.UI
         public void OpenCurrentExerciseWindow()
         {
             ClosePreparingWindow();
+            CloseExerciseCompleteWindow();
 
             currentExerciseWindowIsOpen = true;
             currentExerciseWindow.SetActive(true);
@@ -121,6 +132,19 @@ namespace Tractor.UI
             currentExerciseWindowIsOpen = false;
             currentExerciseWindow.SetActive(false);
             exercisePreparingWindowButton.SetActive(true);
+        }
+
+        public void OpenExerciseCompleteWindow()
+        {
+            ClosePreparingWindow();
+            CloseCurrentExerciseWindow();
+
+            exerciseCompleteWindow.SetActive(true);
+        }
+
+        public void CloseExerciseCompleteWindow()
+        {
+            exerciseCompleteWindow.SetActive(false);
         }
 
         public void SelectExercise(Exercise exercise)
@@ -187,6 +211,7 @@ namespace Tractor.UI
 
         public void ExerciseForceExit()
         {
+            exercisesController.isCompleted = false;
             exercisesController.ExerciseForceExit();
             CloseCurrentExerciseWindow();
             SelectExercise(null);

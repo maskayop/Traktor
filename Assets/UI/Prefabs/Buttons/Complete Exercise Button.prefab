@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7912489536297010609
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1423563674586770911, guid: 7b9c83eb75844c745a744e9a760aba71, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423563674586770911, guid: 7b9c83eb75844c745a744e9a760aba71, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423563674586770911, guid: 7b9c83eb75844c745a744e9a760aba71, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423563674586770911, guid: 7b9c83eb75844c745a744e9a760aba71, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423563674586770911, guid: 7b9c83eb75844c745a744e9a760aba71, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423563674586770911, guid: 7b9c83eb75844c745a744e9a760aba71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423563674586770911, guid: 7b9c83eb75844c745a744e9a760aba71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423563674586770911, guid: 7b9c83eb75844c745a744e9a760aba71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3716021124228364672, guid: 7b9c83eb75844c745a744e9a760aba71, type: 3}
+      propertyPath: m_Name
+      value: Complete Exercise Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 4497983083890432297, guid: 7b9c83eb75844c745a744e9a760aba71, type: 3}
+      propertyPath: m_text
+      value: "\u0417\u0430\u0432\u0435\u0440\u0448\u0438\u0442\u044C"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7b9c83eb75844c745a744e9a760aba71, type: 3}

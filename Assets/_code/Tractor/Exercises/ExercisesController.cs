@@ -15,6 +15,9 @@ namespace Tractor
         public ExerciseStep currentStep;
         public int currentStepId = -1;
 
+        public bool isCompleted = false;
+        public bool IsCompleted { get { return isCompleted; } set { isCompleted = value; } }
+
         void Awake()
         {
             if (Instance != null)
@@ -77,6 +80,7 @@ namespace Tractor
 
         public void StartExercise()
         {
+            isCompleted = false;
             exercises[currentExerciseId].StartExercise();
         }
 
@@ -100,6 +104,13 @@ namespace Tractor
                 return true;
             else
                 return false;
+        }
+
+        public void CompleteExercise()
+        {
+            isCompleted = true;
+
+            ExerciseForceExit();
         }
     }
 }
