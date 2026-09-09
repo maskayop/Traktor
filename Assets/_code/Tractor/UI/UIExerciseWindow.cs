@@ -21,7 +21,7 @@ namespace Tractor.UI
         [SerializeField] TextMeshProUGUI currentExerciseNameText;
         [SerializeField] GameObject exerciseStepTextPrefab;
         [SerializeField] RectTransform exerciseStepTextsContainer;
-        List<UIExerciseStepText> exerciseStepText = new List<UIExerciseStepText>();
+        List<UIExerciseStepText> exerciseStepTexts = new List<UIExerciseStepText>();
 
         bool preparingWindowIsOpen = false;
         public bool PreparingWindowIsOpen { get { return preparingWindowIsOpen; } }
@@ -31,6 +31,9 @@ namespace Tractor.UI
 
         ExercisesController exercisesController;
         Exercise currentExercise;
+
+        int currentStep = -1;
+        int previousStep = -1;
 
         void Awake()
         {
@@ -51,7 +54,26 @@ namespace Tractor.UI
 
         void Update()
         {
+            if (!exercisesController.IsExercise())
+                return;
 
+            if (currentExercise == null)
+                return;
+
+            if (currentExercise.GetCurrentExerciseStep() == null)
+                return;
+
+            currentStep = currentExercise.GetCurrentExerciseStepId();
+
+            if (currentStep != previousStep)
+            {
+                exerciseStepTexts[currentStep].SetCurrent(true);
+
+                if (currentStep - 1 >= 0)
+                    exerciseStepTexts[currentStep - 1].SetCompleted(true);
+            }
+
+            previousStep = currentStep;
         }
 
         public void Init()
@@ -172,7 +194,7 @@ namespace Tractor.UI
 
         void CreateExerciseStepTexts()
         {
-            exerciseStepText.Clear();
+            exerciseStepTexts.Clear();
 
             foreach (Transform t in exerciseStepTextsContainer)
                 Destroy(t.gameObject);
@@ -187,7 +209,7 @@ namespace Tractor.UI
 
                 UIExerciseStepText est = go.GetComponent<UIExerciseStepText>();
                 est.Init(currentExercise, currentExercise.steps[i]);
-                exerciseStepText.Add(est);
+                exerciseStepTexts.Add(est);
             }
         }
     }

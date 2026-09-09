@@ -27,11 +27,6 @@ namespace Tractor
             tractorController = targetController;
         }
 
-        public void StartStep()
-        {
-
-        }
-
         public bool IsCompleted()
         {
             // Проверяем, что targetObject не null и он реализует ICheckable

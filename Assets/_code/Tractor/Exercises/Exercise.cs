@@ -17,8 +17,8 @@ namespace Tractor
         public List<ExerciseStep> steps = new List<ExerciseStep>();
 
         ExercisesController exercisesController;
-        ExerciseStep currentExerciseStep;
-        int currentStep;
+        ExerciseStep currentStep;
+        int currentStepId;
 
         void Start()
         {
@@ -31,29 +31,40 @@ namespace Tractor
             if (steps.Count == 0)
                 return;
 
-            currentExerciseStep = steps[0];
-            currentStep = 0;
+            TractorController tractorController = FindAnyObjectByType<TractorController>();
+
+            if (tractorController == null)
+                return;
+
+            foreach (var step in steps)
+                step.Init(tractorController);
+
+            currentStepId = 0;
+            currentStep = steps[currentStepId];
         }
 
-        public void NextSTep()
+        public void StartNextStep()
         {
-            currentStep++;
+            currentStepId++;
 
-            if (steps.Count < currentStep)
-                currentExerciseStep = steps[currentStep];
+            if (currentStepId < steps.Count)
+                currentStep = steps[currentStepId];
             else
             {
-                currentExerciseStep = null;
-                currentStep = 0;
+                currentStep = null;
+                currentStepId = -1;
                 return;
             }
-
-            steps[currentStep].StartStep();
         }
 
         public ExerciseStep GetCurrentExerciseStep()
         {
-            return currentExerciseStep;
+            return currentStep;
+        }
+
+        public int GetCurrentExerciseStepId()
+        {
+            return currentStepId;
         }
     }
 }

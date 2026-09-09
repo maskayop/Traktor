@@ -9,8 +9,11 @@ namespace Tractor
 
         public List<Exercise> exercises = new List<Exercise>();
 
-        Exercise currentExercise;
-        int currentExerciseId = -1;
+        [Header("Info")]
+        public Exercise currentExercise;
+        public int currentExerciseId = -1;
+        public ExerciseStep currentStep;
+        public int currentStepId = -1;
 
         void Awake()
         {
@@ -27,6 +30,24 @@ namespace Tractor
         void Start()
         {
             Init();
+        }
+
+        void Update()
+        {
+            if (!IsExercise())
+                return;
+
+            if (!currentExercise)
+                return;
+
+            if (currentExercise.GetCurrentExerciseStep())
+            {
+                currentStepId = currentExercise.GetCurrentExerciseStepId();
+                currentStep = currentExercise.GetCurrentExerciseStep();
+
+                if (currentStep.IsCompleted())
+                    currentExercise.StartNextStep();
+            }
         }
 
         public void Init()
@@ -68,6 +89,17 @@ namespace Tractor
         {
             currentExercise = null;
             currentExerciseId = -1;
+
+            currentStep = null;
+            currentStepId = -1;
+        }
+
+        public bool IsExercise()
+        {
+            if (currentExerciseId != -1)
+                return true;
+            else
+                return false;
         }
     }
 }
