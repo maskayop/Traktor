@@ -19,6 +19,9 @@ namespace Tractor.UI
         [Header("Окно текущего задания")]
         [SerializeField] GameObject currentExerciseWindow;
         [SerializeField] TextMeshProUGUI currentExerciseNameText;
+        [SerializeField] GameObject exerciseStepTextPrefab;
+        [SerializeField] RectTransform exerciseStepTextsContainer;
+        List<UIExerciseStepText> exerciseStepText = new List<UIExerciseStepText>();
 
         bool preparingWindowIsOpen = false;
         public bool PreparingWindowIsOpen { get { return preparingWindowIsOpen; } }
@@ -27,6 +30,7 @@ namespace Tractor.UI
         public bool CurrentExerciseWindowIsOpen { get { return currentExerciseWindowIsOpen; } }
 
         ExercisesController exercisesController;
+        Exercise currentExercise;
 
         void Awake()
         {
@@ -123,10 +127,14 @@ namespace Tractor.UI
         public void StartExercise()
         {
             exercisesController.StartExercise();
+
             ClosePreparingWindow();
             OpenCurrentExerciseWindow();
 
-            currentExerciseNameText.text = exercisesController.GetCurrentExercise().exerciseName;
+            currentExercise = exercisesController.GetCurrentExercise();
+            currentExerciseNameText.text = currentExercise.exerciseName;
+
+            CreateExerciseStepTexts();
         }
 
         void CreateExerciseButtons()
@@ -139,7 +147,7 @@ namespace Tractor.UI
             for (int i = 0; i < exercisesController.exercises.Count; i++)
             {
                 GameObject go = Instantiate(exerciseButtonPrefab, exerciseButtonsContainer);
-                go.name = exercisesController.exercises[i].name;
+                go.name = exercisesController.exercises[i].exerciseName;
 
                 UIExerciseButton eb = go.GetComponent<UIExerciseButton>();
                 eb.Init(exercisesController.exercises[i]);
@@ -160,6 +168,27 @@ namespace Tractor.UI
             exercisesController.ExerciseForceExit();
             CloseCurrentExerciseWindow();
             SelectExercise(null);
+        }
+
+        void CreateExerciseStepTexts()
+        {
+            exerciseStepText.Clear();
+
+            foreach (Transform t in exerciseStepTextsContainer)
+                Destroy(t.gameObject);
+
+            if (currentExercise == null)
+                return;
+
+            for (int i = 0; i < currentExercise.steps.Count; i++)
+            {
+                GameObject go = Instantiate(exerciseStepTextPrefab, exerciseStepTextsContainer);
+                go.name = currentExercise.steps[i].stepDescription;
+
+                UIExerciseStepText est = go.GetComponent<UIExerciseStepText>();
+                est.Init(currentExercise, currentExercise.steps[i]);
+                exerciseStepText.Add(est);
+            }
         }
     }
 }
