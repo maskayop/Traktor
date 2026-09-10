@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,6 +15,10 @@ namespace Tractor
 
     public class TractorGearbox : MonoBehaviour, ICheckable
     {
+        [Header("Состояние передач")]
+        [SerializeField] float initDelay = 1.0f;
+
+        [Header("Состояние передач")]
         public bool isGearLevel1 = true;
         public int currentRange = 0;
         public int currentGear = 0;
@@ -70,9 +75,18 @@ namespace Tractor
 
         public void ResetGearbox()
         {
-            SetNeutralGear();
             ChangeGearLevel(true);
             ChangeGearRange(1);
+
+            StartCoroutine(InitDelayed());
+        }
+
+        IEnumerator InitDelayed()
+        {
+            yield return new WaitForSeconds(initDelay);
+
+            SetNeutralGear();
+            gearbox.ShiftToN();
         }
 
         public void ShiftToGear(float input, int value)
@@ -92,13 +106,14 @@ namespace Tractor
 
         public void SetNeutralGear()
         {
+            if (currentGear != 0)
+                gearbox.ShiftToN();
+
             currentGear = 0;
             gearbox.forceToRGear = false;
 
             foreach (var d in differentials)
                 d.finalDriveRatio = defaultFinalDrive;
-
-            gearbox.ShiftToN();
         }
 
         public void ChangeGearLevel(bool isFirstLevel)

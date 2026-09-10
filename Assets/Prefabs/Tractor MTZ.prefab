@@ -390,8 +390,8 @@ MonoBehaviour:
   maxTurboChargePsi: 12
   turboChargerCoEfficient: 1.25
   turboBlowOut: 0
-  engineFriction: 0.2
-  engineInertia: 0.1
+  engineFriction: 0.15
+  engineInertia: 0.05
   engineLoad: 0
   producedTorqueAsNM: 0
   fuelInput: 0
@@ -730,6 +730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d962fe735bca0c44fa52d829f33f2d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.TractorGearbox
+  initDelay: 0.5
   isGearLevel1: 1
   currentRange: 0
   currentGear: 0
@@ -742,10 +743,10 @@ MonoBehaviour:
   - name: Gear Range 1
     maxSpeed: 5
     finalDriveOverrides:
-    - 200
     - 220
     - 240
     - 260
+    - 280
   - name: Gear Range 2
     maxSpeed: 10
     finalDriveOverrides:
@@ -1116,7 +1117,7 @@ MonoBehaviour:
     gearState: 3
   defaultGearState: 3
   targetSpeeds: []
-  shiftingTime: 0.2
+  shiftingTime: 0.05
   maxSpeedToShiftReverse: 5
   shiftingNow: 0
   dontShiftTimer: 1
