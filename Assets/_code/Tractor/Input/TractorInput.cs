@@ -243,12 +243,12 @@ namespace Tractor
 
             if (starterOff_Input != null)
                 if (starterOff_Input.inputValue != 0)
-                    tractorEngine.StarterOff();
+                    tractorEngine.StarterTurnOff();
 
             if (ignition_Input != null)
             {
                 if (ignition_Input.inputValue != 0)
-                    tractorEngine.StarterOn();
+                    tractorEngine.StarterTurnOn();
                 else
                     tractorEngine.Ignition = false;
             }

@@ -7,18 +7,23 @@ namespace Tractor
     {
         public int id;
 
+        [Header("Трансформы")]
+        public Transform spawnPoint;
+
         [Header("Описание задания")]
         public string exerciseName;
 
         [TextArea(1, 50)]
         public string exerciseDescription;
 
-        [Header("Описание задания")]
+        [Header("Шаги")]
         public List<ExerciseStep> steps = new List<ExerciseStep>();
 
         ExercisesController exercisesController;
         ExerciseStep currentStep;
         int currentStepId;
+
+        TractorController tractorController;
 
         void Start()
         {
@@ -31,7 +36,7 @@ namespace Tractor
             if (steps.Count == 0)
                 return;
 
-            TractorController tractorController = FindAnyObjectByType<TractorController>();
+            tractorController = FindAnyObjectByType<TractorController>();
 
             if (tractorController == null)
                 return;
@@ -41,6 +46,9 @@ namespace Tractor
 
             currentStepId = 0;
             currentStep = steps[currentStepId];
+
+            tractorController.ResetTractor();
+            RCCP.Transport(tractorController.CarController, spawnPoint.position, spawnPoint.rotation);
         }
 
         public void StartNextStep()

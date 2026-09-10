@@ -18,6 +18,7 @@ namespace Tractor
         public bool isHandbrake = false;
 
         RCCP_CarController carController;
+        public RCCP_CarController CarController { get { return carController; } }
 
         public float GetVariableValue(string conditionName)
         {
@@ -90,6 +91,15 @@ namespace Tractor
         public void SetHandbrake(bool state)
         {
             isHandbrake = state;
+        }
+
+        public void ResetTractor()
+        {
+            if (!tractorEngine || !tractorGearbox)
+                return;
+
+            tractorEngine.ResetEngine();
+            tractorGearbox.ResetGearbox();
         }
     }
 }

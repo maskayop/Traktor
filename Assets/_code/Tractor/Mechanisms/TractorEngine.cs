@@ -71,6 +71,14 @@ namespace Tractor
 
             engine = tractorInput.RCCP_Vehicle.Engine;
             tractorGearbox = INtractorGearbox;
+
+            ResetEngine();
+        }
+
+        public void ResetEngine()
+        {
+            MassTurnOff();
+            StarterTurnOff();
         }
 
         public void MassTurnOn()
@@ -84,7 +92,7 @@ namespace Tractor
             engine.StopEngine();
         }
 
-        public void StarterOn()
+        public void StarterTurnOn()
         {
             if (!mass || !starter)
                 return;
@@ -94,7 +102,7 @@ namespace Tractor
             engine.StartEngine();
         }
 
-        public void StarterOff()
+        public void StarterTurnOff()
         {
             ignition = false;
             starter = false;

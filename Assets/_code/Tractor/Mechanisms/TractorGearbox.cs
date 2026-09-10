@@ -65,6 +65,11 @@ namespace Tractor
             for (int i = 0; i < gearbox.gearRatios.Length; i++)
                 defaultGearRatios[i] = gearbox.gearRatios[i];
 
+            ResetGearbox();
+        }
+
+        public void ResetGearbox()
+        {
             SetNeutralGear();
             ChangeGearLevel(true);
             ChangeGearRange(1);
