@@ -18,7 +18,7 @@ namespace Tractor
         public string stepDescription;
 
         TractorController tractorController;
-        ExerciseStepAdditionalObjects additionalObjects;
+        ExerciseAdditionalObjects additionalObjects;
 
         public void Init(TractorController targetController)
         {
@@ -26,7 +26,7 @@ namespace Tractor
                 return;
 
             tractorController = targetController;
-            additionalObjects = GetComponent<ExerciseStepAdditionalObjects>();
+            additionalObjects = GetComponent<ExerciseAdditionalObjects>();
 
             if (additionalObjects)
                 if (additionalObjects.destinationMarker)
@@ -89,7 +89,7 @@ namespace Tractor
             }
         }
 
-        public ExerciseStepAdditionalObjects GetAdditionalObjects()
+        public ExerciseAdditionalObjects GetAdditionalObjects()
         {
             return additionalObjects;
         }

@@ -77,9 +77,9 @@ namespace Tractor
         {
             foreach (var step in steps)
             {
-                if (step.GetComponent<ExerciseStepAdditionalObjects>())
-                    if (step.GetComponent<ExerciseStepAdditionalObjects>().destinationMarker)
-                        step.GetComponent<ExerciseStepAdditionalObjects>().destinationMarker.SetActive(false);
+                if (step.GetComponent<ExerciseAdditionalObjects>())
+                    if (step.GetComponent<ExerciseAdditionalObjects>().destinationMarker)
+                        step.GetComponent<ExerciseAdditionalObjects>().destinationMarker.SetActive(false);
             }
 
             if (!tractorController)
@@ -90,7 +90,7 @@ namespace Tractor
 
             if (steps[currentStepId].tractorBehavior == TractorController.TractorBehavior.Main)
             {
-                ExerciseStepAdditionalObjects additional = steps[currentStepId].GetComponent<ExerciseStepAdditionalObjects>();
+                ExerciseAdditionalObjects additional = steps[currentStepId].GetComponent<ExerciseAdditionalObjects>();
 
                 if (additional)
                 {
