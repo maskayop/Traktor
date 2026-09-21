@@ -14,6 +14,7 @@ namespace Tractor.UI
         [SerializeField] RectTransform exerciseButtonsContainer;
         [SerializeField] GameObject startExerciseButton;
         [SerializeField] GameObject exercisePreparingWindowButton;
+        [SerializeField] TextMeshProUGUI exerciseDescriptionText;
         List<UIExerciseButton> exerciseButtons = new List<UIExerciseButton>();
 
         [Header("Окно текущего задания")]
@@ -154,10 +155,13 @@ namespace Tractor.UI
                 foreach (var eb in exerciseButtons)
                     eb.Select(false);
 
+                exerciseDescriptionText.text = "";
+
                 return;
             }
 
             exercisesController.SelectExercise(exercise);
+            exerciseDescriptionText.text = exercise.exerciseDescription;
 
             for (int i = 0; i < exerciseButtons.Count; i++)
             {

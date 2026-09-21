@@ -29,6 +29,8 @@ namespace Tractor
         {
             exercisesController = ExercisesController.Instance;
             exercisesController?.AddExercise(this);
+
+            InitStepAdditionalObjects();
         }
 
         public void StartExercise()
@@ -59,6 +61,8 @@ namespace Tractor
                 currentStep = steps[currentStepId];
             else
                 CompleteExercise();
+
+            InitStepAdditionalObjects();
         }
 
         public void CompleteExercise()
@@ -67,6 +71,40 @@ namespace Tractor
             currentStepId = -1;
 
             exercisesController.CompleteExercise();
+        }
+
+        void InitStepAdditionalObjects()
+        {
+            foreach (var step in steps)
+            {
+                if (step.GetComponent<ExerciseStepAdditionalObjects>())
+                    if (step.GetComponent<ExerciseStepAdditionalObjects>().destinationMarker)
+                        step.GetComponent<ExerciseStepAdditionalObjects>().destinationMarker.SetActive(false);
+            }
+
+            if (!tractorController)
+                return;
+
+            if (currentStepId == -1)
+                return;
+
+            if (steps[currentStepId].tractorBehavior == TractorController.TractorBehavior.Main)
+            {
+                ExerciseStepAdditionalObjects additional = steps[currentStepId].GetComponent<ExerciseStepAdditionalObjects>();
+
+                if (additional)
+                {
+                    if (additional.destinationMarker)
+                    {
+                        tractorController.DestinationTransform = additional.destinationMarker.transform;
+                        additional.destinationMarker.SetActive(true);
+                    }
+                }
+                else
+                    tractorController.DestinationTransform = null;
+            }
+            else
+                tractorController.DestinationTransform = null;
         }
 
         public ExerciseStep GetCurrentExerciseStep()

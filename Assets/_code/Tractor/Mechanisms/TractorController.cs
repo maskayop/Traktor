@@ -20,6 +20,9 @@ namespace Tractor
         RCCP_CarController carController;
         public RCCP_CarController CarController { get { return carController; } }
 
+        Transform destinationTransform;
+        public Transform DestinationTransform { get { return destinationTransform; } set { destinationTransform = value; } }
+
         public float GetVariableValue(string conditionName)
         {
             switch (conditionName)
@@ -38,6 +41,8 @@ namespace Tractor
                         return 1;
                     else
                         return 0;
+                case "destinationDistance":
+                    return Vector3.Distance(transform.position, destinationTransform.position);
                 default:
                     Debug.LogWarning($"Неизвестное условие: {conditionName}");
                     return 0;

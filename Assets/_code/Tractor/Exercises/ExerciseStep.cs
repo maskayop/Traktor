@@ -18,6 +18,7 @@ namespace Tractor
         public string stepDescription;
 
         TractorController tractorController;
+        ExerciseStepAdditionalObjects additionalObjects;
 
         public void Init(TractorController targetController)
         {
@@ -25,6 +26,11 @@ namespace Tractor
                 return;
 
             tractorController = targetController;
+            additionalObjects = GetComponent<ExerciseStepAdditionalObjects>();
+
+            if (additionalObjects)
+                if (additionalObjects.destinationMarker)
+                    additionalObjects.destinationMarker.gameObject.SetActive(false);
         }
 
         public bool IsCompleted()
@@ -81,6 +87,11 @@ namespace Tractor
                 default:
                     return false;
             }
+        }
+
+        public ExerciseStepAdditionalObjects GetAdditionalObjects()
+        {
+            return additionalObjects;
         }
     }
 }
