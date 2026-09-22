@@ -10,6 +10,7 @@ namespace Tractor
         public TractorInput tractorInput;
         public TractorGearbox tractorGearbox;
         public TractorEngine tractorEngine;
+        public TractorLights tractorLights;
         public RoadDetector roadDetector;
 
         [Header("Инфо")]
@@ -54,6 +55,7 @@ namespace Tractor
             tractorInput.Init(this, tractorGearbox, tractorEngine);
             tractorGearbox.Init(tractorInput);
             tractorEngine.Init(tractorInput, tractorGearbox);
+            tractorLights.Init(tractorInput);
 
             carController = tractorInput.RCCP_Vehicle;
         }

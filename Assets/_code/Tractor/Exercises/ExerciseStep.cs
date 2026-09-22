@@ -29,8 +29,12 @@ namespace Tractor
             additionalObjects = GetComponent<ExerciseAdditionalObjects>();
 
             if (additionalObjects)
+            {
                 if (additionalObjects.destinationMarker)
                     additionalObjects.destinationMarker.gameObject.SetActive(false);
+
+                additionalObjects.EnableAdditionalGameObjects(false);
+            }
         }
 
         public bool IsCompleted()

@@ -96,6 +96,9 @@ namespace Tractor
 
             currentStep = null;
             currentStepId = -1;
+
+            for (int i = 0; i < exercises.Count; i++)
+                exercises[i].EnableAdditionalGameObjects(false);
         }
 
         public bool IsExercise()
