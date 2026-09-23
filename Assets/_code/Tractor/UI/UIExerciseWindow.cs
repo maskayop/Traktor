@@ -21,6 +21,7 @@ namespace Tractor.UI
         [SerializeField] GameObject currentExerciseWindow;
         [SerializeField] TextMeshProUGUI currentExerciseNameText;
         [SerializeField] GameObject exerciseStepTextPrefab;
+        [SerializeField] GameObject exerciseSubStepTextPrefab;
         [SerializeField] RectTransform exerciseStepTextsContainer;
         List<UIExerciseStepText> exerciseStepTexts = new List<UIExerciseStepText>();
 
@@ -73,12 +74,7 @@ namespace Tractor.UI
             currentStep = currentExercise.GetCurrentExerciseStepId();
 
             if (currentStep != previousStep)
-            {
-                exerciseStepTexts[currentStep].SetCurrent(true);
-
-                if (currentStep - 1 >= 0)
-                    exerciseStepTexts[currentStep - 1].SetCompleted(true);
-            }
+                ChangeStep();
 
             previousStep = currentStep;
         }
@@ -239,6 +235,52 @@ namespace Tractor.UI
                 UIExerciseStepText est = go.GetComponent<UIExerciseStepText>();
                 est.Init(currentExercise, currentExercise.steps[i]);
                 exerciseStepTexts.Add(est);
+
+                ExerciseAdditionalObjects add = currentExercise.steps[i].GetComponent<ExerciseAdditionalObjects>();
+
+                if (add)
+                    CreateSubStepTexts(est, add);
+            }
+        }
+
+        void CreateSubStepTexts(UIExerciseStepText stepText, ExerciseAdditionalObjects additional)
+        {
+            for (int i = 0; i < additional.additionalConditions.Count; i++)
+            {
+                GameObject go = Instantiate(exerciseSubStepTextPrefab, exerciseStepTextsContainer);
+                go.name = additional.additionalConditions[i].stepDescription;
+
+                UIExerciseStepText est = go.GetComponent<UIExerciseStepText>();
+                est.Init(currentExercise, additional.additionalConditions[i]);
+
+                stepText.AddSubStepText(est);
+            }
+        }
+
+        void ChangeStep()
+        {
+            exerciseStepTexts[currentStep].SetCurrent(true);
+
+            List<UIExerciseStepText> subStepsList = exerciseStepTexts[currentStep].GetSubStepTexts();
+
+            for (int i = 0; i < subStepsList.Count; i++)
+                subStepsList[i].SetCurrent(true);
+
+            if (currentStep - 1 >= 0)
+            {
+                exerciseStepTexts[currentStep - 1].SetCompleted(true);
+                subStepsList = exerciseStepTexts[currentStep - 1].GetSubStepTexts();
+
+                for (int i = 0; i < subStepsList.Count; i++)
+                {
+                    //bool ok = subStepsList[i].Step.IsCompleted();
+                    bool ok = true;
+
+                    if (ok)
+                        subStepsList[i].SetCompleted(true);
+                    else
+                        subStepsList[i].SetFailed(true);
+                }
             }
         }
     }

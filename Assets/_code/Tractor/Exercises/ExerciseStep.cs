@@ -20,21 +20,21 @@ namespace Tractor
         TractorController tractorController;
         ExerciseAdditionalObjects additionalObjects;
 
+        void Start()
+        {
+            additionalObjects = GetComponent<ExerciseAdditionalObjects>();
+            ResetAllAdditionalGameObjects();
+        }
+
         public void Init(TractorController targetController)
         {
             if (targetController == null)
                 return;
 
             tractorController = targetController;
-            additionalObjects = GetComponent<ExerciseAdditionalObjects>();
 
-            if (additionalObjects)
-            {
-                if (additionalObjects.destinationMarker)
-                    additionalObjects.destinationMarker.gameObject.SetActive(false);
-
-                additionalObjects.EnableAdditionalGameObjects(false);
-            }
+            ResetAllAdditionalGameObjects();
+            InitAdditionalConditions();
         }
 
         public bool IsCompleted()
@@ -96,6 +96,30 @@ namespace Tractor
         public ExerciseAdditionalObjects GetAdditionalObjects()
         {
             return additionalObjects;
+        }
+
+        public void EnableDestinationMarker(bool state)
+        {
+            if (additionalObjects)
+                additionalObjects.EnableDestinationMarker(state);
+        }
+
+        public void EnableAdditionalGameObjects(bool state)
+        {
+            if (additionalObjects)
+                additionalObjects.EnableAdditionalGameObjects(state);
+        }
+
+        public void ResetAllAdditionalGameObjects()
+        {
+            EnableDestinationMarker(false);
+            EnableAdditionalGameObjects(false);
+        }
+
+        public void InitAdditionalConditions()
+        {
+            if (additionalObjects)
+                additionalObjects.InitAdditionalConditions(tractorController);
         }
     }
 }

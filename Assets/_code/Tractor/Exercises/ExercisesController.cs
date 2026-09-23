@@ -56,9 +56,17 @@ namespace Tractor
         public void Init()
         {
             exercises.Clear();
+
+            Exercise[] allExercises = FindObjectsByType<Exercise>();
+
+            for (int i = 0; i < allExercises.Length; i++)
+            {
+                AddExercise(allExercises[i]);
+                allExercises[i].Init(this);
+            }
         }
 
-        public void AddExercise(Exercise exercise)
+        void AddExercise(Exercise exercise)
         {
             for (int i = 0; i <= exercise.id; i++)
             {

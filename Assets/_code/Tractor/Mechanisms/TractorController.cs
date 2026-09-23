@@ -4,7 +4,7 @@ namespace Tractor
 {
     public class TractorController : MonoBehaviour, ICheckable
     {
-        public enum TractorBehavior { Main, Gearbox, Engine }
+        public enum TractorBehavior { Main, Gearbox, Engine, Lights }
 
         [Header("Механизмы")]
         public TractorInput tractorInput;

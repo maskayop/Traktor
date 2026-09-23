@@ -28,15 +28,18 @@ namespace Tractor
 
         void Start()
         {
-            exercisesController = ExercisesController.Instance;
+            exerciseAdditionalObjects = GetComponent<ExerciseAdditionalObjects>();
+            EnableAdditionalGameObjects(false);
+        }
 
-            if (!exercisesController)
+        public void Init(ExercisesController INexercisesController)
+        {
+            exercisesController = INexercisesController;
+
+            if (!exercisesController || !tractorController)
                 return;
 
-            exercisesController.AddExercise(this);
-
-            EnableAdditionalGameObjects(false);
-            InitStepAdditionalObjects();
+            InitSteps();
         }
 
         public void StartExercise()
@@ -49,9 +52,6 @@ namespace Tractor
             if (tractorController == null)
                 return;
 
-            foreach (var step in steps)
-                step.Init(tractorController);
-
             currentStepId = 0;
             currentStep = steps[currentStepId];
 
@@ -59,6 +59,7 @@ namespace Tractor
             RCCP.Transport(tractorController.CarController, spawnPoint.position, spawnPoint.rotation);
 
             EnableAdditionalGameObjects(true);
+            InitSteps();
         }
 
         public void StartNextStep()
@@ -70,7 +71,7 @@ namespace Tractor
             else
                 CompleteExercise();
 
-            InitStepAdditionalObjects();
+            InitSteps();
         }
 
         public void CompleteExercise()
@@ -81,14 +82,10 @@ namespace Tractor
             exercisesController.CompleteExercise();
         }
 
-        void InitStepAdditionalObjects()
+        void InitSteps()
         {
             foreach (var step in steps)
-            {
-                if (step.GetComponent<ExerciseAdditionalObjects>())
-                    if (step.GetComponent<ExerciseAdditionalObjects>().destinationMarker)
-                        step.GetComponent<ExerciseAdditionalObjects>().destinationMarker.SetActive(false);
-            }
+                step.Init(tractorController);
 
             if (!tractorController)
                 return;
@@ -98,23 +95,21 @@ namespace Tractor
 
             if (steps[currentStepId].tractorBehavior == TractorController.TractorBehavior.Main)
             {
-                ExerciseAdditionalObjects additional = steps[currentStepId].GetComponent<ExerciseAdditionalObjects>();
+                Transform destinationTransform = null;
 
-                if (additional)
-                {
-                    if (additional.destinationMarker)
-                    {
-                        tractorController.DestinationTransform = additional.destinationMarker.transform;
-                        additional.destinationMarker.SetActive(true);
-                    }
+                if (steps[currentStepId].GetAdditionalObjects())
+                    destinationTransform = steps[currentStepId].GetAdditionalObjects().GetDestinationMarkerTransform();
 
-                    additional.EnableAdditionalGameObjects(true);
-                }
+                if (destinationTransform)
+                    tractorController.DestinationTransform = destinationTransform;
                 else
                     tractorController.DestinationTransform = null;
             }
             else
                 tractorController.DestinationTransform = null;
+
+            steps[currentStepId].EnableDestinationMarker(true);
+            steps[currentStepId].EnableAdditionalGameObjects(true);
         }
 
         public ExerciseStep GetCurrentExerciseStep()
@@ -129,8 +124,6 @@ namespace Tractor
 
         public void EnableAdditionalGameObjects(bool state)
         {
-            exerciseAdditionalObjects = GetComponent<ExerciseAdditionalObjects>();
-
             if (!exerciseAdditionalObjects)
                 return;
 

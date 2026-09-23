@@ -8,6 +8,36 @@ namespace Tractor
         {
             switch (conditionName)
             {
+                case "leftTurnIsOn":
+                    if (leftTurnIsOn)
+                        return 1;
+                    else
+                        return 0;
+                case "leftTurn":
+                    if (leftTurnIsOn)
+                        return 1;
+                    else
+                        return 0;
+                case "rightTurnIsOn":
+                    if (rightTurnIsOn)
+                        return 1;
+                    else
+                        return 0;
+                case "rightTurn":
+                    if (rightTurnIsOn)
+                        return 1;
+                    else
+                        return 0;
+                case "alarmIsOn":
+                    if (alarmIsOn)
+                        return 1;
+                    else
+                        return 0;
+                case "alarm":
+                    if (alarmIsOn)
+                        return 1;
+                    else
+                        return 0;
                 default:
                     Debug.LogWarning($"Неизвестное условие: {conditionName}");
                     return 0;
