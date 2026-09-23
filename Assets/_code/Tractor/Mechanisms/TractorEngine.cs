@@ -99,6 +99,7 @@ namespace Tractor
 
             ignition = true;
             starter = true;
+
             engine.StartEngine();
         }
 
@@ -106,6 +107,7 @@ namespace Tractor
         {
             ignition = false;
             starter = false;
+
             engine.StopEngine();
         }
     }

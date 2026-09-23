@@ -11,6 +11,7 @@ namespace Tractor
         public TractorGearbox tractorGearbox;
         public TractorEngine tractorEngine;
         public TractorLights tractorLights;
+        public TractorAudio tractorAudio;
         public RoadDetector roadDetector;
 
         [Header("Инфо")]
@@ -52,10 +53,11 @@ namespace Tractor
 
         void Start()
         {
-            tractorInput.Init(this, tractorGearbox, tractorEngine);
+            tractorInput.Init(this, tractorGearbox, tractorEngine, tractorLights, tractorAudio);
             tractorGearbox.Init(tractorInput);
             tractorEngine.Init(tractorInput, tractorGearbox);
-            tractorLights.Init(tractorInput);
+            tractorLights.Init(tractorInput, tractorEngine);
+            tractorAudio.Init(tractorInput, tractorEngine);
 
             carController = tractorInput.RCCP_Vehicle;
         }

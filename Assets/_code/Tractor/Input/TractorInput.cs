@@ -6,21 +6,21 @@ namespace Tractor
     {
         [Header("Руль")]
         [SerializeField] string steerInputName;
-        CustomInput steerInput;
+        CustomInput steer_Input;
 
         [Header("Педали")]
         [SerializeField] string throttleInputName;
-        CustomInput throttleInput;
+        CustomInput throttle_Input;
 
         [SerializeField] string brakeInputName;
-        CustomInput brakeInput;
+        CustomInput brake_Input;
 
         [SerializeField] string clutchInputName;
-        CustomInput clutchInput;
+        CustomInput clutch_Input;
 
         [Header("Ручник")]
         [SerializeField] string handbrakeInputName;
-        CustomInput handbrakeInput;
+        CustomInput handbrake_Input;
 
         [Header("Передачи")]
         [SerializeField] string gearNInputName;
@@ -76,6 +76,17 @@ namespace Tractor
         [SerializeField] string ignitionInputName;
         CustomInput ignition_Input;
 
+        [Header("Лампочки и фары")]
+        [SerializeField] string turnLeftInputName;
+        CustomInput turnLeft_Input;
+
+        [SerializeField] string turnRightInputName;
+        CustomInput turnRight_Input;
+
+        [Header("Звуки")]
+        [SerializeField] string hornSignalInputName;
+        CustomInput hornSignal_Input;
+
         RCCP_CarController vehicle;
         public RCCP_CarController RCCP_Vehicle { get { return vehicle; } }
 
@@ -87,17 +98,19 @@ namespace Tractor
         TractorController tractorMain;
         TractorGearbox tractorGearbox;
         TractorEngine tractorEngine;
+        TractorLights tractorLights;
+        TractorAudio tractorAudio;
 
         void Start()
         {
             inputController = InputController.Instance;
             overrideInputs = inputController.overrideInputs;
 
-            steerInput = inputController?.GetInputByName(steerInputName);
-            throttleInput = inputController?.GetInputByName(throttleInputName);
-            brakeInput = inputController?.GetInputByName(brakeInputName);
-            clutchInput = inputController?.GetInputByName(clutchInputName);
-            handbrakeInput = inputController?.GetInputByName(handbrakeInputName);
+            steer_Input = inputController?.GetInputByName(steerInputName);
+            throttle_Input = inputController?.GetInputByName(throttleInputName);
+            brake_Input = inputController?.GetInputByName(brakeInputName);
+            clutch_Input = inputController?.GetInputByName(clutchInputName);
+            handbrake_Input = inputController?.GetInputByName(handbrakeInputName);
 
             gearN_Input = inputController?.GetInputByName(gearNInputName);
             gear1_Input = inputController?.GetInputByName(gear1InputName);
@@ -119,16 +132,24 @@ namespace Tractor
             starterOn_Input = inputController?.GetInputByName(starterOnInputName);
             starterOff_Input = inputController?.GetInputByName(starterOffInputName);
             ignition_Input = inputController?.GetInputByName(ignitionInputName);
+
+            turnLeft_Input = inputController?.GetInputByName(turnLeftInputName);
+            turnRight_Input = inputController?.GetInputByName(turnRightInputName);
+
+            hornSignal_Input = inputController?.GetInputByName(hornSignalInputName);
         }
 
-        public void Init(TractorController INtractorMain, TractorGearbox INtractorGearbox, TractorEngine INtractorEngine)
+        public void Init(TractorController INtractorMain, TractorGearbox INtractorGearbox, TractorEngine INtractorEngine,
+            TractorLights INtractorLights, TractorAudio INtractorAudio)
         {
-            if (INtractorMain == null || INtractorGearbox == null || INtractorEngine == null)
+            if (INtractorMain == null || INtractorGearbox == null || INtractorEngine == null || INtractorLights == null || INtractorAudio == null)
                 return;
 
             tractorMain = INtractorMain;
             tractorGearbox = INtractorGearbox;
             tractorEngine = INtractorEngine;
+            tractorLights = INtractorLights;
+            tractorAudio = INtractorAudio;
 
             FindVehicle();
             UseOverrides();
@@ -161,26 +182,30 @@ namespace Tractor
 
         void SetInputs()
         {
-            if (steerInput != null)
-                vehicleInput.inputs.steerInput = steerInput.inputValue;
+            //Руль
+            if (steer_Input != null)
+                vehicleInput.inputs.steerInput = steer_Input.inputValue;
 
-            if (throttleInput != null)
-                vehicleInput.inputs.throttleInput = throttleInput.inputValue;
+            //Педали
+            if (throttle_Input != null)
+                vehicleInput.inputs.throttleInput = throttle_Input.inputValue;
 
-            if (brakeInput != null)
-                vehicleInput.inputs.brakeInput = brakeInput.inputValue;
+            if (brake_Input != null)
+                vehicleInput.inputs.brakeInput = brake_Input.inputValue;
 
-            if (clutchInput != null)
-                vehicleInput.inputs.clutchInput = clutchInput.inputValue;
+            if (clutch_Input != null)
+                vehicleInput.inputs.clutchInput = clutch_Input.inputValue;
 
-            if (handbrakeInput != null)
+            //Ручник
+            if (handbrake_Input != null)
             {
-                if (handbrakeInput.inputValue != 0)
+                if (handbrake_Input.inputValue != 0)
                     tractorMain.SetHandbrake(true);
                 else
                     tractorMain.SetHandbrake(false);
             }
 
+            //Передачи
             if (gear1_Input != null)
                 if (gear1_Input.inputValue != 0)
                     tractorGearbox?.ShiftToGear(gear1_Input.inputValue, 1);
@@ -229,6 +254,7 @@ namespace Tractor
                 if (rangeR_Input.inputValue != 0)
                     tractorGearbox?.ChangeGearRange(-1);
 
+            //Зажигание
             if (massOn_Input != null)
                 if (massOn_Input.inputValue != 0)
                     tractorEngine.MassTurnOn();
@@ -251,6 +277,28 @@ namespace Tractor
                     tractorEngine.StarterTurnOn();
                 else
                     tractorEngine.Ignition = false;
+            }
+
+            //Лампочки
+            if (turnLeft_Input != null)
+                if (turnLeft_Input.inputValue != 0)
+                    tractorLights.TurnOnLeftTurnLight();
+
+            if (turnRight_Input != null)
+                if (turnRight_Input.inputValue != 0)
+                    tractorLights.TurnOnRightTurnLight();
+
+            if (turnLeft_Input != null && turnRight_Input != null)
+                if (turnLeft_Input.inputValue == 0 && turnRight_Input.inputValue == 0)
+                    tractorLights.TurnOffTurnLight();
+
+            //Звуки
+            if (hornSignal_Input != null)
+            {
+                if (hornSignal_Input.inputValue != 0)
+                    tractorAudio.ActivateHornSignal(true);
+                else
+                    tractorAudio.ActivateHornSignal(false);
             }
         }
 

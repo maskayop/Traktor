@@ -241,7 +241,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Sound Signal",
+                    "name": "Horn Signal",
                     "type": "Button",
                     "id": "cf73820c-13f5-42ab-a930-b6bc478d24da",
                     "expectedControlType": "",
@@ -798,8 +798,30 @@
                 },
                 {
                     "name": "",
+                    "id": "db3a7640-0059-4cc2-b875-04750b420363",
+                    "path": "<Keyboard>/leftBracket",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Turn Left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "86491eb7-7b54-4e27-9bd0-a6a9e84bf276",
                     "path": "<HID::Arduino LLC Arduino Leonardo>/button16",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Turn RIght",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c05c19ad-07e2-4c5e-8177-0b69e3589416",
+                    "path": "<Keyboard>/rightBracket",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -814,7 +836,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Sound Signal",
+                    "action": "Horn Signal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cea16974-d9df-4afe-a978-b87115388ad6",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Horn Signal",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

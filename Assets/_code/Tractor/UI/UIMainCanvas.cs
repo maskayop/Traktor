@@ -18,6 +18,10 @@ namespace Tractor.UI
         [SerializeField] TextMeshProUGUI gearboxRangeText;
         [SerializeField] TextMeshProUGUI gearboxGearText;
 
+        [Header("Лампочки и звуки")]
+        [SerializeField] TextMeshProUGUI turnLightsText;
+        [SerializeField] TextMeshProUGUI hornSignalText;
+
         [Header("Зажигание")]
         [SerializeField] TextMeshProUGUI massText;
         [SerializeField] TextMeshProUGUI starterText;
@@ -30,6 +34,8 @@ namespace Tractor.UI
         TractorController tractorMain;
         TractorGearbox tractorGearbox;
         TractorEngine tractorEngine;
+        TractorLights tractorLights;
+        TractorAudio tractorAudio;
         RoadDetector roadDetector;
 
         void Awake()
@@ -63,6 +69,8 @@ namespace Tractor.UI
 
             tractorGearbox = tractorMain.tractorGearbox;
             tractorEngine = tractorMain.tractorEngine;
+            tractorLights = tractorMain.tractorLights;
+            tractorAudio = tractorMain.tractorAudio;
             roadDetector = tractorMain.roadDetector;
         }
 
@@ -90,6 +98,34 @@ namespace Tractor.UI
                 gearboxGearText.text = "N";
             else
                 gearboxGearText.text = tractorGearbox.currentGear.ToString();
+
+            //Лампочки и звуки
+            if (tractorLights.leftTurnIsOn)
+            {
+                turnLightsText.text = "Left";
+                turnLightsText.color = Color.orange;
+            }
+            else if (tractorLights.rightTurnIsOn)
+            {
+                turnLightsText.text = "Right";
+                turnLightsText.color = Color.violet;
+            }
+            else
+            {
+                turnLightsText.text = "0";
+                turnLightsText.color = Color.white;
+            }
+
+            if (tractorAudio.hornIsPlaying)
+            {
+                hornSignalText.text = tractorAudio.hornIsPlaying.ToString();
+                hornSignalText.color = Color.green;
+            }
+            else
+            {
+                hornSignalText.text = tractorAudio.hornIsPlaying.ToString();
+                hornSignalText.color = Color.red;
+            }
 
             //Зажигание
             massText.text = tractorEngine.Mass.ToString();

@@ -149,6 +149,62 @@ MonoBehaviour:
   driftSidewaysStiffnessMultiplier: 1
   wheelbase: 2.55
   trackWidth: 1.5
+--- !u!1 &670816619376233406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4745679692135771049}
+  - component: {fileID: 3694548527609351977}
+  m_Layer: 8
+  m_Name: Turn Signals Lever pivot Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4745679692135771049
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670816619376233406}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.00000005960462, y: -0.000000014901174, z: 0.0000000372529, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8051388915997345509}
+  - {fileID: 1428547620976004430}
+  m_Father: {fileID: 4393224134418271869}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3694548527609351977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670816619376233406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bcc4c20d8c7fb4f9c13d3a4e7cafca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tractor.InputSystemLerpAnimator
+  inputName: Turn Left
+  startPosition: {x: 0, y: 0, z: 0}
+  endPosition: {x: 0, y: 0, z: 0}
+  startRotation: {x: 0, y: 0, z: 0}
+  endRotation: {x: -15, y: 0, z: 0}
+  input:
+    inputName: 
+    useDeadzone: 0
+    deadzone: 0.05
+    inputValue: 0
 --- !u!1 &833967582947079785
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,6 +574,38 @@ MonoBehaviour:
   inertiaTensorAbsolute: {x: 2000, y: 2030, z: 400}
   autoReset: 1
   autoResetTime: 3
+--- !u!1 &1532383349141021159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8770840207213493195}
+  m_Layer: 8
+  m_Name: Tractor Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8770840207213493195
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532383349141021159}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7680576947693529264}
+  m_Father: {fileID: 6657069847412001070}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1813409246852421867
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,6 +622,7 @@ GameObject:
   - component: {fileID: 5510360152096047968}
   - component: {fileID: 683907502795099115}
   - component: {fileID: 3280773456689473532}
+  - component: {fileID: 791837015719757519}
   - component: {fileID: 3385472217592471738}
   m_Layer: 8
   m_Name: Tractor MTZ
@@ -569,6 +658,7 @@ Transform:
   - {fileID: 1059401326626620825}
   - {fileID: 8338027592731791850}
   - {fileID: 5732157765574417704}
+  - {fileID: 8770840207213493195}
   - {fileID: 2554465729203045569}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -682,6 +772,7 @@ MonoBehaviour:
   tractorGearbox: {fileID: 5510360152096047968}
   tractorEngine: {fileID: 683907502795099115}
   tractorLights: {fileID: 3280773456689473532}
+  tractorAudio: {fileID: 791837015719757519}
   roadDetector: {fileID: 3385472217592471738}
   speed: 0
   RPM: 0
@@ -720,6 +811,9 @@ MonoBehaviour:
   starterOnInputName: Starter On
   starterOffInputName: Starter Off
   ignitionInputName: Ignition
+  turnLeftInputName: Turn Left
+  turnRightInputName: Turn Right
+  hornSignalInputName: Horn Signal
 --- !u!114 &5510360152096047968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -811,6 +905,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4ad4dd29e8bdf49b06e496e66f3494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.TractorLights
+  leftTurnIsOn: 0
+  rightTurnIsOn: 0
+  alarmIsOn: 0
+  turnLightsRelayCanWork: 0
+--- !u!114 &791837015719757519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813409246852421867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cd2be661dc4e894f9f9c8af7222f294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tractor.TractorAudio
+  audioSource: {fileID: 8136659910503347784}
+  hornSignalClip: {fileID: 0}
+  hornSignal: 0
+  signalsCanWork: 0
 --- !u!114 &3385472217592471738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1238,6 +1352,61 @@ Transform:
   - {fileID: 2755466440203524928}
   m_Father: {fileID: 6657069847412001070}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3276755407756639744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4393224134418271869}
+  - component: {fileID: 4815291341026521919}
+  m_Layer: 8
+  m_Name: Turn Signals Lever pivot Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4393224134418271869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3276755407756639744}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.00000032782555, y: 0.000000014901161, z: -0.000000018626451, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4745679692135771049}
+  m_Father: {fileID: 2316659773077497391}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4815291341026521919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3276755407756639744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bcc4c20d8c7fb4f9c13d3a4e7cafca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tractor.InputSystemLerpAnimator
+  inputName: Turn Right
+  startPosition: {x: 0, y: 0, z: 0}
+  endPosition: {x: 0, y: 0, z: 0}
+  startRotation: {x: 0, y: 0, z: 0}
+  endRotation: {x: 15, y: 0, z: 0}
+  input:
+    inputName: 
+    useDeadzone: 0
+    deadzone: 0.05
+    inputValue: 0
 --- !u!1 &3541872694880031290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1591,6 +1760,38 @@ Transform:
   - {fileID: 8996413209386986012}
   - {fileID: 3661729200332250530}
   m_Father: {fileID: 2554465729203045569}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4321024077452735738
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1428547620976004430}
+  m_Layer: 8
+  m_Name: Horn Signal Button pivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1428547620976004430
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4321024077452735738}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.00000035762793, y: -0.000000052154103, z: 0.00000009126963, w: 1}
+  m_LocalPosition: {x: -0, y: 0.08830591, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2048985336384274544}
+  m_Father: {fileID: 4745679692135771049}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4582334521431902260
 GameObject:
@@ -2027,56 +2228,20 @@ MonoBehaviour:
   audioMixer: {fileID: 24300002, guid: 1f184b80a5580734490824e8df462002, type: 2}
   engineSounds:
   - audioSourceOn: {fileID: 0}
-    audioClipOn: {fileID: 8300000, guid: cd879aa0fe04e18478728c5d2777ef89, type: 3}
+    audioClipOn: {fileID: 8300000, guid: 98aed3e8f3581724bb8ce273a8101485, type: 3}
     audioSourceOff: {fileID: 0}
-    audioClipOff: {fileID: 8300000, guid: 9cc20a291fb4d3e44ad9684aa575e0a4, type: 3}
+    audioClipOff: {fileID: 8300000, guid: 98aed3e8f3581724bb8ce273a8101485, type: 3}
     localPosition: {x: 0, y: 0, z: 1.5}
     minPitch: 0.85
-    maxPitch: 1.45
-    minRPM: 0
-    maxRPM: 4000
+    maxPitch: 1.25
+    minRPM: 500
+    maxRPM: 2300
     minDistance: 10
     maxDistance: 120
-    maxVolume: 0.6
-  - audioSourceOn: {fileID: 0}
-    audioClipOn: {fileID: 8300000, guid: 11b8d68de272edd428b21db3ab991f36, type: 3}
-    audioSourceOff: {fileID: 0}
-    audioClipOff: {fileID: 8300000, guid: e36a638ec1a8cb641840c735ffd4750b, type: 3}
-    localPosition: {x: 0, y: 0, z: 1.5}
-    minPitch: 0.85
-    maxPitch: 1.75
-    minRPM: 2000
-    maxRPM: 7000
-    minDistance: 10
-    maxDistance: 120
-    maxVolume: 0.65
-  - audioSourceOn: {fileID: 0}
-    audioClipOn: {fileID: 8300000, guid: 09992d57ed272e241954ca186b66de71, type: 3}
-    audioSourceOff: {fileID: 0}
-    audioClipOff: {fileID: 8300000, guid: dd31934351e19ce49a9953b1e10de387, type: 3}
-    localPosition: {x: 0, y: 0, z: 1.5}
-    minPitch: 0.9
-    maxPitch: 1.3
-    minRPM: 5000
-    maxRPM: 8000
-    minDistance: 10
-    maxDistance: 120
-    maxVolume: 0.7
-  - audioSourceOn: {fileID: 0}
-    audioClipOn: {fileID: 8300000, guid: 3bf3833d4b5c3a341aed92089f471bcd, type: 3}
-    audioSourceOff: {fileID: 0}
-    audioClipOff: {fileID: 8300000, guid: 3bf3833d4b5c3a341aed92089f471bcd, type: 3}
-    localPosition: {x: 0, y: 0, z: 1.5}
-    minPitch: 0.55
-    maxPitch: 1.55
-    minRPM: 0
-    maxRPM: 1200
-    minDistance: 10
-    maxDistance: 120
-    maxVolume: 0.6
+    maxVolume: 1
   engineStart:
     audioSource: {fileID: 0}
-    audioClips: {fileID: 8300000, guid: 8d3ddfbc69660b342b48f88b496dedee, type: 3}
+    audioClips: {fileID: 8300000, guid: 07e7dd9da9c31f94b819cac36287d18f, type: 3}
     localPosition: {x: 0, y: 0, z: 1.5}
     minDistance: 5
     maxDistance: 65
@@ -2377,6 +2542,38 @@ MonoBehaviour:
   producedMotorTorqueNM_Right: 0
   producedBrakeTorqueNM: 0
   producedHandbrakeTorqueNM: 0
+--- !u!1 &6628226586175517602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2316659773077497391}
+  m_Layer: 8
+  m_Name: Turn Signals Lever pivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2316659773077497391
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6628226586175517602}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.23618162, y: 0.1317887, z: 0.4842443, w: 0.8320802}
+  m_LocalPosition: {x: -0.023925781, y: 1.7761327, z: -0.29785156}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4393224134418271869}
+  m_Father: {fileID: 4147179458918889908}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6889668641143818709
 GameObject:
   m_ObjectHideFlags: 0
@@ -2437,6 +2634,135 @@ MonoBehaviour:
   outputLeft: 0
   outputRight: 0
   connectedAxle: {fileID: 4183952943463572194}
+--- !u!1 &7001276085217315674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7680576947693529264}
+  - component: {fileID: 8136659910503347784}
+  m_Layer: 8
+  m_Name: Horn Signal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7680576947693529264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7001276085217315674}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8770840207213493195}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &8136659910503347784
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7001276085217315674}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 2d3580a27ec48bf41bd747ed39e85abe, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7333544390544391457
 GameObject:
   m_ObjectHideFlags: 0
@@ -2478,6 +2804,7 @@ Transform:
   - {fileID: 1536477395539357552}
   - {fileID: 8988516367638845653}
   - {fileID: 8559468959881642829}
+  - {fileID: 2316659773077497391}
   - {fileID: 906113151340443025}
   - {fileID: 5880679437761711383}
   - {fileID: 5231522439523353174}
@@ -3788,6 +4115,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8625783382974808842, guid: 84d3da04f7964b844810b716a701066b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -7943440732282385863, guid: 84d3da04f7964b844810b716a701066b, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -3909,6 +4240,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4257536438152475563, guid: 84d3da04f7964b844810b716a701066b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418726355819098874, guid: 84d3da04f7964b844810b716a701066b, type: 3}
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
@@ -4127,6 +4462,98 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7775264462724376532, guid: a731644237b07ea4e81125b7e9862f61, type: 3}
   m_PrefabInstance: {fileID: 2625936929551727512}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2669649079377937155
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1428547620976004430}
+    m_Modifications:
+    - target: {fileID: 3055603403374238228, guid: 9ede52f8b31ed8e41a2a6464c32b3893, type: 3}
+      propertyPath: m_Name
+      value: Horn Signal Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135160976652501875, guid: 9ede52f8b31ed8e41a2a6464c32b3893, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135160976652501875, guid: 9ede52f8b31ed8e41a2a6464c32b3893, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135160976652501875, guid: 9ede52f8b31ed8e41a2a6464c32b3893, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135160976652501875, guid: 9ede52f8b31ed8e41a2a6464c32b3893, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135160976652501875, guid: 9ede52f8b31ed8e41a2a6464c32b3893, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135160976652501875, guid: 9ede52f8b31ed8e41a2a6464c32b3893, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135160976652501875, guid: 9ede52f8b31ed8e41a2a6464c32b3893, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -2.6645202e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135160976652501875, guid: 9ede52f8b31ed8e41a2a6464c32b3893, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135160976652501875, guid: 9ede52f8b31ed8e41a2a6464c32b3893, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135160976652501875, guid: 9ede52f8b31ed8e41a2a6464c32b3893, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3055603403374238228, guid: 9ede52f8b31ed8e41a2a6464c32b3893, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4429201662048497987}
+  m_SourcePrefab: {fileID: 100100000, guid: 9ede52f8b31ed8e41a2a6464c32b3893, type: 3}
+--- !u!1 &1111211163047024919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3055603403374238228, guid: 9ede52f8b31ed8e41a2a6464c32b3893, type: 3}
+  m_PrefabInstance: {fileID: 2669649079377937155}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4429201662048497987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111211163047024919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bcc4c20d8c7fb4f9c13d3a4e7cafca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tractor.InputSystemLerpAnimator
+  inputName: Horn Signal
+  startPosition: {x: 0, y: 0, z: 0}
+  endPosition: {x: 0, y: -0.02, z: 0}
+  startRotation: {x: 0, y: 0, z: 0}
+  endRotation: {x: 0, y: 0, z: 0}
+  input:
+    inputName: 
+    useDeadzone: 0
+    deadzone: 0.05
+    inputValue: 0
+--- !u!4 &2048985336384274544 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4135160976652501875, guid: 9ede52f8b31ed8e41a2a6464c32b3893, type: 3}
+  m_PrefabInstance: {fileID: 2669649079377937155}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2692308296087342143
 PrefabInstance:
@@ -4832,11 +5259,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 445952547905450075, guid: bbf64ce5bbca7f54699ebbd8326b5fbc, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.99813485
       objectReference: {fileID: 0}
     - target: {fileID: 445952547905450075, guid: bbf64ce5bbca7f54699ebbd8326b5fbc, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.06104851
       objectReference: {fileID: 0}
     - target: {fileID: 445952547905450075, guid: bbf64ce5bbca7f54699ebbd8326b5fbc, type: 3}
       propertyPath: m_LocalRotation.y
@@ -4848,7 +5275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 445952547905450075, guid: bbf64ce5bbca7f54699ebbd8326b5fbc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 445952547905450075, guid: bbf64ce5bbca7f54699ebbd8326b5fbc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -4937,6 +5364,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6479878265581249134, guid: 5e0e3a71c59cefe48ae58b27ca15dd78, type: 3}
   m_PrefabInstance: {fileID: 6003353628582402763}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6259807151857075606
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4745679692135771049}
+    m_Modifications:
+    - target: {fileID: 3055603403374238228, guid: 67df57d73bdba2a4086c9166204fe3d0, type: 3}
+      propertyPath: m_Name
+      value: Turn Signals Lever
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135160976652501875, guid: 67df57d73bdba2a4086c9166204fe3d0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135160976652501875, guid: 67df57d73bdba2a4086c9166204fe3d0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135160976652501875, guid: 67df57d73bdba2a4086c9166204fe3d0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135160976652501875, guid: 67df57d73bdba2a4086c9166204fe3d0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135160976652501875, guid: 67df57d73bdba2a4086c9166204fe3d0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135160976652501875, guid: 67df57d73bdba2a4086c9166204fe3d0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135160976652501875, guid: 67df57d73bdba2a4086c9166204fe3d0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 8.881787e-16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135160976652501875, guid: 67df57d73bdba2a4086c9166204fe3d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135160976652501875, guid: 67df57d73bdba2a4086c9166204fe3d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135160976652501875, guid: 67df57d73bdba2a4086c9166204fe3d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 67df57d73bdba2a4086c9166204fe3d0, type: 3}
+--- !u!4 &8051388915997345509 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4135160976652501875, guid: 67df57d73bdba2a4086c9166204fe3d0, type: 3}
+  m_PrefabInstance: {fileID: 6259807151857075606}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6270264118525576081
 PrefabInstance:
