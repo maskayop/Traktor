@@ -273,10 +273,7 @@ namespace Tractor.UI
 
                 for (int i = 0; i < subStepsList.Count; i++)
                 {
-                    //bool ok = subStepsList[i].Step.IsCompleted();
-                    bool ok = true;
-
-                    if (ok)
+                    if (subStepsList[i].Step.IsCompleted())
                         subStepsList[i].SetCompleted(true);
                     else
                         subStepsList[i].SetFailed(true);

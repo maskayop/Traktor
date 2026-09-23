@@ -92,6 +92,8 @@ namespace Tractor
                     return tractorGearbox;
                 case TractorBehavior.Engine:
                     return tractorEngine;
+                case TractorBehavior.Lights:
+                    return tractorLights;
                 default:
                     return null;
             }

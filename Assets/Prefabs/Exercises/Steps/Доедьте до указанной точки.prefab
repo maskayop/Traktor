@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.ExerciseStep
   tractorBehavior: 0
   variableName: destinationDistance
-  conditionValue: 1
+  conditionValue: 1.5
   comparison: 3
   stepDescription: "\u0414\u043E\u0435\u0434\u044C\u0442\u0435 \u0434\u043E \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u043E\u0439
     \u0442\u043E\u0447\u043A\u0438"
@@ -65,3 +65,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.ExerciseStepAdditionalObjects
   destinationMarker: {fileID: 0}
+  gameObjectsToEnable: []
+  additionalConditions: []

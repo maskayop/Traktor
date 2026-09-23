@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1392323973242700533, guid: 816a5ebe8dd773b4cae399bb1c23e294, type: 3}
       propertyPath: defaultColor.a
-      value: 0.6
+      value: 0.5019608
       objectReference: {fileID: 0}
     - target: {fileID: 1392323973242700533, guid: 816a5ebe8dd773b4cae399bb1c23e294, type: 3}
       propertyPath: defaultColor.b
@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2704739973098772423, guid: 816a5ebe8dd773b4cae399bb1c23e294, type: 3}
       propertyPath: m_Color.a
-      value: 0.6
+      value: 0.5019608
       objectReference: {fileID: 0}
     - target: {fileID: 2704739973098772423, guid: 816a5ebe8dd773b4cae399bb1c23e294, type: 3}
       propertyPath: m_Color.b

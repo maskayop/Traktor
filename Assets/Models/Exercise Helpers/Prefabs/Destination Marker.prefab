@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1343590833213309151}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Destination Marker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 3804754559379208739}
   - component: {fileID: 7275391532233125747}
   - component: {fileID: 1518653871295606341}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
