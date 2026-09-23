@@ -20,6 +20,7 @@ namespace Tractor.UI
 
         [Header("Лампочки и звуки")]
         [SerializeField] TextMeshProUGUI turnLightsText;
+        [SerializeField] TextMeshProUGUI alarmLightsText;
         [SerializeField] TextMeshProUGUI hornSignalText;
 
         [Header("Зажигание")]
@@ -116,16 +117,11 @@ namespace Tractor.UI
                 turnLightsText.color = Color.white;
             }
 
-            if (tractorAudio.hornIsPlaying)
-            {
-                hornSignalText.text = tractorAudio.hornIsPlaying.ToString();
-                hornSignalText.color = Color.green;
-            }
-            else
-            {
-                hornSignalText.text = tractorAudio.hornIsPlaying.ToString();
-                hornSignalText.color = Color.red;
-            }
+            alarmLightsText.text = tractorLights.alarmIsOn.ToString();
+            ColorBoolText(alarmLightsText, tractorLights.alarmIsOn);
+
+            hornSignalText.text = tractorAudio.hornIsPlaying.ToString();
+            ColorBoolText(hornSignalText, tractorAudio.hornIsPlaying);
 
             //Зажигание
             massText.text = tractorEngine.Mass.ToString();

@@ -1018,6 +1018,17 @@
                 },
                 {
                     "name": "",
+                    "id": "1ebe7b4e-7fc6-4541-a7de-3d8299773d90",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Alarm",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "97c5fe1f-3010-47ac-a733-02f0ce8473f2",
                     "path": "<HID::Arduino LLC Arduino Leonardo>/button23",
                     "interactions": "",

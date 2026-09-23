@@ -82,6 +82,8 @@ namespace Tractor
 
         [SerializeField] string turnRightInputName;
         CustomInput turnRight_Input;
+        [SerializeField] string alarmInputName;
+        CustomInput alarm_Input;
 
         [Header("Звуки")]
         [SerializeField] string hornSignalInputName;
@@ -135,6 +137,7 @@ namespace Tractor
 
             turnLeft_Input = inputController?.GetInputByName(turnLeftInputName);
             turnRight_Input = inputController?.GetInputByName(turnRightInputName);
+            alarm_Input = inputController?.GetInputByName(alarmInputName);
 
             hornSignal_Input = inputController?.GetInputByName(hornSignalInputName);
         }
@@ -291,6 +294,14 @@ namespace Tractor
             if (turnLeft_Input != null && turnRight_Input != null)
                 if (turnLeft_Input.inputValue == 0 && turnRight_Input.inputValue == 0)
                     tractorLights.TurnOffTurnLight();
+
+            if (alarm_Input != null)
+            {
+                if (alarm_Input.inputValue != 0)
+                    tractorLights.ActivateAlarmLights(true);
+                else
+                    tractorLights.ActivateAlarmLights(false);
+            }
 
             //Звуки
             if (hornSignal_Input != null)
