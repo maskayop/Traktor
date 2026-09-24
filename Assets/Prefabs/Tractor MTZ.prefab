@@ -946,12 +946,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.TractorLights
   turnLightPropertyName: _Vertex_Green_Intensity
-  turnLightMultiplier: 4
+  turnLightMultiplier: 5
   turnLightsBlinkingSpeed: 8
-  lightSideFrontLeft: {fileID: 7208109728850349756}
-  lightSideFrontRight: {fileID: 729163725044897187}
-  lightSideBackLeft: {fileID: 3314216128673071988}
-  lightSideBackRight: {fileID: 6583963472918478303}
+  lightSideFrontLeft: {fileID: 8748209919484473897}
+  lightSideFrontRight: {fileID: 7708323206060226675}
+  lightSideBackLeft: {fileID: 7021041348888547897}
+  lightSideBackRight: {fileID: 7846186426463608025}
   turnLightsRelayCanWork: 0
   leftTurnIsOn: 0
   rightTurnIsOn: 0
@@ -1012,6 +1012,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.TractorCameraController
   menuCamera: {fileID: 4651720896654227027}
   gameCamera: {fileID: 4235386298348881763}
+  mirrorCameras:
+  - {fileID: 7717159596900202394}
+  - {fileID: 1048044324757721288}
+  - {fileID: 1780351937775557618}
 --- !u!1 &2014435452676515496
 GameObject:
   m_ObjectHideFlags: 0
@@ -3480,11 +3484,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6664413196179992297, guid: 0c64de8ca77182e46beddbbb84caa740, type: 3}
   m_PrefabInstance: {fileID: 348042539672854443}
   m_PrefabAsset: {fileID: 0}
---- !u!23 &7208109728850349756 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 6979496692135842071, guid: 0c64de8ca77182e46beddbbb84caa740, type: 3}
+--- !u!114 &8748209919484473897 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9057755120846466434, guid: 0c64de8ca77182e46beddbbb84caa740, type: 3}
   m_PrefabInstance: {fileID: 348042539672854443}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3595d380c1bf3bb4485f67cf12eb1091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tractor.MeshLightController
 --- !u!1001 &650253487560077681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5383,16 +5393,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 971a851b42c99854b8b7e438a27c085a, type: 3}
---- !u!23 &6583963472918478303 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 6979496692135842071, guid: 971a851b42c99854b8b7e438a27c085a, type: 3}
-  m_PrefabInstance: {fileID: 4288210410579340488}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7493436554032792097 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6664413196179992297, guid: 971a851b42c99854b8b7e438a27c085a, type: 3}
   m_PrefabInstance: {fileID: 4288210410579340488}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7846186426463608025 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -2926908346002018287, guid: 971a851b42c99854b8b7e438a27c085a, type: 3}
+  m_PrefabInstance: {fileID: 4288210410579340488}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3595d380c1bf3bb4485f67cf12eb1091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tractor.MeshLightController
 --- !u!1001 &4431477174894535396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5450,6 +5466,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea24b91c4d2d056449eefa0a77c1169b, type: 3}
+--- !u!20 &1048044324757721288 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3743797236385673772, guid: ea24b91c4d2d056449eefa0a77c1169b, type: 3}
+  m_PrefabInstance: {fileID: 4431477174894535396}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7939296624535904079 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6003801011091455403, guid: ea24b91c4d2d056449eefa0a77c1169b, type: 3}
@@ -5577,6 +5598,11 @@ PrefabInstance:
 --- !u!4 &1665128339669460928 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6190155677796573366, guid: 4cd1cca185fe25043a01e1dadab257eb, type: 3}
+  m_PrefabInstance: {fileID: 4826839200269698934}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &1780351937775557618 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 6505858724258372740, guid: 4cd1cca185fe25043a01e1dadab257eb, type: 3}
   m_PrefabInstance: {fileID: 4826839200269698934}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5045986479663537197
@@ -5774,11 +5800,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6664413196179992297, guid: e0ed73a6daa406742bc986de4040369f, type: 3}
   m_PrefabInstance: {fileID: 5558094230945567331}
   m_PrefabAsset: {fileID: 0}
---- !u!23 &3314216128673071988 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 6979496692135842071, guid: e0ed73a6daa406742bc986de4040369f, type: 3}
+--- !u!114 &7021041348888547897 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -6030901915716665254, guid: e0ed73a6daa406742bc986de4040369f, type: 3}
   m_PrefabInstance: {fileID: 5558094230945567331}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3595d380c1bf3bb4485f67cf12eb1091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tractor.MeshLightController
 --- !u!1001 &6003353628582402763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6373,6 +6405,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8674738940483263247, guid: 1409ac10adedcb747a6bfdbf9e68d9fb, type: 3}
   m_PrefabInstance: {fileID: 6903255657037668356}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &7717159596900202394 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3807109270065125278, guid: 1409ac10adedcb747a6bfdbf9e68d9fb, type: 3}
+  m_PrefabInstance: {fileID: 6903255657037668356}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7142646824301797812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6492,16 +6529,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76c7072e5a69ddb478a3042cdd2b28aa, type: 3}
---- !u!23 &729163725044897187 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 6979496692135842071, guid: 76c7072e5a69ddb478a3042cdd2b28aa, type: 3}
-  m_PrefabInstance: {fileID: 7692893393451713716}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3944702157342141021 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6664413196179992297, guid: 76c7072e5a69ddb478a3042cdd2b28aa, type: 3}
   m_PrefabInstance: {fileID: 7692893393451713716}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7708323206060226675 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 16838839464967367, guid: 76c7072e5a69ddb478a3042cdd2b28aa, type: 3}
+  m_PrefabInstance: {fileID: 7692893393451713716}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3595d380c1bf3bb4485f67cf12eb1091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tractor.MeshLightController
 --- !u!1001 &7731705541547860431
 PrefabInstance:
   m_ObjectHideFlags: 0

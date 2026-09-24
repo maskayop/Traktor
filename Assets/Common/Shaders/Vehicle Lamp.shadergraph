@@ -1201,7 +1201,7 @@
     "m_LiteralFloatMode": false,
     "m_RangeValues": {
         "x": 0.0,
-        "y": 5.0
+        "y": 10.0
     },
     "m_SliderType": 0,
     "m_SliderPower": 3.0,
@@ -1988,7 +1988,7 @@
     "m_LiteralFloatMode": false,
     "m_RangeValues": {
         "x": 0.0,
-        "y": 5.0
+        "y": 10.0
     },
     "m_SliderType": 0,
     "m_SliderPower": 3.0,
@@ -3082,7 +3082,7 @@
     "m_LiteralFloatMode": false,
     "m_RangeValues": {
         "x": 0.0,
-        "y": 5.0
+        "y": 10.0
     },
     "m_SliderType": 0,
     "m_SliderPower": 3.0,
@@ -4068,8 +4068,8 @@
     "m_ObjectId": "d4c2759c9b3c431883e1992dfdbc6ffe",
     "m_Title": "Albedo",
     "m_Position": {
-        "x": 3940.999755859375,
-        "y": -66.9999771118164
+        "x": 3941.0,
+        "y": -67.0
     }
 }
 

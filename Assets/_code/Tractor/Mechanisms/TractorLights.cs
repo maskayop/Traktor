@@ -50,10 +50,10 @@ namespace Tractor
         [SerializeField] float turnLightsBlinkingSpeed = 1.0f;
 
         [Header("Поворотники")]
-        [SerializeField] MeshRenderer lightSideFrontLeft;
-        [SerializeField] MeshRenderer lightSideFrontRight;
-        [SerializeField] MeshRenderer lightSideBackLeft;
-        [SerializeField] MeshRenderer lightSideBackRight;
+        [SerializeField] MeshLightController lightSideFrontLeft;
+        [SerializeField] MeshLightController lightSideFrontRight;
+        [SerializeField] MeshLightController lightSideBackLeft;
+        [SerializeField] MeshLightController lightSideBackRight;
 
         [Header("Info")]
         public bool turnLightsRelayCanWork = false;
@@ -115,39 +115,36 @@ namespace Tractor
 
         void UpdateTurnLightsMaterials()
         {
+            float value = turnLightsRelayValue * turnLightMultiplier;
+
             if (leftTurnIsOn)
             {
-                SetMaterialFloatValue(lightSideFrontLeft.material, turnLightPropertyName, turnLightsRelayValue * turnLightMultiplier);
-                SetMaterialFloatValue(lightSideBackLeft.material, turnLightPropertyName, turnLightsRelayValue * turnLightMultiplier);
-                SetMaterialFloatValue(lightSideFrontRight.material, turnLightPropertyName, 0);
-                SetMaterialFloatValue(lightSideBackRight.material, turnLightPropertyName, 0);
+                lightSideFrontLeft.UpdateVisuals(turnLightPropertyName, value);
+                lightSideBackLeft.UpdateVisuals(turnLightPropertyName, value);
+                lightSideFrontRight.UpdateVisuals(turnLightPropertyName, 0);
+                lightSideBackRight.UpdateVisuals(turnLightPropertyName, 0);
             }
             else if (rightTurnIsOn)
             {
-                SetMaterialFloatValue(lightSideFrontLeft.material, turnLightPropertyName, 0);
-                SetMaterialFloatValue(lightSideBackLeft.material, turnLightPropertyName, 0);
-                SetMaterialFloatValue(lightSideFrontRight.material, turnLightPropertyName, turnLightsRelayValue * turnLightMultiplier);
-                SetMaterialFloatValue(lightSideBackRight.material, turnLightPropertyName, turnLightsRelayValue * turnLightMultiplier);
+                lightSideFrontLeft.UpdateVisuals(turnLightPropertyName, 0);
+                lightSideBackLeft.UpdateVisuals(turnLightPropertyName, 0);
+                lightSideFrontRight.UpdateVisuals(turnLightPropertyName, value);
+                lightSideBackRight.UpdateVisuals(turnLightPropertyName, value);
             }
             else if (alarmIsOn)
             {
-                SetMaterialFloatValue(lightSideFrontLeft.material, turnLightPropertyName, turnLightsRelayValue * turnLightMultiplier);
-                SetMaterialFloatValue(lightSideBackLeft.material, turnLightPropertyName, turnLightsRelayValue * turnLightMultiplier);
-                SetMaterialFloatValue(lightSideFrontRight.material, turnLightPropertyName, turnLightsRelayValue * turnLightMultiplier);
-                SetMaterialFloatValue(lightSideBackRight.material, turnLightPropertyName, turnLightsRelayValue * turnLightMultiplier);
+                lightSideFrontLeft.UpdateVisuals(turnLightPropertyName, value);
+                lightSideBackLeft.UpdateVisuals(turnLightPropertyName, value);
+                lightSideFrontRight.UpdateVisuals(turnLightPropertyName, value);
+                lightSideBackRight.UpdateVisuals(turnLightPropertyName, value);
             }
             else
             {
-                SetMaterialFloatValue(lightSideFrontLeft.material, turnLightPropertyName, 0);
-                SetMaterialFloatValue(lightSideBackLeft.material, turnLightPropertyName, 0);
-                SetMaterialFloatValue(lightSideFrontRight.material, turnLightPropertyName, 0);
-                SetMaterialFloatValue(lightSideBackRight.material, turnLightPropertyName, 0);
+                lightSideFrontRight.UpdateVisuals(turnLightPropertyName, 0);
+                lightSideBackRight.UpdateVisuals(turnLightPropertyName, 0);
+                lightSideFrontLeft.UpdateVisuals(turnLightPropertyName, 0);
+                lightSideBackLeft.UpdateVisuals(turnLightPropertyName, 0);
             }
-        }
-
-        void SetMaterialFloatValue(Material m, string p, float v)
-        {
-            m.SetFloat(p, v);
         }
 
         public void TurnOnLeftTurnLight()
