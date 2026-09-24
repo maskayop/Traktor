@@ -42,11 +42,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3716021124228364672, guid: 7b9c83eb75844c745a744e9a760aba71, type: 3}
       propertyPath: m_Name
-      value: Controls Button
+      value: Start Game Button
       objectReference: {fileID: 0}
     - target: {fileID: 4497983083890432297, guid: 7b9c83eb75844c745a744e9a760aba71, type: 3}
       propertyPath: m_text
-      value: "\u0423\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435"
+      value: "\u0417\u0430\u043F\u0443\u0441\u0442\u0438\u0442\u044C"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

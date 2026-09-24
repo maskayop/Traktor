@@ -56,7 +56,7 @@ namespace Tractor
             currentStep = steps[currentStepId];
 
             tractorController.ResetTractor();
-            RCCP.Transport(tractorController.CarController, spawnPoint.position, spawnPoint.rotation);
+            tractorController.PlaceTractor(spawnPoint);
 
             EnableAdditionalGameObjects(true);
             InitSteps();

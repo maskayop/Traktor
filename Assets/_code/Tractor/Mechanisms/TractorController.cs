@@ -13,6 +13,7 @@ namespace Tractor
         public TractorLights tractorLights;
         public TractorAudio tractorAudio;
         public RoadDetector roadDetector;
+        public TractorCameraController tractorCameraController;
 
         [Header("Инфо")]
         public float speed;
@@ -24,6 +25,8 @@ namespace Tractor
 
         Transform destinationTransform;
         public Transform DestinationTransform { get { return destinationTransform; } set { destinationTransform = value; } }
+
+        GameController gameController;
 
         public float GetVariableValue(string conditionName)
         {
@@ -60,6 +63,9 @@ namespace Tractor
             tractorAudio.Init(tractorInput, tractorEngine);
 
             carController = tractorInput.RCCP_Vehicle;
+
+            gameController = GameController.Instance;
+            gameController.SetTractorController(this);
         }
 
         void Update()
@@ -111,6 +117,11 @@ namespace Tractor
 
             tractorEngine.ResetEngine();
             tractorGearbox.ResetGearbox();
+        }
+
+        public void PlaceTractor(Transform t)
+        {
+            RCCP.Transport(carController, t.position, t.rotation);
         }
     }
 }

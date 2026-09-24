@@ -58,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 260467337402860945}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7207031, y: 0.7883943, z: -1.0217285}
+  m_LocalPosition: {x: 0.72070616, y: 0.7883943, z: -1.0217266}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -232,7 +232,7 @@ Transform:
   m_GameObject: {fileID: 833967582947079785}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.77563477, y: 0.5403291, z: 1.3977051}
+  m_LocalPosition: {x: -0.77563894, y: 0.5403291, z: 1.3977029}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -659,6 +659,7 @@ GameObject:
   - component: {fileID: 3280773456689473532}
   - component: {fileID: 791837015719757519}
   - component: {fileID: 3385472217592471738}
+  - component: {fileID: 5563451126285392092}
   m_Layer: 8
   m_Name: Tractor MTZ
   m_TagString: Untagged
@@ -692,6 +693,7 @@ Transform:
   - {fileID: 6669516753013425299}
   - {fileID: 1059401326626620825}
   - {fileID: 8338027592731791850}
+  - {fileID: 3874663555563072536}
   - {fileID: 5732157765574417704}
   - {fileID: 8770840207213493195}
   - {fileID: 2554465729203045569}
@@ -809,6 +811,7 @@ MonoBehaviour:
   tractorLights: {fileID: 3280773456689473532}
   tractorAudio: {fileID: 791837015719757519}
   roadDetector: {fileID: 3385472217592471738}
+  tractorCameraController: {fileID: 5563451126285392092}
   speed: 0
   RPM: 0
   isHandbrake: 0
@@ -994,6 +997,20 @@ MonoBehaviour:
   laneStatus: 
   halfLanes: {x: 0, y: 0, z: 0, w: 0}
   laneNumbers: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5563451126285392092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813409246852421867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 806559318c5ba944bae163e39fc22fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tractor.TractorCameraController
+  menuCamera: {fileID: 4651720896654227027}
+  gameCamera: {fileID: 4235386298348881763}
 --- !u!1 &2014435452676515496
 GameObject:
   m_ObjectHideFlags: 0
@@ -1600,7 +1617,7 @@ Transform:
   m_GameObject: {fileID: 3594051971412693564}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7819824, y: 0.5403292, z: 1.3977051}
+  m_LocalPosition: {x: 0.7819785, y: 0.5403292, z: 1.3977073}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2001,7 +2018,7 @@ Transform:
   m_GameObject: {fileID: 5266074535454211200}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.71240234, y: 0.7883943, z: -1.0217285}
+  m_LocalPosition: {x: -0.7123994, y: 0.7883943, z: -1.0217307}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3839,7 +3856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7419466565156578667, guid: 2fca9c5fcbd73664d829c4e637b291ff, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000000021855694
+      value: 0.000000021855696
       objectReference: {fileID: 0}
     - target: {fileID: 7419466565156578667, guid: 2fca9c5fcbd73664d829c4e637b291ff, type: 3}
       propertyPath: m_LocalRotation.y
@@ -3847,7 +3864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7419466565156578667, guid: 2fca9c5fcbd73664d829c4e637b291ff, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -8.881784e-16
+      value: 8.881783e-16
       objectReference: {fileID: 0}
     - target: {fileID: 7419466565156578667, guid: 2fca9c5fcbd73664d829c4e637b291ff, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4094,7 +4111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 387818790129261493, guid: 9d4da9f594f51ab4d8a0ea23c766f029, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000000021855694
+      value: 0.000000021855696
       objectReference: {fileID: 0}
     - target: {fileID: 387818790129261493, guid: 9d4da9f594f51ab4d8a0ea23c766f029, type: 3}
       propertyPath: m_LocalRotation.y
@@ -4102,7 +4119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 387818790129261493, guid: 9d4da9f594f51ab4d8a0ea23c766f029, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -8.881784e-16
+      value: 8.881783e-16
       objectReference: {fileID: 0}
     - target: {fileID: 387818790129261493, guid: 9d4da9f594f51ab4d8a0ea23c766f029, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5025,6 +5042,73 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9188269064073939217, guid: 79345e2cfc0bb104c957766828b2647b, type: 3}
   m_PrefabInstance: {fileID: 3500277243821185130}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3744116932545649731
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6657069847412001070}
+    m_Modifications:
+    - target: {fileID: 445952547905450075, guid: c7b6e8f6b31b5d745a8c025b4e78edb4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 445952547905450075, guid: c7b6e8f6b31b5d745a8c025b4e78edb4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 445952547905450075, guid: c7b6e8f6b31b5d745a8c025b4e78edb4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 445952547905450075, guid: c7b6e8f6b31b5d745a8c025b4e78edb4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.4995241
+      objectReference: {fileID: 0}
+    - target: {fileID: 445952547905450075, guid: c7b6e8f6b31b5d745a8c025b4e78edb4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0218097
+      objectReference: {fileID: 0}
+    - target: {fileID: 445952547905450075, guid: c7b6e8f6b31b5d745a8c025b4e78edb4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.86520123
+      objectReference: {fileID: 0}
+    - target: {fileID: 445952547905450075, guid: c7b6e8f6b31b5d745a8c025b4e78edb4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.037775517
+      objectReference: {fileID: 0}
+    - target: {fileID: 445952547905450075, guid: c7b6e8f6b31b5d745a8c025b4e78edb4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 445952547905450075, guid: c7b6e8f6b31b5d745a8c025b4e78edb4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 445952547905450075, guid: c7b6e8f6b31b5d745a8c025b4e78edb4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638274482005963191, guid: c7b6e8f6b31b5d745a8c025b4e78edb4, type: 3}
+      propertyPath: m_Name
+      value: Tractor Menu Camera
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c7b6e8f6b31b5d745a8c025b4e78edb4, type: 3}
+--- !u!4 &3874663555563072536 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 445952547905450075, guid: c7b6e8f6b31b5d745a8c025b4e78edb4, type: 3}
+  m_PrefabInstance: {fileID: 3744116932545649731}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &4651720896654227027 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8321522917883947536, guid: c7b6e8f6b31b5d745a8c025b4e78edb4, type: 3}
+  m_PrefabInstance: {fileID: 3744116932545649731}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3908167265836791934
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5555,6 +5639,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbf64ce5bbca7f54699ebbd8326b5fbc, type: 3}
+--- !u!20 &4235386298348881763 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8321522917883947536, guid: bbf64ce5bbca7f54699ebbd8326b5fbc, type: 3}
+  m_PrefabInstance: {fileID: 5313368383999896947}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5732157765574417704 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 445952547905450075, guid: bbf64ce5bbca7f54699ebbd8326b5fbc, type: 3}
@@ -6538,7 +6627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9132554029495965844, guid: a6ee5da9be1c83647b71d75ad1fb3c25, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000000021855694
+      value: 0.000000021855696
       objectReference: {fileID: 0}
     - target: {fileID: 9132554029495965844, guid: a6ee5da9be1c83647b71d75ad1fb3c25, type: 3}
       propertyPath: m_LocalRotation.y
@@ -6546,7 +6635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9132554029495965844, guid: a6ee5da9be1c83647b71d75ad1fb3c25, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -8.881784e-16
+      value: 8.881783e-16
       objectReference: {fileID: 0}
     - target: {fileID: 9132554029495965844, guid: a6ee5da9be1c83647b71d75ad1fb3c25, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6611,7 +6700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5157622072382351144, guid: f295fff6117efaa4a89140f3a68033f0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000000021855694
+      value: 0.000000021855696
       objectReference: {fileID: 0}
     - target: {fileID: 5157622072382351144, guid: f295fff6117efaa4a89140f3a68033f0, type: 3}
       propertyPath: m_LocalRotation.y
@@ -6619,7 +6708,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5157622072382351144, guid: f295fff6117efaa4a89140f3a68033f0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -8.881784e-16
+      value: 8.881783e-16
       objectReference: {fileID: 0}
     - target: {fileID: 5157622072382351144, guid: f295fff6117efaa4a89140f3a68033f0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

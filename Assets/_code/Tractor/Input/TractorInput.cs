@@ -103,10 +103,18 @@ namespace Tractor
         TractorLights tractorLights;
         TractorAudio tractorAudio;
 
+        GameController gameController;
+
         void Start()
         {
             inputController = InputController.Instance;
+            gameController = GameController.Instance;
+
+            if (!inputController || !gameController)
+                return;
+
             overrideInputs = inputController.overrideInputs;
+
 
             steer_Input = inputController?.GetInputByName(steerInputName);
             throttle_Input = inputController?.GetInputByName(throttleInputName);
@@ -160,12 +168,16 @@ namespace Tractor
 
         void Update()
         {
+            if (!inputController || !gameController)
+                return;
+
             overrideInputs = inputController.overrideInputs;
 
             if (!vehicleInput || !overrideInputs)
                 return;
 
-            SetInputs();
+            if (gameController.gameState == GameController.GameState.Game)
+                SetInputs();
         }
 
         void OnDisable()
