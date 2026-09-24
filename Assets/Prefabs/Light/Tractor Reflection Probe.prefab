@@ -48,7 +48,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 1
   m_Resolution: 64
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 4, y: 3, z: 3}
+  m_BoxSize: {x: 400, y: 300, z: 300}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 1
   m_FarClip: 50
@@ -78,4 +78,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3369614e2ed7e8f419546a8bd0def44f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Vopere.Common.ReflectionProbeController
-  delay: 0.5
+  delay: 1

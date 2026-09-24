@@ -48,6 +48,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 5
       m_NumAlphaKeys: 2
     cirrusCloudsWindIntensity: 0.5
@@ -81,6 +82,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 5
       m_NumAlphaKeys: 2
     flatCloudsAmbientColor:
@@ -110,6 +112,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 4
       m_NumAlphaKeys: 2
     flatCloudsLightIntensity: 1.014
@@ -193,7 +196,7 @@ MonoBehaviour:
   Settings:
     volumetrics: 1
     steps: 32
-    quality: 1
+    quality: 0
     scattering: 0.28
     scatteringMultiplier:
       serializedVersion: 2
@@ -288,6 +291,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 4
       m_NumAlphaKeys: 2
     unityFog: 0
@@ -322,13 +326,39 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
   preset: {fileID: 11400000, guid: 6625884995235d049bd7f2f1de182577, type: 2}
   showFogControls: 1
-  showVolumetricsControls: 0
-  showUnityFogControls: 0
+  showVolumetricsControls: 1
+  showUnityFogControls: 1
   fogLights:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -464,6 +494,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 3
       m_NumAlphaKeys: 2
     frontColorGradient1:
@@ -493,6 +524,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
     frontColorGradient2:
@@ -522,6 +554,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
     frontColorGradient3:
@@ -551,6 +584,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
     frontColorGradient4:
@@ -580,6 +614,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
     frontColorGradient5:
@@ -609,6 +644,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
     backColorGradient0:
@@ -638,6 +674,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 3
       m_NumAlphaKeys: 2
     backColorGradient1:
@@ -667,6 +704,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
     backColorGradient2:
@@ -696,6 +734,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
     backColorGradient3:
@@ -725,6 +764,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
     backColorGradient4:
@@ -754,6 +794,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
     backColorGradient5:
@@ -783,6 +824,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
     sunDiscColorGradient:
@@ -812,6 +854,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 5
       m_NumAlphaKeys: 2
     moonColorGradient:
@@ -841,6 +884,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 3
       m_NumAlphaKeys: 2
     moonGlowColorGradient:
@@ -870,6 +914,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     starsTex: {fileID: 8900000, guid: b5a7175da0f133b4d951c19c9c2cebfc, type: 3}
@@ -1175,6 +1220,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 3
       m_NumAlphaKeys: 2
     frontColorGradient1:
@@ -1204,6 +1250,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
     frontColorGradient2:
@@ -1233,6 +1280,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
     frontColorGradient3:
@@ -1262,6 +1310,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
     frontColorGradient4:
@@ -1291,6 +1340,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
     frontColorGradient5:
@@ -1320,6 +1370,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
     backColorGradient0:
@@ -1349,6 +1400,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 3
       m_NumAlphaKeys: 2
     backColorGradient1:
@@ -1378,6 +1430,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
     backColorGradient2:
@@ -1407,6 +1460,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
     backColorGradient3:
@@ -1436,6 +1490,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
     backColorGradient4:
@@ -1465,6 +1520,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
     backColorGradient5:
@@ -1494,6 +1550,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
     sunDiscColorGradient:
@@ -1523,6 +1580,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 5
       m_NumAlphaKeys: 2
     moonColorGradient:
@@ -1552,6 +1610,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 3
       m_NumAlphaKeys: 2
     moonGlowColorGradient:
@@ -1581,6 +1640,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     starsTex: {fileID: 8900000, guid: b5a7175da0f133b4d951c19c9c2cebfc, type: 3}
@@ -1972,7 +2032,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    temperature: 8.778342
+    temperature: 6.932418
     temperatureWeatherMod: 0
     temperatureCustomMod: 0
     temperatureChangingSpeed: 0.1
@@ -2151,6 +2211,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 5
       m_NumAlphaKeys: 2
     moonColorGradient:
@@ -2180,6 +2241,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 4
       m_NumAlphaKeys: 2
     sunIntensityCurveHDRP:
@@ -2362,6 +2424,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     lightIntensityHDRP: 350
@@ -2469,6 +2532,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 5
       m_NumAlphaKeys: 2
     ambientEquatorColorGradient:
@@ -2498,6 +2562,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 5
       m_NumAlphaKeys: 2
     ambientGroundColorGradient:
@@ -2527,6 +2592,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 5
       m_NumAlphaKeys: 2
     ambientIntensityCurve:
@@ -2691,6 +2757,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 5
       m_NumAlphaKeys: 2
     moonColorGradient:
@@ -2720,6 +2787,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 4
       m_NumAlphaKeys: 2
     sunIntensityCurveHDRP:
@@ -2902,6 +2970,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     lightIntensityHDRP: 350
@@ -3009,6 +3078,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 5
       m_NumAlphaKeys: 2
     ambientEquatorColorGradient:
@@ -3038,6 +3108,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 5
       m_NumAlphaKeys: 2
     ambientGroundColorGradient:
@@ -3067,6 +3138,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 5
       m_NumAlphaKeys: 2
     ambientIntensityCurve:
@@ -3773,6 +3845,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 5
       m_NumAlphaKeys: 2
     moonLightColorGradient:
@@ -3802,6 +3875,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 3
       m_NumAlphaKeys: 2
     ambientColorGradient:
@@ -3831,6 +3905,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 5
       m_NumAlphaKeys: 2
     sunLightColor: {r: 0, g: 0, b: 0, a: 0}
@@ -3898,10 +3973,10 @@ MonoBehaviour:
     monthSerial: 3
     yearSerial: 2026
     timeOfDay: 8
-    latitude: 0
-    longitude: 0
-    utcOffset: 0
-    cycleLengthInMinutes: 10
+    latitude: 55.7522
+    longitude: 37.6156
+    utcOffset: 3
+    cycleLengthInMinutes: 24
     dayLengthModifier: 1
     nightLengthModifier: 1
     calenderType: 0
@@ -3911,8 +3986,8 @@ MonoBehaviour:
     customSunRotation: 88
   preset: {fileID: 11400000, guid: 82acdd278499d74498ad37dd931734d1, type: 2}
   showTimeControls: 1
-  showLocationControls: 0
-  LST: 298.86017
+  showLocationControls: 1
+  LST: 291.35272
 --- !u!114 &4011421771873438716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4253,7 +4328,7 @@ MonoBehaviour:
   m_Name: Flat Clouds Module
   m_EditorClassIdentifier: 
   showModuleInspector: 0
-  showSaveLoad: 0
+  showSaveLoad: 1
   active: 1
   settings:
     useCirrusClouds: 1
@@ -4288,6 +4363,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 5
       m_NumAlphaKeys: 2
     cirrusCloudsWindIntensity: 0.5
@@ -4321,6 +4397,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 5
       m_NumAlphaKeys: 2
     flatCloudsAmbientColor:
@@ -4350,6 +4427,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 4
       m_NumAlphaKeys: 2
     flatCloudsLightIntensity: 0.807
@@ -4366,11 +4444,11 @@ MonoBehaviour:
     flatCloudsWindIntensity: 1
     flatCloudsDetailWindIntensity: 0.5
   preset: {fileID: 11400000, guid: 0fcdd472bd6a8ec429fc1e9bc978c4fa, type: 2}
-  showCirrusCloudsControls: 0
-  show2DCloudsControls: 0
-  cloudFlatBaseAnim: {x: -0.15257281, y: 0.5053664}
-  cloudFlatDetailAnim: {x: -0.7628683, y: 0.5268067}
-  cirrusAnim: {x: -0.076286405, y: 0.2526832}
+  showCirrusCloudsControls: 1
+  show2DCloudsControls: 1
+  cloudFlatBaseAnim: {x: 0.0664465, y: 0.79335237}
+  cloudFlatDetailAnim: {x: 0.33200154, y: -0.033445224}
+  cirrusAnim: {x: 0.03322325, y: -0.6033487}
 --- !u!114 &6137975383063632260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4484,6 +4562,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 4
       m_NumAlphaKeys: 2
     unityFog: 0
@@ -4518,6 +4597,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
   preset: {fileID: 11400000, guid: 6625884995235d049bd7f2f1de182577, type: 2}
@@ -4993,11 +5073,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 456bf221b186fde4096dcf2c1841b35a, type: 3}
   m_Name: Quality Module
   m_EditorClassIdentifier: 
-  showModuleInspector: 0
+  showModuleInspector: 1
   showSaveLoad: 0
   active: 1
   Settings:
-    defaultQuality: {fileID: 11400000, guid: 60e887b1524da0a4a8f1318ef102e22a, type: 2}
+    defaultQuality: {fileID: 11400000, guid: 2e0aaa075bca92245a9e8300b7eace9c, type: 2}
     Qualities:
     - {fileID: 11400000, guid: a002704085c17f1439758fcee25df529, type: 2}
     - {fileID: 11400000, guid: 2e0aaa075bca92245a9e8300b7eace9c, type: 2}
@@ -5044,7 +5124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ccdfb360c52f049bf71126aa74826f, type: 3}
   m_Name: Weather Module
   m_EditorClassIdentifier: 
-  showModuleInspector: 0
+  showModuleInspector: 1
   showSaveLoad: 0
   active: 1
   Settings:
@@ -5068,7 +5148,7 @@ MonoBehaviour:
     audioTransitionSpeed: 1
   preset: {fileID: 11400000, guid: 8c4e279017d5e44458e3e4663b6ab460, type: 2}
   targetWeatherType: {fileID: 11400000, guid: 6c589d06d1746d04a864437f71d0cc30, type: 2}
-  weatherBlendProgress: 1
+  weatherBlendProgress: 0
   globalAutoWeatherChange: 1
   triggerCollider: {fileID: 0}
   triggerRB: {fileID: 0}
@@ -5162,6 +5242,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 5
       m_NumAlphaKeys: 2
     moonLightColorGradient:
@@ -5191,6 +5272,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 3
       m_NumAlphaKeys: 2
     ambientColorGradient:
@@ -5220,6 +5302,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 5
       m_NumAlphaKeys: 2
     sunLightColor: {r: 0, g: 0, b: 0, a: 0}
@@ -5244,22 +5327,22 @@ MonoBehaviour:
     volumetricClouds: 1
     lightningSupport: 1
     variableBottomNoise: 0
-    downsampling: 2
+    downsampling: 3
     stepsLayer1: 128
     stepsLayer2: 64
     blueNoiseIntensity: 2
     reprojectionBlendTime: 2
-    lodDistance: 0.6
+    lodDistance: 0.7
   preset: {fileID: 11400000, guid: 4b3879673bba3ff488a4b539b4de69b7, type: 2}
   showGlobalControls: 1
   showVolumeSettings: 0
-  showCoverageControls: 0
+  showCoverageControls: 1
   showLightingControls: 0
   showDensityControls: 0
   showTextureControls: 0
   showWindControls: 0
-  cloudAnimLayer1: {x: -0.7628683, y: 0.5268067, z: 0.16259775}
+  cloudAnimLayer1: {x: 0.33200154, y: -0.033445224, z: 0.15637225}
   cloudAnimLayer2: {x: 0, y: 0, z: 0}
-  cloudAnimNonScaledLayer1: {x: -0.006102912, y: 0.020214701, z: -0.46545905}
+  cloudAnimNonScaledLayer1: {x: 0.00265785, y: 0.11173435, z: -3.5519707}
   cloudAnimNonScaledLayer2: {x: 0, y: 0, z: 0}
   weatherMap: {fileID: 0}
