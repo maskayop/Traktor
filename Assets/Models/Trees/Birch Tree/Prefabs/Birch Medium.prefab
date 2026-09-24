@@ -146,14 +146,26 @@ PrefabInstance:
       propertyPath: m_ForceMeshLod
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1516057731949428924, guid: 9a59d90537df61744a4c09dd02fa8dad, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b477cb2ccfa4b94fbea754ad921cc2a, type: 2}
     - target: {fileID: 7156129480023273810, guid: 9a59d90537df61744a4c09dd02fa8dad, type: 3}
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7156129480023273810, guid: 9a59d90537df61744a4c09dd02fa8dad, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f9abce5178eecda47a41a2420a1e9f92, type: 2}
     - target: {fileID: 8649943633771727955, guid: 9a59d90537df61744a4c09dd02fa8dad, type: 3}
       propertyPath: m_ForceMeshLod
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8649943633771727955, guid: 9a59d90537df61744a4c09dd02fa8dad, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b477cb2ccfa4b94fbea754ad921cc2a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -186,8 +198,8 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1613770180044298150}
   serializedVersion: 3
-  m_LocalReferencePoint: {x: -0.36463523, y: 5.1378307, z: -0.093533754}
-  m_Size: 10.2798
+  m_LocalReferencePoint: {x: 0.36463523, y: 5.1378374, z: 0.093533516}
+  m_Size: 10.279795
   m_FadeMode: 1
   m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0

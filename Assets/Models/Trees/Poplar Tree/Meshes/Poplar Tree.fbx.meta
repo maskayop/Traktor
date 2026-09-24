@@ -32,7 +32,7 @@ ModelImporter:
       name: PoplarTree001_Billboard
     second: {fileID: 2100000, guid: 25e92fb83579e7b49badbd1b44ce69a3, type: 2}
   materials:
-    materialImportMode: 2
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -71,7 +71,7 @@ ModelImporter:
     sortHierarchyByName: 1
     importPhysicalCameras: 1
     importVisibility: 0
-    importBlendShapes: 1
+    importBlendShapes: 0
     importCameras: 0
     importLights: 0
     nodeNameCollisionStrategy: 1
@@ -89,7 +89,7 @@ ModelImporter:
     optimizeBones: 1
     generateMeshLods: 1
     meshLodGenerationFlags: 0
-    maximumMeshLod: 2
+    maximumMeshLod: 3
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
@@ -103,7 +103,7 @@ ModelImporter:
     strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 0
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
