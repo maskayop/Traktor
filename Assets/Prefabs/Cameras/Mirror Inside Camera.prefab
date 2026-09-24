@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 62808825224277412, guid: 574ab65ba5bfcce4da60e17edaee3839, type: 3}
       propertyPath: far clip plane
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 62808825224277412, guid: 574ab65ba5bfcce4da60e17edaee3839, type: 3}
       propertyPath: m_TargetTexture

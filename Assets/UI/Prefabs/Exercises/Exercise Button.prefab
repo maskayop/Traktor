@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7593434170366543383}
   - component: {fileID: 7973953443034929276}
   - component: {fileID: 5118949306103774046}
+  - component: {fileID: -7837014810714955597}
   m_Layer: 5
   m_Name: Exercise Button
   m_TagString: Untagged
@@ -149,6 +150,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.UI.UIExerciseButton
   selected: {fileID: 8791144469543440412}
   nameText: {fileID: 1542701127113369212}
+--- !u!114 &-7837014810714955597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5348854154070751160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d8b23b58e42784bb5aeadfdde30416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Vopere.UI.UIButtonClickAudio
+  clip: {fileID: 8300000, guid: 12c1d115c4c97cb4ba0497d886b79c70, type: 3}
 --- !u!1 &8717543149174570040
 GameObject:
   m_ObjectHideFlags: 0

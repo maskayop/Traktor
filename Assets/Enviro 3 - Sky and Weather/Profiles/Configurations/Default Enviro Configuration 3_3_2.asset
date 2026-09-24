@@ -363,6 +363,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   customFogDensityModifer: 1
   fogMat: {fileID: 0}
   volumetricsMat: {fileID: 0}
@@ -381,15 +387,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 153c2e7862a6cc74c80438e6d8e45aab, type: 3}
   m_Name: Reflections Module
   m_EditorClassIdentifier: 
-  showModuleInspector: 0
+  showModuleInspector: 1
   showSaveLoad: 0
   active: 1
   Settings:
-    globalReflections: 1
+    globalReflections: 0
     customRendering: 1
     customRenderingTimeSlicing: 1
     globalReflectionTimeSlicingMode: 0
-    globalReflectionsUpdateOnGameTime: 1
+    globalReflectionsUpdateOnGameTime: 0
     globalReflectionsUpdateOnPosition: 0
     globalReflectionsIntensity: 1
     globalReflectionsTimeTreshold: 0.025
@@ -399,7 +405,7 @@ MonoBehaviour:
     globalReflectionLayers:
       serializedVersion: 2
       m_Bits: 0
-    updateDefaultEnvironmentReflections: 1
+    updateDefaultEnvironmentReflections: 0
     defaultSkyReflectionTex: {fileID: 0}
   preset: {fileID: 11400000, guid: da668770e38694d49af97ecfd05fd7eb, type: 2}
   showReflectionControls: 1
@@ -2032,7 +2038,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    temperature: 6.932418
+    temperature: 6.93241
     temperatureWeatherMod: 0
     temperatureCustomMod: 0
     temperatureChangingSpeed: 0.1
@@ -3961,7 +3967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0081d4f9e5d6e0a4d9fe8e7a8d7256b6, type: 3}
   m_Name: Time Module
   m_EditorClassIdentifier: 
-  showModuleInspector: 1
+  showModuleInspector: 0
   showSaveLoad: 0
   active: 1
   Settings:
@@ -4446,9 +4452,9 @@ MonoBehaviour:
   preset: {fileID: 11400000, guid: 0fcdd472bd6a8ec429fc1e9bc978c4fa, type: 2}
   showCirrusCloudsControls: 1
   show2DCloudsControls: 1
-  cloudFlatBaseAnim: {x: 0.0664465, y: 0.79335237}
-  cloudFlatDetailAnim: {x: 0.33200154, y: -0.033445224}
-  cirrusAnim: {x: 0.03322325, y: -0.6033487}
+  cloudFlatBaseAnim: {x: 0.037714418, y: 0.9777157}
+  cloudFlatDetailAnim: {x: 0.18833838, y: 0.8883884}
+  cirrusAnim: {x: 0.018857209, y: -0.5111662}
 --- !u!114 &6137975383063632260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5124,7 +5130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ccdfb360c52f049bf71126aa74826f, type: 3}
   m_Name: Weather Module
   m_EditorClassIdentifier: 
-  showModuleInspector: 1
+  showModuleInspector: 0
   showSaveLoad: 0
   active: 1
   Settings:
@@ -5148,7 +5154,7 @@ MonoBehaviour:
     audioTransitionSpeed: 1
   preset: {fileID: 11400000, guid: 8c4e279017d5e44458e3e4663b6ab460, type: 2}
   targetWeatherType: {fileID: 11400000, guid: 6c589d06d1746d04a864437f71d0cc30, type: 2}
-  weatherBlendProgress: 0
+  weatherBlendProgress: 1
   globalAutoWeatherChange: 1
   triggerCollider: {fileID: 0}
   triggerRB: {fileID: 0}
@@ -5341,8 +5347,8 @@ MonoBehaviour:
   showDensityControls: 0
   showTextureControls: 0
   showWindControls: 0
-  cloudAnimLayer1: {x: 0.33200154, y: -0.033445224, z: 0.15637225}
+  cloudAnimLayer1: {x: 0.18833838, y: 0.8883884, z: 0.17555335}
   cloudAnimLayer2: {x: 0, y: 0, z: 0}
-  cloudAnimNonScaledLayer1: {x: 0.00265785, y: 0.11173435, z: -3.5519707}
+  cloudAnimNonScaledLayer1: {x: 0.0015085499, y: 0.11910913, z: -3.7914016}
   cloudAnimNonScaledLayer2: {x: 0, y: 0, z: 0}
   weatherMap: {fileID: 0}

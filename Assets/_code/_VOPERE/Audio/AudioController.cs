@@ -81,6 +81,9 @@ namespace Vopere
 
         public void Init()
         {
+            if (!DataSaveLoad.Instance)
+                return;
+
             if (musicSource.volume > 0)
                 PlayRandomMusicClip();
 
@@ -206,6 +209,10 @@ namespace Vopere
         void SetVolume(AudioMixerGroup mixerGroup, float INvalue, float value)
         {
             mixerGroup.audioMixer.SetFloat(mixerGroup.name + "Volume", value);
+
+            if (!DataSaveLoad.Instance)
+                return;
+
             DataSaveLoad.Instance.Save(mixerGroup.name + "Volume", INvalue);
         }
 

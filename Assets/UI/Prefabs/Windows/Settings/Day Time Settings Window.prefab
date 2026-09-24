@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6374665906144601273}
   - component: {fileID: 1807235104964244142}
+  - component: {fileID: 3762806454653597954}
   m_Layer: 5
   m_Name: Dynamic Time Toggle
   m_TagString: Untagged
@@ -98,6 +99,19 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 1
+--- !u!114 &3762806454653597954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9874423305648413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf13f456e3558b4894c9aa8afab357b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Vopere.UI.UIToggleClickAudio
+  clip: {fileID: 8300000, guid: 12c1d115c4c97cb4ba0497d886b79c70, type: 3}
 --- !u!1 &1547654357070774992
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,7 +525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.6666667, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.6666667, a: 0.5019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

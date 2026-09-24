@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using Vopere.Common;
 using static Tractor.GameController;
@@ -8,13 +9,14 @@ namespace Tractor.UI
     {
         public static UIMainCanvas Instance;
 
-        [Header("Test Info")]
-        [SerializeField] bool showTestInfoWindow = true;
-        [SerializeField] UITestInfoWindow testInfoWindow;
-
         [Header("Windows")]
         [SerializeField] GameObject mainMenuWindow;
         [SerializeField] GameObject HUDWindow;
+        [Header("Test Info")]
+        [SerializeField] bool showTestInfoWindow = true;
+        [SerializeField] UITestInfoWindow testInfoWindow;
+        [Header("Version")]
+        [SerializeField] TextMeshProUGUI versionText;
 
         GameController gameController;
         TractorController tractorController;
@@ -51,6 +53,9 @@ namespace Tractor.UI
 
             OpenMainMenuWindow();
             testInfoWindow.gameObject.SetActive(showTestInfoWindow);
+
+            if (versionText)
+                versionText.text = Application.version;
         }
 
         public void ExitGame()
