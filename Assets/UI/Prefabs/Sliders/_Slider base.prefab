@@ -554,4 +554,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad7a828f4021850438bcdec6839076a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Vopere.UI.UISliderAudio
-  clip: {fileID: 8300000, guid: 2a4093ee59afb1e45b0d70531db137dd, type: 3}
+  clip: {fileID: 0}

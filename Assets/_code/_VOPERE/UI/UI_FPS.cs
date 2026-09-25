@@ -1,6 +1,5 @@
 ﻿using TMPro;
 using UnityEngine;
-using UnityEngine.Localization.Settings;
 
 namespace Vopere.UI
 {
@@ -13,8 +12,6 @@ namespace Vopere.UI
         int frames = 0;
         float duration;
 
-        string currentLanguage;
-
         void Start()
         {
             SetFps(0);
@@ -25,13 +22,6 @@ namespace Vopere.UI
             float frameDuration = Time.unscaledDeltaTime;
             frames += 1;
             duration += frameDuration;
-
-            currentLanguage = LocalizationSettings.SelectedLocale.Identifier.Code;
-
-            if (currentLanguage == "ru")
-                isRussian = true;
-            else
-                isRussian = false;
 
             if (duration >= sampleDuration)
             {

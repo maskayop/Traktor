@@ -10,6 +10,9 @@ namespace Vopere.Common
 
         [SerializeField] List<string> scenes = new List<string>();
 
+        [Header("Info")]
+        public string[] scenesInBuild;
+
         string currentLoadedScene;
 
         void Awake()
@@ -24,20 +27,58 @@ namespace Vopere.Common
             Instance = this;
         }
 
-        public void LoadScene(string name)
+        void Start()
         {
-            SceneManager.LoadScene(name, LoadSceneMode.Single);
+            Init();
         }
 
-        public void LoadSceneAdditive(string name)
+        public void Init()
         {
-            SceneManager.LoadScene(name, LoadSceneMode.Additive);
-            currentLoadedScene = name;
+            GetAllScenesInBuild();
         }
 
-        public void UnloadScene(string name)
+        public string[] GetAllScenesInBuild()
         {
-            SceneManager.UnloadSceneAsync(name);
+            int sceneCount = SceneManager.sceneCountInBuildSettings;
+            scenesInBuild = new string[sceneCount];
+
+            for (int i = 0; i < sceneCount; i++)
+            {
+                string scenePath = SceneUtility.GetScenePathByBuildIndex(i);
+                scenesInBuild[i] = System.IO.Path.GetFileNameWithoutExtension(scenePath);
+            }
+
+            return scenesInBuild;
+        }
+
+        public bool IsSceneAddedToBuild(string sceneName)
+        {
+            bool value = false;
+
+            for (int i = 0; i < scenesInBuild.Length; i++)
+                if (scenesInBuild[i] == sceneName)
+                {
+                    value = true;
+                    break;
+                }
+
+            return value;
+        }
+
+        public void LoadScene(string sceneName)
+        {
+            SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        }
+
+        public void LoadSceneAdditive(string sceneName)
+        {
+            SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+            currentLoadedScene = sceneName;
+        }
+
+        public void UnloadScene(string sceneName)
+        {
+            SceneManager.UnloadSceneAsync(sceneName);
         }
 
         public void UnloadCurrentLoadedScene()
@@ -48,11 +89,6 @@ namespace Vopere.Common
         public string GetCurrentLoadedSceneName()
         {
             return currentLoadedScene;
-        }
-
-        public Scene GetCurrentOpenScene()
-        {
-            return SceneManager.GetActiveScene();
         }
 
         public void LoadSceneByName(string sceneName)

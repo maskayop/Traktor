@@ -110,6 +110,9 @@ namespace Vopere
 
         void PlayMusicClip()
         {
+            if (musicSamples.Count == 0)
+                return;
+
             if (currentMusic < 0)
                 currentMusic = musicSamples.Count - 1;
             else if (currentMusic >= musicSamples.Count)
@@ -185,8 +188,10 @@ namespace Vopere
 
         public void PlayUIAudioClip(AudioClip clip)
         {
-            if (UISource)
-                UISource.PlayOneShot(clip);
+            if (!UISource || !clip)
+                return;
+
+            UISource.PlayOneShot(clip);
         }
 
         public void ChangeVolume(int group, float INvalue)

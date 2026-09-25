@@ -10,3 +10,5 @@ UserSettings
 Builds
 Miscellaneous
 *.slnx
+Assets/game_log.txt
+Assets/game_log.txt.meta

@@ -5741,10 +5741,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2000225813805534545, guid: bbf64ce5bbca7f54699ebbd8326b5fbc, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5638274482005963191, guid: bbf64ce5bbca7f54699ebbd8326b5fbc, type: 3}
       propertyPath: m_Name
       value: Tractor Camera
