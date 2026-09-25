@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 297561b44d9345d498067c7b39b0a085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Vopere.Common.CameraFPSLimiter
-  targetFPS: 10
+  targetFPS: 15
   renderOnStart: 1
 --- !u!114 &7596845362503224079
 MonoBehaviour:
