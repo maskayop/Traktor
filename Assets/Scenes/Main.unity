@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 0.8050667
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 1908963148}
+  m_SkyboxMaterial: {fileID: 1834773625}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1705,6 +1705,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (20)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.71958905
@@ -1756,10 +1760,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (20)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1989,6 +1989,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (18)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6916428
@@ -2040,10 +2044,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (18)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4852,6 +4852,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.71493244
@@ -4903,10 +4907,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5219,6 +5219,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (9)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7166898
@@ -5271,10 +5275,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (9)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5298,6 +5298,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (22)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.72437054
@@ -5349,10 +5353,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (22)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6815,6 +6815,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (37)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.72850764
@@ -6866,10 +6870,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (37)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9727,6 +9727,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.69236434
@@ -9778,10 +9782,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10722,6 +10722,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (10)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6536962
@@ -10773,10 +10777,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (10)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11018,6 +11018,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (39)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7564492
@@ -11070,10 +11074,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (39)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11092,6 +11092,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7751301
@@ -11143,10 +11147,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12531,6 +12531,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (24)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.71355426
@@ -12582,10 +12586,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (24)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13015,6 +13015,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (21)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.722002
@@ -13066,10 +13070,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (21)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16115,6 +16115,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (32)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6773502
@@ -16166,10 +16170,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (32)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16695,6 +16695,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6588052
@@ -16746,10 +16750,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17881,6 +17881,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (16)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.79489845
@@ -17932,10 +17936,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (16)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19324,6 +19324,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (25)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.74367034
@@ -19375,10 +19379,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (25)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19435,6 +19435,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (19)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6659433
@@ -19486,10 +19490,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (19)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19649,6 +19649,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (34)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7380105
@@ -19700,10 +19704,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (34)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21313,6 +21313,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (31)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.777064
@@ -21364,10 +21368,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (31)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21609,6 +21609,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (15)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.75115126
@@ -21660,10 +21664,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (15)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21879,6 +21879,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (44)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.75939727
@@ -21930,10 +21934,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (44)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23046,6 +23046,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (11)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7044477
@@ -23097,10 +23101,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (11)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25579,6 +25579,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (12)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.68165016
@@ -25630,10 +25634,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (12)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26319,6 +26319,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (35)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7932585
@@ -26370,10 +26374,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (35)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26751,6 +26751,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (14)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.76521873
@@ -26802,10 +26806,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (14)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29508,6 +29508,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (13)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.66783255
@@ -29559,10 +29563,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (13)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -31101,6 +31101,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7665197
@@ -31152,10 +31156,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32603,6 +32603,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (23)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7445102
@@ -32654,10 +32658,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (23)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32739,6 +32739,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (38)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7006257
@@ -32790,10 +32794,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (38)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32887,6 +32887,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7480399
@@ -32938,10 +32942,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36061,6 +36061,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (33)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7215273
@@ -36112,10 +36116,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (33)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36271,6 +36271,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (43)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7951646
@@ -36322,10 +36326,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (43)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36567,6 +36567,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6548043
@@ -36618,10 +36622,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37345,6 +37345,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7281147
@@ -37396,10 +37400,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -38073,6 +38073,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7163254
@@ -38124,10 +38128,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -40609,6 +40609,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (17)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.77744377
@@ -40660,10 +40664,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (17)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -40831,6 +40831,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (27)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.67221415
@@ -40882,10 +40886,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (27)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -41143,6 +41143,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (29)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.777846
@@ -41194,10 +41198,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (29)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -41728,6 +41728,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (41)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.73570454
@@ -41779,10 +41783,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (41)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -43773,6 +43773,54 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4559363503427387824, guid: 45925a4ef25326743969f23a472b4fd8, type: 3}
   m_PrefabInstance: {fileID: 1832945615}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &1834773625
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Enviro/Skybox
+  m_Shader: {fileID: 4800000, guid: 34fee0a1b19b20b45aea7483b5f757da, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _GalaxyTex:
+        m_Texture: {fileID: 8900000, guid: 5734983fc81450b4187c3cfa5985edef, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MoonGlowTex:
+        m_Texture: {fileID: 2800000, guid: 6838e0810da4e49488b5d9a6ee76eb07, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MoonTex:
+        m_Texture: {fileID: 2800000, guid: c6fd9f694390e0245b6dca5812065950, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _StarsTex:
+        m_Texture: {fileID: 8900000, guid: b5a7175da0f133b4d951c19c9c2cebfc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SunTex:
+        m_Texture: {fileID: 2800000, guid: c95bed5306e94f24ba5802d841607ac7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats: []
+    m_Colors: []
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1001 &1835672759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43929,6 +43977,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (40)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7359263
@@ -43980,10 +44032,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (40)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -45400,54 +45448,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4559363503427387824, guid: 45925a4ef25326743969f23a472b4fd8, type: 3}
   m_PrefabInstance: {fileID: 1908112531}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1908963148
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Enviro/Skybox
-  m_Shader: {fileID: 4800000, guid: 34fee0a1b19b20b45aea7483b5f757da, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _GalaxyTex:
-        m_Texture: {fileID: 8900000, guid: 5734983fc81450b4187c3cfa5985edef, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MoonGlowTex:
-        m_Texture: {fileID: 2800000, guid: 6838e0810da4e49488b5d9a6ee76eb07, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MoonTex:
-        m_Texture: {fileID: 2800000, guid: c6fd9f694390e0245b6dca5812065950, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _StarsTex:
-        m_Texture: {fileID: 8900000, guid: b5a7175da0f133b4d951c19c9c2cebfc, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SunTex:
-        m_Texture: {fileID: 2800000, guid: c95bed5306e94f24ba5802d841607ac7, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats: []
-    m_Colors: []
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1 &1910395284
 GameObject:
   m_ObjectHideFlags: 0
@@ -45926,6 +45926,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (30)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.70229495
@@ -45977,10 +45981,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (30)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -46073,6 +46073,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (42)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.74143314
@@ -46124,10 +46128,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (42)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -47122,6 +47122,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (36)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7676722
@@ -47173,10 +47177,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (36)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -48763,6 +48763,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (28)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6731106
@@ -48814,10 +48818,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (28)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -50261,6 +50261,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114833172}
     m_Modifications:
+    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
+      propertyPath: m_Name
+      value: Birch Medium (26)
+      objectReference: {fileID: 0}
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.71979094
@@ -50312,10 +50316,6 @@ PrefabInstance:
     - target: {fileID: 2102780533705067804, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613770180044298150, guid: 5a4462da4cb22da49abc55b3a6f0983d, type: 3}
-      propertyPath: m_Name
-      value: Birch Medium (26)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -50518,7 +50518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 605831752466901865, guid: fc3a6a4078b63654f8057169c8d16d07, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.00029015762
+      value: -0.00077010907
       objectReference: {fileID: 0}
     - target: {fileID: 659931950799443123, guid: fc3a6a4078b63654f8057169c8d16d07, type: 3}
       propertyPath: m_AnchorMax.x
@@ -51973,6 +51973,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7456509903811314784, guid: fc3a6a4078b63654f8057169c8d16d07, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468392516130431176, guid: fc3a6a4078b63654f8057169c8d16d07, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468392516130431176, guid: fc3a6a4078b63654f8057169c8d16d07, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468392516130431176, guid: fc3a6a4078b63654f8057169c8d16d07, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468392516130431176, guid: fc3a6a4078b63654f8057169c8d16d07, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}

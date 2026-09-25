@@ -21,6 +21,9 @@ namespace Tractor.UI
         [SerializeField] Slider UIAudioSlider;
         [SerializeField] TextMeshProUGUI UIAudioValueText;
 
+        [Header("UI")]
+        [SerializeField] Toggle testInfoToggle;
+
         protected override void OnInit()
         {
             SetTogglesLoadedValue("GraphicsLevel", graphicsLevelToggles);
@@ -29,6 +32,9 @@ namespace Tractor.UI
             SetSliderLoadedValue("UIVolume", UIAudioSlider, UIAudioValueText, 100);
 
             SetScreenResolutionProperties();
+
+            if (testInfoToggle)
+                testInfoToggle.SetIsOnWithoutNotify(mainCanvas.showTestInfoWindow);
         }
 
         protected override void OnOpen()
@@ -136,6 +142,20 @@ namespace Tractor.UI
                 else
                     screenResolutionTexts[i].text = defaultScreenResolution.x + " x " + defaultScreenResolution.y;
             }
+        }
+
+        public void ShowTestInfoWindow(bool state)
+        {
+            mainCanvas.ShowTestInfoWindow(state);
+        }
+
+        public void SetTestInfoToggle(bool enabled)
+        {
+            if (!testInfoToggle)
+                return;
+
+            testInfoToggle.SetIsOnWithoutNotify(enabled);
+            ShowTestInfoWindow(enabled);
         }
     }
 }

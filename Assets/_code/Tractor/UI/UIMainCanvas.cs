@@ -13,7 +13,7 @@ namespace Tractor.UI
         [SerializeField] GameObject mainMenuWindow;
         [SerializeField] GameObject HUDWindow;
         [Header("Test Info")]
-        [SerializeField] bool showTestInfoWindow = true;
+        public bool showTestInfoWindow = true;
         [SerializeField] UITestInfoWindow testInfoWindow;
         [Header("Version")]
         [SerializeField] TextMeshProUGUI versionText;
@@ -52,7 +52,7 @@ namespace Tractor.UI
                 return;
 
             OpenMainMenuWindow();
-            testInfoWindow.gameObject.SetActive(showTestInfoWindow);
+            ShowTestInfoWindow(showTestInfoWindow);
 
             if (versionText)
                 versionText.text = Application.version;
@@ -82,6 +82,12 @@ namespace Tractor.UI
         public void StartGame()
         {
             CloseMainMenuWindow();
+        }
+
+        public void ShowTestInfoWindow(bool state)
+        {
+            showTestInfoWindow = state;
+            testInfoWindow.gameObject.SetActive(state);
         }
     }
 }

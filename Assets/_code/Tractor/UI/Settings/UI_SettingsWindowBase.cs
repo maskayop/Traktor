@@ -16,6 +16,8 @@ namespace Tractor.UI
         protected AudioController audioController;
         protected LightController lightController;
 
+        protected UIMainCanvas mainCanvas;
+
         bool isOpen = false;
         public bool IsOpen { get { return isOpen; } }
 
@@ -38,6 +40,7 @@ namespace Tractor.UI
             gameController = GameController.Instance;
             audioController = AudioController.Instance;
             lightController = LightController.Instance;
+            mainCanvas = UIMainCanvas.Instance;
 
             OnInit();
         }
