@@ -196,6 +196,14 @@ MonoBehaviour:
     useDeadzone: 0
     deadzone: 0
     inputValue: 0
+  - inputName: Parking Lights On
+    useDeadzone: 0
+    deadzone: 0
+    inputValue: 0
+  - inputName: Parking Lights Off
+    useDeadzone: 0
+    deadzone: 0
+    inputValue: 0
   - inputName: Headlights
     useDeadzone: 0
     deadzone: 0

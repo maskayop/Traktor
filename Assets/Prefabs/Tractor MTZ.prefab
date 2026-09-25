@@ -853,6 +853,8 @@ MonoBehaviour:
   turnLeftInputName: Turn Left
   turnRightInputName: Turn Right
   alarmInputName: Alarm
+  parkingLightOnInputName: Parking Lights On
+  parkingLightOffInputName: Parking Lights Off
   hornSignalInputName: Horn Signal
 --- !u!114 &5510360152096047968
 MonoBehaviour:
@@ -948,15 +950,20 @@ MonoBehaviour:
   turnLightPropertyName: _Vertex_Green_Intensity
   turnLightMultiplier: 5
   turnLightsBlinkingSpeed: 8
+  brakeLightPropertyName: _Vertex_Red_Intensity
+  brakeLightMultiplier: 7
+  parkingLightPropertyName: _Vertex_Blue_Intensity
+  parkingLightMultiplier: 3
   lightSideFrontLeft: {fileID: 8748209919484473897}
   lightSideFrontRight: {fileID: 7708323206060226675}
   lightSideBackLeft: {fileID: 7021041348888547897}
   lightSideBackRight: {fileID: 7846186426463608025}
-  turnLightsRelayCanWork: 0
+  lightsCanWork: 0
   leftTurnIsOn: 0
   rightTurnIsOn: 0
   alarmIsOn: 0
-  turnLightsRelayValue: 0
+  brakeIsOn: 0
+  parkingIsOn: 0
 --- !u!114 &791837015719757519
 MonoBehaviour:
   m_ObjectHideFlags: 0

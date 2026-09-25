@@ -44,39 +44,52 @@ namespace Tractor
             }
         }
 
-        [Header("Параметры материала")]
+        [Header("Параметры материалов")]
         [SerializeField] string turnLightPropertyName;
         [SerializeField] float turnLightMultiplier = 1.0f;
         [SerializeField] float turnLightsBlinkingSpeed = 1.0f;
 
-        [Header("Поворотники")]
+        [SerializeField] string brakeLightPropertyName;
+        [SerializeField] float brakeLightMultiplier = 1.0f;
+
+        [SerializeField] string parkingLightPropertyName;
+        [SerializeField] float parkingLightMultiplier = 1.0f;
+
+        [Header("Боковые светильники")]
         [SerializeField] MeshLightController lightSideFrontLeft;
         [SerializeField] MeshLightController lightSideFrontRight;
         [SerializeField] MeshLightController lightSideBackLeft;
         [SerializeField] MeshLightController lightSideBackRight;
 
-        [Header("Info")]
-        public bool turnLightsRelayCanWork = false;
+
+        [Header("Инфо")]
+        public bool lightsCanWork = false;
+
+        [Space(10)]
         public bool leftTurnIsOn = false;
         public bool rightTurnIsOn = false;
         public bool alarmIsOn = false;
+        public bool brakeIsOn = false;
+        public bool parkingIsOn = false;
 
         TractorEngine tractorEngine;
 
-        public float turnLightsRelayValue = 0;
+        float turnLightsRelayValue = 0;
         float turnLightsRelayTime = 0;
 
         void Update()
         {
             if (!tractorEngine.Mass)
             {
-                turnLightsRelayCanWork = false;
+                lightsCanWork = false;
                 return;
             }
             else
-                turnLightsRelayCanWork = true;
+                lightsCanWork = true;
 
             UpdateTurnLightsRelay();
+            UpdateBrakeLightsMaterials();
+            UpdateParkingLightsMaterials();
         }
 
         public void Init(TractorInput INtractorInput, TractorEngine INtractorEngine)
@@ -89,7 +102,7 @@ namespace Tractor
 
         void UpdateTurnLightsRelay()
         {
-            if (!turnLightsRelayCanWork)
+            if (!lightsCanWork)
                 return;
 
             if (!leftTurnIsOn && !rightTurnIsOn && !alarmIsOn)
@@ -147,6 +160,44 @@ namespace Tractor
             }
         }
 
+        void UpdateBrakeLightsMaterials()
+        {
+            if (!lightsCanWork)
+                return;
+
+            if (brakeIsOn)
+            {
+                lightSideBackLeft.UpdateVisuals(brakeLightPropertyName, brakeLightMultiplier);
+                lightSideBackRight.UpdateVisuals(brakeLightPropertyName, brakeLightMultiplier);
+            }
+            else
+            {
+                lightSideBackLeft.UpdateVisuals(brakeLightPropertyName, 0);
+                lightSideBackRight.UpdateVisuals(brakeLightPropertyName, 0);
+            }
+        }
+
+        void UpdateParkingLightsMaterials()
+        {
+            if (!lightsCanWork)
+                return;
+
+            if (parkingIsOn)
+            {
+                lightSideFrontLeft.UpdateVisuals(parkingLightPropertyName, parkingLightMultiplier);
+                lightSideBackLeft.UpdateVisuals(parkingLightPropertyName, parkingLightMultiplier);
+                lightSideFrontRight.UpdateVisuals(parkingLightPropertyName, parkingLightMultiplier);
+                lightSideBackRight.UpdateVisuals(parkingLightPropertyName, parkingLightMultiplier);
+            }
+            else
+            {
+                lightSideFrontLeft.UpdateVisuals(parkingLightPropertyName, 0);
+                lightSideBackLeft.UpdateVisuals(parkingLightPropertyName, 0);
+                lightSideFrontRight.UpdateVisuals(parkingLightPropertyName, 0);
+                lightSideBackRight.UpdateVisuals(parkingLightPropertyName, 0);
+            }
+        }
+
         public void TurnOnLeftTurnLight()
         {
             leftTurnIsOn = true;
@@ -168,6 +219,21 @@ namespace Tractor
         public void ActivateAlarmLights(bool state)
         {
             alarmIsOn = state;
+        }
+
+        public void ActivateBrakeLights(bool state)
+        {
+            brakeIsOn = state;
+        }
+
+        public void TurnOnParkingLights()
+        {
+            parkingIsOn = true;
+        }
+
+        public void TurnOffParkingLights()
+        {
+            parkingIsOn = false;
         }
     }
 }

@@ -82,8 +82,15 @@ namespace Tractor
 
         [SerializeField] string turnRightInputName;
         CustomInput turnRight_Input;
+
         [SerializeField] string alarmInputName;
         CustomInput alarm_Input;
+
+        [SerializeField] string parkingLightOnInputName;
+        CustomInput parkingLightOn_Input;
+
+        [SerializeField] string parkingLightOffInputName;
+        CustomInput parkingLightOff_Input;
 
         [Header("Звуки")]
         [SerializeField] string hornSignalInputName;
@@ -146,6 +153,8 @@ namespace Tractor
             turnLeft_Input = inputController?.GetInputByName(turnLeftInputName);
             turnRight_Input = inputController?.GetInputByName(turnRightInputName);
             alarm_Input = inputController?.GetInputByName(alarmInputName);
+            parkingLightOn_Input = inputController?.GetInputByName(parkingLightOnInputName);
+            parkingLightOff_Input = inputController?.GetInputByName(parkingLightOffInputName);
 
             hornSignal_Input = inputController?.GetInputByName(hornSignalInputName);
         }
@@ -206,7 +215,14 @@ namespace Tractor
                 vehicleInput.inputs.throttleInput = throttle_Input.inputValue;
 
             if (brake_Input != null)
+            {
                 vehicleInput.inputs.brakeInput = brake_Input.inputValue;
+
+                if (brake_Input.inputValue != 0)
+                    tractorLights.ActivateBrakeLights(true);
+                else
+                    tractorLights.ActivateBrakeLights(false);
+            }
 
             if (clutch_Input != null)
                 vehicleInput.inputs.clutchInput = clutch_Input.inputValue;
@@ -314,6 +330,14 @@ namespace Tractor
                 else
                     tractorLights.ActivateAlarmLights(false);
             }
+
+            if (parkingLightOn_Input != null)
+                if (parkingLightOn_Input.inputValue != 0)
+                    tractorLights.TurnOnParkingLights();
+
+            if (parkingLightOff_Input != null)
+                if (parkingLightOff_Input.inputValue != 0)
+                    tractorLights.TurnOffParkingLights();
 
             //Звуки
             if (hornSignal_Input != null)

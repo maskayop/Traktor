@@ -340,6 +340,24 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Parking Lights On",
+                    "type": "Button",
+                    "id": "9783726d-95c1-4c8e-b017-ed95c502a477",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Parking Lights Off",
+                    "type": "Button",
+                    "id": "7edab77e-09a8-4b44-9cd1-47fe50aac5ad",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Headlights",
                     "type": "Button",
                     "id": "59534f9d-daed-40e9-aeec-81ec0cb54d62",
@@ -1233,6 +1251,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Clutch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f2824b6a-6c66-480f-a49c-a1fb5fdbc2d9",
+                    "path": "<Keyboard>/5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Parking Lights On",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5870cb22-151e-426b-81bd-5dc80b90313c",
+                    "path": "<Keyboard>/6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Parking Lights Off",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
