@@ -208,6 +208,14 @@ MonoBehaviour:
     useDeadzone: 0
     deadzone: 0
     inputValue: 0
+  - inputName: Headlights On
+    useDeadzone: 0
+    deadzone: 0
+    inputValue: 0
+  - inputName: Headlights Off
+    useDeadzone: 0
+    deadzone: 0
+    inputValue: 0
   - inputName: High Beam Light Constant
     useDeadzone: 0
     deadzone: 0

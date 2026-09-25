@@ -10,11 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6026595336330140824, guid: 535294961af2bf54f871c7dece588a5f, type: 3}
       propertyPath: m_text
-      value: "\u0414\u0435\u043D\u044C\n<size=15>13:00</size>"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6026595336330140824, guid: 535294961af2bf54f871c7dece588a5f, type: 3}
-      propertyPath: m_fontColor.a
-      value: 0.9
+      value: "\u0414\u0435\u043D\u044C\n<size=16>13:00</size>"
       objectReference: {fileID: 0}
     - target: {fileID: 6800218599672790065, guid: 535294961af2bf54f871c7dece588a5f, type: 3}
       propertyPath: m_Name

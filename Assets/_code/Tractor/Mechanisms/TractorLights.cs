@@ -55,6 +55,12 @@ namespace Tractor
         [SerializeField] string parkingLightPropertyName;
         [SerializeField] float parkingLightMultiplier = 1.0f;
 
+        [SerializeField] string headLightPropertyName;
+        [SerializeField] float headLightMultiplier = 1.0f;
+
+        [Header("Главные светильники")]
+        [SerializeField] MeshLightController lightHeadFront;
+
         [Header("Боковые светильники")]
         [SerializeField] MeshLightController lightSideFrontLeft;
         [SerializeField] MeshLightController lightSideFrontRight;
@@ -71,6 +77,7 @@ namespace Tractor
         public bool alarmIsOn = false;
         public bool brakeIsOn = false;
         public bool parkingIsOn = false;
+        public bool headIsOn = false;
 
         TractorEngine tractorEngine;
 
@@ -90,6 +97,7 @@ namespace Tractor
             UpdateTurnLightsRelay();
             UpdateBrakeLightsMaterials();
             UpdateParkingLightsMaterials();
+            UpdateHeadLightsMaterials();
         }
 
         public void Init(TractorInput INtractorInput, TractorEngine INtractorEngine)
@@ -198,6 +206,17 @@ namespace Tractor
             }
         }
 
+        void UpdateHeadLightsMaterials()
+        {
+            if (!lightsCanWork)
+                return;
+
+            if (headIsOn)
+                lightHeadFront.UpdateVisuals(headLightPropertyName, headLightMultiplier);
+            else
+                lightHeadFront.UpdateVisuals(headLightPropertyName, 0);
+        }
+
         public void TurnOnLeftTurnLight()
         {
             leftTurnIsOn = true;
@@ -234,6 +253,16 @@ namespace Tractor
         public void TurnOffParkingLights()
         {
             parkingIsOn = false;
+        }
+
+        public void TurnOnHeadLights()
+        {
+            headIsOn = true;
+        }
+
+        public void TurnOffHeadLights()
+        {
+            headIsOn = false;
         }
     }
 }

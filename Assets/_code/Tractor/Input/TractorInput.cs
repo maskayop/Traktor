@@ -92,6 +92,12 @@ namespace Tractor
         [SerializeField] string parkingLightOffInputName;
         CustomInput parkingLightOff_Input;
 
+        [SerializeField] string headLightOnInputName;
+        CustomInput headLightOn_Input;
+
+        [SerializeField] string headLightOffInputName;
+        CustomInput headLightOff_Input;
+
         [Header("Звуки")]
         [SerializeField] string hornSignalInputName;
         CustomInput hornSignal_Input;
@@ -155,6 +161,8 @@ namespace Tractor
             alarm_Input = inputController?.GetInputByName(alarmInputName);
             parkingLightOn_Input = inputController?.GetInputByName(parkingLightOnInputName);
             parkingLightOff_Input = inputController?.GetInputByName(parkingLightOffInputName);
+            headLightOn_Input = inputController?.GetInputByName(headLightOnInputName);
+            headLightOff_Input = inputController?.GetInputByName(headLightOffInputName);
 
             hornSignal_Input = inputController?.GetInputByName(hornSignalInputName);
         }
@@ -338,6 +346,14 @@ namespace Tractor
             if (parkingLightOff_Input != null)
                 if (parkingLightOff_Input.inputValue != 0)
                     tractorLights.TurnOffParkingLights();
+
+            if (headLightOn_Input != null)
+                if (headLightOn_Input.inputValue != 0)
+                    tractorLights.TurnOnHeadLights();
+
+            if (headLightOff_Input != null)
+                if (headLightOff_Input.inputValue != 0)
+                    tractorLights.TurnOffHeadLights();
 
             //Звуки
             if (hornSignal_Input != null)

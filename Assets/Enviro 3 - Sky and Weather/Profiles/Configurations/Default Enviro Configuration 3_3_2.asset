@@ -369,6 +369,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   customFogDensityModifer: 1
   fogMat: {fileID: 0}
   volumetricsMat: {fileID: 0}
@@ -387,7 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 153c2e7862a6cc74c80438e6d8e45aab, type: 3}
   m_Name: Reflections Module
   m_EditorClassIdentifier: 
-  showModuleInspector: 1
+  showModuleInspector: 0
   showSaveLoad: 0
   active: 1
   Settings:
@@ -471,7 +478,7 @@ MonoBehaviour:
   active: 1
   Settings:
     skyMode: 0
-    moonMode: 1
+    moonMode: 2
     forcedSkyboxSetup: 1
     frontColorGradient0:
       serializedVersion: 2
@@ -1151,7 +1158,7 @@ MonoBehaviour:
   preset: {fileID: 11400000, guid: 44f43418b8d8b8142863e38d1e49e174, type: 2}
   showSkyControls: 0
   showSkySunControls: 0
-  showSkyMoonControls: 0
+  showSkyMoonControls: 1
   showSkyStarsControls: 0
   mySkyboxMat: {fileID: 0}
 --- !u!114 &-1420550187111102359
@@ -2099,7 +2106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18a0693e95fd064e9d0a3b96e538236, type: 3}
   m_Name: Lighting Module
   m_EditorClassIdentifier: 
-  showModuleInspector: 0
+  showModuleInspector: 1
   showSaveLoad: 0
   active: 1
   Settings:
@@ -2192,8 +2199,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     sunColorGradient:
       serializedVersion: 2
-      key0: {r: 0.29803923, g: 0.33333334, b: 0.4392157, a: 1}
-      key1: {r: 0.3853806, g: 0.4379325, b: 0.5955882, a: 1}
+      key0: {r: 0.20357145, g: 0.22767858, b: 0.3, a: 1}
+      key1: {r: 0.29117647, g: 0.33088234, b: 0.45, a: 1}
       key2: {r: 1, g: 0.51851845, b: 0, a: 0}
       key3: {r: 0.91764706, g: 0.78431374, b: 0.6431373, a: 0}
       key4: {r: 0.91764706, g: 0.8627451, b: 0.80784315, a: 0}
@@ -2217,7 +2224,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: -1
+      m_ColorSpace: 0
       m_NumColorKeys: 5
       m_NumAlphaKeys: 2
     moonColorGradient:
@@ -2630,7 +2637,7 @@ MonoBehaviour:
     ambientUpdateIntervall: 0.1
     shadowIntensity: 1
   preset: {fileID: 11400000, guid: 81d8b109102443243bcb0894975c0718, type: 2}
-  showDirectLightingControls: 0
+  showDirectLightingControls: 1
   showAmbientLightingControls: 0
   showReflectionControls: 0
 --- !u!114 &1121697361819163703
@@ -4452,9 +4459,9 @@ MonoBehaviour:
   preset: {fileID: 11400000, guid: 0fcdd472bd6a8ec429fc1e9bc978c4fa, type: 2}
   showCirrusCloudsControls: 1
   show2DCloudsControls: 1
-  cloudFlatBaseAnim: {x: 0.037714418, y: 0.9777157}
-  cloudFlatDetailAnim: {x: 0.18833838, y: 0.8883884}
-  cirrusAnim: {x: 0.018857209, y: -0.5111662}
+  cloudFlatBaseAnim: {x: -0.09089103, y: -0.19726574}
+  cloudFlatDetailAnim: {x: -0.4546904, y: -0.9869637}
+  cirrusAnim: {x: -0.045445517, y: -0.09856108}
 --- !u!114 &6137975383063632260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5347,8 +5354,8 @@ MonoBehaviour:
   showDensityControls: 0
   showTextureControls: 0
   showWindControls: 0
-  cloudAnimLayer1: {x: 0.18833838, y: 0.8883884, z: 0.17555335}
+  cloudAnimLayer1: {x: -0.4546904, y: -0.9869637, z: -0.5921737}
   cloudAnimLayer2: {x: 0, y: 0, z: 0}
-  cloudAnimNonScaledLayer1: {x: 0.0015085499, y: 0.11910913, z: -3.7914016}
+  cloudAnimNonScaledLayer1: {x: -0.0036356642, y: 0.15211841, z: -4.8631}
   cloudAnimNonScaledLayer2: {x: 0, y: 0, z: 0}
   weatherMap: {fileID: 0}

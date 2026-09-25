@@ -367,6 +367,24 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Headlights On",
+                    "type": "Button",
+                    "id": "8196b12c-33db-4005-b8a0-6e66ef35b101",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Headlights Off",
+                    "type": "Button",
+                    "id": "29e7998b-66f7-415a-8fa9-a27e3b92ef2d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "High Beam Light Constant",
                     "type": "Button",
                     "id": "20689bee-638b-43bb-aa62-ebaef27b7133",
@@ -1273,6 +1291,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Parking Lights Off",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "76e15252-463e-42ea-b88f-6edaba67b2d0",
+                    "path": "<Keyboard>/7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Headlights On",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "addd5686-31af-48cc-ac62-e4e5957bde19",
+                    "path": "<Keyboard>/8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Headlights Off",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

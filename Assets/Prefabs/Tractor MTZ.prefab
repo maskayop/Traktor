@@ -635,6 +635,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2662062807576876527}
   - {fileID: 6388565693970198850}
   - {fileID: 3944702157342141021}
   - {fileID: 1251597447517666442}
@@ -855,6 +856,8 @@ MonoBehaviour:
   alarmInputName: Alarm
   parkingLightOnInputName: Parking Lights On
   parkingLightOffInputName: Parking Lights Off
+  headLightOnInputName: Headlights On
+  headLightOffInputName: Headlights Off
   hornSignalInputName: Horn Signal
 --- !u!114 &5510360152096047968
 MonoBehaviour:
@@ -954,6 +957,9 @@ MonoBehaviour:
   brakeLightMultiplier: 7
   parkingLightPropertyName: _Vertex_Blue_Intensity
   parkingLightMultiplier: 3
+  headLightPropertyName: _Vertex_Red_Intensity
+  headLightMultiplier: 8
+  lightHeadFront: {fileID: 377968324352054916}
   lightSideFrontLeft: {fileID: 8748209919484473897}
   lightSideFrontRight: {fileID: 7708323206060226675}
   lightSideBackLeft: {fileID: 7021041348888547897}
@@ -964,6 +970,7 @@ MonoBehaviour:
   alarmIsOn: 0
   brakeIsOn: 0
   parkingIsOn: 0
+  headIsOn: 0
 --- !u!114 &791837015719757519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4298,6 +4305,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -8499241361533076576, guid: 84d3da04f7964b844810b716a701066b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -7943440732282385863, guid: 84d3da04f7964b844810b716a701066b, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -4410,6 +4421,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3163987590827546294, guid: 84d3da04f7964b844810b716a701066b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3454330174241478843, guid: 84d3da04f7964b844810b716a701066b, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -4487,6 +4502,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8619516659342238290, guid: 84d3da04f7964b844810b716a701066b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8869903714218908678, guid: 84d3da04f7964b844810b716a701066b, type: 3}
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
@@ -6855,6 +6874,79 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5157622072382351144, guid: f295fff6117efaa4a89140f3a68033f0, type: 3}
   m_PrefabInstance: {fileID: 8449490382523923082}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8686683346993806086
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3650971732383396570}
+    m_Modifications:
+    - target: {fileID: 6664413196179992297, guid: 0f188c6651cb3cc4d8afc9ea8ece5f87, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6664413196179992297, guid: 0f188c6651cb3cc4d8afc9ea8ece5f87, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6664413196179992297, guid: 0f188c6651cb3cc4d8afc9ea8ece5f87, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6664413196179992297, guid: 0f188c6651cb3cc4d8afc9ea8ece5f87, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6664413196179992297, guid: 0f188c6651cb3cc4d8afc9ea8ece5f87, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6664413196179992297, guid: 0f188c6651cb3cc4d8afc9ea8ece5f87, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6664413196179992297, guid: 0f188c6651cb3cc4d8afc9ea8ece5f87, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6664413196179992297, guid: 0f188c6651cb3cc4d8afc9ea8ece5f87, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6664413196179992297, guid: 0f188c6651cb3cc4d8afc9ea8ece5f87, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6664413196179992297, guid: 0f188c6651cb3cc4d8afc9ea8ece5f87, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9120262000338728016, guid: 0f188c6651cb3cc4d8afc9ea8ece5f87, type: 3}
+      propertyPath: m_Name
+      value: Headlights Front
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0f188c6651cb3cc4d8afc9ea8ece5f87, type: 3}
+--- !u!114 &377968324352054916 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9057755120846466434, guid: 0f188c6651cb3cc4d8afc9ea8ece5f87, type: 3}
+  m_PrefabInstance: {fileID: 8686683346993806086}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3595d380c1bf3bb4485f67cf12eb1091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tractor.MeshLightController
+--- !u!4 &2662062807576876527 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6664413196179992297, guid: 0f188c6651cb3cc4d8afc9ea8ece5f87, type: 3}
+  m_PrefabInstance: {fileID: 8686683346993806086}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8769645214218303758
 PrefabInstance:
