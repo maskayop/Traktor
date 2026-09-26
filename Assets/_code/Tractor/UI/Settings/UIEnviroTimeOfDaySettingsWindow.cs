@@ -10,7 +10,7 @@ namespace Tractor.UI
         [SerializeField] Slider hourSlider;
         [SerializeField] TMP_Text timeLabel;
         [SerializeField] Toggle dynamicTimeToggle;
-        [SerializeField] bool stopAutomaticTime = true;
+        [SerializeField] bool simulateTime = true;
         [SerializeField] bool useCloudyDemoWeather = true;
         [SerializeField, Range(0f, 24f)] float fallbackStartHour = 8f;
 
@@ -21,13 +21,12 @@ namespace Tractor.UI
             if (!TryGetTimeModule(out var timeModule))
                 return;
 
-            if (stopAutomaticTime)
-                timeModule.Settings.simulate = false;
+            timeModule.Settings.simulate = simulateTime;
 
-            if (dynamicTimeToggle != null)
+            if (dynamicTimeToggle)
                 dynamicTimeToggle.SetIsOnWithoutNotify(timeModule.Settings.simulate);
 
-            if (useCloudyDemoWeather && EnviroManager.instance.Weather != null)
+            if (useCloudyDemoWeather && EnviroManager.instance.Weather)
                 EnviroManager.instance.Weather.ChangeWeatherInstant("Cloudy 1");
 
             var initialHour = timeModule.GetTimeOfDay();

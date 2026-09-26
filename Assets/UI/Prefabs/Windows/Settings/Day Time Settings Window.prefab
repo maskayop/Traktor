@@ -1066,7 +1066,7 @@ MonoBehaviour:
   hourSlider: {fileID: 5618488986967027661}
   timeLabel: {fileID: 5447336328874157950}
   dynamicTimeToggle: {fileID: 6749651825005932363}
-  stopAutomaticTime: 0
+  stopAutomaticTime: 1
   useCloudyDemoWeather: 1
   fallbackStartHour: 8
 --- !u!1 &7094309388476054270 stripped
