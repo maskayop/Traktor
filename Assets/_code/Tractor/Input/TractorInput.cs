@@ -220,11 +220,15 @@ namespace Tractor
 
             //Педали
             if (throttle_Input != null)
+            {
                 vehicleInput.inputs.throttleInput = throttle_Input.inputValue;
+                tractorMain.throttle = throttle_Input.inputValue;
+            }
 
             if (brake_Input != null)
             {
                 vehicleInput.inputs.brakeInput = brake_Input.inputValue;
+                tractorMain.brake = brake_Input.inputValue;
 
                 if (brake_Input.inputValue != 0)
                     tractorLights.ActivateBrakeLights(true);
@@ -233,7 +237,10 @@ namespace Tractor
             }
 
             if (clutch_Input != null)
-                vehicleInput.inputs.clutchInput = clutch_Input.inputValue;
+            {
+                tractorGearbox.SetClutch(clutch_Input.inputValue);
+                tractorMain.clutch = clutch_Input.inputValue;
+            }
 
             //Ручник
             if (handbrake_Input != null)

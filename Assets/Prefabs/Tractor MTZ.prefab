@@ -202,6 +202,7 @@ MonoBehaviour:
   endRotation: {x: -15, y: 0, z: 0}
   input:
     inputName: 
+    normalize: 0
     useDeadzone: 0
     deadzone: 0.05
     inputValue: 0
@@ -819,6 +820,9 @@ MonoBehaviour:
   speed: 0
   RPM: 0
   isHandbrake: 0
+  throttle: 0
+  brake: 0
+  clutch: 0
 --- !u!114 &6909384308401504491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -873,10 +877,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d962fe735bca0c44fa52d829f33f2d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.TractorGearbox
-  initDelay: 0.5
   isGearLevel1: 1
   currentRange: 0
+  rangeValue: 0
+  previousRange: -99
   currentGear: 0
+  gearValue: 0
+  previousGear: -99
   defaultGearRatios:
   - 1.43
   - 0.81
@@ -1486,6 +1493,7 @@ MonoBehaviour:
   endRotation: {x: 15, y: 0, z: 0}
   input:
     inputName: 
+    normalize: 0
     useDeadzone: 0
     deadzone: 0.05
     inputValue: 0
@@ -2479,10 +2487,10 @@ MonoBehaviour:
   overrideClutch: 0
   clutchInput: 1
   clutchInertia: 0.35
-  automaticClutch: 1
+  automaticClutch: 0
   forceToPressClutch: 0
-  pressClutchWhileShiftingGears: 1
-  pressClutchWhileHandbraking: 1
+  pressClutchWhileShiftingGears: 0
+  pressClutchWhileHandbraking: 0
   engageRPM: 900
   receivedTorqueAsNM: 0
   producedTorqueAsNM: 0
@@ -3107,6 +3115,7 @@ MonoBehaviour:
   endRotation: {x: 0, y: 30, z: 0}
   input:
     inputName: 
+    normalize: 0
     useDeadzone: 0
     deadzone: 0.05
     inputValue: 0
@@ -3657,6 +3666,7 @@ MonoBehaviour:
   endRotation: {x: 0, y: 720, z: 0}
   input:
     inputName: 
+    normalize: 0
     useDeadzone: 0
     deadzone: 0.05
     inputValue: 0
@@ -3754,6 +3764,7 @@ MonoBehaviour:
   endRotation: {x: 0, y: 30, z: 0}
   input:
     inputName: 
+    normalize: 0
     useDeadzone: 0
     deadzone: 0.05
     inputValue: 0
@@ -3850,6 +3861,7 @@ MonoBehaviour:
   endRotation: {x: 0, y: 0, z: -30}
   input:
     inputName: 
+    normalize: 0
     useDeadzone: 0
     deadzone: 0.05
     inputValue: 0
@@ -4671,6 +4683,7 @@ MonoBehaviour:
   endRotation: {x: 15, y: 0, z: 0}
   input:
     inputName: 
+    normalize: 0
     useDeadzone: 0
     deadzone: 0.05
     inputValue: 0
@@ -4825,6 +4838,7 @@ MonoBehaviour:
   endRotation: {x: 0, y: 0, z: 0}
   input:
     inputName: 
+    normalize: 0
     useDeadzone: 0
     deadzone: 0.05
     inputValue: 0
@@ -5423,6 +5437,7 @@ MonoBehaviour:
   endRotation: {x: 0, y: 0, z: 0}
   input:
     inputName: 
+    normalize: 0
     useDeadzone: 0
     deadzone: 0.05
     inputValue: 0
@@ -6235,6 +6250,7 @@ MonoBehaviour:
   endRotation: {x: 15, y: 0, z: 0}
   input:
     inputName: 
+    normalize: 0
     useDeadzone: 0
     deadzone: 0.05
     inputValue: 0
@@ -6777,6 +6793,7 @@ MonoBehaviour:
   endRotation: {x: -30, y: 0, z: 0}
   input:
     inputName: 
+    normalize: 0
     useDeadzone: 0
     deadzone: 0.05
     inputValue: 0
@@ -7159,6 +7176,7 @@ MonoBehaviour:
   endRotation: {x: 15, y: 0, z: 0}
   input:
     inputName: 
+    normalize: 0
     useDeadzone: 0
     deadzone: 0.05
     inputValue: 0

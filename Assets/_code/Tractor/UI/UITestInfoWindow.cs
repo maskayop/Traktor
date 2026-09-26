@@ -10,6 +10,11 @@ namespace Tractor.UI
         [SerializeField] TextMeshProUGUI RPMText;
         [SerializeField] TextMeshProUGUI handbrakeText;
 
+        [Header("Педали")]
+        [SerializeField] TextMeshProUGUI throttleText;
+        [SerializeField] TextMeshProUGUI brakeText;
+        [SerializeField] TextMeshProUGUI clutchText;
+
         [Header("Коробка передач")]
         [SerializeField] TextMeshProUGUI gearboxLevelText;
         [SerializeField] TextMeshProUGUI gearboxRangeText;
@@ -71,6 +76,11 @@ namespace Tractor.UI
 
             handbrakeText.text = tractorMain.isHandbrake.ToString();
             ColorBoolText(handbrakeText, tractorMain.isHandbrake);
+
+            //Педали
+            throttleText.text = tractorMain.throttle.ToString("F2");
+            brakeText.text = tractorMain.brake.ToString("F2");
+            clutchText.text = tractorMain.clutch.ToString("F2");
 
             //Коробка передач
             if (tractorGearbox.isGearLevel1)

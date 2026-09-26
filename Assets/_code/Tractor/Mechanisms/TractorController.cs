@@ -19,6 +19,9 @@ namespace Tractor
         public float speed;
         public float RPM;
         public bool isHandbrake = false;
+        public float throttle;
+        public float brake;
+        public float clutch;
 
         RCCP_CarController carController;
         public RCCP_CarController CarController { get { return carController; } }
@@ -105,11 +108,6 @@ namespace Tractor
             }
         }
 
-        public void SetHandbrake(bool state)
-        {
-            isHandbrake = state;
-        }
-
         public void ResetTractor()
         {
             if (!tractorEngine || !tractorGearbox)
@@ -122,6 +120,11 @@ namespace Tractor
         public void PlaceTractor(Transform t)
         {
             RCCP.Transport(carController, t.position, t.rotation);
+        }
+
+        public void SetHandbrake(bool state)
+        {
+            isHandbrake = state;
         }
     }
 }

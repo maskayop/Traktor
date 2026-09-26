@@ -9,6 +9,7 @@ namespace Tractor
     public class CustomInput
     {
         public string inputName;
+        public bool normalize = false;
         public bool useDeadzone = false;
         public float deadzone = 0.05f;
 
@@ -46,6 +47,9 @@ namespace Tractor
 
             if (useDeadzone && Mathf.Abs(value) < deadzone)
                 value = 0f;
+
+            if (normalize)
+                value = Mathf.Clamp01((value + 1) / 2);
 
             inputValue = value;
         }

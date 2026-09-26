@@ -38,6 +38,7 @@ namespace Tractor
         int currentGearModification = 0;
 
         RCCP_Gearbox gearbox;
+        RCCP_Clutch clutch;
         RCCP_Engine engine;
         RCCP_Differential[] differentials;
 
@@ -71,6 +72,7 @@ namespace Tractor
                 return;
 
             gearbox = tractorInput.RCCP_Vehicle.Gearbox;
+            clutch = tractorInput.RCCP_Vehicle.Clutch;
             engine = tractorInput.RCCP_Vehicle.Engine;
             differentials = tractorInput.RCCP_Vehicle.Differentials;
 
@@ -84,7 +86,7 @@ namespace Tractor
         {
             if (previousRange != rangeValue)
                 ChangeGear(rangeValue, currentGear);
-            
+
             if (previousGear != gearValue)
                 ChangeGear(currentRange, gearValue);
 
@@ -209,6 +211,11 @@ namespace Tractor
 
             foreach (var d in differentials)
                 d.finalDriveRatio = gearModifications[currentGearModification].finalDriveOverrides[gearValue - 1];
+        }
+
+        public void SetClutch(float value)
+        {
+            clutch.clutchInput = value;
         }
     }
 }
