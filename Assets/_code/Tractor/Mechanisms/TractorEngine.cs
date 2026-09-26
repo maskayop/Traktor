@@ -58,7 +58,7 @@ namespace Tractor
                 }
             }
 
-            if (tractorGearbox.currentGear == 0)
+            if (tractorGearbox.gearValue == 0)
                 engine.engineAccelerationRate = neutralAccelerationRate;
             else
                 engine.engineAccelerationRate = driveAccelerationRate;

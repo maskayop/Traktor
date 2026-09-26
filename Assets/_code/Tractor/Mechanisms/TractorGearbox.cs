@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,12 +15,20 @@ namespace Tractor
     public class TractorGearbox : MonoBehaviour, ICheckable
     {
         [Header("Состояние передач")]
-        [SerializeField] float initDelay = 1.0f;
-
-        [Header("Состояние передач")]
+        //Уровень
         public bool isGearLevel1 = true;
+
+        //Диапазон
         public int currentRange = 0;
+        public int rangeValue = 0;
+        public int RangeValue { get { return rangeValue; } set { rangeValue = value; } }
+        public int previousRange = -99;
+
+        //Передача
         public int currentGear = 0;
+        public int gearValue = 0;
+        public int GearValue { get { return gearValue; } set { gearValue = value; } }
+        public int previousGear = -99;
 
         [Header("Модификаторы Передач")]
         [SerializeField] List<float> defaultGearRatios = new List<float>();
@@ -51,7 +58,7 @@ namespace Tractor
                 case "currentRange":
                     return currentRange;
                 case "currentGear":
-                    return currentGear;
+                    return gearValue;
                 default:
                     Debug.LogWarning($"Неизвестное условие: {conditionName}");
                     return 0;
@@ -73,47 +80,44 @@ namespace Tractor
             ResetGearbox();
         }
 
+        void Update()
+        {
+            if (previousRange != rangeValue)
+                ChangeGear(rangeValue, currentGear);
+            
+            if (previousGear != gearValue)
+                ChangeGear(currentRange, gearValue);
+
+            previousRange = rangeValue;
+            previousGear = gearValue;
+        }
+
         public void ResetGearbox()
         {
+            previousRange = -99;
+            previousGear = -99;
+
             ChangeGearLevel(true);
-            ChangeGearRange(1);
-
-            StartCoroutine(InitDelayed());
+            ChangeGear(0, gearValue);
         }
 
-        IEnumerator InitDelayed()
+        public void ShiftToGear()
         {
-            yield return new WaitForSeconds(initDelay);
-
-            SetNeutralGear();
-            gearbox.ShiftToN();
-        }
-
-        public void ShiftToGear(float input, int value)
-        {
-            currentGear = value;
-            UpdateGearRatios();
-
             if (currentRange < 0)
-            {
                 gearbox.forceToRGear = true;
-                return;
-            }
+            else
+                gearbox.forceToRGear = false;
 
-            if (input >= 0.5f)
-                gearbox.ShiftToGear(value - 1);
-        }
-
-        public void SetNeutralGear()
-        {
             if (currentGear != 0)
-                gearbox.ShiftToN();
+            {
+                gearbox.forceToNGear = false;
+                gearbox.ShiftToGear(currentGear - 1);
+            }
+            else
+                gearbox.forceToNGear = true;
 
-            currentGear = 0;
-            gearbox.forceToRGear = false;
-
-            foreach (var d in differentials)
-                d.finalDriveRatio = defaultFinalDrive;
+            if (currentRange == 0)
+                gearbox.forceToNGear = true;
         }
 
         public void ChangeGearLevel(bool isFirstLevel)
@@ -121,19 +125,23 @@ namespace Tractor
             isGearLevel1 = isFirstLevel;
 
             if (currentRange < 0)
-                ChangeGearRange(-1);
-            else
-            {
-                if (currentRange == 1 || currentRange == 2)
-                    ChangeGearRange(1);
-                else if (currentRange == 3 || currentRange == 4)
-                    ChangeGearRange(2);
-            }
+                ChangeGear(-1, gearValue);
+            else if (currentRange == 1 || currentRange == 2)
+                ChangeGear(1, gearValue);
+            else if (currentRange == 3 || currentRange == 4)
+                ChangeGear(2, gearValue);
+            else if (currentRange == 0)
+                ChangeGear(0, gearValue);
         }
 
-        public void ChangeGearRange(int value)
+        public void ChangeGear(int range, int gear)
         {
-            if (value == 1)
+            if (range == 0)
+            {
+                currentRange = 0;
+                currentGearModification = 0;
+            }
+            else if (range == 1)
             {
                 if (isGearLevel1)
                 {
@@ -146,7 +154,7 @@ namespace Tractor
                     currentGearModification = 1;
                 }
             }
-            else if (value == 2)
+            else if (range == 2)
             {
                 if (isGearLevel1)
                 {
@@ -159,7 +167,7 @@ namespace Tractor
                     currentGearModification = 3;
                 }
             }
-            else if (value == -1)
+            else if (range == -1)
             {
                 if (isGearLevel1)
                 {
@@ -172,30 +180,25 @@ namespace Tractor
                     currentGearModification = 5;
                 }
             }
+
+            if (range == 0 || currentRange == 0)
+                currentGear = 0;
             else
-            {
-                currentRange = 0;
-                currentGearModification = 0;
-            }
+                currentGear = gear;
 
-            if (currentGear != 0)
-            {
-                if (currentRange < 0)
-                    gearbox.forceToRGear = true;
-                else
-                {
-                    gearbox.forceToRGear = false;
-                    gearbox.ShiftToGear(currentGear - 1);
-                }
-            }
-
+            ShiftToGear();
             UpdateGearRatios();
         }
 
         void UpdateGearRatios()
         {
-            if (currentGear == 0)
+            if (gearValue == 0 || rangeValue == 0)
+            {
+                foreach (var d in differentials)
+                    d.finalDriveRatio = defaultFinalDrive;
+
                 return;
+            }
 
             float mSpeed = gearModifications[currentGearModification].maxSpeed;
 
@@ -205,7 +208,7 @@ namespace Tractor
                 engine.maximumSpeed = gearModifications[currentGearModification].maxSpeed;
 
             foreach (var d in differentials)
-                d.finalDriveRatio = gearModifications[currentGearModification].finalDriveOverrides[currentGear - 1];
+                d.finalDriveRatio = gearModifications[currentGearModification].finalDriveOverrides[gearValue - 1];
         }
     }
 }

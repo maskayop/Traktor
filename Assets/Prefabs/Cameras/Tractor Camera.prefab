@@ -156,8 +156,8 @@ MonoBehaviour:
   pitchScale: 1
   rollScale: 0
   smoothSpeed: 8
-  maxYaw: 10
-  maxPitch: 25
+  maxYaw: 8
+  maxPitch: 20
   applyPosition: 0
   positionScale: 0.01
 --- !u!114 &5066480935300862792

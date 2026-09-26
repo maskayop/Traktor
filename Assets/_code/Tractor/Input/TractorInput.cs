@@ -247,31 +247,28 @@ namespace Tractor
             //Передачи
             if (gear1_Input != null)
                 if (gear1_Input.inputValue != 0)
-                    tractorGearbox?.ShiftToGear(gear1_Input.inputValue, 1);
+                    tractorGearbox.GearValue = 1;
 
             if (gear2_Input != null)
                 if (gear2_Input.inputValue != 0)
-                    tractorGearbox?.ShiftToGear(gear2_Input.inputValue, 2);
+                    tractorGearbox.GearValue = 2;
 
             if (gear3_Input != null)
                 if (gear3_Input.inputValue != 0)
-                    tractorGearbox?.ShiftToGear(gear3_Input.inputValue, 3);
+                    tractorGearbox.GearValue = 3;
 
             if (gear4_Input != null)
                 if (gear4_Input.inputValue != 0)
-                    tractorGearbox?.ShiftToGear(gear4_Input.inputValue, 4);
+                    tractorGearbox.GearValue = 4;
 
             if (gearN_Input != null)
-            {
                 if (gearN_Input.inputValue != 0)
-                    tractorGearbox?.SetNeutralGear();
-            }
-            else if (gear1_Input != null && gear2_Input != null && gear3_Input != null && gear4_Input != null)
-            {
+                    tractorGearbox.GearValue = 0;
+
+            if (gear1_Input != null && gear2_Input != null && gear3_Input != null && gear4_Input != null)
                 if (gear1_Input.inputValue == 0 && gear2_Input.inputValue == 0 &&
                     gear3_Input.inputValue == 0 && gear4_Input.inputValue == 0)
-                    tractorGearbox?.SetNeutralGear();
-            }
+                    tractorGearbox.GearValue = 0;
 
             if (level1_Input != null)
                 if (level1_Input.inputValue != 0)
@@ -283,15 +280,19 @@ namespace Tractor
 
             if (range12_Input != null)
                 if (range12_Input.inputValue != 0)
-                    tractorGearbox?.ChangeGearRange(1);
+                    tractorGearbox.RangeValue = 1;
 
             if (range34_Input != null)
                 if (range34_Input.inputValue != 0)
-                    tractorGearbox?.ChangeGearRange(2);
+                    tractorGearbox.RangeValue = 2;
 
             if (rangeR_Input != null)
                 if (rangeR_Input.inputValue != 0)
-                    tractorGearbox?.ChangeGearRange(-1);
+                    tractorGearbox.RangeValue = -1;
+
+            if (range12_Input != null && range34_Input != null && rangeR_Input != null)
+                if (range12_Input.inputValue == 0 && range34_Input.inputValue == 0 && rangeR_Input.inputValue == 0)
+                    tractorGearbox.RangeValue = 0;
 
             //Зажигание
             if (massOn_Input != null)

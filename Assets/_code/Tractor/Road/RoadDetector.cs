@@ -142,15 +142,15 @@ namespace Tractor
             if (onRoad == 1)
             {
                 if (!onCross)
-                    laneStatus = "На дороге, на полосе ";
+                    laneStatus = "На дороге," + "\n" + " на полосе ";
                 else
-                    laneStatus = "На дороге, на перекрёстке";
+                    laneStatus = "На дороге," + "\n" + " на перекрёстке";
             }
             else if (onRoad == 0)
             {
                 if (!onCross)
                 {
-                    laneStatus = "Частично выезд с дороги, на полосе ";
+                    laneStatus = "Частично выезд с дороги," + "\n" + " на полосе ";
 
                     for (int i = 0; i < 4; i++)
                     {
@@ -177,7 +177,7 @@ namespace Tractor
                     }
                 }
                 else
-                    laneStatus = "Частично выезд с дороги, на перекрёстке ";
+                    laneStatus = "Частично выезд с дороги," + "\n" + " на перекрёстке ";
             }
             else if (onRoad == -1)
                 laneStatus = "Не на дороге";
@@ -188,9 +188,9 @@ namespace Tractor
             if (onRoad == 1 && !onLane && !onCross)
             {
                 if (laneNumbers.x != laneNumbers.y)
-                    laneStatus += laneNumbers.x + " и полосе " + laneNumbers.y;
+                    laneStatus += laneNumbers.x + "\n" + " и полосе " + laneNumbers.y;
                 else if (laneNumbers.z != laneNumbers.w)
-                    laneStatus += laneNumbers.z + " и полосе " + laneNumbers.w;
+                    laneStatus += laneNumbers.z + "\n" + " и полосе " + laneNumbers.w;
             }
         }
     }
