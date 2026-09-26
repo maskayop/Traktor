@@ -7825,6 +7825,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1359116808326245524}
     m_Modifications:
+    - target: {fileID: 2582090166518004654, guid: 97f34f67a676bc341aeb4e2b90c0e5b1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582090166518004654, guid: 97f34f67a676bc341aeb4e2b90c0e5b1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582090166518004654, guid: 97f34f67a676bc341aeb4e2b90c0e5b1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582090166518004654, guid: 97f34f67a676bc341aeb4e2b90c0e5b1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2602023133523761470, guid: 97f34f67a676bc341aeb4e2b90c0e5b1, type: 3}
       propertyPath: m_Name
       value: Settings Window
