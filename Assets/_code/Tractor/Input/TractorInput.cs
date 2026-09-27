@@ -4,6 +4,8 @@ namespace Tractor
 {
     public class TractorInput : MonoBehaviour
     {
+        public bool useKeyboard = true;
+
         [Header("Руль")]
         [SerializeField] string steerInputName;
         CustomInput steer_Input;
@@ -215,16 +217,53 @@ namespace Tractor
         void SetInputs()
         {
             //Руль
-            if (steer_Input != null)
-                vehicleInput.inputs.steerInput = steer_Input.inputValue;
+            SetSteer();
 
             //Педали
+            SetThrottle();
+            SetBrake();
+            SetClutch();
+
+            //Ручник
+            SetHandbrake();
+
+            //Передачи
+            SetGearLevel();
+            SetGearRange();
+            SetGear();
+
+            //Зажигание
+            SetMass();
+            SetStarter();
+            SetIgnition();
+
+            //Лампочки
+            SetTurnLights();
+            SetAlarmLights();
+            SetParkingLights();
+            SetHeadLights();
+
+            //Звуки
+            SetHornSignal();
+        }
+
+        void SetSteer()
+        {
+            if (steer_Input != null)
+                vehicleInput.inputs.steerInput = steer_Input.inputValue;
+        }
+
+        void SetThrottle()
+        {
             if (throttle_Input != null)
             {
                 vehicleInput.inputs.throttleInput = throttle_Input.inputValue;
                 tractorMain.throttle = throttle_Input.inputValue;
             }
+        }
 
+        void SetBrake()
+        {
             if (brake_Input != null)
             {
                 vehicleInput.inputs.brakeInput = brake_Input.inputValue;
@@ -235,14 +274,19 @@ namespace Tractor
                 else
                     tractorLights.ActivateBrakeLights(false);
             }
+        }
 
+        void SetClutch()
+        {
             if (clutch_Input != null)
             {
                 tractorGearbox.SetClutch(clutch_Input.inputValue);
                 tractorMain.clutch = clutch_Input.inputValue;
             }
+        }
 
-            //Ручник
+        void SetHandbrake()
+        {
             if (handbrake_Input != null)
             {
                 if (handbrake_Input.inputValue != 0)
@@ -250,8 +294,10 @@ namespace Tractor
                 else
                     tractorMain.SetHandbrake(false);
             }
+        }
 
-            //Передачи
+        void SetGear()
+        {
             if (gear1_Input != null)
                 if (gear1_Input.inputValue != 0)
                     tractorGearbox.GearValue = 1;
@@ -272,11 +318,17 @@ namespace Tractor
                 if (gearN_Input.inputValue != 0)
                     tractorGearbox.GearValue = 0;
 
+            if (useKeyboard)
+                return;
+
             if (gear1_Input != null && gear2_Input != null && gear3_Input != null && gear4_Input != null)
                 if (gear1_Input.inputValue == 0 && gear2_Input.inputValue == 0 &&
                     gear3_Input.inputValue == 0 && gear4_Input.inputValue == 0)
                     tractorGearbox.GearValue = 0;
+        }
 
+        void SetGearLevel()
+        {
             if (level1_Input != null)
                 if (level1_Input.inputValue != 0)
                     tractorGearbox?.ChangeGearLevel(true);
@@ -284,7 +336,10 @@ namespace Tractor
             if (level2_Input != null)
                 if (level2_Input.inputValue != 0)
                     tractorGearbox?.ChangeGearLevel(false);
+        }
 
+        void SetGearRange()
+        {
             if (range12_Input != null)
                 if (range12_Input.inputValue != 0)
                     tractorGearbox.RangeValue = 1;
@@ -297,11 +352,16 @@ namespace Tractor
                 if (rangeR_Input.inputValue != 0)
                     tractorGearbox.RangeValue = -1;
 
+            if (useKeyboard)
+                return;
+
             if (range12_Input != null && range34_Input != null && rangeR_Input != null)
                 if (range12_Input.inputValue == 0 && range34_Input.inputValue == 0 && rangeR_Input.inputValue == 0)
                     tractorGearbox.RangeValue = 0;
+        }
 
-            //Зажигание
+        void SetMass()
+        {
             if (massOn_Input != null)
                 if (massOn_Input.inputValue != 0)
                     tractorEngine.MassTurnOn();
@@ -309,7 +369,10 @@ namespace Tractor
             if (massOff_Input != null)
                 if (massOff_Input.inputValue != 0)
                     tractorEngine.MassTurnOff();
+        }
 
+        void SetStarter()
+        {
             if (starterOn_Input != null)
                 if (starterOn_Input.inputValue != 0)
                     tractorEngine.Starter = true;
@@ -317,7 +380,10 @@ namespace Tractor
             if (starterOff_Input != null)
                 if (starterOff_Input.inputValue != 0)
                     tractorEngine.StarterTurnOff();
+        }
 
+        void SetIgnition()
+        {
             if (ignition_Input != null)
             {
                 if (ignition_Input.inputValue != 0)
@@ -325,8 +391,10 @@ namespace Tractor
                 else
                     tractorEngine.Ignition = false;
             }
+        }
 
-            //Лампочки
+        void SetTurnLights()
+        {
             if (turnLeft_Input != null)
                 if (turnLeft_Input.inputValue != 0)
                     tractorLights.TurnOnLeftTurnLight();
@@ -338,7 +406,10 @@ namespace Tractor
             if (turnLeft_Input != null && turnRight_Input != null)
                 if (turnLeft_Input.inputValue == 0 && turnRight_Input.inputValue == 0)
                     tractorLights.TurnOffTurnLight();
+        }
 
+        void SetAlarmLights()
+        {
             if (alarm_Input != null)
             {
                 if (alarm_Input.inputValue != 0)
@@ -346,7 +417,10 @@ namespace Tractor
                 else
                     tractorLights.ActivateAlarmLights(false);
             }
+        }
 
+        void SetParkingLights()
+        {
             if (parkingLightOn_Input != null)
                 if (parkingLightOn_Input.inputValue != 0)
                     tractorLights.TurnOnParkingLights();
@@ -354,7 +428,10 @@ namespace Tractor
             if (parkingLightOff_Input != null)
                 if (parkingLightOff_Input.inputValue != 0)
                     tractorLights.TurnOffParkingLights();
+        }
 
+        void SetHeadLights()
+        {
             if (headLightOn_Input != null)
                 if (headLightOn_Input.inputValue != 0)
                     tractorLights.TurnOnHeadLights();
@@ -362,8 +439,10 @@ namespace Tractor
             if (headLightOff_Input != null)
                 if (headLightOff_Input.inputValue != 0)
                     tractorLights.TurnOffHeadLights();
+        }
 
-            //Звуки
+        void SetHornSignal()
+        {
             if (hornSignal_Input != null)
             {
                 if (hornSignal_Input.inputValue != 0)

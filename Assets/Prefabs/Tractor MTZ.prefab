@@ -378,8 +378,8 @@ MonoBehaviour:
   maxEngineRPM: 2200
   engineAccelerationRate: 0.5
   enableDynamicAcceleration: 0
-  engineCouplingToWheelsRate: 0.5
-  engineDecelerationRate: 0.5
+  engineCouplingToWheelsRate: 0.4
+  engineDecelerationRate: 0.6
   NMCurve:
     serializedVersion: 2
     m_Curve:
@@ -447,7 +447,7 @@ MonoBehaviour:
   maxTurboChargePsi: 12
   turboChargerCoEfficient: 1.25
   turboBlowOut: 0
-  engineFriction: 0.15
+  engineFriction: 0.2
   engineInertia: 0.05
   engineLoad: 0
   producedTorqueAsNM: 0
@@ -463,8 +463,8 @@ MonoBehaviour:
   enableKnockDetection: 0
   knockFactor: 0
   engineBraking: 1
-  engineBrakingCoefficient: 0.1
-  engineBrakingMinRPMFactor: 1
+  engineBrakingCoefficient: 0.2
+  engineBrakingMinRPMFactor: 0.99
   engineBrakingThrottleCutoff: 0.05
   overRevEngineBrakingMultiplier: 2
   autoCalculateDifferentialRatio: 0
@@ -835,6 +835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d1d5513b5e1fc4da128ea9b80a7690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.TractorInput
+  useKeyboard: 1
   steerInputName: Steering Wheel
   throttleInputName: Accelerator
   brakeInputName: Brake
@@ -877,6 +878,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d962fe735bca0c44fa52d829f33f2d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.TractorGearbox
+  currentClutch: 0
+  isNeutralGear: 0
   isGearLevel1: 1
   currentRange: 0
   rangeValue: 0
@@ -946,7 +949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.TractorEngine
   neutralAccelerationRate: 1
-  driveAccelerationRate: 0.25
+  driveAccelerationRate: 0.1
 --- !u!114 &3280773456689473532
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -25,9 +25,11 @@ Category {
 			#pragma exclude_renderers gles 
 
 			#include "UnityCG.cginc"
+			/*
 	#if !SHADER_API_GLES3
 			#include "Assets/Enviro 3 - Sky and Weather/Resources/Shader/Includes/ParticlesInclude.cginc"
 	#endif
+	*/
 			sampler2D _MainTex;
 			fixed4 _TintColor;
 			float4 _EnviroLighting;
@@ -88,9 +90,11 @@ Category {
 
 				//float4 fog = TransparentFog(col,i.posWorld,i.projPos.xy,sceneZ);
 				float blend = 1.0; 
+				/*
 			#if !SHADER_API_GLES3
 				ParticleZones(i.posWorld, blend);
 			#endif
+			*/
 				return float4(col.rgb * max(_EnviroLightIntensity,0.1) ,col.a * blend);
 			}  
 			ENDCG 

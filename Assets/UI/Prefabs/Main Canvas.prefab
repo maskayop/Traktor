@@ -400,8 +400,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b22c76855beef414bbe30c172f510284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.UIMainCanvas
-  mainMenuWindow: {fileID: 7371258210490651229}
+  mainMenuWindow: {fileID: 8184412985548763407}
   HUDWindow: {fileID: 2718866374850669572}
+  controlsButton: {fileID: 589724344605675070}
   showTestInfoWindow: 0
   testInfoWindow: {fileID: 4874045611482776698}
   versionText: {fileID: 9209098226586421615}
@@ -3497,6 +3498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.UI.UIMenuWindow
   settingsWindow: {fileID: 5986378352356417506}
   controlsWindow: {fileID: 1731936132399450238}
+  controlsButton: {fileID: 7549355940005559766}
 --- !u!1 &7524387055426070439
 GameObject:
   m_ObjectHideFlags: 0
@@ -5780,6 +5782,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9083563433980225646, guid: f4d54abe0ac55834fb9f9bcc3f03769c, type: 3}
   m_PrefabInstance: {fileID: 3934890376804172263}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7549355940005559766 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6800218599672790065, guid: f4d54abe0ac55834fb9f9bcc3f03769c, type: 3}
+  m_PrefabInstance: {fileID: 3934890376804172263}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3983933153804314215
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5909,6 +5916,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 599a999da1af7e949b9abaaed4ab25b6, type: 3}
+--- !u!1 &589724344605675070 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4568577684056533081, guid: 599a999da1af7e949b9abaaed4ab25b6, type: 3}
+  m_PrefabInstance: {fileID: 3983933153804314215}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8496973764790906497 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4801565658175539430, guid: 599a999da1af7e949b9abaaed4ab25b6, type: 3}
@@ -7956,6 +7968,22 @@ PrefabInstance:
     - target: {fileID: 2602023133523761470, guid: 97f34f67a676bc341aeb4e2b90c0e5b1, type: 3}
       propertyPath: m_Name
       value: Settings Window
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724837890487967711, guid: 97f34f67a676bc341aeb4e2b90c0e5b1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724837890487967711, guid: 97f34f67a676bc341aeb4e2b90c0e5b1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724837890487967711, guid: 97f34f67a676bc341aeb4e2b90c0e5b1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724837890487967711, guid: 97f34f67a676bc341aeb4e2b90c0e5b1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6040261159561894919, guid: 97f34f67a676bc341aeb4e2b90c0e5b1, type: 3}
       propertyPath: m_Pivot.x

@@ -284,17 +284,22 @@ MonoBehaviour:
     deadzone: 0.01
     inputValue: 0
   - inputName: Accelerator
-    normalize: 1
+    normalize: 0
+    useDeadzone: 1
+    deadzone: 0.01
+    inputValue: 0
+  - inputName: Accelerator Keyboard
+    normalize: 0
     useDeadzone: 1
     deadzone: 0.01
     inputValue: 0
   - inputName: Brake
-    normalize: 1
+    normalize: 0
     useDeadzone: 1
     deadzone: 0.01
     inputValue: 0
   - inputName: Clutch
-    normalize: 1
+    normalize: 0
     useDeadzone: 1
     deadzone: 0.01
     inputValue: 0

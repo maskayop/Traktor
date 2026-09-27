@@ -24,6 +24,11 @@ namespace Tractor.UI
         [Header("UI")]
         [SerializeField] Toggle testInfoToggle;
 
+        [Header("Input")]
+        [SerializeField] Toggle useKeyboardToggle;
+
+        TractorController tractorController;
+
         protected override void OnInit()
         {
             SetTogglesLoadedValue("GraphicsLevel", graphicsLevelToggles);
@@ -33,8 +38,12 @@ namespace Tractor.UI
 
             SetScreenResolutionProperties();
 
+            tractorController = FindAnyObjectByType<TractorController>();
+
             if (testInfoToggle)
                 testInfoToggle.SetIsOnWithoutNotify(mainCanvas.showTestInfoWindow);
+
+            SetUseKeyboardToggle(tractorController.tractorInput.useKeyboard);
         }
 
         protected override void OnOpen()
@@ -156,6 +165,27 @@ namespace Tractor.UI
 
             testInfoToggle.SetIsOnWithoutNotify(enabled);
             ShowTestInfoWindow(enabled);
+        }
+
+        public void SetUseKeyboardToggle(bool enabled)
+        {
+            if (!useKeyboardToggle)
+                return;
+
+            useKeyboardToggle.SetIsOnWithoutNotify(enabled);
+            UseKeyboardToggle(enabled);
+        }
+
+        public void UseKeyboardToggle(bool state)
+        {
+            tractorController.tractorInput.useKeyboard = state;
+            ShowControlsButton(state);
+        }
+
+        void ShowControlsButton(bool state)
+        {
+            mainCanvas.ShowControlsButton(state);
+            mainMenuWindow.ShowControlsButton(state);
         }
     }
 }

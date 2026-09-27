@@ -10,11 +10,16 @@ namespace Tractor.UI
         public static UIMainCanvas Instance;
 
         [Header("Windows")]
-        [SerializeField] GameObject mainMenuWindow;
+        [SerializeField] UIMainMenuWindow mainMenuWindow;
         [SerializeField] GameObject HUDWindow;
+
+        [Header("Buttons")]
+        [SerializeField] GameObject controlsButton;
+
         [Header("Test Info")]
         public bool showTestInfoWindow = true;
         [SerializeField] UITestInfoWindow testInfoWindow;
+
         [Header("Version")]
         [SerializeField] TextMeshProUGUI versionText;
 
@@ -36,11 +41,6 @@ namespace Tractor.UI
         void Start()
         {
             Init();
-        }
-
-        void Update()
-        {
-
         }
 
         public void Init()
@@ -65,7 +65,7 @@ namespace Tractor.UI
 
         public void OpenMainMenuWindow()
         {
-            mainMenuWindow.SetActive(true);
+            mainMenuWindow.gameObject.SetActive(true);
             HUDWindow.SetActive(false);
 
             gameController.SetGameState(GameState.Menu);
@@ -73,7 +73,7 @@ namespace Tractor.UI
 
         public void CloseMainMenuWindow()
         {
-            mainMenuWindow.SetActive(false);
+            mainMenuWindow.gameObject.SetActive(false);
             HUDWindow.SetActive(true);
 
             gameController.SetGameState(GameState.Game);
@@ -88,6 +88,11 @@ namespace Tractor.UI
         {
             showTestInfoWindow = state;
             testInfoWindow.gameObject.SetActive(state);
+        }
+
+        public void ShowControlsButton(bool state)
+        {
+            controlsButton.SetActive(state);
         }
     }
 }

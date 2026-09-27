@@ -14,7 +14,11 @@ namespace Tractor
 
     public class TractorGearbox : MonoBehaviour, ICheckable
     {
+        [Header("Состояние сцепления")]
+        public float currentClutch = 0;
+
         [Header("Состояние передач")]
+        public bool isNeutralGear = false;
         //Уровень
         public bool isGearLevel1 = true;
 
@@ -92,6 +96,8 @@ namespace Tractor
 
             previousRange = rangeValue;
             previousGear = gearValue;
+
+            clutch.clutchInput = currentClutch;
         }
 
         public void ResetGearbox()
@@ -105,21 +111,39 @@ namespace Tractor
 
         public void ShiftToGear()
         {
-            if (currentRange < 0)
-                gearbox.forceToRGear = true;
-            else
-                gearbox.forceToRGear = false;
-
             if (currentGear != 0)
             {
+                if (currentRange < 0)
+                    gearbox.forceToRGear = true;
+                else
+                    gearbox.forceToRGear = false;
+
+                SetNeutralGear(false);
                 gearbox.forceToNGear = false;
                 gearbox.ShiftToGear(currentGear - 1);
             }
             else
-                gearbox.forceToNGear = true;
+                SetNeutralGear(true);
 
             if (currentRange == 0)
+                SetNeutralGear(true);
+        }
+
+        void SetNeutralGear(bool state)
+        {
+            if (state)
+            {
                 gearbox.forceToNGear = true;
+                gearbox.forceToRGear = false;
+                isNeutralGear = true;
+                currentClutch = 1;
+            }
+            else
+            {
+                gearbox.forceToNGear = false;
+                isNeutralGear = false;
+                currentClutch = 0;
+            }
         }
 
         public void ChangeGearLevel(bool isFirstLevel)
@@ -215,7 +239,10 @@ namespace Tractor
 
         public void SetClutch(float value)
         {
-            clutch.clutchInput = value;
+            if (isNeutralGear)
+                return;
+
+            currentClutch = value;
         }
     }
 }
