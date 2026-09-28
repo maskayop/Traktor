@@ -1,10 +1,18 @@
+using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
 namespace Vopere
 {
-    [System.Serializable]
+    [Serializable]
+    public class Column
+    {
+        public string header = "Column";
+        public List<string> values = new List<string>();
+    }
+
+    [Serializable]
     public class Report
     {
         [Tooltip("Имя файла без расширения.")]
@@ -67,9 +75,9 @@ namespace Vopere
             return sb.ToString();
         }
 
-        public static Report FromCsv(string csvText, string fileName = "")
+        public static Report FromCsv(string csvText, string INfileName = "")
         {
-            var report = new Report { fileName = fileName };
+            var report = new Report { fileName = INfileName };
 
             string[] rawLines = csvText.Split(
                 new[] { '\n', '\r' },

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.ExerciseStep
   tractorBehavior: 2
-  variableName: starter
-  conditionValue: 0
-  comparison: 0
+  variableName: RPM
+  conditionValue: 1
+  comparison: 2
   stepDescription: "\u0417\u0430\u0433\u043B\u0443\u0448\u0438\u0442\u0435 \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044C"

@@ -7,6 +7,8 @@ namespace Vopere
 {
     public class ReportSaver : MonoBehaviour
     {
+        [SerializeField] string reportBaseName = "Report";
+
         public Report report = new Report();
 
         const string FolderName = "Reports";
@@ -18,7 +20,7 @@ namespace Vopere
 #if UNITY_EDITOR
                 return Path.Combine(Application.dataPath, "..", FolderName);
 #else
-            return Path.Combine(Path.GetDirectoryName(Application.dataPath), FolderName);
+                return Path.Combine(Path.GetDirectoryName(Application.dataPath), FolderName);
 #endif
             }
         }
@@ -37,13 +39,8 @@ namespace Vopere
                 return;
             }
 
-            // Базовое имя: либо заданное, либо "Report"
-            string baseName = string.IsNullOrWhiteSpace(report.fileName)
-                ? "Report"
-                : report.fileName;
-
             string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss");
-            string fileName = $"{baseName} {timestamp}.csv";
+            string fileName = $"{reportBaseName} {timestamp}.csv";
             string path = Path.Combine(folder, fileName);
 
             report.fileName = Path.GetFileNameWithoutExtension(fileName);

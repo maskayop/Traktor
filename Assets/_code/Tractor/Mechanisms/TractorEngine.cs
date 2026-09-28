@@ -7,6 +7,10 @@ namespace Tractor
         [SerializeField] float neutralAccelerationRate = 1.0f;
         [SerializeField] float driveAccelerationRate = 0.5f;
 
+        [Header("RPM")]
+        public float RPM;
+        [SerializeField] int engineShutdownRPM = 500;
+
         bool mass = false;
         public bool Mass { get { return mass; } set { mass = value; } }
 
@@ -15,6 +19,8 @@ namespace Tractor
 
         bool ignition = false;
         public bool Ignition { get { return ignition; } set { ignition = value; } }
+
+        bool gearboxCoupling = false;
 
         RCCP_Engine engine;
         TractorGearbox tractorGearbox;
@@ -38,6 +44,8 @@ namespace Tractor
                         return 1;
                     else
                         return 0;
+                case "RPM":
+                    return RPM;
                 default:
                     Debug.LogWarning($"Неизвестное условие: {conditionName}");
                     return 0;
@@ -58,10 +66,10 @@ namespace Tractor
                 }
             }
 
-            if (tractorGearbox.isNeutralGear || tractorGearbox.currentClutch == 1)
-                engine.engineAccelerationRate = neutralAccelerationRate;
-            else
-                engine.engineAccelerationRate = driveAccelerationRate;
+            RPM = engine.engineRPM;
+
+            CheckForGearboxCoupling();
+            CheckForWorkingRPM();
         }
 
         public void Init(TractorInput tractorInput, TractorGearbox INtractorGearbox)
@@ -109,6 +117,29 @@ namespace Tractor
             starter = false;
 
             engine.StopEngine();
+        }
+
+        void CheckForGearboxCoupling()
+        {
+            if (tractorGearbox.isNeutralGear || tractorGearbox.currentClutch == 1)
+                gearboxCoupling = false;
+            else
+                gearboxCoupling = true;
+
+            if (gearboxCoupling)
+                engine.engineAccelerationRate = driveAccelerationRate;
+            else
+                engine.engineAccelerationRate = neutralAccelerationRate;
+        }
+
+        void CheckForWorkingRPM()
+        {
+            if (!gearboxCoupling)
+                return;
+
+            if (RPM < engineShutdownRPM)
+                if (engine.engineStarting == false || engine.engineRunning == true)
+                    engine.StopEngine();
         }
     }
 }
