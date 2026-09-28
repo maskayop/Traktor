@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static Tractor.ExerciseStep;
 
 namespace Tractor
 {
@@ -53,7 +54,11 @@ namespace Tractor
                 return;
 
             foreach (ExerciseStep s in steps)
-                s.result = ExerciseStep.StepResult.No;
+            {
+                s.result = StepResult.No;
+                s.SetCurrentStepTime(0);
+                s.ResetAllAdditionalConditions();
+            }
 
             currentStepId = 0;
             currentStep = steps[currentStepId];

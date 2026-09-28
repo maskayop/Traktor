@@ -36,5 +36,14 @@ namespace Tractor
             else
                 return null;
         }
+
+        public void ResetAllAdditionalConditions()
+        {
+            for (int i = 0; i < additionalConditions.Count; i++)
+            {
+                additionalConditions[i].result = ExerciseStep.StepResult.Done;
+                additionalConditions[i].SetCurrentStepTime(0);
+            }
+        }
     }
 }

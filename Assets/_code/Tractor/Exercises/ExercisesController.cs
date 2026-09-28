@@ -185,6 +185,12 @@ namespace Tractor
             for (int i = 0; i < currentExercise.steps.Count; i++)
             {
                 AddCurrentStepReport(currentExercise.steps[i]);
+
+                ExerciseAdditionalObjects additional = currentExercise.steps[i].GetAdditionalObjects();
+
+                if (additional)
+                    for (int a = 0; a < additional.additionalConditions.Count; a++)
+                        AddCurrentStepReport(additional.additionalConditions[a]);
             }
         }
 
@@ -192,7 +198,7 @@ namespace Tractor
         {
             currentReport.columns[0].values.Add(FormatCurrentExerciseTime(step.GetCurrentStepTime()));
             currentReport.columns[1].values.Add(GetStepResultString(step.result));
-            currentReport.columns[2].values.Add(currentStep.stepDescription);
+            currentReport.columns[2].values.Add(step.stepDescription);
         }
 
         string GetStepResultString(ExerciseStep.StepResult result)

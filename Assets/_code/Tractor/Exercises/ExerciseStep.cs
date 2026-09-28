@@ -125,6 +125,12 @@ namespace Tractor
                 additionalObjects.InitAdditionalConditions(tractorController);
         }
 
+        public void ResetAllAdditionalConditions()
+        {
+            if (additionalObjects)
+                additionalObjects.ResetAllAdditionalConditions();
+        }
+
         public void SetCurrentStepTime(float value)
         {
             currentStepTime = value;
