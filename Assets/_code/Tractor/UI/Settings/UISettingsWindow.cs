@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Tractor.UI
 {
-    public class UISettingsWindow : UI_SettingsWindowBase
+    public class UISettingsWindow : UI_WindowBase
     {
         [Header("Screen Resolution")]
         [SerializeField] GameObject screenResolutionContainer;

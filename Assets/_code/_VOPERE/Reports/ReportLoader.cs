@@ -7,6 +7,7 @@ namespace Vopere
 {
     public class ReportLoader : MonoBehaviour
     {
+        public bool loadOnStart = false;
         public List<Report> loadedReports = new List<Report>();
 
         const string FolderName = "Reports";
@@ -25,7 +26,8 @@ namespace Vopere
 
         void Start()
         {
-            LoadAll();
+            if (loadOnStart)
+                LoadAll();
         }
 
         public void LoadAll()

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Tractor.UI
 {
-    public sealed class UIEnviroTimeOfDaySettingsWindow : UI_SettingsWindowBase
+    public sealed class UIEnviroTimeOfDaySettingsWindow : UI_WindowBase
     {
         [SerializeField] Slider hourSlider;
         [SerializeField] TMP_Text timeLabel;

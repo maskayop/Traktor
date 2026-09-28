@@ -1033,6 +1033,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8650308306145530754, guid: 1866c6a57e99acf4eb6065a4f0a52c97, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650308306145530754, guid: 1866c6a57e99acf4eb6065a4f0a52c97, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7638685127684554502}
+    - target: {fileID: 8650308306145530754, guid: 1866c6a57e99acf4eb6065a4f0a52c97, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Close
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650308306145530754, guid: 1866c6a57e99acf4eb6065a4f0a52c97, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Tractor.UI.UIEnviroTimeOfDaySettingsWindow, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1066,7 +1082,7 @@ MonoBehaviour:
   hourSlider: {fileID: 5618488986967027661}
   timeLabel: {fileID: 5447336328874157950}
   dynamicTimeToggle: {fileID: 6749651825005932363}
-  stopAutomaticTime: 1
+  simulateTime: 1
   useCloudyDemoWeather: 1
   fallbackStartHour: 8
 --- !u!1 &7094309388476054270 stripped

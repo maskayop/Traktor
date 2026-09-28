@@ -66,5 +66,10 @@ namespace Tractor.UI
         {
             return subStepTexts;
         }
+
+        public void SetCurrentStepTime(float time)
+        {
+            step.SetCurrentStepTime(time);
+        }
     }
 }

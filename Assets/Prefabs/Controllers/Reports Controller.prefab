@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1998503009902012536}
+  - component: {fileID: 8956235747822455094}
   - component: {fileID: 1617486136749985290}
   - component: {fileID: 2955008435792453684}
   m_Layer: 0
@@ -33,6 +34,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8956235747822455094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2914883170556993409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 173a0a1dbbee9e346979cb39aaecc96d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Vopere.ReportController
+  reportSaver: {fileID: 2955008435792453684}
+  reportLoader: {fileID: 1617486136749985290}
 --- !u!114 &1617486136749985290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,6 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3e29ba093a3604395c1a961e300151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReportLoader
+  loadOnStart: 0
   loadedReports: []
 --- !u!114 &2955008435792453684
 MonoBehaviour:
@@ -62,16 +78,4 @@ MonoBehaviour:
   report:
     fileName: 
     dateSaved: 
-    columns:
-    - header: "\u0418\u043C\u044F"
-      values:
-      - "\u0410\u043B\u0435\u043A\u0441\u0435\u0439"
-      - "\u041C\u0430\u0440\u0438\u044F"
-    - header: "\u0412\u043E\u0437\u0440\u0430\u0441\u0442"
-      values:
-      - 38
-      - 35
-    - header: "\u041F\u043E\u043B"
-      values:
-      - "\u041C"
-      - "\u0416"
+    columns: []

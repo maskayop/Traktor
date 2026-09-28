@@ -71,7 +71,7 @@ namespace Tractor.UI
             if (currentExercise.GetCurrentExerciseStep() == null)
                 return;
 
-            currentStep = currentExercise.GetCurrentExerciseStepId();
+            currentStep = currentExercise.GetCurrentStepId();
 
             if (currentStep != previousStep)
                 ChangeStep();
@@ -268,15 +268,27 @@ namespace Tractor.UI
 
             if (currentStep - 1 >= 0)
             {
+                float currentTime = exercisesController.GetCurrentExerciseTime();
+
                 exerciseStepTexts[currentStep - 1].SetCompleted(true);
+                exerciseStepTexts[currentStep - 1].SetCurrentStepTime(currentTime);
+
                 subStepsList = exerciseStepTexts[currentStep - 1].GetSubStepTexts();
 
                 for (int i = 0; i < subStepsList.Count; i++)
                 {
+                    subStepsList[i].SetCurrentStepTime(currentTime);
+
                     if (subStepsList[i].Step.IsCompleted())
+                    {
                         subStepsList[i].SetCompleted(true);
+                        subStepsList[i].Step.result = ExerciseStep.StepResult.Done;
+                    }
                     else
+                    {
                         subStepsList[i].SetFailed(true);
+                        subStepsList[i].Step.result = ExerciseStep.StepResult.Penalty;
+                    }
                 }
             }
         }

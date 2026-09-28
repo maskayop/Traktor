@@ -52,6 +52,9 @@ namespace Tractor
             if (tractorController == null)
                 return;
 
+            foreach (ExerciseStep s in steps)
+                s.result = ExerciseStep.StepResult.No;
+
             currentStepId = 0;
             currentStep = steps[currentStepId];
 
@@ -117,7 +120,7 @@ namespace Tractor
             return currentStep;
         }
 
-        public int GetCurrentExerciseStepId()
+        public int GetCurrentStepId()
         {
             return currentStepId;
         }

@@ -8881,22 +8881,6 @@ PrefabInstance:
       propertyPath: m_text
       value: "\u0423\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435"
       objectReference: {fileID: 0}
-    - target: {fileID: 2700590823101927616, guid: 1866c6a57e99acf4eb6065a4f0a52c97, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2700590823101927616, guid: 1866c6a57e99acf4eb6065a4f0a52c97, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 103036535471569931}
-    - target: {fileID: 2700590823101927616, guid: 1866c6a57e99acf4eb6065a4f0a52c97, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Close
-      objectReference: {fileID: 0}
-    - target: {fileID: 2700590823101927616, guid: 1866c6a57e99acf4eb6065a4f0a52c97, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Tractor.UI.UIControlsWindow, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 6618432414850822693, guid: 1866c6a57e99acf4eb6065a4f0a52c97, type: 3}
       propertyPath: m_SizeDelta.y
       value: 600
@@ -8980,6 +8964,22 @@ PrefabInstance:
     - target: {fileID: 8178773241950799162, guid: 1866c6a57e99acf4eb6065a4f0a52c97, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650308306145530754, guid: 1866c6a57e99acf4eb6065a4f0a52c97, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650308306145530754, guid: 1866c6a57e99acf4eb6065a4f0a52c97, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 103036535471569931}
+    - target: {fileID: 8650308306145530754, guid: 1866c6a57e99acf4eb6065a4f0a52c97, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Close
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650308306145530754, guid: 1866c6a57e99acf4eb6065a4f0a52c97, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Tractor.UI.UIControlsWindow, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

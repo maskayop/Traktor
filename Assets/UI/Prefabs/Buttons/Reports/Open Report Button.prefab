@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1423563674586770911, guid: 7b9c83eb75844c745a744e9a760aba71, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 320
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423563674586770911, guid: 7b9c83eb75844c745a744e9a760aba71, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -42,11 +46,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3716021124228364672, guid: 7b9c83eb75844c745a744e9a760aba71, type: 3}
       propertyPath: m_Name
-      value: Complete Exercise Button
+      value: Open Report Button
       objectReference: {fileID: 0}
     - target: {fileID: 4497983083890432297, guid: 7b9c83eb75844c745a744e9a760aba71, type: 3}
       propertyPath: m_text
-      value: "\u0417\u0430\u0432\u0435\u0440\u0448\u0438\u0442\u044C"
+      value: "\u041E\u0442\u043A\u0440\u044B\u0442\u044C \u043E\u0442\u0447\u0451\u0442"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

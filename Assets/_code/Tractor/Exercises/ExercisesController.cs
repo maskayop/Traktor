@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Vopere;
 
 namespace Tractor
 {
@@ -9,7 +10,7 @@ namespace Tractor
 
         public List<Exercise> exercises = new List<Exercise>();
 
-        [Header("Info")]
+        [Header("Инфо")]
         public Exercise currentExercise;
         public int currentExerciseId = -1;
         public ExerciseStep currentStep;
@@ -17,6 +18,22 @@ namespace Tractor
 
         public bool isCompleted = false;
         public bool IsCompleted { get { return isCompleted; } set { isCompleted = value; } }
+
+        [Header("Заголовки отчёта")]
+        [SerializeField] string reportTimeHeader;
+        [SerializeField] string reportStepResultHeader;
+        [SerializeField] string reportStepsHeader;
+
+        [Header("Результаты шагов")]
+        [SerializeField] string doneResultFormat;
+        [SerializeField] string warningResultFormat;
+        [SerializeField] string errorResultFormat;
+        [SerializeField] string penaltyResultFormat;
+
+        [Header("Отчёт")]
+        public Report currentReport;
+
+        float currentExerciseTime = 0;
 
         void Awake()
         {
@@ -45,12 +62,17 @@ namespace Tractor
 
             if (currentExercise.GetCurrentExerciseStep())
             {
-                currentStepId = currentExercise.GetCurrentExerciseStepId();
+                currentStepId = currentExercise.GetCurrentStepId();
                 currentStep = currentExercise.GetCurrentExerciseStep();
 
                 if (currentStep.IsCompleted())
+                {
+                    currentStep.result = ExerciseStep.StepResult.Done;
                     currentExercise.StartNextStep();
+                }
             }
+
+            currentExerciseTime += Time.deltaTime;
         }
 
         public void Init()
@@ -64,6 +86,8 @@ namespace Tractor
                 AddExercise(allExercises[i]);
                 allExercises[i].Init(this);
             }
+
+            PrepareReport();
         }
 
         void AddExercise(Exercise exercise)
@@ -120,8 +144,74 @@ namespace Tractor
         public void CompleteExercise()
         {
             isCompleted = true;
-
+            CreateReport();
             ExerciseForceExit();
+        }
+
+        public float GetCurrentExerciseTime()
+        {
+            return currentExerciseTime;
+        }
+
+        void PrepareReport()
+        {
+            currentReport.columns.Clear();
+            currentExerciseTime = 0;
+
+            Column c1 = new Column();
+            c1.header = reportTimeHeader;
+            currentReport.columns.Add(c1);
+
+            Column c2 = new Column();
+            c2.header = reportStepResultHeader;
+            currentReport.columns.Add(c2);
+
+            Column c3 = new Column();
+            c3.header = reportStepsHeader;
+            currentReport.columns.Add(c3);
+        }
+
+        string FormatCurrentExerciseTime(float INtime)
+        {
+            int totalSeconds = Mathf.FloorToInt(INtime);
+            int minutes = totalSeconds / 60;
+            int seconds = totalSeconds % 60;
+
+            return string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
+
+        void CreateReport()
+        {
+            for (int i = 0; i < currentExercise.steps.Count; i++)
+            {
+                AddCurrentStepReport(currentExercise.steps[i]);
+            }
+        }
+
+        void AddCurrentStepReport(ExerciseStep step)
+        {
+            currentReport.columns[0].values.Add(FormatCurrentExerciseTime(step.GetCurrentStepTime()));
+            currentReport.columns[1].values.Add(GetStepResultString(step.result));
+            currentReport.columns[2].values.Add(currentStep.stepDescription);
+        }
+
+        string GetStepResultString(ExerciseStep.StepResult result)
+        {
+            switch (result)
+            {
+                case ExerciseStep.StepResult.No:
+                    return "";
+                case ExerciseStep.StepResult.Done:
+                    return doneResultFormat;
+                case ExerciseStep.StepResult.Warning:
+                    return warningResultFormat;
+                case ExerciseStep.StepResult.Error:
+                    return errorResultFormat;
+                case ExerciseStep.StepResult.Penalty:
+                    return penaltyResultFormat;
+                default:
+                    return "";
+            }
         }
     }
 }

@@ -6,6 +6,9 @@ namespace Vopere
     {
         public static ReportController Instance;
 
+        [SerializeField] ReportSaver reportSaver;
+        [SerializeField] ReportLoader reportLoader;
+
         void Awake()
         {
             if (Instance != null)
@@ -24,5 +27,20 @@ namespace Vopere
         }
 
         public void Init() { }
+
+        public void LoadAllReports()
+        {
+            reportLoader.LoadAll();
+        }
+
+        public void SaveReport()
+        {
+            reportSaver.Save();
+        }
+
+        public void SetReport(Report r)
+        {
+            reportSaver.report = r;
+        }
     }
 }

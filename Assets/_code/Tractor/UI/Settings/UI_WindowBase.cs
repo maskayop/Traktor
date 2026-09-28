@@ -4,7 +4,7 @@ using Vopere.Common;
 
 namespace Tractor.UI
 {
-    public abstract class UI_SettingsWindowBase : MonoBehaviour
+    public abstract class UI_WindowBase : MonoBehaviour
     {
         [SerializeField] bool closeOnAwake = true;
         [SerializeField] protected GameObject window;

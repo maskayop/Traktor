@@ -12,13 +12,16 @@ namespace Tractor
         public enum ConditionComparison { Equal, NotEqual, Less, LessOrEqual, Greater, GreaterOrEqual };
         public ConditionComparison comparison = ConditionComparison.Equal;
 
-        [Header("Описание шага")]
+        public enum StepResult { No, Done, Warning, Error, Penalty };
+        public StepResult result = StepResult.No;
 
         [TextArea(1, 50)]
         public string stepDescription;
 
         TractorController tractorController;
         ExerciseAdditionalObjects additionalObjects;
+
+        float currentStepTime = 0;
 
         void Start()
         {
@@ -120,6 +123,16 @@ namespace Tractor
         {
             if (additionalObjects)
                 additionalObjects.InitAdditionalConditions(tractorController);
+        }
+
+        public void SetCurrentStepTime(float value)
+        {
+            currentStepTime = value;
+        }
+
+        public float GetCurrentStepTime()
+        {
+            return currentStepTime;
         }
     }
 }
