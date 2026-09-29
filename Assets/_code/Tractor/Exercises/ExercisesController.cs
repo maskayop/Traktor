@@ -34,8 +34,6 @@ namespace Tractor
 
         float currentExerciseTime = 0;
 
-        ErrorDetector errorDetector;
-
         void Awake()
         {
             if (Instance != null)
@@ -55,10 +53,7 @@ namespace Tractor
 
         void Update()
         {
-            if (!IsExercise())
-                return;
-
-            if (!currentExercise)
+            if (!IsExercise() || !currentExercise)
                 return;
 
             if (currentExercise.GetCurrentExerciseStep())
@@ -77,8 +72,6 @@ namespace Tractor
 
         public void Init()
         {
-            errorDetector = ErrorDetector.Instance;
-
             exercises.Clear();
 
             Exercise[] allExercises = FindObjectsByType<Exercise>();
@@ -116,7 +109,9 @@ namespace Tractor
         {
             isCompleted = false;
             exercises[currentExerciseId].StartExercise();
-            errorDetector.Record = true;
+
+            currentReport = new Report();
+            PrepareReport();
         }
 
         public Exercise GetCurrentExercise()
@@ -132,8 +127,6 @@ namespace Tractor
 
             for (int i = 0; i < exercises.Count; i++)
                 exercises[i].EnableAdditionalGameObjects(false);
-
-            errorDetector.Record = false;
         }
 
         public bool IsExercise()
@@ -202,6 +195,9 @@ namespace Tractor
 
         void AddCurrentStepReport(ExerciseStep step)
         {
+            if (step == null || currentReport == null)
+                return;
+
             currentReport.columns[0].values.Add(FormatCurrentExerciseTime(step.GetCurrentStepTime()));
             currentReport.columns[1].values.Add(GetStepResultString(step.result));
             currentReport.columns[2].values.Add(step.stepDescription);

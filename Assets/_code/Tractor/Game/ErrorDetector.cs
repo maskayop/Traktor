@@ -22,9 +22,6 @@ namespace Tractor
         ErrorMessage errorMessage;
         public ErrorMessage ErrorMessage { get { return errorMessage; } set { errorMessage = value; } }
 
-        bool recordErrors = false;
-        public bool Record { get { return recordErrors; } set { recordErrors = value; } }
-
         TractorController tractorController;
         TractorGearbox tractorGearbox;
 
@@ -52,9 +49,6 @@ namespace Tractor
         void Update()
         {
             CheckGearbox();
-
-            if (!recordErrors)
-                return;
         }
 
         public void Init()

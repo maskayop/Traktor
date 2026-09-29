@@ -17,7 +17,7 @@ namespace Tractor.UI
         ExerciseStep step;
         public ExerciseStep Step { get { return step; } }
 
-        List<UIExerciseStepText> subStepTexts = new List<UIExerciseStepText>();
+        public List<UIExerciseStepText> subStepTexts = new List<UIExerciseStepText>();
 
         public void Init(Exercise INexercise, ExerciseStep INstep)
         {

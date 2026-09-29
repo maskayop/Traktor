@@ -43,6 +43,7 @@ namespace Tractor.UI
         public void Init()
         {
             errorDetector = ErrorDetector.Instance;
+            errorMessage = errorDetector.ErrorMessage;
 
             foreach (Transform t in messagesContainer)
                 Destroy(t.gameObject);

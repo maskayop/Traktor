@@ -25,6 +25,12 @@ namespace Tractor.UI
         [SerializeField] RectTransform exerciseStepTextsContainer;
         List<UIExerciseStepText> exerciseStepTexts = new List<UIExerciseStepText>();
 
+        [Header("Компактное окно текущего задания")]
+        [SerializeField] GameObject currentExerciseWindowCompact;
+        [SerializeField] TextMeshProUGUI currentExerciseNameTextCompact;
+        [SerializeField] RectTransform exerciseStepTextsContainerCompact;
+        List<UIExerciseStepText> exerciseStepTextsCompact = new List<UIExerciseStepText>();
+
         [Header("Окно завершения задания")]
         [SerializeField] GameObject exerciseCompleteWindow;
 
@@ -87,6 +93,7 @@ namespace Tractor.UI
 
             CloseCurrentExerciseWindow();
             ClosePreparingWindow();
+            ShowCurrentExerciseWindowCompact(false);
 
             currentStep = 0;
             previousStep = -1;
@@ -129,6 +136,7 @@ namespace Tractor.UI
             currentExerciseWindowIsOpen = false;
             currentExerciseWindow.SetActive(false);
             exercisePreparingWindowButton.SetActive(true);
+            ShowCurrentExerciseWindowCompact(false);
         }
 
         public void OpenExerciseCompleteWindow()
@@ -142,6 +150,7 @@ namespace Tractor.UI
         public void CloseExerciseCompleteWindow()
         {
             exerciseCompleteWindow.SetActive(false);
+            ShowCurrentExerciseWindowCompact(false);
         }
 
         public void SelectExercise(Exercise exercise)
@@ -176,9 +185,11 @@ namespace Tractor.UI
 
             ClosePreparingWindow();
             OpenCurrentExerciseWindow();
+            ShowCurrentExerciseWindowCompact(false);
 
             currentExercise = exercisesController.GetCurrentExercise();
             currentExerciseNameText.text = currentExercise.exerciseName;
+            currentExerciseNameTextCompact.text = currentExercise.exerciseName;
 
             CreateExerciseStepTexts();
         }
@@ -213,6 +224,7 @@ namespace Tractor.UI
         {
             exercisesController.isCompleted = false;
             exercisesController.ExerciseForceExit();
+            exercisesController.CurrentReport = null;
             CloseCurrentExerciseWindow();
             SelectExercise(null);
         }
@@ -220,8 +232,12 @@ namespace Tractor.UI
         void CreateExerciseStepTexts()
         {
             exerciseStepTexts.Clear();
+            exerciseStepTextsCompact.Clear();
 
             foreach (Transform t in exerciseStepTextsContainer)
+                Destroy(t.gameObject);
+
+            foreach (Transform t in exerciseStepTextsContainerCompact)
                 Destroy(t.gameObject);
 
             if (currentExercise == null)
@@ -230,24 +246,32 @@ namespace Tractor.UI
             for (int i = 0; i < currentExercise.steps.Count; i++)
             {
                 GameObject go = Instantiate(exerciseStepTextPrefab, exerciseStepTextsContainer);
-                go.name = currentExercise.steps[i].stepDescription;
+                GameObject goco = Instantiate(exerciseStepTextPrefab, exerciseStepTextsContainerCompact);
+                go.name = goco.name = currentExercise.steps[i].stepDescription;
 
                 UIExerciseStepText est = go.GetComponent<UIExerciseStepText>();
                 est.Init(currentExercise, currentExercise.steps[i]);
                 exerciseStepTexts.Add(est);
 
+                UIExerciseStepText estco = goco.GetComponent<UIExerciseStepText>();
+                estco.Init(currentExercise, currentExercise.steps[i]);
+                exerciseStepTextsCompact.Add(estco);
+
                 ExerciseAdditionalObjects add = currentExercise.steps[i].GetComponent<ExerciseAdditionalObjects>();
 
                 if (add)
-                    CreateSubStepTexts(est, add);
+                {
+                    CreateSubStepTexts(est, add, exerciseStepTextsContainer);
+                    CreateSubStepTexts(estco, add, exerciseStepTextsContainerCompact);
+                }
             }
         }
 
-        void CreateSubStepTexts(UIExerciseStepText stepText, ExerciseAdditionalObjects additional)
+        void CreateSubStepTexts(UIExerciseStepText stepText, ExerciseAdditionalObjects additional, Transform container)
         {
             for (int i = 0; i < additional.additionalConditions.Count; i++)
             {
-                GameObject go = Instantiate(exerciseSubStepTextPrefab, exerciseStepTextsContainer);
+                GameObject go = Instantiate(exerciseSubStepTextPrefab, container);
                 go.name = additional.additionalConditions[i].stepDescription;
 
                 UIExerciseStepText est = go.GetComponent<UIExerciseStepText>();
@@ -260,37 +284,82 @@ namespace Tractor.UI
         void ChangeStep()
         {
             exerciseStepTexts[currentStep].SetCurrent(true);
+            exerciseStepTextsCompact[currentStep].SetCurrent(true);
 
             List<UIExerciseStepText> subStepsList = exerciseStepTexts[currentStep].GetSubStepTexts();
+            List<UIExerciseStepText> subStepsListCompact = exerciseStepTextsCompact[currentStep].GetSubStepTexts();
 
             for (int i = 0; i < subStepsList.Count; i++)
+            {
                 subStepsList[i].SetCurrent(true);
+                subStepsListCompact[i].SetCurrent(true);
+            }
 
             if (currentStep - 1 >= 0)
             {
                 float currentTime = exercisesController.GetCurrentExerciseTime();
 
                 exerciseStepTexts[currentStep - 1].SetCompleted(true);
+                exerciseStepTextsCompact[currentStep - 1].SetCompleted(true);
+
                 exerciseStepTexts[currentStep - 1].SetCurrentStepTime(currentTime);
+                exerciseStepTextsCompact[currentStep - 1].SetCurrentStepTime(currentTime);
 
                 subStepsList = exerciseStepTexts[currentStep - 1].GetSubStepTexts();
+                subStepsListCompact = exerciseStepTextsCompact[currentStep - 1].GetSubStepTexts();
 
                 for (int i = 0; i < subStepsList.Count; i++)
                 {
                     subStepsList[i].SetCurrentStepTime(currentTime);
+                    subStepsListCompact[i].SetCurrentStepTime(currentTime);
 
                     if (subStepsList[i].Step.IsCompleted())
                     {
                         subStepsList[i].SetCompleted(true);
+                        subStepsListCompact[i].SetCompleted(true);
+
                         subStepsList[i].Step.result = ExerciseStep.StepResult.Done;
+                        subStepsListCompact[i].Step.result = ExerciseStep.StepResult.Done;
                     }
                     else
                     {
                         subStepsList[i].SetFailed(true);
+                        subStepsListCompact[i].SetFailed(true);
+
                         subStepsList[i].Step.result = ExerciseStep.StepResult.Penalty;
+                        subStepsListCompact[i].Step.result = ExerciseStep.StepResult.Penalty;
                     }
                 }
             }
+
+            foreach (var t in exerciseStepTextsCompact)
+            {
+                foreach (var sst in t.GetSubStepTexts())
+                    sst.gameObject.SetActive(false);
+            }
+
+            for (int i = 0; i < exerciseStepTextsCompact.Count; i++)
+            {
+                if (i == currentStep || i == currentStep + 1 || i == currentStep - 1 && currentStep - 1 >= 0)
+                {
+                    exerciseStepTextsCompact[i].gameObject.SetActive(true);
+
+                    foreach (var sst in exerciseStepTextsCompact[i].GetSubStepTexts())
+                        sst.gameObject.SetActive(true);
+                }
+                else
+                    exerciseStepTextsCompact[i].gameObject.SetActive(false);
+            }
+        }
+
+        public void ShowCurrentExerciseWindow(bool state)
+        {
+            currentExerciseWindow.SetActive(state);
+        }
+
+        public void ShowCurrentExerciseWindowCompact(bool state)
+        {
+            currentExerciseWindowCompact.SetActive(state);
         }
     }
 }
