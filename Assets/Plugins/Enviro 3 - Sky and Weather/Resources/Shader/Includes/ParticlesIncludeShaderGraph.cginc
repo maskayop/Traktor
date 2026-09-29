@@ -1,4 +1,5 @@
 #include_with_pragmas "FogIncludeHLSL.hlsl"
+#pragma exclude_renderers gles3
 
 
 void ApplyFog_float(float3 sceneColor, float2 uv, float3 wPos, float linearDepth,out float3 finalColor)

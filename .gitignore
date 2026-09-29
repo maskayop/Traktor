@@ -13,3 +13,5 @@ Miscellaneous
 Assets/game_log.txt
 Assets/game_log.txt.meta
 *.csv
+.utmp
+.utmp
