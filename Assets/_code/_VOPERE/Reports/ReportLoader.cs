@@ -67,14 +67,14 @@ namespace Vopere
             }
 
             Debug.Log($"Загружено отчётов: {loadedReports.Count}");
-            foreach (var r in loadedReports)
-                Debug.Log($"  • {r.fileName} — колонок: {r.columns.Count}, строк: {r.RowCount} (от {r.dateSaved})");
         }
 
         public Report GetReport(string fileName)
         {
             foreach (var r in loadedReports)
-                if (r.fileName == fileName) return r;
+                if (r.fileName == fileName)
+                    return r;
+
             return null;
         }
     }

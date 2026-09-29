@@ -39,12 +39,12 @@ namespace Vopere
                 return;
             }
 
-            string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss");
+            string timestamp = DateTime.Now.ToString(". yyyy-MM-dd . HH-mm-ss");
             string fileName = $"{reportBaseName} {timestamp}.csv";
             string path = Path.Combine(folder, fileName);
 
             report.fileName = Path.GetFileNameWithoutExtension(fileName);
-            report.dateSaved = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            report.dateSaved = DateTime.Now.ToString(". yyyy-MM-dd . HH:mm:ss");
 
             File.WriteAllText(path, report.ToCsv(), Encoding.UTF8);
             Debug.Log($"Сохранено: {path}");

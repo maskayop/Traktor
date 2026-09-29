@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Vopere
@@ -8,6 +9,8 @@ namespace Vopere
 
         [SerializeField] ReportSaver reportSaver;
         [SerializeField] ReportLoader reportLoader;
+
+        List<Report> allReports = new List<Report>();
 
         void Awake()
         {
@@ -31,6 +34,10 @@ namespace Vopere
         public void LoadAllReports()
         {
             reportLoader.LoadAll();
+            allReports.Clear();
+
+            for (int i = 0; i < reportLoader.loadedReports.Count; i++)
+                allReports.Add(reportLoader.loadedReports[i]);
         }
 
         public void SaveReport()
@@ -41,6 +48,15 @@ namespace Vopere
         public void SetReport(Report r)
         {
             reportSaver.report = r;
+        }
+
+        public void OpenReportsFolder()
+        {
+            reportSaver.OpenReportsFolder();
+        }
+        public List<Report> GetAllReports()
+        {
+            return allReports;
         }
     }
 }

@@ -219,5 +219,19 @@ namespace Tractor
                     return "";
             }
         }
+
+        public ExerciseStep.StepResult GetStepResultByString(string result)
+        {
+            if (result == doneResultFormat)
+                return ExerciseStep.StepResult.Done;
+            else if (result == warningResultFormat)
+                return ExerciseStep.StepResult.Warning;
+            else if (result == errorResultFormat)
+                return ExerciseStep.StepResult.Error;
+            else if (result == penaltyResultFormat)
+                return ExerciseStep.StepResult.Penalty;
+            else
+                return ExerciseStep.StepResult.No;
+        }
     }
 }
