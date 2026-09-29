@@ -9,6 +9,7 @@ namespace Tractor.UI
         [SerializeField] TextMeshProUGUI speedText;
         [SerializeField] TextMeshProUGUI RPMText;
         [SerializeField] TextMeshProUGUI handbrakeText;
+        [SerializeField] TextMeshProUGUI hornSignalText;
 
         [Header("Педали")]
         [SerializeField] TextMeshProUGUI throttleText;
@@ -20,10 +21,11 @@ namespace Tractor.UI
         [SerializeField] TextMeshProUGUI gearboxRangeText;
         [SerializeField] TextMeshProUGUI gearboxGearText;
 
-        [Header("Лампочки и звуки")]
+        [Header("Лампы и звуки")]
         [SerializeField] TextMeshProUGUI turnLightsText;
         [SerializeField] TextMeshProUGUI alarmLightsText;
-        [SerializeField] TextMeshProUGUI hornSignalText;
+        [SerializeField] TextMeshProUGUI parkingLightsText;
+        [SerializeField] TextMeshProUGUI headLightsText;
 
         [Header("Зажигание")]
         [SerializeField] TextMeshProUGUI massText;
@@ -71,7 +73,7 @@ namespace Tractor.UI
                 return;
 
             //Основное
-            speedText.text = tractorMain.speed.ToString("F2");
+            speedText.text = tractorMain.speed.ToString("F1");
             RPMText.text = tractorMain.RPM.ToString("F0");
 
             handbrakeText.text = tractorMain.isHandbrake.ToString();
@@ -104,7 +106,7 @@ namespace Tractor.UI
             else if (tractorLights.rightTurnIsOn)
             {
                 turnLightsText.text = "Right";
-                turnLightsText.color = Color.violet;
+                turnLightsText.color = Color.cyan;
             }
             else
             {
@@ -114,6 +116,12 @@ namespace Tractor.UI
 
             alarmLightsText.text = tractorLights.alarmIsOn.ToString();
             ColorBoolText(alarmLightsText, tractorLights.alarmIsOn);
+
+            parkingLightsText.text = tractorLights.parkingIsOn.ToString();
+            ColorBoolText(parkingLightsText, tractorLights.parkingIsOn);
+
+            headLightsText.text = tractorLights.headIsOn.ToString();
+            ColorBoolText(headLightsText, tractorLights.headIsOn);
 
             hornSignalText.text = tractorAudio.hornIsPlaying.ToString();
             ColorBoolText(hornSignalText, tractorAudio.hornIsPlaying);

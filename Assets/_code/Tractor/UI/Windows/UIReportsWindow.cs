@@ -34,7 +34,7 @@ namespace Tractor.UI
                 return;
 
             if (isExercise != exercisesController.IsExercise())
-                SetCurrentReport(exercisesController.currentReport);
+                SetCurrentReport(exercisesController.CurrentReport);
 
             isExercise = exercisesController.IsExercise();
         }

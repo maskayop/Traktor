@@ -19,6 +19,7 @@ namespace Tractor
 
         [Header("Состояние передач")]
         public bool isNeutralGear = false;
+
         //Уровень
         public bool isGearLevel1 = true;
 

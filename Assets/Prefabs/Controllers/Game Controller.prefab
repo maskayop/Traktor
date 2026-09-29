@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4646677227271036047}
   - component: {fileID: 793747871009046374}
+  - component: {fileID: 4661852199369825972}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: Untagged
@@ -76,4 +77,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 225c0fd4a249f60408a9f941ba12b401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.GameController
+  gameState: 0
   mainSpawnPoint: {fileID: 3991666337962666663}
+--- !u!114 &4661852199369825972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3103449507959437421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c130a801df9c84a8dc1ba10d187ab0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tractor.ErrorDetector
+  gearSwitchWithoutClutchMessage: "\u041D\u0435 \u0432\u044B\u0436\u0430\u0442\u043E
+    \u0441\u0446\u0435\u043F\u043B\u0435\u043D\u0438\u0435 \u043F\u0440\u0438 \u043F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0438
+    \u043F\u0435\u0440\u0435\u0434\u0430\u0447!"
+  rangeSwitchOnSpeedMessage: "\u041F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435
+    \u0434\u0438\u0430\u043F\u0430\u0437\u043E\u043D\u0430 \u043F\u0435\u0440\u0435\u0434\u0430\u0447
+    \u043D\u0430 \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u0438!"

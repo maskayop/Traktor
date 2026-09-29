@@ -9,7 +9,14 @@ namespace Tractor
         [Header("Частота обновления")]
         [SerializeField] float updateDelay = 1.0f;
 
-        [Header("Info")]
+        [Header("Фразы состояний")]
+        [SerializeField] string onLaneStatus;
+        [SerializeField] string onCrossStatus;
+        [SerializeField] string partiallyOffRoadStatus;
+        [SerializeField] string offRoadStatus;
+        [SerializeField] string wrongDirectionStatus;
+
+        [Header("Инфо")]
         public int onRoad = 1;
         public bool wrongDirection = false;
         public bool onLane = false;
@@ -18,8 +25,8 @@ namespace Tractor
         public string laneStatus = "";
 
         // x = FL, y = FR, z = BL, w = BR
-        public Vector4 halfLanes = Vector4.zero;
-        public Vector4 laneNumbers = Vector4.zero;
+        Vector4 halfLanes = Vector4.zero;
+        Vector4 laneNumbers = Vector4.zero;
 
         Vector4 notOnRoadVector = new Vector4(-9, -9, -9, -9);
 
@@ -142,15 +149,15 @@ namespace Tractor
             if (onRoad == 1)
             {
                 if (!onCross)
-                    laneStatus = "На дороге," + "\n" + " на полосе ";
+                    laneStatus = onLaneStatus;
                 else
-                    laneStatus = "На дороге," + "\n" + " на перекрёстке";
+                    laneStatus = onCrossStatus;
             }
             else if (onRoad == 0)
             {
                 if (!onCross)
                 {
-                    laneStatus = "Частично выезд с дороги," + "\n" + " на полосе ";
+                    laneStatus = partiallyOffRoadStatus + onLaneStatus;
 
                     for (int i = 0; i < 4; i++)
                     {
@@ -177,21 +184,27 @@ namespace Tractor
                     }
                 }
                 else
-                    laneStatus = "Частично выезд с дороги," + "\n" + " на перекрёстке ";
+                    laneStatus = partiallyOffRoadStatus + onCrossStatus;
             }
             else if (onRoad == -1)
-                laneStatus = "Не на дороге";
+                laneStatus = offRoadStatus;
 
             if (onLane && !onCross)
                 laneStatus += laneNumbers.x;
 
-            if (onRoad == 1 && !onLane && !onCross)
+            if (onRoad == 1)
             {
-                if (laneNumbers.x != laneNumbers.y)
-                    laneStatus += laneNumbers.x + "\n" + " и полосе " + laneNumbers.y;
-                else if (laneNumbers.z != laneNumbers.w)
-                    laneStatus += laneNumbers.z + "\n" + " и полосе " + laneNumbers.w;
+                if (!onLane && !onCross)
+                {
+                    if (laneNumbers.x != laneNumbers.y)
+                        laneStatus = onLaneStatus + laneNumbers.x + "\n" + onLaneStatus + laneNumbers.y;
+                    else if (laneNumbers.z != laneNumbers.w)
+                        laneStatus = onLaneStatus + laneNumbers.z + "\n" + onLaneStatus + laneNumbers.w;
+                }
             }
+
+            if (wrongDirection)
+                laneStatus += "\n" + wrongDirectionStatus;
         }
     }
 }

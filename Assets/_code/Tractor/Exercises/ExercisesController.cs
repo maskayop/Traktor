@@ -10,15 +10,6 @@ namespace Tractor
 
         public List<Exercise> exercises = new List<Exercise>();
 
-        [Header("Инфо")]
-        public Exercise currentExercise;
-        public int currentExerciseId = -1;
-        public ExerciseStep currentStep;
-        public int currentStepId = -1;
-
-        public bool isCompleted = false;
-        public bool IsCompleted { get { return isCompleted; } set { isCompleted = value; } }
-
         [Header("Заголовки отчёта")]
         [SerializeField] string reportTimeHeader;
         [SerializeField] string reportStepResultHeader;
@@ -30,10 +21,20 @@ namespace Tractor
         [SerializeField] string errorResultFormat;
         [SerializeField] string penaltyResultFormat;
 
-        [Header("Отчёт")]
-        public Report currentReport;
+        [Header("Инфо")]
+        Exercise currentExercise;
+        int currentExerciseId = -1;
+        ExerciseStep currentStep;
+
+        public bool isCompleted = false;
+        public bool IsCompleted { get { return isCompleted; } set { isCompleted = value; } }
+
+        Report currentReport;
+        public Report CurrentReport { get { return currentReport; } set { currentReport = value; } }
 
         float currentExerciseTime = 0;
+
+        ErrorDetector errorDetector;
 
         void Awake()
         {
@@ -62,7 +63,6 @@ namespace Tractor
 
             if (currentExercise.GetCurrentExerciseStep())
             {
-                currentStepId = currentExercise.GetCurrentStepId();
                 currentStep = currentExercise.GetCurrentExerciseStep();
 
                 if (currentStep.IsCompleted())
@@ -77,6 +77,8 @@ namespace Tractor
 
         public void Init()
         {
+            errorDetector = ErrorDetector.Instance;
+
             exercises.Clear();
 
             Exercise[] allExercises = FindObjectsByType<Exercise>();
@@ -114,6 +116,7 @@ namespace Tractor
         {
             isCompleted = false;
             exercises[currentExerciseId].StartExercise();
+            errorDetector.Record = true;
         }
 
         public Exercise GetCurrentExercise()
@@ -125,12 +128,12 @@ namespace Tractor
         {
             currentExercise = null;
             currentExerciseId = -1;
-
             currentStep = null;
-            currentStepId = -1;
 
             for (int i = 0; i < exercises.Count; i++)
                 exercises[i].EnableAdditionalGameObjects(false);
+
+            errorDetector.Record = false;
         }
 
         public bool IsExercise()
@@ -155,6 +158,9 @@ namespace Tractor
 
         void PrepareReport()
         {
+            if (currentReport == null)
+                return;
+
             currentReport.columns.Clear();
             currentExerciseTime = 0;
 
