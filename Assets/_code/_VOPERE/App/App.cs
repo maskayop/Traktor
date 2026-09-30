@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Net;
+using System.Net.Sockets;
 using UnityEngine;
 
 namespace Vopere.Common
@@ -93,6 +96,21 @@ namespace Vopere.Common
         public Vector2Int GetDefaultScreenResolution()
         {
             return defaultScreenResolution;
+        }
+
+        public List<string> GetAllLocalIPv4()
+        {
+            var result = new List<string>();
+            string hostName = Dns.GetHostName();
+            IPHostEntry hostEntry = Dns.GetHostEntry(hostName);
+
+            foreach (IPAddress ip in hostEntry.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                    result.Add(ip.ToString());
+            }
+
+            return result;
         }
     }
 }
