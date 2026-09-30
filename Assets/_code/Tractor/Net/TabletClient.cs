@@ -24,8 +24,11 @@ public class TabletClient : MonoBehaviour
     readonly Queue<string> messageQueue = new Queue<string>();
     readonly object queueLock = new object();
 
+    readonly Queue<string> logQueue = new Queue<string>();
+    readonly object logLock = new object();
+
     // Флаг, чтобы OnDataReceived не пытался писать в UI из фонового потока
-    bool connectionLost = false;
+    public bool connectionLost = false;
 
 #if UNITY_ANDROID
     void Start()
@@ -33,8 +36,27 @@ public class TabletClient : MonoBehaviour
         ConnectToServer();
     }
 
-    void ConnectToServer()
+    void Update()
     {
+        // displayText — входящие данные (как было)
+        lock (queueLock)
+        {
+            while (messageQueue.Count > 0)
+                displayText.text = messageQueue.Dequeue();
+        }
+
+        // logText — свои логи отправки
+        lock (logLock)
+        {
+            while (logQueue.Count > 0)
+                logText.text = logQueue.Dequeue();
+        }
+    }
+#endif
+
+    public void ConnectToServer()
+    {
+#if UNITY_ANDROID
         try
         {
             client = new TcpClient();
@@ -48,6 +70,41 @@ public class TabletClient : MonoBehaviour
             logText.text = $"Не удалось подключиться: {e.Message}";
             displayText.text = "Ошибка подключения. Проверьте IP-адрес.";
         }
+#endif
+    }
+
+#if UNITY_ANDROID
+    // Обёртки для кнопок — OnClick в инспекторе умеет звать только методы без параметров
+    public void OnStartButton() { SendCommand("START"); }
+    public void OnStopButton() { SendCommand("STOP"); }
+    public void OnEmergencyButton() { SendCommand("EMERGENCY"); }
+
+    // Отправка команды на ПК
+    public void SendCommand(string command)
+    {
+        if (client == null || !client.Connected || stream == null)
+        {
+            Log($"Не отправлено (нет связи): {command}");
+            return;
+        }
+
+        try
+        {
+            byte[] data = Encoding.UTF8.GetBytes(command);
+            stream.Write(data, 0, data.Length);
+            Log($"Отправлено: {command}");
+        }
+        catch (System.Exception e)
+        {
+            Log($"Ошибка отправки: {e.Message}");
+        }
+    }
+
+    void Log(string message)
+    {
+        Debug.Log(message);
+        lock (logLock)
+            logQueue.Enqueue(message);
     }
 
     void OnDataReceived(System.IAsyncResult ar)
@@ -70,24 +127,6 @@ public class TabletClient : MonoBehaviour
         {
             logText.text = $"Соединение потеряно: {e.Message}";
             connectionLost = true;
-        }
-    }
-
-    void Update()
-    {
-        // Применяем накопленные сообщения в главном потоке
-        lock (queueLock)
-        {
-            while (messageQueue.Count > 0)
-            {
-                displayText.text = messageQueue.Dequeue();
-            }
-        }
-
-        if (connectionLost)
-        {
-            displayText.text = "Соединение потеряно.";
-            connectionLost = false;
         }
     }
 
