@@ -6,13 +6,13 @@ using UnityEngine;
 
 public class TabletClient : MonoBehaviour
 {
-
     [Header("Настройки подключения")]
     public string serverIP = "192.168.0.101";
     public int serverPort = 8052;
 
     [Header("UI")]
     public GameObject window;
+    public GameObject additionalMenu;
     public TextMeshProUGUI displayText;
     public TextMeshProUGUI logText;
 
@@ -20,17 +20,26 @@ public class TabletClient : MonoBehaviour
     NetworkStream stream;
     byte[] receiveBuffer = new byte[1024];
 
-    // Очередь сообщений между фоновым потоком и главным
-    readonly Queue<string> messageQueue = new Queue<string>();
-    readonly object queueLock = new object();
+    readonly Queue<System.Action> actionQueue = new Queue<System.Action>();
+    readonly object actionLock = new object();
 
     readonly Queue<string> logQueue = new Queue<string>();
     readonly object logLock = new object();
 
-    // Флаг, чтобы OnDataReceived не пытался писать в UI из фонового потока
-    public bool connectionLost = false;
+    bool connectionLost = false;
 
 #if UNITY_ANDROID
+    void Awake()
+    {
+    }
+#else
+    void Awake()
+    {
+        DestroyImmediate(window);
+        DestroyImmediate(this);
+    }
+#endif
+
     void Start()
     {
         ConnectToServer();
@@ -38,48 +47,45 @@ public class TabletClient : MonoBehaviour
 
     void Update()
     {
-        // displayText — входящие данные (как было)
-        lock (queueLock)
-        {
-            while (messageQueue.Count > 0)
-                displayText.text = messageQueue.Dequeue();
-        }
-
         // logText — свои логи отправки
         lock (logLock)
         {
             while (logQueue.Count > 0)
                 logText.text = logQueue.Dequeue();
         }
+
+        // Выполняем действия из очереди (главный поток)
+        lock (actionLock)
+        {
+            while (actionQueue.Count > 0)
+                actionQueue.Dequeue()?.Invoke();
+        }
+
+        if (connectionLost)
+        {
+            displayText.text = "Соединение потеряно.";
+            connectionLost = false;
+        }
     }
-#endif
 
     public void ConnectToServer()
     {
-#if UNITY_ANDROID
         try
         {
             client = new TcpClient();
             client.Connect(serverIP, serverPort);
             stream = client.GetStream();
             stream.BeginRead(receiveBuffer, 0, receiveBuffer.Length, OnDataReceived, null);
-            logText.text = "Подключено к ПК!";
+            Log("Подключено к ПК!");
         }
         catch (System.Exception e)
         {
-            logText.text = $"Не удалось подключиться: {e.Message}";
+            Log($"Не удалось подключиться: {e.Message}");
             displayText.text = "Ошибка подключения. Проверьте IP-адрес.";
         }
-#endif
     }
 
-#if UNITY_ANDROID
-    // Обёртки для кнопок — OnClick в инспекторе умеет звать только методы без параметров
-    public void OnStartButton() { SendCommand("START"); }
-    public void OnStopButton() { SendCommand("STOP"); }
-    public void OnEmergencyButton() { SendCommand("EMERGENCY"); }
-
-    // Отправка команды на ПК
+    // Отправка команды
     public void SendCommand(string command)
     {
         if (client == null || !client.Connected || stream == null)
@@ -115,19 +121,49 @@ public class TabletClient : MonoBehaviour
             if (bytesRead > 0)
             {
                 string message = Encoding.UTF8.GetString(receiveBuffer, 0, bytesRead);
-                lock (queueLock)
-                {
-                    messageQueue.Enqueue(message);
-                }
+                Log($"Получено от ПК: {message}");
+                HandleCommand(message);
             }
 
             stream.BeginRead(receiveBuffer, 0, receiveBuffer.Length, OnDataReceived, null);
         }
         catch (System.Exception e)
         {
-            logText.text = $"Соединение потеряно: {e.Message}";
+            Log($"Соединение потеряно: {e.Message}");
             connectionLost = true;
         }
+    }
+
+    void HandleCommand(string command)
+    {
+        // Всё, что трогает Unity API, кладём в очередь и выполним в Update.
+        switch (command)
+        {
+            case "TRACTOR_STARTED":
+                lock (actionLock) actionQueue.Enqueue(() => ShowMessage("Трактор запущен"));
+                break;
+            case "TRACTOR_STOPPED":
+                lock (actionLock) actionQueue.Enqueue(() => ShowMessage("Трактор остановлен"));
+                break;
+            case "EMERGENCY_STOPPED":
+                lock (actionLock) actionQueue.Enqueue(() => ShowMessage("АВАРИЙНАЯ ОСТАНОВКА!"));
+                break;
+            case "ShowMenu":
+                lock (actionLock) actionQueue.Enqueue(OnShowMenu);
+                break;
+            case "HideMenu":
+                lock (actionLock) actionQueue.Enqueue(OnHideMenu);
+                break;
+            default:
+                // Всё остальное — просто текст из InputField на ПК
+                lock (actionLock) actionQueue.Enqueue(() => ShowMessage(command));
+                break;
+        }
+    }
+
+    void ShowMessage(string text)
+    {
+        displayText.text = text;
     }
 
     void OnApplicationQuit()
@@ -136,11 +172,21 @@ public class TabletClient : MonoBehaviour
         client?.Close();
     }
 
-#else
-    void Start()
+    // Обёртки для кнопок
+    public void OnStartButton() { SendCommand("START"); }
+    public void OnStopButton() { SendCommand("STOP"); }
+    public void OnEmergencyButton() { SendCommand("EMERGENCY"); }
+
+    // Обёртки для вызова методов
+    void OnShowMenu()
     {
-        Destroy(window);
-        Destroy(this);
+        Log("Показать меню");
+        additionalMenu.SetActive(true);
     }
-#endif
+
+    void OnHideMenu()
+    {
+        Log("Скрыть меню");
+        additionalMenu.SetActive(false);
+    }
 }

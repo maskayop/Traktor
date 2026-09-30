@@ -16,15 +16,12 @@ public class PCServer : MonoBehaviour
     List<TcpClient> clients = new List<TcpClient>();
     string lastMessage = "";
 
-    // Очередь команд из фонового потока — выполняем в Update
     readonly Queue<System.Action> commandQueue = new Queue<System.Action>();
     readonly object commandLock = new object();
 
-    // Очередь логов, накопленных в фоновом потоке — применяем в Update
     readonly Queue<string> logQueue = new Queue<string>();
     readonly object logLock = new object();
 
-    // Вспомогательный класс: хранит клиента и его буфер для чтения
     class ClientState
     {
         public TcpClient Client;
@@ -32,31 +29,45 @@ public class PCServer : MonoBehaviour
     }
 
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN
+    void Awake()
+    {
+    }
+#else
+    void Awake()
+    {
+        DestroyImmediate(window);
+        DestroyImmediate(this);
+    }
+#endif
+
     void Start()
     {
         listener = new TcpListener(IPAddress.Any, 8052);
         listener.Start();
-        logText.text = "Сервер запущен. Ждём подключения...";
+        Log("Сервер запущен. Ждём подключения...");
         listener.BeginAcceptTcpClient(OnClientConnected, null);
     }
 
     void Update()
     {
-        // Отправка текста из InputField (как было)
-        if (inputField.text != lastMessage)
+        // Отправка текста из InputField
+        if (inputField != null)
         {
-            lastMessage = inputField.text;
-            SendToAllClients(lastMessage);
+            if (inputField.text != lastMessage)
+            {
+                lastMessage = inputField.text;
+                SendToAllClients(lastMessage);
+            }
         }
 
-        // Применяем логи, накопленные в фоновом потоке
+        // Логи из фонового потока
         lock (logLock)
         {
             while (logQueue.Count > 0)
                 logText.text = logQueue.Dequeue();
         }
 
-        // Выполняем команды, накопленные из OnClientData
+        // Команды из фонового потока
         lock (commandLock)
         {
             while (commandQueue.Count > 0)
@@ -68,18 +79,15 @@ public class PCServer : MonoBehaviour
     {
         TcpClient client = listener.EndAcceptTcpClient(ar);
         clients.Add(client);
-        logText.text = $"Планшет подключен! Всего клиентов: {clients.Count}";
+        Log($"Планшет подключен! Всего клиентов: {clients.Count}");
 
-        // Начинаем слушать ЭТОГО клиента (в фоне)
         ClientState state = new ClientState { Client = client };
         NetworkStream stream = client.GetStream();
         stream.BeginRead(state.Buffer, 0, state.Buffer.Length, OnClientData, state);
 
-        // И принимаем следующего
         listener.BeginAcceptTcpClient(OnClientConnected, null);
     }
 
-    // Срабатывает, когда от планшета приходят байты (в ФОНОВОМ потоке!)
     void OnClientData(System.IAsyncResult ar)
     {
         ClientState state = (ClientState)ar.AsyncState;
@@ -96,12 +104,10 @@ public class PCServer : MonoBehaviour
                 Log($"Получено от планшета: {message}");
                 HandleCommand(message);
 
-                // Продолжаем слушать этого же клиента
                 stream.BeginRead(state.Buffer, 0, state.Buffer.Length, OnClientData, state);
             }
             else
             {
-                // 0 байт = клиент отключился
                 Log("Планшет отключился.");
                 client.Close();
                 clients.Remove(client);
@@ -140,9 +146,16 @@ public class PCServer : MonoBehaviour
         }
     }
 
-    // Универсальный лог: можно звать и из главного потока, и из фонового
+    // Отправка команды
+    public void SendCommand(string command)
+    {
+        Log($"Отправка на планшет: {command}");
+        SendToAllClients(command);
+    }
+
     void Log(string message)
     {
+        Debug.Log(message);
         lock (logLock)
             logQueue.Enqueue(message);
     }
@@ -153,53 +166,48 @@ public class PCServer : MonoBehaviour
         foreach (var c in clients) c.Close();
     }
 
-    // Разбор команды. Вызывается из фонового потока!
     void HandleCommand(string command)
     {
-        // Всё, что трогает Unity API, кладём в очередь и выполним в Update.
         switch (command)
         {
             case "START":
                 lock (commandLock) commandQueue.Enqueue(StartTractor);
                 break;
-
             case "STOP":
                 lock (commandLock) commandQueue.Enqueue(StopTractor);
                 break;
-
             case "EMERGENCY":
                 lock (commandLock) commandQueue.Enqueue(EmergencyStop);
                 break;
-
             default:
                 Log($"Неизвестная команда: {command}");
                 break;
         }
     }
 
+    // Обёртки для кнопок
+    public void OnShowMenuButton() { SendCommand("ShowMenu"); }
+    public void OnHideMenuButton() { SendCommand("HideMenu"); }
+
+    // Обёртки для вызова методов
     void StartTractor()
     {
         Log("Трактор: СТАРТ");
         // логика
+        SendCommand("TRACTOR_STARTED");
     }
 
     void StopTractor()
     {
         Log("Трактор: СТОП");
         // логика
+        SendCommand("TRACTOR_STOPPED");
     }
 
     void EmergencyStop()
     {
         Log("Трактор: АВАРИЙНАЯ ОСТАНОВКА");
         // логика
+        SendCommand("EMERGENCY_STOPPED");
     }
-
-#else
-    void Start()
-    {
-        Destroy(window);
-        Destroy(this);
-    }
-#endif
 }
