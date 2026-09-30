@@ -10,9 +10,7 @@ namespace Tractor.Editor
             string path = "Assets/Scenes/";
 
             if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
-            {
                 EditorSceneManager.OpenScene(path + sceneName + ".unity", OpenSceneMode.Single);
-            }
         }
 
         [MenuItem("Tractor/Открыть сцену/Main")]
@@ -29,16 +27,16 @@ namespace Tractor.Editor
             LoadScene("Test/Test Inputs");
         }
 
-        [MenuItem("Tractor/Открыть сцену/Тест/Test Autodrom")]
-        static void LoadSceneTestAutodrom()
+        [MenuItem("Tractor/Открыть сцену/Тест/Test PC Android Connection")]
+        static void LoadSceneTestPCAndroidConnection()
         {
-            LoadScene("Test/Test Autodrom");
+            LoadScene("Test/Test PC Android Connection");
         }
 
-        [MenuItem("Tractor/Открыть сцену/Тест/Test Tractor City")]
-        static void LoadSceneTestTractorCity()
+        [MenuItem("Tractor/Открыть сцену/Тест/Test UI")]
+        static void LoadSceneTestUI()
         {
-            LoadScene("Test/Test Tractor City");
+            LoadScene("Test/Test UI");
         }
     }
 }

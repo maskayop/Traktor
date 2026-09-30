@@ -376,6 +376,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   customFogDensityModifer: 1
   fogMat: {fileID: 0}
   volumetricsMat: {fileID: 0}
@@ -2106,7 +2107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18a0693e95fd064e9d0a3b96e538236, type: 3}
   m_Name: Lighting Module
   m_EditorClassIdentifier: 
-  showModuleInspector: 1
+  showModuleInspector: 0
   showSaveLoad: 0
   active: 1
   Settings:
@@ -4459,9 +4460,9 @@ MonoBehaviour:
   preset: {fileID: 11400000, guid: 0fcdd472bd6a8ec429fc1e9bc978c4fa, type: 2}
   showCirrusCloudsControls: 1
   show2DCloudsControls: 1
-  cloudFlatBaseAnim: {x: -0.09089103, y: -0.19726574}
-  cloudFlatDetailAnim: {x: -0.4546904, y: -0.9869637}
-  cirrusAnim: {x: -0.045445517, y: -0.09856108}
+  cloudFlatBaseAnim: {x: -0.10151379, y: -0.12910374}
+  cloudFlatDetailAnim: {x: -0.507803, y: -0.6461559}
+  cirrusAnim: {x: -0.050756894, y: -0.064480074}
 --- !u!114 &6137975383063632260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5086,7 +5087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 456bf221b186fde4096dcf2c1841b35a, type: 3}
   m_Name: Quality Module
   m_EditorClassIdentifier: 
-  showModuleInspector: 1
+  showModuleInspector: 0
   showSaveLoad: 0
   active: 1
   Settings:
@@ -5354,8 +5355,8 @@ MonoBehaviour:
   showDensityControls: 0
   showTextureControls: 0
   showWindControls: 0
-  cloudAnimLayer1: {x: -0.4546904, y: -0.9869637, z: -0.5921737}
+  cloudAnimLayer1: {x: -0.507803, y: -0.6461559, z: -0.8039402}
   cloudAnimLayer2: {x: 0, y: 0, z: 0}
-  cloudAnimNonScaledLayer1: {x: -0.0036356642, y: 0.15211841, z: -4.8631}
+  cloudAnimNonScaledLayer1: {x: -0.0040605697, y: 0.15484485, z: -4.9516172}
   cloudAnimNonScaledLayer2: {x: 0, y: 0, z: 0}
   weatherMap: {fileID: 0}

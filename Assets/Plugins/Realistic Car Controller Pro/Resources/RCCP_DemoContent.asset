@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RCCP_DemoContent
   m_EditorClassIdentifier: 
   instanceId: 0
-  dontAskDemoContent: 0
+  dontAskDemoContent: 1
   content: []
   builtinShadersContent: {fileID: 102900000, guid: 4d41115d6ced8444ba542237275e4eec, type: 3}
   URPShadersContent: {fileID: 102900000, guid: c911bcf1185ed8642ab568df46ce8ff5, type: 3}
