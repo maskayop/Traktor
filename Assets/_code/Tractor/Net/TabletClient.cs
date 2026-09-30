@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class TabletClient : MonoBehaviour
 {
+
     [Header("Настройки подключения")]
     public string serverIP = "192.168.0.101";
     public int serverPort = 8052;
@@ -26,6 +27,7 @@ public class TabletClient : MonoBehaviour
     // Флаг, чтобы OnDataReceived не пытался писать в UI из фонового потока
     bool connectionLost = false;
 
+#if UNITY_ANDROID
     void Start()
     {
         ConnectToServer();
@@ -94,4 +96,12 @@ public class TabletClient : MonoBehaviour
         stream?.Close();
         client?.Close();
     }
+
+#else
+    void Start()
+    {
+        Destroy(window);
+        Destroy(this);
+    }
+#endif
 }

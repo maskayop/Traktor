@@ -16,6 +16,7 @@ public class PCServer : MonoBehaviour
     List<TcpClient> clients = new List<TcpClient>();
     string lastMessage = "";
 
+#if UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN
     void Start()
     {
         listener = new TcpListener(IPAddress.Any, 8052);
@@ -71,4 +72,12 @@ public class PCServer : MonoBehaviour
         listener?.Stop();
         foreach (var c in clients) c.Close();
     }
+
+#else
+    void Start()
+    {
+        Destroy(window);
+        Destroy(this);
+    }
+#endif
 }
