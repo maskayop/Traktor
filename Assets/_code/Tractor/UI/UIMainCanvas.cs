@@ -9,6 +9,9 @@ namespace Tractor.UI
     {
         public static UIMainCanvas Instance;
 
+        public enum CanvasPlatform { Windows, Android }
+        public CanvasPlatform platform = CanvasPlatform.Windows;
+
         [Header("Windows")]
         [SerializeField] UIMainMenuWindow mainMenuWindow;
         [SerializeField] GameObject HUDWindow;
@@ -68,7 +71,7 @@ namespace Tractor.UI
             mainMenuWindow.gameObject.SetActive(true);
             HUDWindow.SetActive(false);
 
-            gameController.SetGameState(GameState.Menu);
+            gameController?.SetGameState(GameState.Menu);
         }
 
         public void CloseMainMenuWindow()
@@ -76,7 +79,7 @@ namespace Tractor.UI
             mainMenuWindow.gameObject.SetActive(false);
             HUDWindow.SetActive(true);
 
-            gameController.SetGameState(GameState.Game);
+            gameController?.SetGameState(GameState.Game);
         }
 
         public void StartGame()

@@ -67,7 +67,8 @@ namespace Tractor.Net
             }
 
             if (!string.IsNullOrEmpty(IP))
-                IPText.text = IP;
+                if (IPText)
+                    IPText.text = IP;
 
             listener = new TcpListener(IPAddress.Any, 8052);
             listener.Start();

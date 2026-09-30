@@ -34,6 +34,9 @@ namespace Tractor.UI
 
         void Update()
         {
+            if (!errorDetector)
+                return;
+
             if (errorMessage != errorDetector.ErrorMessage)
                 ShowErrorMessage();
 
@@ -43,6 +46,10 @@ namespace Tractor.UI
         public void Init()
         {
             errorDetector = ErrorDetector.Instance;
+
+            if (!errorDetector)
+                return;
+
             errorMessage = errorDetector.ErrorMessage;
 
             foreach (Transform t in messagesContainer)

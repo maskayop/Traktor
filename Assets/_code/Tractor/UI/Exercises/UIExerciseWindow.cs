@@ -65,6 +65,9 @@ namespace Tractor.UI
 
         void Update()
         {
+            if (!exercisesController)
+                return;
+
             if (exercisesController.IsCompleted)
                 OpenExerciseCompleteWindow();
 
@@ -200,6 +203,9 @@ namespace Tractor.UI
 
             foreach (Transform t in exerciseButtonsContainer)
                 Destroy(t.gameObject);
+
+            if (!exercisesController)
+                return;
 
             for (int i = 0; i < exercisesController.exercises.Count; i++)
             {

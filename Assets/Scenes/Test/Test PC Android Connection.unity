@@ -4467,10 +4467,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 401720074}
     - target: {fileID: 1064212489357607759, guid: 75de4307b623621408b6f3b841dd1943, type: 3}
-      propertyPath: IPinputField
-      value: 
-      objectReference: {fileID: 2006892231}
-    - target: {fileID: 1064212489357607759, guid: 75de4307b623621408b6f3b841dd1943, type: 3}
       propertyPath: IP_inputField
       value: 
       objectReference: {fileID: 2006892231}

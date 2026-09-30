@@ -40,6 +40,9 @@ namespace Tractor.UI
 
             tractorController = FindAnyObjectByType<TractorController>();
 
+            if (!tractorController)
+                return;
+
             if (testInfoToggle)
                 testInfoToggle.SetIsOnWithoutNotify(mainCanvas.showTestInfoWindow);
 
