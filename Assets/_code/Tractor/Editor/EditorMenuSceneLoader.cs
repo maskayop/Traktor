@@ -13,10 +13,18 @@ namespace Tractor.Editor
                 EditorSceneManager.OpenScene(path + sceneName + ".unity", OpenSceneMode.Single);
         }
 
+        // Основные сцены
+
         [MenuItem("Tractor/Открыть сцену/Main")]
-        static void LoadSceneInit()
+        static void LoadSceneMain()
         {
             LoadScene("Main");
+        }
+
+        [MenuItem("Tractor/Открыть сцену/Android Menu")]
+        static void LoadSceneAndroidMenu()
+        {
+            LoadScene("Android Menu");
         }
 
         // Тестовые сцены

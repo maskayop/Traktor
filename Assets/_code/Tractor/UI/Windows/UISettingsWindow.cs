@@ -40,6 +40,9 @@ namespace Tractor.UI
 
             tractorController = FindAnyObjectByType<TractorController>();
 
+            if (mainCanvas)
+                ShowControlsButton(mainCanvas.showTestInfoWindow);
+
             if (!tractorController)
                 return;
 
@@ -52,6 +55,11 @@ namespace Tractor.UI
         protected override void OnOpen()
         {
             OnInit();
+        }
+
+        public void OnCloseSettingsWindow()
+        {
+            mainMenuWindow?.OnCloseSettingsWindow();
         }
 
         void SetSliderLoadedValue(string key, Slider slider, TextMeshProUGUI valueText, float defaultValue)

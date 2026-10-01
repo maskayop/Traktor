@@ -1,4 +1,5 @@
 using TMPro;
+using Tractor.Net;
 using UnityEngine;
 using Vopere.Common;
 using static Tractor.GameController;
@@ -19,7 +20,7 @@ namespace Tractor.UI
         [Header("Buttons")]
         [SerializeField] GameObject controlsButton;
 
-        [Header("Test Info")]
+        [Header("Test Info Window")]
         public bool showTestInfoWindow = true;
         [SerializeField] UITestInfoWindow testInfoWindow;
 
@@ -28,6 +29,9 @@ namespace Tractor.UI
 
         GameController gameController;
         TractorController tractorController;
+
+        RouterPC routerPC;
+        RouterTablet routerTablet;
 
         void Awake()
         {
@@ -51,14 +55,26 @@ namespace Tractor.UI
             gameController = GameController.Instance;
             tractorController = FindAnyObjectByType<TractorController>();
 
-            if (!tractorController || !gameController)
-                return;
-
             OpenMainMenuWindow();
             ShowTestInfoWindow(showTestInfoWindow);
 
             if (versionText)
                 versionText.text = Application.version;
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC = RouterPC.Instance;
+            else
+                routerTablet = RouterTablet.Instance;
+        }
+
+        public void OnExitGame()
+        {
+            ExitGame();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.OnExitGame();
+            else
+                routerTablet?.OnExitGame();
         }
 
         public void ExitGame()

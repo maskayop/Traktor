@@ -9,6 +9,8 @@ namespace Tractor.Net
 {
     public class TabletClient : MonoBehaviour
     {
+        public static TabletClient Instance;
+
         public bool destroyOnWrongPlatform = true;
 
         [Header("Настройки подключения")]
@@ -21,8 +23,7 @@ namespace Tractor.Net
         public TextMeshProUGUI displayText;
         public TextMeshProUGUI logText;
 
-        [Header("Router")]
-        public RouterTablet router;
+        RouterTablet router;
 
         TcpClient client;
         NetworkStream stream;
@@ -37,7 +38,18 @@ namespace Tractor.Net
         bool connectionLost = false;
 
 #if UNITY_ANDROID
-        void Awake() { }
+        void Awake()
+        {
+
+            if (Instance != null)
+            {
+                Debug.LogWarning("Cannot create TabletClient");
+                Destroy(gameObject);
+                return;
+            }
+
+            Instance = this;
+        }
 #else
         void Awake()
         {
@@ -53,6 +65,8 @@ namespace Tractor.Net
 
         void Start()
         {
+            router = RouterTablet.Instance;
+
             string savedIP = PlayerPrefs.GetString("ServerIP", "");
 
             if (!string.IsNullOrEmpty(savedIP))
@@ -186,7 +200,7 @@ namespace Tractor.Net
         void HandleCommand(string command)
         {
             lock (actionLock)
-                actionQueue.Enqueue(() => router.Route(command));
+                actionQueue.Enqueue(() => router?.Route(command));
         }
 
         void OnApplicationQuit()

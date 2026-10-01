@@ -704,7 +704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 616186899050777721, guid: b242c8e3441621a42af99d3f537986b4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 300
+      value: 320
       objectReference: {fileID: 0}
     - target: {fileID: 616186899050777721, guid: b242c8e3441621a42af99d3f537986b4, type: 3}
       propertyPath: m_SizeDelta.y
@@ -792,7 +792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8865102696336320856, guid: b242c8e3441621a42af99d3f537986b4, type: 3}
       propertyPath: m_fontSize
-      value: 20
+      value: 22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

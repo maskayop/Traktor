@@ -220,6 +220,9 @@ namespace Tractor.UI
 
         void HideShowStartExerciseButton()
         {
+            if (!exercisesController)
+                return;
+
             if (exercisesController.GetCurrentExercise() == null)
                 startExerciseButton.SetActive(false);
             else
@@ -228,6 +231,9 @@ namespace Tractor.UI
 
         public void ExerciseForceExit()
         {
+            if (!exercisesController)
+                return;
+
             exercisesController.isCompleted = false;
             exercisesController.ExerciseForceExit();
             exercisesController.CurrentReport = null;

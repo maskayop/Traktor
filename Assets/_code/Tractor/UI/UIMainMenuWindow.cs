@@ -1,4 +1,6 @@
+using Tractor.Net;
 using UnityEngine;
+using static Tractor.UI.UIMainCanvas;
 
 namespace Tractor.UI
 {
@@ -15,6 +17,11 @@ namespace Tractor.UI
 
         [Header("Кнопки")]
         [SerializeField] GameObject controlsButton;
+
+        UIMainCanvas mainCanvas;
+        CanvasPlatform platform = CanvasPlatform.Windows;
+        RouterPC routerPC;
+        RouterTablet routerTablet;
 
         void Awake()
         {
@@ -33,7 +40,20 @@ namespace Tractor.UI
             Init();
         }
 
-        public void Init() { }
+        public void Init()
+        {
+            mainCanvas = UIMainCanvas.Instance;
+
+            if (!mainCanvas)
+                return;
+
+            platform = mainCanvas.platform;
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC = RouterPC.Instance;
+            else
+                routerTablet = RouterTablet.Instance;
+        }
 
         public void OpenMenuWindow()
         {
@@ -45,9 +65,30 @@ namespace Tractor.UI
             menuWindow.SetActive(false);
         }
 
+        // Settings Window
+        public void OnOpenSettingsWindow()
+        {
+            OpenSettingsWindow();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.OnOpenSettingsWindow();
+            else
+                routerTablet?.OnOpenSettingsWindow();
+        }
+
         public void OpenSettingsWindow()
         {
             settingsWindow.Open();
+        }
+
+        public void OnCloseSettingsWindow()
+        {
+            CloseSettingsWindow();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.OnCloseSettingsWindow();
+            else
+                routerTablet?.OnCloseSettingsWindow();
         }
 
         public void CloseSettingsWindow()
@@ -55,6 +96,7 @@ namespace Tractor.UI
             settingsWindow.Close();
         }
 
+        // Controls Window
         public void OpenControlsWindow()
         {
             controlsWindow.Open();

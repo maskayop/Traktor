@@ -1,3 +1,4 @@
+using Tractor.UI;
 using UnityEngine;
 
 namespace Tractor.Net
@@ -7,7 +8,11 @@ namespace Tractor.Net
         public static RouterPC Instance;
 
         public bool destroyOnWrongPlatform = true;
-        public PCServer server;
+
+        PCServer server;
+
+        UIMainCanvas mainCanvas;
+        UIMainMenuWindow mainMenuWindow;
 
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN
         void Awake()
@@ -29,29 +34,46 @@ namespace Tractor.Net
         }
 #endif
 
+        void Start()
+        {
+            server = PCServer.Instance;
+            mainCanvas = UIMainCanvas.Instance;
+            mainMenuWindow = UIMainMenuWindow.Instance;
+        }
+
         // Вызывается из PCServer в главном потоке (через очередь)
         public void Route(string command)
         {
             switch (command)
             {
+
+                /*
                 case "START":
                     StartTractor();
                     break;
-
                 case "STOP":
                     StopTractor();
                     break;
-
                 case "EMERGENCY":
                     EmergencyStop();
                     break;
-
+                */
+                case "ExitGame":
+                    mainCanvas.ExitGame();
+                    break;
+                case "OpenSettingsWindow":
+                    mainMenuWindow.OpenSettingsWindow();
+                    break;
+                case "CloseSettingsWindow":
+                    mainMenuWindow.CloseSettingsWindow();
+                    break;
                 default:
                     Debug.LogWarning($"[RouterPC] Неизвестная команда: {command}");
                     break;
             }
         }
 
+        /*
         public void StartTractor()
         {
             Debug.Log("Трактор: СТАРТ");
@@ -76,5 +98,10 @@ namespace Tractor.Net
         // Обёртки для кнопок
         public void OnShowMenuButton() { server?.SendCommand("ShowMenu"); }
         public void OnHideMenuButton() { server?.SendCommand("HideMenu"); }
+        */
+
+        public void OnExitGame() { server?.SendCommand("ExitGame"); }
+        public void OnOpenSettingsWindow() { server?.SendCommand("OpenSettingsWindow"); }
+        public void OnCloseSettingsWindow() { server?.SendCommand("CloseSettingsWindow"); }
     }
 }

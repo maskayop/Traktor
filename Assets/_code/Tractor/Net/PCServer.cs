@@ -9,6 +9,8 @@ namespace Tractor.Net
 {
     public class PCServer : MonoBehaviour
     {
+        public static PCServer Instance;
+
         public bool destroyOnWrongPlatform = true;
 
         [Header("UI")]
@@ -17,8 +19,7 @@ namespace Tractor.Net
         public TextMeshProUGUI logText;
         public TextMeshProUGUI IPText;
 
-        [Header("Router")]
-        public RouterPC router;
+        RouterPC router;
 
         TcpListener listener;
         List<TcpClient> clients = new List<TcpClient>();
@@ -40,7 +41,17 @@ namespace Tractor.Net
         }
 
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN
-        void Awake() { }
+        void Awake()
+        {
+            if (Instance != null)
+            {
+                Debug.LogWarning("Cannot create PCServer");
+                Destroy(gameObject);
+                return;
+            }
+
+            Instance = this;
+        }
 #else
         void Awake()
         {
@@ -56,6 +67,8 @@ namespace Tractor.Net
 
         void Start()
         {
+            router = RouterPC.Instance;
+
             if (Vopere.Common.App.Instance)
             {
                 allLocalIPs = Vopere.Common.App.Instance.GetAllLocalIPv4();
@@ -177,11 +190,11 @@ namespace Tractor.Net
             SendToAllClients(command);
         }
 
-        // Просто передаём строку роутеру — он сам знает, что делать
+        // Передаём строку роутеру — он сам знает, что делать
         void HandleCommand(string command)
         {
             lock (commandLock)
-                commandQueue.Enqueue(() => router.Route(command));
+                commandQueue.Enqueue(() => router?.Route(command));
         }
 
         public void Log(string message)

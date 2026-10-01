@@ -1,4 +1,5 @@
 using TMPro;
+using Tractor.UI;
 using UnityEngine;
 
 namespace Tractor.Net
@@ -7,12 +8,16 @@ namespace Tractor.Net
     {
         public static RouterTablet Instance;
 
-        public TabletClient client;
         public bool destroyOnWrongPlatform = true;
 
         [Header("UI, которым управляет роутер")]
         public GameObject additionalMenu;
         public TextMeshProUGUI displayText;
+
+        TabletClient client;
+
+        UIMainCanvas mainCanvas;
+        UIMainMenuWindow mainMenuWindow;
 
 #if UNITY_ANDROID
         void Awake()
@@ -34,11 +39,19 @@ namespace Tractor.Net
         }
 #endif
 
+        void Start()
+        {
+            client = TabletClient.Instance;
+            mainCanvas = UIMainCanvas.Instance;
+            mainMenuWindow = UIMainMenuWindow.Instance;
+        }
+
         // Вызывается из TabletClient в главном потоке (через очередь)
         public void Route(string command)
         {
             switch (command)
             {
+                /*
                 case "TRACTOR_STARTED":
                     ShowMessage("Трактор запущен");
                     break;
@@ -58,7 +71,16 @@ namespace Tractor.Net
                 case "HideMenu":
                     OnHideMenu();
                     break;
-
+                */
+                case "ExitGame":
+                    mainCanvas.ExitGame();
+                    break;
+                case "OpenSettingsWindow":
+                    mainMenuWindow.OpenSettingsWindow();
+                    break;
+                case "CloseSettingsWindow":
+                    mainMenuWindow.CloseSettingsWindow();
+                    break;
                 default:
                     // Всё остальное — просто текст из InputField на ПК
                     ShowMessage(command);
@@ -71,7 +93,7 @@ namespace Tractor.Net
             if (displayText)
                 displayText.text = text;
         }
-
+        /*
         public void OnShowMenu()
         {
             Debug.Log("Показать меню");
@@ -87,8 +109,12 @@ namespace Tractor.Net
         }
 
         // Обёртки для кнопок
-        public void OnStartButton() { client.SendCommand("START"); }
-        public void OnStopButton() { client.SendCommand("STOP"); }
-        public void OnEmergencyButton() { client.SendCommand("EMERGENCY"); }
+        public void OnStartButton() { client?.SendCommand("START"); }
+        public void OnStopButton() { client?.SendCommand("STOP"); }
+        public void OnEmergencyButton() { client?.SendCommand("EMERGENCY"); }
+        */
+        public void OnExitGame() { client?.SendCommand("ExitGame"); }
+        public void OnOpenSettingsWindow() { client?.SendCommand("OpenSettingsWindow"); }
+        public void OnCloseSettingsWindow() { client?.SendCommand("CloseSettingsWindow"); }
     }
 }
