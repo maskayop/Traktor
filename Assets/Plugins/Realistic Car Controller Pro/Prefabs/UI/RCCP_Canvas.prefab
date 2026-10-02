@@ -69725,7 +69725,7 @@ MonoBehaviour:
     slider: {fileID: 5910632702824676375}
   - inputName: Turn Right
     slider: {fileID: 8677716536952126588}
-  - inputName: Sound Signal
+  - inputName: Horn Signal
     slider: {fileID: 265323212811539593}
   - inputName: Ignition
     slider: {fileID: 190331740786583340}

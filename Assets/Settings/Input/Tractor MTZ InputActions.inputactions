@@ -691,30 +691,8 @@
                 },
                 {
                     "name": "",
-                    "id": "c4ab456a-6dd8-4698-b161-cb83c06e4902",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button3",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Hydro Right Back - L",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d02c95e9-6f90-4682-a257-bb174122f526",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button4",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Hydro Right Back - R",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "e4aee4bd-f156-4f66-bcf3-2f1b7a0adbc0",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button6",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button4",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -725,7 +703,7 @@
                 {
                     "name": "",
                     "id": "6f6cf210-5d77-43bf-a3db-086937bfdc6d",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button5",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button3",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -735,30 +713,8 @@
                 },
                 {
                     "name": "",
-                    "id": "f2da4f95-4302-4a75-baf2-1e8e739926b7",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button7",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Hydro Right Side - L",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "507fefdd-32f1-4bcd-a635-e36332359f87",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button8",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Hydro Right Side - R",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "567050bd-39de-45b6-bcfb-01a7b692d97b",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button10",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button6",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -769,7 +725,7 @@
                 {
                     "name": "",
                     "id": "3b24df96-f307-4e4e-a57a-c24b2c842f2f",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button9",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button5",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -779,30 +735,8 @@
                 },
                 {
                     "name": "",
-                    "id": "a738c29f-d11a-4ebd-9fc6-8cc7afcdbf76",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button11",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Hydro Left Back - L",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3c25a1da-98ab-4304-8c07-d1e0a3c47abb",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button12",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Hydro Left Back - R",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "f5c6800f-7f69-4103-89a3-7ccdd1f51cae",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button13",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button7",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -813,7 +747,7 @@
                 {
                     "name": "",
                     "id": "60b76965-114e-4e50-9f95-f678c11318b3",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button14",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button8",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -824,7 +758,7 @@
                 {
                     "name": "",
                     "id": "3cd0ba39-785e-4923-8f15-e5cdbb10e5cb",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button15",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button9",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -846,7 +780,7 @@
                 {
                     "name": "",
                     "id": "86491eb7-7b54-4e27-9bd0-a6a9e84bf276",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button16",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button10",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -868,7 +802,7 @@
                 {
                     "name": "",
                     "id": "5f2fa40a-9774-4823-845b-4d032d26d16c",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button17",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button11",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -890,7 +824,7 @@
                 {
                     "name": "",
                     "id": "f1a5ab5e-326f-4cd0-ad09-389afe986778",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button18",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button13",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -911,19 +845,19 @@
                 },
                 {
                     "name": "",
-                    "id": "d78c5d13-5e4f-487e-b53f-36b5b83cd458",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button19",
+                    "id": "c724bbbe-f485-4ba5-b956-32160eb7d70f",
+                    "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Starter",
+                    "action": "Starter On",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "c724bbbe-f485-4ba5-b956-32160eb7d70f",
-                    "path": "<Keyboard>/k",
+                    "id": "34b971dc-5e06-4439-a6cd-bcbbf0af5a6d",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button12",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -944,17 +878,6 @@
                 },
                 {
                     "name": "",
-                    "id": "373b9405-8729-4ea5-853e-39acf8139b3b",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button20",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Mass",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "bc09a1dd-446b-470c-a99f-dc765555367f",
                     "path": "<Keyboard>/i",
                     "interactions": "",
@@ -965,26 +888,15 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "1D Axis",
-                    "id": "b32e4a9b-417d-4187-a67a-306efd1d7159",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Mass On",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "positive",
-                    "id": "25fa7277-2f00-40d5-8c67-1f63f2a9d1e6",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button20",
+                    "name": "",
+                    "id": "594336ce-fa5b-4e4b-9e18-e5f025113ed0",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button14",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Mass On",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
@@ -998,31 +910,9 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "1D Axis",
-                    "id": "0e863a93-c425-4fc4-8c8a-fc673a7557d6",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Mass Off",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "Negative",
-                    "id": "1357c8fd-4ae7-484d-b48a-e19ce023d721",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button20",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Mass Off",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "",
                     "id": "a06f8494-a3fa-4ae2-aa0c-e39944078a3b",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button21",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button15",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1044,7 +934,7 @@
                 {
                     "name": "",
                     "id": "e88ad713-edbe-4f8d-8ca1-a7695163a272",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button22",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button18",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1066,7 +956,7 @@
                 {
                     "name": "",
                     "id": "97c5fe1f-3010-47ac-a733-02f0ce8473f2",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button23",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button17",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1077,7 +967,7 @@
                 {
                     "name": "",
                     "id": "c9bf761c-1d63-4646-9844-6a56a6fe5c5b",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button24",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button16",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1088,7 +978,7 @@
                 {
                     "name": "",
                     "id": "a626f48d-1efa-4595-bfd6-a9b539cdf717",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button25",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button19",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1099,7 +989,7 @@
                 {
                     "name": "",
                     "id": "b099455f-a09f-488c-ad72-d11ef571bd60",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button26",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button20",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1123,7 +1013,7 @@
                     "id": "23c85e13-1d23-46f8-b117-d470a09c0d7a",
                     "path": "<HID::Arduino LLC Arduino Leonardo>/stick/x",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "Invert",
                     "groups": "",
                     "action": "Force Regulation",
                     "isComposite": false,
@@ -1189,7 +1079,7 @@
                     "id": "dda905f3-407c-4a37-b315-126e71ebca8a",
                     "path": "<HID::Gudsen MOZA R9 Base>/z",
                     "interactions": "",
-                    "processors": "Normalize(max=1)",
+                    "processors": "Normalize(min=-1,max=1,zero=-1)",
                     "groups": "",
                     "action": "Accelerator",
                     "isComposite": false,
@@ -1222,7 +1112,7 @@
                     "id": "d1a7e875-3bd4-484c-a499-148d038b25a1",
                     "path": "<HID::Gudsen MOZA R9 Base>/rz",
                     "interactions": "",
-                    "processors": "Normalize(max=1)",
+                    "processors": "Normalize(min=-1,max=1,zero=-1)",
                     "groups": "",
                     "action": "Brake",
                     "isComposite": false,
@@ -1255,7 +1145,7 @@
                     "id": "6aaa3e1f-462b-4ba8-b8aa-819066cb8668",
                     "path": "<HID::Gudsen MOZA R9 Base>/slider",
                     "interactions": "",
-                    "processors": "Normalize(max=1)",
+                    "processors": "Normalize(min=-1,max=1,zero=-1)",
                     "groups": "",
                     "action": "Clutch",
                     "isComposite": false,
@@ -1285,12 +1175,34 @@
                 },
                 {
                     "name": "",
+                    "id": "16f2933a-9c50-41cd-890a-bef7868fb00a",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button17",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Parking Lights On",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "5870cb22-151e-426b-81bd-5dc80b90313c",
                     "path": "<Keyboard>/6",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Parking Lights Off",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "872ec884-efb0-480f-9e2f-de38daab7933",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button16",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Headlights On",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
