@@ -57,17 +57,12 @@ namespace Tractor
         CustomInput rangeR_Input;
 
         [Header("Зажигание")]
-        [SerializeField] string massInputName;
-        CustomInput mass_Input;
 
         [SerializeField] string massOnInputName;
         CustomInput massOn_Input;
 
         [SerializeField] string massOffInputName;
         CustomInput massOff_Input;
-
-        [SerializeField] string starterInputName;
-        CustomInput starter_Input;
 
         [SerializeField] string starterOnInputName;
         CustomInput starterOn_Input;
@@ -120,6 +115,11 @@ namespace Tractor
 
         GameController gameController;
 
+        bool waitHandbrakeButtonRelease = false;
+        bool waitAlarmButtonRelease = false;
+        bool waitParkingLightsButtonRelease = false;
+        bool waitHeadLightsButtonRelease = false;
+
         void Start()
         {
             inputController = InputController.Instance;
@@ -150,10 +150,8 @@ namespace Tractor
             range34_Input = inputController?.GetInputByName(range34InputName);
             rangeR_Input = inputController?.GetInputByName(rangeRInputName);
 
-            mass_Input = inputController?.GetInputByName(massInputName);
             massOn_Input = inputController?.GetInputByName(massOnInputName);
             massOff_Input = inputController?.GetInputByName(massOffInputName);
-            starter_Input = inputController?.GetInputByName(starterInputName);
             starterOn_Input = inputController?.GetInputByName(starterOnInputName);
             starterOff_Input = inputController?.GetInputByName(starterOffInputName);
             ignition_Input = inputController?.GetInputByName(ignitionInputName);
@@ -290,9 +288,15 @@ namespace Tractor
             if (handbrake_Input != null)
             {
                 if (handbrake_Input.inputValue != 0)
-                    tractorMain.SetHandbrake(true);
+                {
+                    if (!waitHandbrakeButtonRelease)
+                    {
+                        tractorMain.SetHandbrake(!tractorMain.isHandbrake);
+                        waitHandbrakeButtonRelease = true;
+                    }
+                }
                 else
-                    tractorMain.SetHandbrake(false);
+                    waitHandbrakeButtonRelease = false;
             }
         }
 
@@ -369,6 +373,13 @@ namespace Tractor
             if (massOff_Input != null)
                 if (massOff_Input.inputValue != 0)
                     tractorEngine.MassTurnOff();
+
+            if (useKeyboard)
+                return;
+
+            if (massOn_Input != null)
+                if (massOn_Input.inputValue == 0)
+                    tractorEngine.MassTurnOff();
         }
 
         void SetStarter()
@@ -379,6 +390,13 @@ namespace Tractor
 
             if (starterOff_Input != null)
                 if (starterOff_Input.inputValue != 0)
+                    tractorEngine.StarterTurnOff();
+
+            if (useKeyboard)
+                return;
+
+            if (starterOn_Input != null)
+                if (starterOn_Input.inputValue == 0)
                     tractorEngine.StarterTurnOff();
         }
 
@@ -412,18 +430,56 @@ namespace Tractor
         {
             if (alarm_Input != null)
             {
-                if (alarm_Input.inputValue != 0)
-                    tractorLights.ActivateAlarmLights(true);
+                if (useKeyboard)
+                {
+                    if (alarm_Input.inputValue != 0)
+                        tractorLights.ActivateAlarmLights(true);
+                    else
+                        tractorLights.ActivateAlarmLights(false);
+                }
                 else
-                    tractorLights.ActivateAlarmLights(false);
+                {
+                    if (alarm_Input.inputValue != 0)
+                    {
+                        if (!waitAlarmButtonRelease)
+                        {
+                            tractorLights.ActivateAlarmLights(!tractorLights.alarmIsOn);
+                            waitAlarmButtonRelease = true;
+                        }
+                    }
+                    else
+                        waitAlarmButtonRelease = false;
+                }
             }
         }
 
         void SetParkingLights()
         {
             if (parkingLightOn_Input != null)
-                if (parkingLightOn_Input.inputValue != 0)
-                    tractorLights.TurnOnParkingLights();
+            {
+                if (useKeyboard)
+                {
+                    if (parkingLightOn_Input.inputValue != 0)
+                        tractorLights.TurnOnParkingLights();
+                }
+                else
+                {
+                    if (parkingLightOn_Input.inputValue != 0)
+                    {
+                        if (!waitParkingLightsButtonRelease)
+                        {
+                            if (!tractorLights.parkingIsOn)
+                                tractorLights.TurnOnParkingLights();
+                            else
+                                tractorLights.TurnOffParkingLights();
+
+                            waitParkingLightsButtonRelease = true;
+                        }
+                    }
+                    else
+                        waitParkingLightsButtonRelease = false;
+                }
+            }
 
             if (parkingLightOff_Input != null)
                 if (parkingLightOff_Input.inputValue != 0)
@@ -433,8 +489,30 @@ namespace Tractor
         void SetHeadLights()
         {
             if (headLightOn_Input != null)
-                if (headLightOn_Input.inputValue != 0)
-                    tractorLights.TurnOnHeadLights();
+            {
+                if (useKeyboard)
+                {
+                    if (headLightOn_Input.inputValue != 0)
+                        tractorLights.TurnOnHeadLights();
+                }
+                else
+                {
+                    if (headLightOn_Input.inputValue != 0)
+                    {
+                        if (!waitHeadLightsButtonRelease)
+                        {
+                            if (!tractorLights.headIsOn)
+                                tractorLights.TurnOnHeadLights();
+                            else
+                                tractorLights.TurnOffHeadLights();
+
+                            waitHeadLightsButtonRelease = true;
+                        }
+                    }
+                    else
+                        waitHeadLightsButtonRelease = false;
+                }
+            }
 
             if (headLightOff_Input != null)
                 if (headLightOff_Input.inputValue != 0)

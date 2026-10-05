@@ -90,10 +90,10 @@ namespace Tractor
         void Update()
         {
             if (previousRange != rangeValue)
-                ChangeGear(rangeValue, currentGear);
+                ChangeGear(rangeValue, gearValue);
 
             if (previousGear != gearValue)
-                ChangeGear(currentRange, gearValue);
+                ChangeGearOnly(gearValue);
 
             previousRange = rangeValue;
             previousGear = gearValue;
@@ -161,14 +161,29 @@ namespace Tractor
                 ChangeGear(0, gearValue);
         }
 
-        public void ChangeGear(int range, int gear)
+        public void ChangeGearOnly(int gear)
         {
-            if (range == 0)
+            if (currentRange == 0 || gear == 0)
+            {
+                currentGear = 0;
+                SetNeutralGear(true);
+                UpdateGearRatios();
+                return;
+            }
+
+            currentGear = gear;
+            ShiftToGear();
+            UpdateGearRatios();
+        }
+
+        public void ChangeGear(int rangePack, int gear)
+        {
+            if (rangePack == 0)
             {
                 currentRange = 0;
                 currentGearModification = 0;
             }
-            else if (range == 1)
+            else if (rangePack == 1)
             {
                 if (isGearLevel1)
                 {
@@ -181,7 +196,7 @@ namespace Tractor
                     currentGearModification = 1;
                 }
             }
-            else if (range == 2)
+            else if (rangePack == 2)
             {
                 if (isGearLevel1)
                 {
@@ -194,7 +209,7 @@ namespace Tractor
                     currentGearModification = 3;
                 }
             }
-            else if (range == -1)
+            else if (rangePack == -1)
             {
                 if (isGearLevel1)
                 {
@@ -208,7 +223,7 @@ namespace Tractor
                 }
             }
 
-            if (range == 0 || currentRange == 0)
+            if (rangePack == 0 || currentRange == 0)
                 currentGear = 0;
             else
                 currentGear = gear;
