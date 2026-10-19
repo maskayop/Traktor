@@ -154,6 +154,10 @@ PrefabInstance:
       propertyPath: IP_inputField
       value: 
       objectReference: {fileID: 1427203581}
+    - target: {fileID: 4130068442054175405, guid: 75de4307b623621408b6f3b841dd1943, type: 3}
+      propertyPath: m_Name
+      value: Net
+      objectReference: {fileID: 0}
     - target: {fileID: 3020388048763531030, guid: 75de4307b623621408b6f3b841dd1943, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -194,10 +198,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4130068442054175405, guid: 75de4307b623621408b6f3b841dd1943, type: 3}
-      propertyPath: m_Name
-      value: Net
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -213,17 +213,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8854513807541846899, guid: 75de4307b623621408b6f3b841dd1943, type: 3}
   m_PrefabInstance: {fileID: 214901556}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &214901559 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1064212489357607759, guid: 75de4307b623621408b6f3b841dd1943, type: 3}
-  m_PrefabInstance: {fileID: 214901556}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fdb4f61365fb954fbce845307c442bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Tractor.Net.TabletClient
 --- !u!1001 &404375471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -926,34 +915,6 @@ PrefabInstance:
     - target: {fileID: 1779272791600979756, guid: efac3085d9d81c947b6ab7060ae86633, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811027312877317487, guid: efac3085d9d81c947b6ab7060ae86633, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811027312877317487, guid: efac3085d9d81c947b6ab7060ae86633, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811027312877317487, guid: efac3085d9d81c947b6ab7060ae86633, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 214901559}
-    - target: {fileID: 1811027312877317487, guid: efac3085d9d81c947b6ab7060ae86633, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811027312877317487, guid: efac3085d9d81c947b6ab7060ae86633, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnConnectButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811027312877317487, guid: efac3085d9d81c947b6ab7060ae86633, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Tractor.Net.TabletClient, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811027312877317487, guid: efac3085d9d81c947b6ab7060ae86633, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1941963094634106060, guid: efac3085d9d81c947b6ab7060ae86633, type: 3}
       propertyPath: m_Value
@@ -1786,34 +1747,6 @@ PrefabInstance:
     - target: {fileID: 5223911824219374066, guid: efac3085d9d81c947b6ab7060ae86633, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5262527197806777097, guid: efac3085d9d81c947b6ab7060ae86633, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5262527197806777097, guid: efac3085d9d81c947b6ab7060ae86633, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5262527197806777097, guid: efac3085d9d81c947b6ab7060ae86633, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1582675803}
-    - target: {fileID: 5262527197806777097, guid: efac3085d9d81c947b6ab7060ae86633, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5262527197806777097, guid: efac3085d9d81c947b6ab7060ae86633, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DeletePlayerPrefs
-      objectReference: {fileID: 0}
-    - target: {fileID: 5262527197806777097, guid: efac3085d9d81c947b6ab7060ae86633, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Vopere.Common.DataSaveLoad, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5262527197806777097, guid: efac3085d9d81c947b6ab7060ae86633, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5447737414153355945, guid: efac3085d9d81c947b6ab7060ae86633, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2866,17 +2799,6 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
---- !u!114 &1582675803 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 267795397663618798, guid: f1830c80f7a6ddd4a8ecdb942fe898e8, type: 3}
-  m_PrefabInstance: {fileID: 928026824}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2df990df6ea8f5a479e981264f522cbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Vopere.Common.DataSaveLoad
 --- !u!1 &1665937138
 GameObject:
   m_ObjectHideFlags: 0

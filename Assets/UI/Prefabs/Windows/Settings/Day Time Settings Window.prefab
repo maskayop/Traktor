@@ -1043,11 +1043,11 @@ PrefabInstance:
       objectReference: {fileID: 7638685127684554502}
     - target: {fileID: 8650308306145530754, guid: 1866c6a57e99acf4eb6065a4f0a52c97, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Close
+      value: OnCloseTimeOfDaySettingsWindow
       objectReference: {fileID: 0}
     - target: {fileID: 8650308306145530754, guid: 1866c6a57e99acf4eb6065a4f0a52c97, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Tractor.UI.UIEnviroTimeOfDaySettingsWindow, Assembly-CSharp
+      value: Tractor.UI.UITimeOfDaySettingsWindow, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -59,7 +59,7 @@ namespace Tractor.UI
 
         public void OnCloseSettingsWindow()
         {
-            mainMenuWindow?.OnCloseSettingsWindow();
+            mainCanvas?.OnCloseSettingsWindow();
         }
 
         void SetSliderLoadedValue(string key, Slider slider, TextMeshProUGUI valueText, float defaultValue)
@@ -195,8 +195,7 @@ namespace Tractor.UI
 
         void ShowControlsButton(bool state)
         {
-            mainCanvas.ShowControlsButton(state);
-            mainMenuWindow.ShowControlsButton(state);
+            mainCanvas.ShowControlsButtons(state);
         }
     }
 }

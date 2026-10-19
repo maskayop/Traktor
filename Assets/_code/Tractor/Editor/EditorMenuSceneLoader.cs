@@ -15,13 +15,13 @@ namespace Tractor.Editor
 
         // Основные сцены
 
-        [MenuItem("Tractor/Открыть сцену/Main")]
+        [MenuItem("Tractor/Открыть сцену - Main")]
         static void LoadSceneMain()
         {
             LoadScene("Main");
         }
 
-        [MenuItem("Tractor/Открыть сцену/Android Menu")]
+        [MenuItem("Tractor/Открыть сцену - Android Menu")]
         static void LoadSceneAndroidMenu()
         {
             LoadScene("Android Menu");
@@ -29,19 +29,19 @@ namespace Tractor.Editor
 
         // Тестовые сцены
 
-        [MenuItem("Tractor/Открыть сцену/Тест/Test Inputs")]
+        [MenuItem("Tractor/Открыть сцену/Тест - Test Inputs")]
         static void LoadSceneTestInputs()
         {
             LoadScene("Test/Test Inputs");
         }
 
-        [MenuItem("Tractor/Открыть сцену/Тест/Test PC Android Connection")]
+        [MenuItem("Tractor/Открыть сцену/Тест - Test PC Android Connection")]
         static void LoadSceneTestPCAndroidConnection()
         {
             LoadScene("Test/Test PC Android Connection");
         }
 
-        [MenuItem("Tractor/Открыть сцену/Тест/Test UI")]
+        [MenuItem("Tractor/Открыть сцену/Тест - Test UI")]
         static void LoadSceneTestUI()
         {
             LoadScene("Test/Test UI");

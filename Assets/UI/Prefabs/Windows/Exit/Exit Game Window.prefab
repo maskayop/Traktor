@@ -9,31 +9,32 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 94883070787319298, guid: 6c10a814f9c300f4194d02e9800378b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 94883070787319298, guid: 6c10a814f9c300f4194d02e9800378b2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 94883070787319298, guid: 6c10a814f9c300f4194d02e9800378b2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5803680508320992885}
+      objectReference: {fileID: 2005010895596273118}
+    - target: {fileID: 94883070787319298, guid: 6c10a814f9c300f4194d02e9800378b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 94883070787319298, guid: 6c10a814f9c300f4194d02e9800378b2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
+      value: OnExitGame
       objectReference: {fileID: 0}
     - target: {fileID: 94883070787319298, guid: 6c10a814f9c300f4194d02e9800378b2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: Tractor.UI.UIExitWindow, Assembly-CSharp
       objectReference: {fileID: 0}
-    - target: {fileID: 985707985676980195, guid: 6c10a814f9c300f4194d02e9800378b2, type: 3}
-      propertyPath: m_text
-      value: "\u0423\u043F\u0440\u0430\u0436\u043D\u0435\u043D\u0438\u0435 \u043D\u0435
-        \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u043E!\n\u0412\u044B\u0439\u0442\u0438
-        \u0438\u0437 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u044F
-        \u0443\u043F\u0440\u0430\u0436\u043D\u0435\u043D\u0438\u044F?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 985707985676980195, guid: 6c10a814f9c300f4194d02e9800378b2, type: 3}
-      propertyPath: m_fontSize
-      value: 32
+    - target: {fileID: 94883070787319298, guid: 6c10a814f9c300f4194d02e9800378b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4091698560472563617, guid: 6c10a814f9c300f4194d02e9800378b2, type: 3}
       propertyPath: m_AnchorMax.y
@@ -137,7 +138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8187933342759310644, guid: 6c10a814f9c300f4194d02e9800378b2, type: 3}
       propertyPath: m_Name
-      value: Exercise Force Exit Window
+      value: Exit Game Window
       objectReference: {fileID: 0}
     - target: {fileID: 8820567894282109286, guid: 6c10a814f9c300f4194d02e9800378b2, type: 3}
       propertyPath: m_AnchorMax.y
@@ -164,8 +165,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c10a814f9c300f4194d02e9800378b2, type: 3}
---- !u!1 &5803680508320992885 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8187933342759310644, guid: 6c10a814f9c300f4194d02e9800378b2, type: 3}
+--- !u!114 &2005010895596273118 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4249299748024460959, guid: 6c10a814f9c300f4194d02e9800378b2, type: 3}
   m_PrefabInstance: {fileID: 2390198993866595137}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c673485c54818904ca2bfeae50caee19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tractor.UI.UIExitWindow

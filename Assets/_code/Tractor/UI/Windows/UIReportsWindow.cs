@@ -28,7 +28,7 @@ namespace Tractor.UI
 
         bool isExercise = false;
 
-        void Update()
+        protected override void OnUpdate()
         {
             if (!reportController || !exercisesController)
                 return;
@@ -54,16 +54,22 @@ namespace Tractor.UI
 
         protected override void OnOpen()
         {
-            selectedReportWindow.SetActive(false);
             currentReport = null;
+            selectedReportWindow.SetActive(false);
+            mainCanvas?.CloseMainMenuPanel();
             ShowOpenSelectedReportButton();
         }
 
         protected override void OnClose()
         {
-            UIMainMenuWindow.Instance?.OnCloseReportsWindow();
             currentReport = null;
             selectedReportWindow.SetActive(false);
+            mainCanvas?.OpenMainMenuPanel();
+        }
+
+        public void OnCloseReportsWindow()
+        {
+            mainCanvas?.OnCloseReportsWindow();
         }
 
         public void LoadAllReports()
@@ -71,7 +77,7 @@ namespace Tractor.UI
             if (!reportController)
                 return;
 
-            reportController.LoadAllReports();
+            reportController?.LoadAllReports();
             allReports.Clear();
 
             for (int i = 0; i < reportController.GetAllReports().Count; i++)
@@ -88,16 +94,16 @@ namespace Tractor.UI
 
         public void SaveExerciseReport()
         {
-            if (reportController)
-            {
-                reportController.SetReport(currentReport);
-                reportController.SaveReport();
-            }
+            if (!reportController)
+                return;
+
+            reportController.SetReport(currentReport);
+            reportController.SaveReport();
         }
 
         public void OpenReportsFolder()
         {
-            reportController.OpenReportsFolder();
+            reportController?.OpenReportsFolder();
         }
 
         public void OpenSelectedReportWindow()

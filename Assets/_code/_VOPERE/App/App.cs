@@ -10,6 +10,7 @@ namespace Vopere.Common
         public static App Instance;
 
         [SerializeField] int defaultGraphicsLevel = 0;
+        [SerializeField] bool preventScreenSleep = true;
 
         bool initialized = false;
         public bool IsInitialized { get { return initialized; } }
@@ -55,6 +56,11 @@ namespace Vopere.Common
 
             int screenResolution = DataSaveLoad.Instance.GetSavedInt("ScreenResolution");
             SetResolution(screenResolution);
+
+            if (preventScreenSleep)
+                Screen.sleepTimeout = SleepTimeout.NeverSleep;
+            else
+                Screen.sleepTimeout = SleepTimeout.SystemSetting;
         }
 
         public void ExitGame()

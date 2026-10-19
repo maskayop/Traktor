@@ -111,7 +111,14 @@ namespace Tractor.UI
             CloseExerciseCompleteWindow();
             HideShowStartExerciseButton();
 
-            if (exercisesController.GetCurrentExercise() == null)
+            startExerciseButton.SetActive(true);
+
+            if (exercisesController)
+            {
+                if (exercisesController.GetCurrentExercise() == null)
+                    startExerciseButton.SetActive(false);
+            }
+            else
                 startExerciseButton.SetActive(false);
 
             exercisePreparingWindowButton.SetActive(false);

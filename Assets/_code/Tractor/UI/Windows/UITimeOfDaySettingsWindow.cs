@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 namespace Tractor.UI
 {
-    public sealed class UIEnviroTimeOfDaySettingsWindow : UI_WindowBase
+    public sealed class UITimeOfDaySettingsWindow : UI_WindowBase
     {
+        [Header("Настройки")]
         [SerializeField] Slider hourSlider;
-        [SerializeField] TMP_Text timeLabel;
+        [SerializeField] TextMeshProUGUI timeLabel;
         [SerializeField] Toggle dynamicTimeToggle;
         [SerializeField] bool simulateTime = true;
         [SerializeField] bool useCloudyDemoWeather = true;
@@ -16,9 +17,9 @@ namespace Tractor.UI
 
         bool isSynchronizing;
 
-        void Start()
+        protected override void OnStart()
         {
-            if (!TryGetTimeModule(out var timeModule))
+            if (!TryGetEnviroTimeModule(out var timeModule))
                 return;
 
             timeModule.Settings.simulate = simulateTime;
@@ -36,9 +37,9 @@ namespace Tractor.UI
             ApplyHour(initialHour);
         }
 
-        void Update()
+        protected override void OnUpdate()
         {
-            if (!TryGetTimeModule(out var timeModule))
+            if (!TryGetEnviroTimeModule(out var timeModule))
                 return;
 
             UpdateVisuals(timeModule.GetTimeOfDay());
@@ -62,7 +63,7 @@ namespace Tractor.UI
 
         public void SetDynamicTime(bool enabled)
         {
-            if (!TryGetTimeModule(out var timeModule))
+            if (!TryGetEnviroTimeModule(out var timeModule))
                 return;
 
             if (!dynamicTimeToggle)
@@ -76,7 +77,7 @@ namespace Tractor.UI
         {
             hour = Mathf.Clamp(hour, 0f, 24f);
 
-            if (!TryGetTimeModule(out var timeModule))
+            if (!TryGetEnviroTimeModule(out var timeModule))
                 return;
 
             timeModule.SetTimeOfDay(hour);
@@ -104,7 +105,7 @@ namespace Tractor.UI
             isSynchronizing = false;
         }
 
-        static bool TryGetTimeModule(out EnviroTimeModule timeModule)
+        static bool TryGetEnviroTimeModule(out EnviroTimeModule timeModule)
         {
             timeModule = null;
 
@@ -113,6 +114,11 @@ namespace Tractor.UI
 
             timeModule = EnviroManager.instance.Time;
             return true;
+        }
+
+        public void OnCloseTimeOfDaySettingsWindow()
+        {
+            mainCanvas?.OnCloseTimeOfDaySettingsWindow();
         }
     }
 }

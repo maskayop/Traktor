@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9dca30018eacd4798bf381e6103864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.Net.RouterPC
-  server: {fileID: 4906233213229485809}
+  isPC: 1
+  destroyOnWrongPlatform: 1
 --- !u!1 &4130068442054175405
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,11 +93,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b83d474936e72146bb4a8de5e8b8801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.Net.PCServer
+  destroyOnWrongPlatform: 1
   window: {fileID: 0}
   inputField: {fileID: 0}
   logText: {fileID: 0}
   IPText: {fileID: 0}
-  router: {fileID: 5810016108839779637}
 --- !u!114 &1064212489357607759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,13 +110,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fdb4f61365fb954fbce845307c442bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.Net.TabletClient
+  destroyOnWrongPlatform: 1
   serverIP: 
   serverPort: 8052
   window: {fileID: 0}
   IP_inputField: {fileID: 0}
   displayText: {fileID: 0}
   logText: {fileID: 0}
-  router: {fileID: 7660812870040593365}
 --- !u!1 &8854513807541846899
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,6 +161,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c85a55061ea05b543ad39df6b039d07f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.Net.RouterTablet
-  client: {fileID: 1064212489357607759}
-  additionalMenu: {fileID: 0}
-  displayText: {fileID: 0}
+  isPC: 0
+  destroyOnWrongPlatform: 1
