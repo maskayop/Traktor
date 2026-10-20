@@ -62,10 +62,10 @@ namespace Tractor.Net
                     mainCanvas?.EndGame();
                     break;
                 case "OpenExitGameWindow":
-                    mainCanvas?.OpenControlsWindow();
+                    mainCanvas?.OpenExitGameWindow();
                     break;
                 case "CloseExitGameWindow":
-                    mainCanvas?.CloseControlsWindow();
+                    mainCanvas?.CloseExitGameWindow();
                     break;
                 case "OpenTimeOfDaySettingsWindow":
                     mainCanvas?.OpenTimeOfDaySettingsWindow();
@@ -78,6 +78,18 @@ namespace Tractor.Net
                     break;
                 case "CloseReportsWindow":
                     mainCanvas?.CloseReportsWindow();
+                    break;
+                case "OpenExitToMainMenuWindow":
+                    mainCanvas?.OpenExitToMainMenuWindow();
+                    break;
+                case "CloseExitToMainMenuWindow":
+                    mainCanvas?.CloseExitToMainMenuWindow();
+                    break;
+                case "OpenExerciseForceExitWindow":
+                    mainCanvas?.OpenExerciseForceExitWindow();
+                    break;
+                case "CloseExerciseForceExitWindow":
+                    mainCanvas?.CloseExerciseForceExitWindow();
                     break;
                 default:
                     Debug.LogWarning($"Неизвестная команда: {command}");
@@ -113,5 +125,9 @@ namespace Tractor.Net
         public void OnCloseTimeOfDaySettingsWindow() { SendCommand("CloseTimeOfDaySettingsWindow"); }
         public void OnOpenReportsWindow() { SendCommand("OpenReportsWindow"); }
         public void OnCloseReportsWindow() { SendCommand("CloseReportsWindow"); }
+        public void OnOpenExitToMainMenuWindow() { SendCommand("OpenExitToMainMenuWindow"); }
+        public void OnCloseExitToMainMenuWindow() { SendCommand("CloseExitToMainMenuWindow"); }
+        public void OnOpenExerciseForceExitWindow() { SendCommand("OpenExerciseForceExitWindow"); }
+        public void OnCloseExerciseForceExitWindow() { SendCommand("CloseExerciseForceExitWindow"); }
     }
 }

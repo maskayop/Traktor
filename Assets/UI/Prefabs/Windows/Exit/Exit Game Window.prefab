@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4895771558912379077, guid: 6c10a814f9c300f4194d02e9800378b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnCloseExitGameWindow
+      objectReference: {fileID: 0}
     - target: {fileID: 8136352610261562965, guid: 6c10a814f9c300f4194d02e9800378b2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

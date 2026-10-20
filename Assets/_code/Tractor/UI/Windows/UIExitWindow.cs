@@ -18,5 +18,20 @@ namespace Tractor.UI
             mainCanvas?.OnExerciseForceExit();
             Close();
         }
+
+        public void OnCloseExitGameWindow()
+        {
+            mainCanvas?.OnCloseExitGameWindow();
+        }
+
+        public void OnCloseExitToMainMenuWindow()
+        {
+            mainCanvas?.OnCloseExitToMainMenuWindow();
+        }
+
+        public void OnCloseExerciseForceExitWindow()
+        {
+            mainCanvas?.OnCloseExerciseForceExitWindow();
+        }
     }
 }

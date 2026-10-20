@@ -412,6 +412,7 @@ MonoBehaviour:
   reportsWindow: {fileID: 4736276681130819207}
   exitGameWindow: {fileID: 3482382067957165942}
   exitToMainMenuWindow: {fileID: 2749912805189160778}
+  exerciseForceExitWindow: {fileID: 8523463856592268017}
   controlsButtons:
   - {fileID: 589724344605675070}
   - {fileID: 7549355940005559766}
@@ -7355,18 +7356,18 @@ PrefabInstance:
     - target: {fileID: 5158584605465780685, guid: 8c926e190d08f9d43b6fbbad47e7e9ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8523463856592268017}
+      objectReference: {fileID: 6913150663080016929}
     - target: {fileID: 5158584605465780685, guid: 8c926e190d08f9d43b6fbbad47e7e9ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5158584605465780685, guid: 8c926e190d08f9d43b6fbbad47e7e9ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Open
+      value: OnOpenExerciseForceExitWindow
       objectReference: {fileID: 0}
     - target: {fileID: 5158584605465780685, guid: 8c926e190d08f9d43b6fbbad47e7e9ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Tractor.UI.UIExitWindow, Assembly-CSharp
+      value: Tractor.UI.UIMainCanvas, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5158584605465780685, guid: 8c926e190d08f9d43b6fbbad47e7e9ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -10196,18 +10197,18 @@ PrefabInstance:
     - target: {fileID: 2700050209202410329, guid: 92efa705db9cf8840ad16072fee799b8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2749912805189160778}
+      objectReference: {fileID: 6913150663080016929}
     - target: {fileID: 2700050209202410329, guid: 92efa705db9cf8840ad16072fee799b8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2700050209202410329, guid: 92efa705db9cf8840ad16072fee799b8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Open
+      value: OnOpenExiToMainMenuWindow
       objectReference: {fileID: 0}
     - target: {fileID: 2700050209202410329, guid: 92efa705db9cf8840ad16072fee799b8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Tractor.UI.UIExitWindow, Assembly-CSharp
+      value: Tractor.UI.UIMainCanvas, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2700050209202410329, guid: 92efa705db9cf8840ad16072fee799b8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -11811,18 +11812,18 @@ PrefabInstance:
     - target: {fileID: 5158584605465780685, guid: 8c926e190d08f9d43b6fbbad47e7e9ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8523463856592268017}
+      objectReference: {fileID: 6913150663080016929}
     - target: {fileID: 5158584605465780685, guid: 8c926e190d08f9d43b6fbbad47e7e9ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5158584605465780685, guid: 8c926e190d08f9d43b6fbbad47e7e9ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Open
+      value: OnOpenExerciseForceExitWindow
       objectReference: {fileID: 0}
     - target: {fileID: 5158584605465780685, guid: 8c926e190d08f9d43b6fbbad47e7e9ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Tractor.UI.UIExitWindow, Assembly-CSharp
+      value: Tractor.UI.UIMainCanvas, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5158584605465780685, guid: 8c926e190d08f9d43b6fbbad47e7e9ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
