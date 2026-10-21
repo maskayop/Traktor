@@ -209,6 +209,38 @@ namespace Tractor.UI
             HideShowStartExerciseButton();
         }
 
+        public void SelectExerciseByName(string name)
+        {
+            if (platform == CanvasPlatform.Windows)
+            {
+                var list = exercisesController?.exercises;
+                if (list == null) return;
+
+                Exercise found = null;
+                for (int i = 0; i < list.Count; i++)
+                {
+                    if (list[i] && list[i].exerciseName == name) { found = list[i]; break; }
+                }
+
+                if (found == null) return;
+
+                exercisesController.SelectExercise(found);
+                exerciseDescriptionText.text = found.exerciseDescription;
+
+                for (int i = 0; i < exerciseButtons.Count; i++)
+                    exerciseButtons[i].Select(exerciseButtons[i].ExerciseName == name);
+
+                HideShowStartExerciseButton();
+            }
+            else
+            {
+                for (int i = 0; i < exerciseButtons.Count; i++)
+                    exerciseButtons[i].Select(exerciseButtons[i].ExerciseName == name);
+
+                routerTablet?.SendSelectExercise(name);
+            }
+        }
+
         // Start Exercise
         public void OnStartExercise()
         {
@@ -473,7 +505,10 @@ namespace Tractor.UI
             OpenExercisePreparingWindow();
 
             if (platform == CanvasPlatform.Windows)
+            {
                 routerPC?.OnOpenExercisePreparingWindow();
+                routerPC?.SendExercisesList();
+            }
             else
                 routerTablet?.OnOpenExercisePreparingWindow();
         }
@@ -496,6 +531,26 @@ namespace Tractor.UI
         public void CloseExercisePreparingWindow()
         {
             ClosePreparingWindow();
+        }
+
+        // От планшета
+        public void AddExerciseButton(string name)
+        {
+            if (!exerciseButtonPrefab || !exerciseButtonsContainer) return;
+
+            // Уже есть кнопка с таким именем? — игнорируем
+            for (int i = 0; i < exerciseButtons.Count; i++)
+            {
+                if (exerciseButtons[i].ExerciseName == name)
+                    return;
+            }
+
+            GameObject go = Instantiate(exerciseButtonPrefab, exerciseButtonsContainer);
+            go.name = name;
+
+            UIExerciseButton eb = go.GetComponent<UIExerciseButton>();
+            eb.Init(name);
+            exerciseButtons.Add(eb);
         }
     }
 }

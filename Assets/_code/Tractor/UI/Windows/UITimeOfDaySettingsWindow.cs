@@ -91,8 +91,22 @@ namespace Tractor.UI
 
         public void OnHourSliderChanged(float hour)
         {
-            if (!isSynchronizing)
-                ApplyHour(hour);
+            if (isSynchronizing)
+                return;
+
+            ApplyHour(hour);
+        }
+
+        public void OnHourSliderReleased()
+        {
+            if (!hourSlider) return;
+
+            float hour = Mathf.Clamp(hourSlider.value, 0f, 24f);
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.SendSetHour(hour);
+            else
+                routerTablet?.SendSetHour(hour);
         }
 
         void ApplyHour(float hour)

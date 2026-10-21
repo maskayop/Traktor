@@ -1,3 +1,4 @@
+using System.Globalization;
 using Tractor.UI;
 using UnityEngine;
 
@@ -28,6 +29,15 @@ namespace Tractor.Net
 
         public void Route(string command)
         {
+            int colonIndex = command.IndexOf(':');
+            if (colonIndex > 0)
+            {
+                string cmd = command.Substring(0, colonIndex);
+                string param = command.Substring(colonIndex + 1);
+                RouteWithParam(cmd, param);
+                return;
+            }
+
             switch (command)
             {
                 // Test
@@ -130,8 +140,33 @@ namespace Tractor.Net
                 case "DisableDynamicTime":
                     timeOfDaySettingsWindow?.SetDynamicTime(false);
                     break;
+
                 default:
                     Debug.LogWarning($"Неизвестная команда: {command}");
+                    break;
+            }
+        }
+
+        void RouteWithParam(string command, string param)
+        {
+            switch (command)
+            {
+                case "SetHour":
+                    if (TryParseFloat(param, out float hour))
+                        timeOfDaySettingsWindow?.SetHour(hour);
+                    else
+                        Debug.LogWarning($"Не удалось разобрать SetHour: {param}");
+                    break;
+
+                case "EXERCISE":
+                    OnExerciseReceived(param);
+                    break;
+                case "SELECT_EXERCISE":
+                    exerciseWindow?.SelectExerciseByName(param);
+                    break;
+
+                default:
+                    Debug.LogWarning($"Неизвестная команда с параметром: {command}");
                     break;
             }
         }
@@ -142,6 +177,26 @@ namespace Tractor.Net
                 server?.SendCommand(command);
             else
                 client?.SendCommand(command);
+        }
+
+        protected void SendWithParam(string command, string param)
+        {
+            SendCommand(command + ":" + param);
+        }
+
+        protected void SendWithParam(string command, float param)
+        {
+            SendWithParam(command, param.ToString(CultureInfo.InvariantCulture));
+        }
+
+        protected void SendWithParam(string command, int param)
+        {
+            SendWithParam(command, param.ToString(CultureInfo.InvariantCulture));
+        }
+
+        static bool TryParseFloat(string s, out float value)
+        {
+            return float.TryParse(s, NumberStyles.Float, CultureInfo.InvariantCulture, out value);
         }
 
         // Тестовые обёртки
@@ -182,5 +237,33 @@ namespace Tractor.Net
         public void SetDayTimeNight() { SendCommand("SetDayTimeNight"); }
         public void EnableDynamicTime() { SendCommand("EnableDynamicTime"); }
         public void DisableDynamicTime() { SendCommand("DisableDynamicTime"); }
+        public void SendSetHour(float hour) => SendWithParam("SetHour", hour);
+
+        // Обёртки Exercises
+        public void SendExercisesList()
+        {
+            var list = ExercisesController.Instance?.exercises;
+            if (list == null || list.Count == 0) return;
+
+            var pcServer = PCServer.Instance;
+            if (!pcServer) return;
+
+            foreach (var ex in list)
+            {
+                if (!ex) continue;
+                pcServer.SendCommand("EXERCISE:" + ex.exerciseName.Replace(":", "-"));
+            }
+        }
+
+        void OnExerciseReceived(string name)
+        {
+            if (isPC) return;
+            exerciseWindow?.AddExerciseButton(name);
+        }
+
+        public void SendSelectExercise(string name)
+        {
+            SendWithParam("SELECT_EXERCISE", name);
+        }
     }
 }

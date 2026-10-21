@@ -100,13 +100,25 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4678389696196287328, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4898373648553033783, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_RaycastTarget
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4898373648553033783, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5152798970192581076, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_RaycastTarget
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152798970192581076, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6117925432420221512, guid: 20990ad93f24dd849b5f29fa740b7a84, type: 3}
       propertyPath: m_Name
