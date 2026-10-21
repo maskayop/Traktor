@@ -2,6 +2,13 @@ namespace Tractor.UI
 {
     public class UIExitWindow : UI_WindowBase
     {
+        UIExerciseWindow exerciseWindow;
+
+        protected override void OnInit()
+        {
+            exerciseWindow = UIExerciseWindow.Instance;
+        }
+
         public void OnExitGame()
         {
             mainCanvas?.OnExitGame();
@@ -10,13 +17,11 @@ namespace Tractor.UI
         public void OnEndGame()
         {
             mainCanvas?.OnEndGame();
-            Close();
         }
 
         public void OnExerciseForceExit()
         {
-            mainCanvas?.OnExerciseForceExit();
-            Close();
+            exerciseWindow?.OnExerciseForceExit();
         }
 
         public void OnCloseExitGameWindow()
@@ -31,7 +36,7 @@ namespace Tractor.UI
 
         public void OnCloseExerciseForceExitWindow()
         {
-            mainCanvas?.OnCloseExerciseForceExitWindow();
+            exerciseWindow?.OnCloseExerciseForceExitWindow();
         }
     }
 }

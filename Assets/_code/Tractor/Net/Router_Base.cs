@@ -13,6 +13,8 @@ namespace Tractor.Net
 
         UITestCanvas testCanvas;
         UIMainCanvas mainCanvas;
+        UIExerciseWindow exerciseWindow;
+        UITimeOfDaySettingsWindow timeOfDaySettingsWindow;
 
         void Start()
         {
@@ -20,6 +22,8 @@ namespace Tractor.Net
             client = TabletClient.Instance;
             testCanvas = UITestCanvas.Instance;
             mainCanvas = UIMainCanvas.Instance;
+            exerciseWindow = UIExerciseWindow.Instance;
+            timeOfDaySettingsWindow = UITimeOfDaySettingsWindow.Instance;
         }
 
         public void Route(string command)
@@ -39,7 +43,8 @@ namespace Tractor.Net
                 case "TestCloseTablet":
                     testCanvas?.TestCloseTablet();
                     break;
-                //
+
+                // Base UI
                 case "ExitGame":
                     mainCanvas?.ExitGame();
                     break;
@@ -85,11 +90,45 @@ namespace Tractor.Net
                 case "CloseExitToMainMenuWindow":
                     mainCanvas?.CloseExitToMainMenuWindow();
                     break;
+
+                // Exercise UI
                 case "OpenExerciseForceExitWindow":
-                    mainCanvas?.OpenExerciseForceExitWindow();
+                    exerciseWindow?.OpenExerciseForceExitWindow();
                     break;
                 case "CloseExerciseForceExitWindow":
-                    mainCanvas?.CloseExerciseForceExitWindow();
+                    exerciseWindow?.CloseExerciseForceExitWindow();
+                    break;
+                case "OpenExercisePreparingWindow":
+                    exerciseWindow?.OpenExercisePreparingWindow();
+                    break;
+                case "CloseExercisePreparingWindow":
+                    exerciseWindow?.CloseExercisePreparingWindow();
+                    break;
+                case "StartExercise":
+                    exerciseWindow?.StartExercise();
+                    break;
+                case "ExerciseForceExit":
+                    exerciseWindow?.ExerciseForceExit();
+                    break;
+
+                // Time of Day UI
+                case "SetDayTimeMorning":
+                    timeOfDaySettingsWindow?.SetMorning();
+                    break;
+                case "SetDayTimeDay":
+                    timeOfDaySettingsWindow?.SetDay();
+                    break;
+                case "SetDayTimeEvening":
+                    timeOfDaySettingsWindow?.SetEvening();
+                    break;
+                case "SetDayTimeNight":
+                    timeOfDaySettingsWindow?.SetNight();
+                    break;
+                case "EnableDynamicTime":
+                    timeOfDaySettingsWindow?.SetDynamicTime(true);
+                    break;
+                case "DisableDynamicTime":
+                    timeOfDaySettingsWindow?.SetDynamicTime(false);
                     break;
                 default:
                     Debug.LogWarning($"Неизвестная команда: {command}");
@@ -111,7 +150,7 @@ namespace Tractor.Net
         public void OnTestOpenTablet() { SendCommand("TestOpenTablet"); }
         public void OnTestCloseTablet() { SendCommand("TestCloseTablet"); }
 
-        // Рабочие обёртки для кнопок
+        // Базовые обёртки кнопок UI
         public void OnExitGame() { SendCommand("ExitGame"); }
         public void OnOpenSettingsWindow() { SendCommand("OpenSettingsWindow"); }
         public void OnCloseSettingsWindow() { SendCommand("CloseSettingsWindow"); }
@@ -127,7 +166,21 @@ namespace Tractor.Net
         public void OnCloseReportsWindow() { SendCommand("CloseReportsWindow"); }
         public void OnOpenExitToMainMenuWindow() { SendCommand("OpenExitToMainMenuWindow"); }
         public void OnCloseExitToMainMenuWindow() { SendCommand("CloseExitToMainMenuWindow"); }
+
+        // Обёртки Exercise UI
         public void OnOpenExerciseForceExitWindow() { SendCommand("OpenExerciseForceExitWindow"); }
         public void OnCloseExerciseForceExitWindow() { SendCommand("CloseExerciseForceExitWindow"); }
+        public void OnOpenExercisePreparingWindow() { SendCommand("OpenExercisePreparingWindow"); }
+        public void OnCloseExercisePreparingWindow() { SendCommand("CloseExercisePreparingWindow"); }
+        public void OnStartExercise() { SendCommand("StartExercise"); }
+        public void OnExerciseForceExit() { SendCommand("ExerciseForceExit"); }
+
+        // Обёртки Time of Day UI
+        public void SetDayTimeMorning() { SendCommand("SetDayTimeMorning"); }
+        public void SetDayTimeDay() { SendCommand("SetDayTimeDay"); }
+        public void SetDayTimeEvening() { SendCommand("SetDayTimeEvening"); }
+        public void SetDayTimeNight() { SendCommand("SetDayTimeNight"); }
+        public void EnableDynamicTime() { SendCommand("EnableDynamicTime"); }
+        public void DisableDynamicTime() { SendCommand("DisableDynamicTime"); }
     }
 }

@@ -24,7 +24,11 @@ namespace Tractor.UI
         {
             if (closeOnAwake)
                 Close();
+
+            OnAwake();
         }
+
+        protected virtual void OnAwake() { }
 
         void Start()
         {

@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -582,11 +582,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1307290750610142852, guid: 0ada72e67651f9b46953aab9623bcf98, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetDay
+      value: OnSetDay
       objectReference: {fileID: 0}
     - target: {fileID: 1307290750610142852, guid: 0ada72e67651f9b46953aab9623bcf98, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TractorSimulator.TimeOfDay.EnviroTimeOfDayUI, Assembly-CSharp
+      value: Tractor.UI.UITimeOfDaySettingsWindow, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1307290750610142852, guid: 0ada72e67651f9b46953aab9623bcf98, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -764,7 +764,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5327451212807887470, guid: b242c8e3441621a42af99d3f537986b4, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5327451212807887470, guid: b242c8e3441621a42af99d3f537986b4, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -776,11 +776,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5327451212807887470, guid: b242c8e3441621a42af99d3f537986b4, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetDynamicTime
+      value: OnSetDynamicTime
       objectReference: {fileID: 0}
     - target: {fileID: 5327451212807887470, guid: b242c8e3441621a42af99d3f537986b4, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Tractor.UI.UIEnviroTimeOfDaySettingsWindow, Assembly-CSharp
+      value: Tractor.UI.UITimeOfDaySettingsWindow, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5327451212807887470, guid: b242c8e3441621a42af99d3f537986b4, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -845,11 +845,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1307290750610142852, guid: d0c73f43865e4e64dbc61baacc33c59f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetMorning
+      value: OnSetMorning
       objectReference: {fileID: 0}
     - target: {fileID: 1307290750610142852, guid: d0c73f43865e4e64dbc61baacc33c59f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TractorSimulator.TimeOfDay.EnviroTimeOfDayUI, Assembly-CSharp
+      value: Tractor.UI.UITimeOfDaySettingsWindow, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1307290750610142852, guid: d0c73f43865e4e64dbc61baacc33c59f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1085,6 +1085,10 @@ MonoBehaviour:
   simulateTime: 1
   useCloudyDemoWeather: 1
   fallbackStartHour: 8
+  morningHour: 8
+  dayHour: 13
+  eveningHour: 19
+  nightHour: 0
 --- !u!1 &7094309388476054270 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4622817090089345987, guid: 1866c6a57e99acf4eb6065a4f0a52c97, type: 3}
@@ -1125,11 +1129,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1307290750610142852, guid: ac46fc620766a3943b092534b69a94fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetNight
+      value: OnSetNight
       objectReference: {fileID: 0}
     - target: {fileID: 1307290750610142852, guid: ac46fc620766a3943b092534b69a94fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TractorSimulator.TimeOfDay.EnviroTimeOfDayUI, Assembly-CSharp
+      value: Tractor.UI.UITimeOfDaySettingsWindow, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1307290750610142852, guid: ac46fc620766a3943b092534b69a94fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1243,11 +1247,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1307290750610142852, guid: c7dc9e165fda5ef4bbeb4e4c4d452818, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetEvening
+      value: OnSetEvening
       objectReference: {fileID: 0}
     - target: {fileID: 1307290750610142852, guid: c7dc9e165fda5ef4bbeb4e4c4d452818, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TractorSimulator.TimeOfDay.EnviroTimeOfDayUI, Assembly-CSharp
+      value: Tractor.UI.UITimeOfDaySettingsWindow, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1307290750610142852, guid: c7dc9e165fda5ef4bbeb4e4c4d452818, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

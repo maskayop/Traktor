@@ -1,13 +1,17 @@
 using Enviro;
 using TMPro;
+using Tractor.Net;
 using UnityEngine;
 using UnityEngine.UI;
+using static Tractor.UI.UIMainCanvas;
 
 namespace Tractor.UI
 {
     public sealed class UITimeOfDaySettingsWindow : UI_WindowBase
     {
-        [Header("Настройки")]
+        public static UITimeOfDaySettingsWindow Instance;
+
+        [Header("Общие настройки")]
         [SerializeField] Slider hourSlider;
         [SerializeField] TextMeshProUGUI timeLabel;
         [SerializeField] Toggle dynamicTimeToggle;
@@ -15,7 +19,29 @@ namespace Tractor.UI
         [SerializeField] bool useCloudyDemoWeather = true;
         [SerializeField, Range(0f, 24f)] float fallbackStartHour = 8f;
 
+        [Header("Общие настройки")]
+        [SerializeField] int morningHour = 8;
+        [SerializeField] int dayHour = 13;
+        [SerializeField] int eveningHour = 19;
+        [SerializeField] int nightHour = 0;
+
         bool isSynchronizing;
+
+        CanvasPlatform platform = CanvasPlatform.Windows;
+        RouterPC routerPC;
+        RouterTablet routerTablet;
+
+        protected override void OnAwake()
+        {
+            if (Instance != null)
+            {
+                Debug.LogWarning("Cannot create UITimeOfDaySettingsWindow");
+                Destroy(gameObject);
+                return;
+            }
+
+            Instance = this;
+        }
 
         protected override void OnStart()
         {
@@ -37,6 +63,19 @@ namespace Tractor.UI
             ApplyHour(initialHour);
         }
 
+        protected override void OnInit()
+        {
+            if (!mainCanvas)
+                return;
+
+            platform = mainCanvas.platform;
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC = RouterPC.Instance;
+            else
+                routerTablet = RouterTablet.Instance;
+        }
+
         protected override void OnUpdate()
         {
             if (!TryGetEnviroTimeModule(out var timeModule))
@@ -54,23 +93,6 @@ namespace Tractor.UI
         {
             if (!isSynchronizing)
                 ApplyHour(hour);
-        }
-
-        public void SetMorning() => ApplyHour(8f);
-        public void SetDay() => ApplyHour(13f);
-        public void SetEvening() => ApplyHour(19f);
-        public void SetNight() => ApplyHour(0f);
-
-        public void SetDynamicTime(bool enabled)
-        {
-            if (!TryGetEnviroTimeModule(out var timeModule))
-                return;
-
-            if (!dynamicTimeToggle)
-                return;
-
-            dynamicTimeToggle.SetIsOnWithoutNotify(enabled);
-            timeModule.Settings.simulate = dynamicTimeToggle.isOn;
         }
 
         void ApplyHour(float hour)
@@ -119,6 +141,86 @@ namespace Tractor.UI
         public void OnCloseTimeOfDaySettingsWindow()
         {
             mainCanvas?.OnCloseTimeOfDaySettingsWindow();
+        }
+
+        // Set Time
+        public void OnSetMorning()
+        {
+            SetMorning();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.SetDayTimeMorning();
+            else
+                routerTablet?.SetDayTimeMorning();
+        }
+
+        public void SetMorning() => ApplyHour(morningHour);
+
+        public void OnSetDay()
+        {
+            SetDay();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.SetDayTimeDay();
+            else
+                routerTablet?.SetDayTimeDay();
+        }
+
+        public void SetDay() => ApplyHour(dayHour);
+
+        public void OnSetEvening()
+        {
+            SetEvening();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.SetDayTimeEvening();
+            else
+                routerTablet?.SetDayTimeEvening();
+        }
+
+        public void SetEvening() => ApplyHour(eveningHour);
+
+        public void OnSetNight()
+        {
+            SetNight();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.SetDayTimeNight();
+            else
+                routerTablet?.SetDayTimeNight();
+        }
+
+        public void SetNight() => ApplyHour(nightHour);
+
+        // Set Dynamic Time
+        public void OnSetDynamicTime()
+        {
+            if (!dynamicTimeToggle) return;
+
+            bool state = dynamicTimeToggle.isOn;
+
+            SetDynamicTime(state);
+
+            if (platform == CanvasPlatform.Windows)
+            {
+                if (state) routerPC?.EnableDynamicTime();
+                else routerPC?.DisableDynamicTime();
+            }
+            else
+            {
+                if (state) routerTablet?.EnableDynamicTime();
+                else routerTablet?.DisableDynamicTime();
+            }
+        }
+        public void SetDynamicTime(bool state)
+        {
+            if (dynamicTimeToggle)
+                dynamicTimeToggle.SetIsOnWithoutNotify(state);
+
+            if (!TryGetEnviroTimeModule(out var timeModule))
+                return;
+
+            timeModule.Settings.simulate = state;
         }
     }
 }

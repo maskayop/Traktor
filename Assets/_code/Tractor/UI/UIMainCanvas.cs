@@ -24,7 +24,6 @@ namespace Tractor.UI
         [SerializeField] UIReportsWindow reportsWindow;
         [SerializeField] UIExitWindow exitGameWindow;
         [SerializeField] UIExitWindow exitToMainMenuWindow;
-        [SerializeField] UIExitWindow exerciseForceExitWindow;
 
         [Header("Buttons")]
         [SerializeField] List<GameObject> controlsButtons = new List<GameObject>();
@@ -146,6 +145,7 @@ namespace Tractor.UI
         public void EndGame()
         {
             OpenMainMenuWindow();
+            OnCloseExitToMainMenuWindow();
             exerciseWindow?.ExerciseForceExit();
             gameController?.SetGameState(GameState.Menu);
         }
@@ -347,43 +347,6 @@ namespace Tractor.UI
         public void CloseTimeOfDaySettingsWindow()
         {
             timeOfDaySettingsWindow?.Close();
-        }
-
-        // Exercises
-        public void OnExerciseForceExit()
-        {
-            exerciseWindow?.ExerciseForceExit();
-        }
-
-        // Exercise Force Exit Window
-        public void OnOpenExerciseForceExitWindow()
-        {
-            OpenExerciseForceExitWindow();
-
-            if (platform == CanvasPlatform.Windows)
-                routerPC?.OnOpenExerciseForceExitWindow();
-            else
-                routerTablet?.OnOpenExerciseForceExitWindow();
-        }
-
-        public void OpenExerciseForceExitWindow()
-        {
-            exerciseForceExitWindow?.Open();
-        }
-
-        public void OnCloseExerciseForceExitWindow()
-        {
-            CloseExerciseForceExitWindow();
-
-            if (platform == CanvasPlatform.Windows)
-                routerPC?.OnCloseExerciseForceExitWindow();
-            else
-                routerTablet?.OnCloseExerciseForceExitWindow();
-        }
-
-        public void CloseExerciseForceExitWindow()
-        {
-            exerciseForceExitWindow?.Close();
         }
     }
 }
