@@ -25,6 +25,13 @@ namespace Tractor.UI
         [SerializeField] int eveningHour = 19;
         [SerializeField] int nightHour = 0;
 
+        [Header("Пресеты погоды")]
+        [SerializeField] string cloudyWeather = "Cloudy 3";
+        [SerializeField] string rainyWeather = "Rain";
+        [SerializeField] string foggyWeather = "Foggy";
+        [SerializeField] string clearSkyWeather = "Clear Sky";
+        [SerializeField] string snowyWeather = "Snow";
+
         bool isSynchronizing;
 
         CanvasPlatform platform = CanvasPlatform.Windows;
@@ -236,5 +243,86 @@ namespace Tractor.UI
 
             timeModule.Settings.simulate = state;
         }
+
+        // Weather Helper
+        static bool TryGetEnviroWeatherModule(out EnviroWeatherModule weatherModule)
+        {
+            weatherModule = null;
+
+            if (EnviroManager.instance == null || EnviroManager.instance.Weather == null)
+                return false;
+
+            weatherModule = EnviroManager.instance.Weather;
+            return true;
+        }
+
+        public void ApplyWeather(string weather)
+        {
+            if (!TryGetEnviroWeatherModule(out var weatherModule))
+                return;
+
+            weatherModule.ChangeWeatherInstant(weather);
+        }
+
+        // Set Weather
+        public void onSetCloudyWeather()
+        {
+            SetCloudyWeather();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.SetWeatherCloudy();
+            else
+                routerTablet?.SetWeatherCloudy();
+        }
+
+        public void SetCloudyWeather() => ApplyWeather(cloudyWeather);
+
+        public void onSetRainyWeather()
+        {
+            SetRainyWeather();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.SetWeatherRainy();
+            else
+                routerTablet?.SetWeatherRainy();
+        }
+
+        public void SetRainyWeather() => ApplyWeather(rainyWeather);
+
+        public void onSetFoggyWeather()
+        {
+            SetFoggyWeather();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.SetWeatherFoggy();
+            else
+                routerTablet?.SetWeatherFoggy();
+        }
+
+        public void SetFoggyWeather() => ApplyWeather(foggyWeather);
+
+        public void onSetClearSkyWeather()
+        {
+            SetClearSkyWeather();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.SetWeatherClearSky();
+            else
+                routerTablet?.SetWeatherClearSky();
+        }
+
+        public void SetClearSkyWeather() => ApplyWeather(clearSkyWeather);
+
+        public void onSetSnowyWeather()
+        {
+            SetSnowyWeather();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.SetWeatherSnowy();
+            else
+                routerTablet?.SetWeatherSnowy();
+        }
+
+        public void SetSnowyWeather() => ApplyWeather(snowyWeather);
     }
 }
