@@ -392,6 +392,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   customFogDensityModifer: 1
   fogMat: {fileID: 0}
   volumetricsMat: {fileID: 0}
@@ -2061,7 +2067,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    temperature: 5.941233
+    temperature: 6.9323964
     temperatureWeatherMod: 0
     temperatureCustomMod: 0
     temperatureChangingSpeed: 0.1
@@ -4475,9 +4481,9 @@ MonoBehaviour:
   preset: {fileID: 11400000, guid: 0fcdd472bd6a8ec429fc1e9bc978c4fa, type: 2}
   showCirrusCloudsControls: 1
   show2DCloudsControls: 1
-  cloudFlatBaseAnim: {x: -0.13596538, y: 0.09196265}
-  cloudFlatDetailAnim: {x: -0.6800583, y: 0.45917872}
-  cirrusAnim: {x: -0.06798269, y: 0.04605311}
+  cloudFlatBaseAnim: {x: -0.24350165, y: 0.7819965}
+  cloudFlatDetailAnim: {x: 0.78228486, y: -0.09073642}
+  cirrusAnim: {x: -0.121750824, y: 0.39106998}
 --- !u!114 &6137975383063632260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5153,7 +5159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ccdfb360c52f049bf71126aa74826f, type: 3}
   m_Name: Weather Module
   m_EditorClassIdentifier: 
-  showModuleInspector: 0
+  showModuleInspector: 1
   showSaveLoad: 0
   active: 1
   Settings:
@@ -5167,14 +5173,14 @@ MonoBehaviour:
     - {fileID: 11400000, guid: f736e404e0b052942bc41c35c50dccad, type: 2}
     - {fileID: 11400000, guid: 96eebec6fa78a3c48ba2bc98ac5ab57f, type: 2}
     - {fileID: 11400000, guid: ebf8ae7a51a5cd342a90c81f5182d8a8, type: 2}
-    cloudsTransitionSpeed: 1
-    fogTransitionSpeed: 1
-    lightingTransitionSpeed: 1
-    skyTransitionSpeed: 1
-    effectsTransitionSpeed: 1
-    auroraTransitionSpeed: 1
-    environmentTransitionSpeed: 1
-    audioTransitionSpeed: 1
+    cloudsTransitionSpeed: 0.5
+    fogTransitionSpeed: 0.5
+    lightingTransitionSpeed: 0.5
+    skyTransitionSpeed: 0.5
+    effectsTransitionSpeed: 0.5
+    auroraTransitionSpeed: 0.5
+    environmentTransitionSpeed: 0.5
+    audioTransitionSpeed: 0.5
   preset: {fileID: 11400000, guid: 8c4e279017d5e44458e3e4663b6ab460, type: 2}
   targetWeatherType: {fileID: 11400000, guid: 6c589d06d1746d04a864437f71d0cc30, type: 2}
   weatherBlendProgress: 1
@@ -5370,8 +5376,8 @@ MonoBehaviour:
   showDensityControls: 0
   showTextureControls: 0
   showWindControls: 0
-  cloudAnimLayer1: {x: -0.6800583, y: 0.45917872, z: 0.026709614}
+  cloudAnimLayer1: {x: 0.78228486, y: -0.09073642, z: -0.37133393}
   cloudAnimLayer2: {x: 0, y: 0, z: 0}
-  cloudAnimNonScaledLayer1: {x: -0.005438651, y: 0.1636873, z: -5.2388186}
+  cloudAnimNonScaledLayer1: {x: -0.00974051, y: 0.19129586, z: -6.1353936}
   cloudAnimNonScaledLayer2: {x: 0, y: 0, z: 0}
   weatherMap: {fileID: 0}

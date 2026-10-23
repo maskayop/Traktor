@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Enviro;
 using TMPro;
 using Tractor.Net;
@@ -17,6 +18,8 @@ namespace Tractor.UI
         [SerializeField] Toggle dynamicTimeToggle;
         [SerializeField] bool simulateTime = true;
         [SerializeField] bool useCloudyDemoWeather = true;
+        [SerializeField] Toggle dynamicWeatherToggle;
+        [SerializeField] bool dynamicWeather = true;
         [SerializeField, Range(0f, 24f)] float fallbackStartHour = 8f;
 
         [Header("Общие настройки")]
@@ -26,12 +29,16 @@ namespace Tractor.UI
         [SerializeField] int nightHour = 0;
 
         [Header("Пресеты погоды")]
-        [SerializeField] string cloudyWeather = "Cloudy 3";
-        [SerializeField] string rainyWeather = "Rain";
-        [SerializeField] string foggyWeather = "Foggy";
-        [SerializeField] string clearSkyWeather = "Clear Sky";
-        [SerializeField] string snowyWeather = "Snow";
+        [SerializeField] List<string> weatherPresets = new List<string>
+        {
+            "Cloudy 3",
+            "Rain",
+            "Foggy",
+            "Clear Sky",
+            "Snow"
+        };
 
+        int weatherIndex;
         bool isSynchronizing;
 
         CanvasPlatform platform = CanvasPlatform.Windows;
@@ -60,6 +67,9 @@ namespace Tractor.UI
             if (dynamicTimeToggle)
                 dynamicTimeToggle.SetIsOnWithoutNotify(timeModule.Settings.simulate);
 
+            if (dynamicWeatherToggle)
+                dynamicWeatherToggle.SetIsOnWithoutNotify(dynamicWeather);
+
             if (useCloudyDemoWeather && EnviroManager.instance.Weather)
                 SetCloudyWeather();
 
@@ -68,6 +78,13 @@ namespace Tractor.UI
                 initialHour = fallbackStartHour;
 
             ApplyHour(initialHour);
+            EnviroManager.instance.OnHourPassed += ChangeWeatherOnHour;
+        }
+
+        void OnDestroy()
+        {
+            if (EnviroManager.instance != null)
+                EnviroManager.instance.OnHourPassed -= ChangeWeatherOnHour;
         }
 
         protected override void OnInit()
@@ -256,12 +273,41 @@ namespace Tractor.UI
             return true;
         }
 
-        public void ApplyWeather(string weather)
+        public void ApplyWeather(string weather, bool useInstant = false)
         {
             if (!TryGetEnviroWeatherModule(out var weatherModule))
                 return;
 
-            weatherModule.ChangeWeather(weather);
+            var weatherTypes = weatherModule.Settings?.weatherTypes;
+            if (string.IsNullOrWhiteSpace(weather) || weatherTypes == null) 
+                return;
+
+            for (int i = 0; i < weatherTypes.Count; i++) {
+                var candidate = weatherTypes[i];
+                if (candidate != null && candidate.name == weather) {
+                    if (useInstant)
+                        weatherModule.ChangeWeatherInstant(candidate);
+                    else
+                        weatherModule.ChangeWeather(candidate);
+                    return;
+                }
+            }
+
+            Debug.LogWarning($"Weather {weather} not found");
+        }
+
+        void ApplyInstantWeatherAt(int index)
+        {
+            weatherIndex = index;
+            ApplyWeather(weatherPresets[index], true);
+        }
+
+        void ChangeWeatherOnHour()
+        {
+            if (dynamicWeatherToggle && !dynamicWeatherToggle.isOn) return;
+
+            weatherIndex = Random.Range(0, weatherPresets.Count);
+            ApplyWeather(weatherPresets[weatherIndex]);
         }
 
         // Set Weather
@@ -275,7 +321,7 @@ namespace Tractor.UI
                 routerTablet?.SetWeatherCloudy();
         }
 
-        public void SetCloudyWeather() => ApplyWeather(cloudyWeather);
+        public void SetCloudyWeather() => ApplyInstantWeatherAt(0);
 
         public void OnSetRainyWeather()
         {
@@ -287,7 +333,7 @@ namespace Tractor.UI
                 routerTablet?.SetWeatherRainy();
         }
 
-        public void SetRainyWeather() => ApplyWeather(rainyWeather);
+        public void SetRainyWeather() => ApplyInstantWeatherAt(1);
 
         public void OnSetFoggyWeather()
         {
@@ -299,7 +345,7 @@ namespace Tractor.UI
                 routerTablet?.SetWeatherFoggy();
         }
 
-        public void SetFoggyWeather() => ApplyWeather(foggyWeather);
+        public void SetFoggyWeather() => ApplyInstantWeatherAt(2);
 
         public void OnSetClearSkyWeather()
         {
@@ -311,7 +357,7 @@ namespace Tractor.UI
                 routerTablet?.SetWeatherClearSky();
         }
 
-        public void SetClearSkyWeather() => ApplyWeather(clearSkyWeather);
+        public void SetClearSkyWeather() => ApplyInstantWeatherAt(3);
 
         public void OnSetSnowyWeather()
         {
@@ -323,6 +369,28 @@ namespace Tractor.UI
                 routerTablet?.SetWeatherSnowy();
         }
 
-        public void SetSnowyWeather() => ApplyWeather(snowyWeather);
+        public void SetSnowyWeather() => ApplyInstantWeatherAt(4);
+
+        // Set Dynamic Weather
+        public void OnSetDynamicWeather() {
+            if (!dynamicWeatherToggle) return;
+
+            bool state = dynamicWeatherToggle.isOn;
+            SetDynamicWeather(state);
+
+            if (platform == CanvasPlatform.Windows) {
+                if (state) routerPC?.EnableDynamicWeather();
+                else routerPC?.DisableDynamicWeather();
+            }
+            else {
+                if (state) routerTablet?.EnableDynamicWeather();
+                else routerTablet?.DisableDynamicWeather();
+            }
+        }
+
+        public void SetDynamicWeather(bool state) {
+            if (dynamicWeatherToggle)
+                dynamicWeatherToggle.SetIsOnWithoutNotify(state);
+        }
     }
 }

@@ -157,6 +157,12 @@ namespace Tractor.Net
                 case "SetWeatherSnowy":
                     timeOfDaySettingsWindow?.SetSnowyWeather();
                     break;
+                case "EnableDynamicWeather":
+                    timeOfDaySettingsWindow?.SetDynamicWeather(true);
+                    break;
+                case "DisableDynamicWeather":
+                    timeOfDaySettingsWindow?.SetDynamicWeather(false);
+                    break;
 
                 default:
                     Debug.LogWarning($"Неизвестная команда: {command}");
@@ -262,6 +268,8 @@ namespace Tractor.Net
         public void SetWeatherFoggy() { SendCommand("SetWeatherFoggy"); }
         public void SetWeatherClearSky() { SendCommand("SetWeatherClearSky"); }
         public void SetWeatherSnowy() { SendCommand("SetWeatherSnowy"); }
+        public void EnableDynamicWeather() { SendCommand("EnableDynamicWeather"); }
+        public void DisableDynamicWeather() { SendCommand("DisableDynamicWeather"); }
 
         // Обёртки Exercises
         public void SendExercisesList()
