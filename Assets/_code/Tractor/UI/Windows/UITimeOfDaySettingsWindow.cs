@@ -61,7 +61,7 @@ namespace Tractor.UI
                 dynamicTimeToggle.SetIsOnWithoutNotify(timeModule.Settings.simulate);
 
             if (useCloudyDemoWeather && EnviroManager.instance.Weather)
-                EnviroManager.instance.Weather.ChangeWeatherInstant("Cloudy 1");
+                SetCloudyWeather();
 
             var initialHour = timeModule.GetTimeOfDay();
             if (float.IsNaN(initialHour) || initialHour < 0f || initialHour > 24f)
@@ -261,11 +261,11 @@ namespace Tractor.UI
             if (!TryGetEnviroWeatherModule(out var weatherModule))
                 return;
 
-            weatherModule.ChangeWeatherInstant(weather);
+            weatherModule.ChangeWeather(weather);
         }
 
         // Set Weather
-        public void onSetCloudyWeather()
+        public void OnSetCloudyWeather()
         {
             SetCloudyWeather();
 
@@ -277,7 +277,7 @@ namespace Tractor.UI
 
         public void SetCloudyWeather() => ApplyWeather(cloudyWeather);
 
-        public void onSetRainyWeather()
+        public void OnSetRainyWeather()
         {
             SetRainyWeather();
 
@@ -289,7 +289,7 @@ namespace Tractor.UI
 
         public void SetRainyWeather() => ApplyWeather(rainyWeather);
 
-        public void onSetFoggyWeather()
+        public void OnSetFoggyWeather()
         {
             SetFoggyWeather();
 
@@ -301,7 +301,7 @@ namespace Tractor.UI
 
         public void SetFoggyWeather() => ApplyWeather(foggyWeather);
 
-        public void onSetClearSkyWeather()
+        public void OnSetClearSkyWeather()
         {
             SetClearSkyWeather();
 
@@ -313,7 +313,7 @@ namespace Tractor.UI
 
         public void SetClearSkyWeather() => ApplyWeather(clearSkyWeather);
 
-        public void onSetSnowyWeather()
+        public void OnSetSnowyWeather()
         {
             SetSnowyWeather();
 

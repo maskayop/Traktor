@@ -1031,7 +1031,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6282235825071136051, guid: 0c401b8254afc0c48b76ffdb26d8bc74, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetClearSkyWeather
+      value: OnSetClearSkyWeather
       objectReference: {fileID: 0}
     - target: {fileID: 6282235825071136051, guid: 0c401b8254afc0c48b76ffdb26d8bc74, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1287,6 +1287,11 @@ MonoBehaviour:
   dayHour: 13
   eveningHour: 19
   nightHour: 0
+  cloudyWeather: Cloudy 3
+  rainyWeather: Rain
+  foggyWeather: Foggy
+  clearSkyWeather: Clear Sky
+  snowyWeather: Snow
 --- !u!1 &7094309388476054270 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4622817090089345987, guid: 1866c6a57e99acf4eb6065a4f0a52c97, type: 3}
@@ -1521,7 +1526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7273168519639173417, guid: df5dffcd4e0cb4648a63d331d3f66549, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetRainyWeather
+      value: OnSetRainyWeather
       objectReference: {fileID: 0}
     - target: {fileID: 7273168519639173417, guid: df5dffcd4e0cb4648a63d331d3f66549, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1651,7 +1656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7273168519639173417, guid: 69e801cdd67271c4dbe5cf2e849fe21c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetCloudyWeather
+      value: OnSetCloudyWeather
       objectReference: {fileID: 0}
     - target: {fileID: 7273168519639173417, guid: 69e801cdd67271c4dbe5cf2e849fe21c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1781,7 +1786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7273168519639173417, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetSnowyWeather
+      value: OnSetSnowyWeather
       objectReference: {fileID: 0}
     - target: {fileID: 7273168519639173417, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -2249,7 +2254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7273168519639173417, guid: bc2b0a89f5ca62c4da648e9483db97dc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetFoggyWeather
+      value: OnSetFoggyWeather
       objectReference: {fileID: 0}
     - target: {fileID: 7273168519639173417, guid: bc2b0a89f5ca62c4da648e9483db97dc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

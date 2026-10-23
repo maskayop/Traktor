@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6026595336330140824, guid: 535294961af2bf54f871c7dece588a5f, type: 3}
       propertyPath: m_text
-      value: "\u0421\u043E\u043B\u043D\u0435\u0447\u043D\u043E"
+      value: "\u042F\u0441\u043D\u043E"
       objectReference: {fileID: 0}
     - target: {fileID: 6026595336330140824, guid: 535294961af2bf54f871c7dece588a5f, type: 3}
       propertyPath: m_fontSize
