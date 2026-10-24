@@ -150,7 +150,7 @@ namespace Tractor.UI
             gameController?.SetGameState(GameState.Menu);
         }
 
-        // ---
+        // Settings
         public void ShowTestInfoWindow(bool state)
         {
             showTestInfoWindow = state;
@@ -161,6 +161,16 @@ namespace Tractor.UI
         {
             foreach (var cb in controlsButtons)
                 cb.SetActive(state);
+        }
+
+        public void TryConnectToPC()
+        {
+            TabletClient.Instance?.OnConnectButton();
+        }
+
+        public void DeletePlayerPrefs()
+        {
+            DataSaveLoad.Instance?.DeletePlayerPrefs();
         }
 
         // Settings Window

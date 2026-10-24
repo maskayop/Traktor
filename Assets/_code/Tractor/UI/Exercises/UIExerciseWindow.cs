@@ -505,10 +505,7 @@ namespace Tractor.UI
             OpenExercisePreparingWindow();
 
             if (platform == CanvasPlatform.Windows)
-            {
                 routerPC?.OnOpenExercisePreparingWindow();
-                routerPC?.SendExercisesList();
-            }
             else
                 routerTablet?.OnOpenExercisePreparingWindow();
         }
@@ -516,6 +513,7 @@ namespace Tractor.UI
         public void OpenExercisePreparingWindow()
         {
             OpenPreparingWindow();
+            routerPC?.SendExercisesList();
         }
 
         public void OnCloseExercisePreparingWindow()

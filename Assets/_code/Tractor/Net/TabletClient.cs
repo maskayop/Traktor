@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 
@@ -36,11 +37,13 @@ namespace Tractor.Net
         readonly object logLock = new object();
 
         bool connectionLost = false;
+        StringBuilder pending = new StringBuilder();
+
+        bool isConnecting = false;
 
 #if UNITY_ANDROID
         void Awake()
         {
-
             if (Instance != null)
             {
                 Debug.LogWarning("Cannot create TabletClient");
@@ -128,24 +131,71 @@ namespace Tractor.Net
 
         public void ConnectToServer()
         {
+            if (isConnecting) return;
+            isConnecting = true;
+
             CleanConnection();
             connectionLost = false;
 
-            try
-            {
-                client = new TcpClient();
-                client.Connect(serverIP, serverPort);
-                stream = client.GetStream();
-                stream.BeginRead(receiveBuffer, 0, receiveBuffer.Length, OnDataReceived, null);
-                Log("Подключено к ПК!");
-            }
-            catch (System.Exception e)
-            {
-                Log($"Не удалось подключиться: {e.Message}");
+            string ip = serverIP;
+            int port = serverPort;
 
-                if (displayText)
-                    displayText.text = "Ошибка подключения. Проверьте IP-адрес.";
-            }
+            Task.Run(() =>
+            {
+                TcpClient newClient = null;
+
+                try
+                {
+                    newClient = new TcpClient();
+                    var connectTask = newClient.ConnectAsync(ip, port);
+
+                    if (!connectTask.Wait(3000))
+                    {
+                        newClient.Close();
+                        EnqueueLog("Не удалось подключиться: таймаут");
+                        EnqueueDisplayText("Ошибка подключения (таймаут)");
+                        isConnecting = false;
+                        return;
+                    }
+
+                    // Подключились — ставим клиент в главный поток
+                    lock (actionLock)
+                    {
+                        actionQueue.Enqueue(() =>
+                        {
+                            CleanConnection();
+                            client = newClient;
+                            stream = client.GetStream();
+                            stream.BeginRead(receiveBuffer, 0, receiveBuffer.Length, OnDataReceived, null);
+                            Log("Подключено к ПК!");
+                            isConnecting = false;
+                        });
+                    }
+                }
+                catch (System.Exception e)
+                {
+                    try { newClient?.Close(); } catch { }
+
+                    EnqueueLog($"Не удалось подключиться: {e.Message}");
+                    EnqueueDisplayText("Ошибка подключения. Проверьте IP-адрес.");
+                    isConnecting = false;
+                }
+            });
+        }
+
+        void EnqueueLog(string message)
+        {
+            lock (logLock)
+                logQueue.Enqueue(message);
+        }
+
+        void EnqueueDisplayText(string text)
+        {
+            lock (actionLock)
+                actionQueue.Enqueue(() =>
+                {
+                    if (displayText) displayText.text = text;
+                });
         }
 
         public void SendCommand(string command)
@@ -158,7 +208,7 @@ namespace Tractor.Net
 
             try
             {
-                byte[] data = Encoding.UTF8.GetBytes(command);
+                byte[] data = Encoding.UTF8.GetBytes(command + "\n");
                 stream.Write(data, 0, data.Length);
                 Log($"Отправлено: {command}");
             }
@@ -177,17 +227,31 @@ namespace Tractor.Net
 
         void OnDataReceived(System.IAsyncResult ar)
         {
+            NetworkStream s = stream;
+            if (s == null) return;
+
             try
             {
-                int bytesRead = stream.EndRead(ar);
+                int bytesRead = s.EndRead(ar);
                 if (bytesRead > 0)
                 {
-                    string message = Encoding.UTF8.GetString(receiveBuffer, 0, bytesRead);
-                    Log($"Получено от ПК: {message}");
-                    HandleCommand(message);
+                    pending.Append(Encoding.UTF8.GetString(receiveBuffer, 0, bytesRead));
+
+                    string all = pending.ToString();
+                    int newlineIndex;
+
+                    while ((newlineIndex = all.IndexOf('\n')) >= 0)
+                    {
+                        string message = all.Substring(0, newlineIndex);
+                        all = all.Substring(newlineIndex + 1);
+                        HandleCommand(message);
+                    }
+
+                    pending.Clear();
+                    pending.Append(all);
                 }
 
-                stream.BeginRead(receiveBuffer, 0, receiveBuffer.Length, OnDataReceived, null);
+                s.BeginRead(receiveBuffer, 0, receiveBuffer.Length, OnDataReceived, null);
             }
             catch (System.Exception e)
             {
@@ -196,7 +260,6 @@ namespace Tractor.Net
             }
         }
 
-        // Просто передаём строку роутеру
         void HandleCommand(string command)
         {
             lock (actionLock)
@@ -214,6 +277,7 @@ namespace Tractor.Net
             client?.Close();
             stream = null;
             client = null;
+            pending.Clear();
         }
     }
 }

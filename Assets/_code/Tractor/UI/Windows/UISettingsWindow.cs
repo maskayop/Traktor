@@ -195,7 +195,17 @@ namespace Tractor.UI
 
         void ShowControlsButton(bool state)
         {
-            mainCanvas.ShowControlsButtons(state);
+            mainCanvas?.ShowControlsButtons(state);
+        }
+
+        public void TryConnectToPC()
+        {
+            mainCanvas?.TryConnectToPC();
+        }
+
+        public void DeletePlayerPrefs()
+        {
+            mainCanvas?.DeletePlayerPrefs();
         }
     }
 }

@@ -1294,6 +1294,34 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 28
       objectReference: {fileID: 0}
+    - target: {fileID: 4307202855202464046, guid: 00a1058c156c7a8439b6db1cd4edb14b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307202855202464046, guid: 00a1058c156c7a8439b6db1cd4edb14b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307202855202464046, guid: 00a1058c156c7a8439b6db1cd4edb14b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1685332913563665540}
+    - target: {fileID: 4307202855202464046, guid: 00a1058c156c7a8439b6db1cd4edb14b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307202855202464046, guid: 00a1058c156c7a8439b6db1cd4edb14b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TryConnectToPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307202855202464046, guid: 00a1058c156c7a8439b6db1cd4edb14b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Tractor.UI.UISettingsWindow, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307202855202464046, guid: 00a1058c156c7a8439b6db1cd4edb14b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1312,6 +1340,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8758061312416230168}
     m_Modifications:
+    - target: {fileID: 5158584605465780685, guid: 7696c9230a317f44ba3f8738b7ba6a08, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158584605465780685, guid: 7696c9230a317f44ba3f8738b7ba6a08, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158584605465780685, guid: 7696c9230a317f44ba3f8738b7ba6a08, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1685332913563665540}
+    - target: {fileID: 5158584605465780685, guid: 7696c9230a317f44ba3f8738b7ba6a08, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158584605465780685, guid: 7696c9230a317f44ba3f8738b7ba6a08, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DeletePlayerPrefs
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158584605465780685, guid: 7696c9230a317f44ba3f8738b7ba6a08, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Tractor.UI.UISettingsWindow, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158584605465780685, guid: 7696c9230a317f44ba3f8738b7ba6a08, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6026595336330140824, guid: 7696c9230a317f44ba3f8738b7ba6a08, type: 3}
       propertyPath: m_fontSize
       value: 28

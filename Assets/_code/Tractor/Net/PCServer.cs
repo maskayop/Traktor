@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using TMPro;
 using UnityEngine;
+using Vopere.Common;
 
 namespace Tractor.Net
 {
@@ -38,6 +40,7 @@ namespace Tractor.Net
         {
             public TcpClient Client;
             public byte[] Buffer = new byte[1024];
+            public StringBuilder Pending = new StringBuilder();
         }
 
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN
@@ -69,9 +72,9 @@ namespace Tractor.Net
         {
             router = RouterPC.Instance;
 
-            if (Vopere.Common.App.Instance)
+            if (App.Instance)
             {
-                allLocalIPs = Vopere.Common.App.Instance.GetAllLocalIPv4();
+                allLocalIPs = App.Instance.GetAllLocalIPv4();
 
                 IP = "";
 
@@ -113,7 +116,7 @@ namespace Tractor.Net
             }
         }
 
-        void OnClientConnected(System.IAsyncResult ar)
+        void OnClientConnected(IAsyncResult ar)
         {
             TcpClient client = listener.EndAcceptTcpClient(ar);
             clients.Add(client);
@@ -126,7 +129,7 @@ namespace Tractor.Net
             listener.BeginAcceptTcpClient(OnClientConnected, null);
         }
 
-        void OnClientData(System.IAsyncResult ar)
+        void OnClientData(IAsyncResult ar)
         {
             ClientState state = (ClientState)ar.AsyncState;
             TcpClient client = state.Client;
@@ -135,12 +138,22 @@ namespace Tractor.Net
             {
                 NetworkStream stream = client.GetStream();
                 int bytesRead = stream.EndRead(ar);
-
                 if (bytesRead > 0)
                 {
-                    string message = Encoding.UTF8.GetString(state.Buffer, 0, bytesRead);
-                    Log($"Получено от планшета: {message}");
-                    HandleCommand(message);
+                    state.Pending.Append(Encoding.UTF8.GetString(state.Buffer, 0, bytesRead));
+
+                    string all = state.Pending.ToString();
+                    int newlineIndex;
+
+                    while ((newlineIndex = all.IndexOf('\n')) >= 0)
+                    {
+                        string message = all.Substring(0, newlineIndex);
+                        all = all.Substring(newlineIndex + 1);
+                        HandleCommand(message);
+                    }
+
+                    state.Pending.Clear();
+                    state.Pending.Append(all);
 
                     stream.BeginRead(state.Buffer, 0, state.Buffer.Length, OnClientData, state);
                 }
@@ -151,7 +164,7 @@ namespace Tractor.Net
                     clients.Remove(client);
                 }
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 Log($"Ошибка чтения: {e.Message}");
                 client.Close();
@@ -163,7 +176,7 @@ namespace Tractor.Net
         {
             if (clients.Count == 0) return;
 
-            byte[] data = Encoding.UTF8.GetBytes(message);
+            byte[] data = Encoding.UTF8.GetBytes(message + "\n");
 
             foreach (var client in clients.ToArray())
             {
@@ -175,7 +188,7 @@ namespace Tractor.Net
                         stream.Write(data, 0, data.Length);
                     }
                 }
-                catch (System.Exception e)
+                catch (Exception e)
                 {
                     Log($"Ошибка отправки клиенту: {e.Message}");
                     client.Close();
