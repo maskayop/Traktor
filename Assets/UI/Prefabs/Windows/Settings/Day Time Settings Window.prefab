@@ -243,7 +243,6 @@ RectTransform:
   - {fileID: 1558591913667893165}
   - {fileID: 2485473086645412045}
   - {fileID: 2121839930192922778}
-  - {fileID: 1684294113643992625}
   m_Father: {fileID: 1112741563897500300}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1261,11 +1260,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7977926344045581456, guid: 0c401b8254afc0c48b76ffdb26d8bc74, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 142
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 7977926344045581456, guid: 0c401b8254afc0c48b76ffdb26d8bc74, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7977926344045581456, guid: 0c401b8254afc0c48b76ffdb26d8bc74, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1619,9 +1618,6 @@ MonoBehaviour:
   - Foggy
   - Clear Sky
   - Snow
-  - Cloudy 1
-  - Cloudy 2
-  - Storm
 --- !u!1 &7094309388476054270 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4622817090089345987, guid: 1866c6a57e99acf4eb6065a4f0a52c97, type: 3}
@@ -1784,11 +1780,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6734792071421214858, guid: df5dffcd4e0cb4648a63d331d3f66549, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 142
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 6734792071421214858, guid: df5dffcd4e0cb4648a63d331d3f66549, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6734792071421214858, guid: df5dffcd4e0cb4648a63d331d3f66549, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1856,7 +1852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7273168519639173417, guid: df5dffcd4e0cb4648a63d331d3f66549, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnSetRainyWeather
+      value: OnSetPrecipitationWeather
       objectReference: {fileID: 0}
     - target: {fileID: 7273168519639173417, guid: df5dffcd4e0cb4648a63d331d3f66549, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1868,7 +1864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9018106050665223381, guid: df5dffcd4e0cb4648a63d331d3f66549, type: 3}
       propertyPath: m_Name
-      value: Rain Button
+      value: Precipitation Button
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1986,7 +1982,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4876349898368669015, guid: ca5a1b74ff63b304287d894be7e62855, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -20
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 4876349898368669015, guid: ca5a1b74ff63b304287d894be7e62855, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2055,11 +2051,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6734792071421214858, guid: 69e801cdd67271c4dbe5cf2e849fe21c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 142
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 6734792071421214858, guid: 69e801cdd67271c4dbe5cf2e849fe21c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6734792071421214858, guid: 69e801cdd67271c4dbe5cf2e849fe21c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2150,136 +2146,6 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6734792071421214858, guid: 69e801cdd67271c4dbe5cf2e849fe21c, type: 3}
   m_PrefabInstance: {fileID: 5248930671255443239}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &5343830085061695163
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 3708298827574433349}
-    m_Modifications:
-    - target: {fileID: 6734792071421214858, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6734792071421214858, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6734792071421214858, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6734792071421214858, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6734792071421214858, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6734792071421214858, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6734792071421214858, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 142
-      objectReference: {fileID: 0}
-    - target: {fileID: 6734792071421214858, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 6734792071421214858, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6734792071421214858, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6734792071421214858, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6734792071421214858, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6734792071421214858, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6734792071421214858, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6734792071421214858, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6734792071421214858, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6734792071421214858, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6734792071421214858, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6734792071421214858, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6734792071421214858, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7273168519639173417, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7273168519639173417, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7273168519639173417, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 7638685127684554502}
-    - target: {fileID: 7273168519639173417, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7273168519639173417, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnSetSnowyWeather
-      objectReference: {fileID: 0}
-    - target: {fileID: 7273168519639173417, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Tractor.UI.UITimeOfDaySettingsWindow, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7273168519639173417, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 9018106050665223381, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-      propertyPath: m_Name
-      value: Snow Button
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
---- !u!224 &1684294113643992625 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6734792071421214858, guid: ae00c6f9b415fe343b904a034761066a, type: 3}
-  m_PrefabInstance: {fileID: 5343830085061695163}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5969364700574445764
 PrefabInstance:
@@ -2913,11 +2779,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6734792071421214858, guid: bc2b0a89f5ca62c4da648e9483db97dc, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 142
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 6734792071421214858, guid: bc2b0a89f5ca62c4da648e9483db97dc, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6734792071421214858, guid: bc2b0a89f5ca62c4da648e9483db97dc, type: 3}
       propertyPath: m_LocalPosition.x

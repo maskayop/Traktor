@@ -312,7 +312,19 @@ namespace Tractor.UI
             if (dynamicWeatherToggle && !dynamicWeatherToggle.isOn) return;
 
             weatherIndex = Random.Range(0, weatherPresets.Count);
-            ApplyWeather(weatherPresets[weatherIndex]);
+            var preset = weatherPresets[weatherIndex];
+
+            if (preset == "Rain" || preset == "Snow") {
+                if (TryGetEnviroEnvironmentModule(out var environmentModule)) {
+                    if (environmentModule.Settings.season == EnviroEnvironment.Seasons.Winter) {
+                        preset = "Snow";
+                    } else {
+                        preset = "Rain";
+                    }
+                }
+            }
+
+            ApplyWeather(preset);
         }
 
         public void OnSetCloudyWeather()
@@ -365,6 +377,16 @@ namespace Tractor.UI
                 routerTablet?.SetWeatherSnowy();
         }
 
+        public void OnSetPrecipitationWeather()
+        {
+            if (!TryGetEnviroEnvironmentModule(out var environmentModule))
+                return;
+            if (environmentModule.Settings.season == EnviroEnvironment.Seasons.Winter)
+                OnSetSnowyWeather();
+            else
+                OnSetRainyWeather();
+        }
+
         public void OnSetDynamicWeather() {
             if (!dynamicWeatherToggle) return;
 
@@ -410,6 +432,17 @@ namespace Tractor.UI
 
             environmentModule.Settings.changeSeason = false;
             environmentModule.ChangeSeason(season);
+            UpdatePrecipitationForSeason();
+        }
+
+        void UpdatePrecipitationForSeason()
+        {
+            if (!TryGetEnviroWeatherModule(out var weatherModule))
+                return;
+            var current = weatherModule.targetWeatherType;
+            if (current == null || (current.name != "Rain" && current.name != "Snow"))
+                return;
+            OnSetPrecipitationWeather();
         }
         #endregion
 
