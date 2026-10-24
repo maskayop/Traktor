@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Enviro;
 using UnityEngine;
 
 namespace Tractor
@@ -6,8 +7,10 @@ namespace Tractor
     public class TractorCameraController : MonoBehaviour
     {
         [SerializeField] Camera menuCamera;
+        [SerializeField] EnviroQuality menuQuality;
         [SerializeField] Camera gameCamera;
         [SerializeField] List<Camera> mirrorCameras = new List<Camera>();
+        [SerializeField] EnviroQuality mirrorsQuality;
 
         GameController gameController;
         GameController.GameState gameState;
@@ -33,6 +36,7 @@ namespace Tractor
         {
             gameController = GameController.Instance;
 
+            RegisterEnviroCameras();
             SetCameras();
         }
 
@@ -53,6 +57,36 @@ namespace Tractor
 
                 foreach (Camera c in mirrorCameras)
                     c.gameObject.SetActive(true);
+            }
+        }
+
+        void RegisterEnviroCameras()
+        {
+            if (EnviroManager.instance == null)
+                return;
+
+            AddEnviroCamera(menuCamera, menuQuality);
+            AddEnviroCamera(gameCamera, null);
+
+            foreach (Camera camera in mirrorCameras)
+                AddEnviroCamera(camera, mirrorsQuality);
+        }
+
+        void AddEnviroCamera(Camera camera, EnviroQuality quality)
+        {
+            if (!camera) return;
+
+            EnviroManager.instance.AddAdditionalCamera(camera);
+
+            var cameras = EnviroManager.instance.Cameras;
+
+            for (int i = 0; i < cameras.Count; i++)
+            {
+                if (cameras[i].camera != camera)
+                    continue;
+                    
+                cameras[i].quality = quality;
+                return;
             }
         }
     }
