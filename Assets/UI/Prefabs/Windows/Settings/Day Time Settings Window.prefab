@@ -1153,6 +1153,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3041673207749813970, guid: 4764f5ff04bfe6046918ecd6790c2d5b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041673207749813970, guid: 4764f5ff04bfe6046918ecd6790c2d5b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041673207749813970, guid: 4764f5ff04bfe6046918ecd6790c2d5b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7638685127684554502}
+    - target: {fileID: 3041673207749813970, guid: 4764f5ff04bfe6046918ecd6790c2d5b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041673207749813970, guid: 4764f5ff04bfe6046918ecd6790c2d5b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnSetAutumn
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041673207749813970, guid: 4764f5ff04bfe6046918ecd6790c2d5b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Tractor.UI.UITimeOfDaySettingsWindow, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041673207749813970, guid: 4764f5ff04bfe6046918ecd6790c2d5b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3746979759789587246, guid: 4764f5ff04bfe6046918ecd6790c2d5b, type: 3}
       propertyPath: m_Name
       value: Autumn Button
@@ -1384,6 +1412,34 @@ PrefabInstance:
     - target: {fileID: 1418497705168629617, guid: c45eabc48ccf3b44e853a16ed01c4934, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041673207749813970, guid: c45eabc48ccf3b44e853a16ed01c4934, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041673207749813970, guid: c45eabc48ccf3b44e853a16ed01c4934, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041673207749813970, guid: c45eabc48ccf3b44e853a16ed01c4934, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7638685127684554502}
+    - target: {fileID: 3041673207749813970, guid: c45eabc48ccf3b44e853a16ed01c4934, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041673207749813970, guid: c45eabc48ccf3b44e853a16ed01c4934, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnSetSummer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041673207749813970, guid: c45eabc48ccf3b44e853a16ed01c4934, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Tractor.UI.UITimeOfDaySettingsWindow, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041673207749813970, guid: c45eabc48ccf3b44e853a16ed01c4934, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3746979759789587246, guid: c45eabc48ccf3b44e853a16ed01c4934, type: 3}
       propertyPath: m_Name
@@ -2431,6 +2487,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3041673207749813970, guid: 149966b1c5c1ec24b9775053161068a6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041673207749813970, guid: 149966b1c5c1ec24b9775053161068a6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041673207749813970, guid: 149966b1c5c1ec24b9775053161068a6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7638685127684554502}
+    - target: {fileID: 3041673207749813970, guid: 149966b1c5c1ec24b9775053161068a6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041673207749813970, guid: 149966b1c5c1ec24b9775053161068a6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnSetSpring
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041673207749813970, guid: 149966b1c5c1ec24b9775053161068a6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Tractor.UI.UITimeOfDaySettingsWindow, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041673207749813970, guid: 149966b1c5c1ec24b9775053161068a6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3746979759789587246, guid: 149966b1c5c1ec24b9775053161068a6, type: 3}
       propertyPath: m_Name
       value: Spring Button
@@ -2532,6 +2616,34 @@ PrefabInstance:
     - target: {fileID: 1418497705168629617, guid: 5b6e92f0513b3c04f89533ec7322db72, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041673207749813970, guid: 5b6e92f0513b3c04f89533ec7322db72, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041673207749813970, guid: 5b6e92f0513b3c04f89533ec7322db72, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041673207749813970, guid: 5b6e92f0513b3c04f89533ec7322db72, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7638685127684554502}
+    - target: {fileID: 3041673207749813970, guid: 5b6e92f0513b3c04f89533ec7322db72, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041673207749813970, guid: 5b6e92f0513b3c04f89533ec7322db72, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnSetWinter
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041673207749813970, guid: 5b6e92f0513b3c04f89533ec7322db72, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Tractor.UI.UITimeOfDaySettingsWindow, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041673207749813970, guid: 5b6e92f0513b3c04f89533ec7322db72, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3746979759789587246, guid: 5b6e92f0513b3c04f89533ec7322db72, type: 3}
       propertyPath: m_Name

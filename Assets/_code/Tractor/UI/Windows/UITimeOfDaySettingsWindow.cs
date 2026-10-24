@@ -83,6 +83,7 @@ namespace Tractor.UI
 
         void OnDestroy()
         {
+            // Отписываемся от события изменения времени
             if (EnviroManager.instance != null)
                 EnviroManager.instance.OnHourPassed -= ChangeWeatherOnHour;
         }
@@ -261,7 +262,8 @@ namespace Tractor.UI
             timeModule.Settings.simulate = state;
         }
 
-        // Weather Helper
+        #region Weather
+        #region Weather Utilities
         static bool TryGetEnviroWeatherModule(out EnviroWeatherModule weatherModule)
         {
             weatherModule = null;
@@ -272,6 +274,7 @@ namespace Tractor.UI
             weatherModule = EnviroManager.instance.Weather;
             return true;
         }
+
 
         public void ApplyWeather(string weather, bool useInstant = false)
         {
@@ -301,7 +304,9 @@ namespace Tractor.UI
             weatherIndex = index;
             ApplyWeather(weatherPresets[index], true);
         }
+        #endregion
 
+        #region Weather Events
         void ChangeWeatherOnHour()
         {
             if (dynamicWeatherToggle && !dynamicWeatherToggle.isOn) return;
@@ -310,7 +315,6 @@ namespace Tractor.UI
             ApplyWeather(weatherPresets[weatherIndex]);
         }
 
-        // Set Weather
         public void OnSetCloudyWeather()
         {
             SetCloudyWeather();
@@ -319,9 +323,7 @@ namespace Tractor.UI
                 routerPC?.SetWeatherCloudy();
             else
                 routerTablet?.SetWeatherCloudy();
-        }
-
-        public void SetCloudyWeather() => ApplyInstantWeatherAt(0);
+        }  
 
         public void OnSetRainyWeather()
         {
@@ -333,8 +335,6 @@ namespace Tractor.UI
                 routerTablet?.SetWeatherRainy();
         }
 
-        public void SetRainyWeather() => ApplyInstantWeatherAt(1);
-
         public void OnSetFoggyWeather()
         {
             SetFoggyWeather();
@@ -344,8 +344,6 @@ namespace Tractor.UI
             else
                 routerTablet?.SetWeatherFoggy();
         }
-
-        public void SetFoggyWeather() => ApplyInstantWeatherAt(2);
 
         public void OnSetClearSkyWeather()
         {
@@ -357,8 +355,6 @@ namespace Tractor.UI
                 routerTablet?.SetWeatherClearSky();
         }
 
-        public void SetClearSkyWeather() => ApplyInstantWeatherAt(3);
-
         public void OnSetSnowyWeather()
         {
             SetSnowyWeather();
@@ -369,9 +365,6 @@ namespace Tractor.UI
                 routerTablet?.SetWeatherSnowy();
         }
 
-        public void SetSnowyWeather() => ApplyInstantWeatherAt(4);
-
-        // Set Dynamic Weather
         public void OnSetDynamicWeather() {
             if (!dynamicWeatherToggle) return;
 
@@ -387,10 +380,81 @@ namespace Tractor.UI
                 else routerTablet?.DisableDynamicWeather();
             }
         }
+        #endregion
 
+        public void SetCloudyWeather() => ApplyInstantWeatherAt(0);
+        public void SetRainyWeather() => ApplyInstantWeatherAt(1);
+        public void SetFoggyWeather() => ApplyInstantWeatherAt(2);
+        public void SetClearSkyWeather() => ApplyInstantWeatherAt(3);
+        public void SetSnowyWeather() => ApplyInstantWeatherAt(4);
         public void SetDynamicWeather(bool state) {
             if (dynamicWeatherToggle)
                 dynamicWeatherToggle.SetIsOnWithoutNotify(state);
         }
+        #endregion
+
+        #region Seasons
+        #region Seasons Utilities
+        static bool TryGetEnviroEnvironmentModule(out EnviroEnvironmentModule environmentModule) {
+            environmentModule = null;
+
+            if (EnviroManager.instance == null || EnviroManager.instance.Environment == null)
+                return false;
+
+            environmentModule = EnviroManager.instance.Environment;
+            return true;
+        }
+
+        void ApplySeason(EnviroEnvironment.Seasons season) {
+            if (!TryGetEnviroEnvironmentModule(out var environmentModule)) return;
+
+            environmentModule.Settings.changeSeason = false;
+            environmentModule.ChangeSeason(season);
+        }
+        #endregion
+
+        #region Seasons Events
+        public void OnSetSpring() {
+            SetSpring();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.SetSeasonSpring();
+            else
+                routerTablet?.SetSeasonSpring();
+        }
+
+        public void OnSetSummer() {
+            SetSummer();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.SetSeasonSummer();
+            else
+                routerTablet?.SetSeasonSummer();
+        }
+        
+        public void OnSetAutumn() {
+            SetAutumn();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.SetSeasonAutumn();
+            else
+                routerTablet?.SetSeasonAutumn();
+        }
+
+        public void OnSetWinter() {
+            SetWinter();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.SetSeasonWinter();
+            else
+                routerTablet?.SetSeasonWinter();
+        }
+        #endregion
+
+        public void SetSpring() => ApplySeason(EnviroEnvironment.Seasons.Spring);
+        public void SetSummer() => ApplySeason(EnviroEnvironment.Seasons.Summer);
+        public void SetAutumn() => ApplySeason(EnviroEnvironment.Seasons.Autumn);
+        public void SetWinter() => ApplySeason(EnviroEnvironment.Seasons.Winter);
+        #endregion
     }
 }

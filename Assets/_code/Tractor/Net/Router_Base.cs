@@ -164,6 +164,20 @@ namespace Tractor.Net
                     timeOfDaySettingsWindow?.SetDynamicWeather(false);
                     break;
 
+                // Seasons UI
+                case "SetSeasonSpring":
+                    timeOfDaySettingsWindow?.SetSpring();
+                    break;
+                case "SetSeasonSummer":
+                    timeOfDaySettingsWindow?.SetSummer();
+                    break;
+                case "SetSeasonAutumn":
+                    timeOfDaySettingsWindow?.SetAutumn();
+                    break;
+                case "SetSeasonWinter":
+                    timeOfDaySettingsWindow?.SetWinter();
+                    break;
+
                 default:
                     Debug.LogWarning($"Неизвестная команда: {command}");
                     break;
@@ -270,6 +284,12 @@ namespace Tractor.Net
         public void SetWeatherSnowy() { SendCommand("SetWeatherSnowy"); }
         public void EnableDynamicWeather() { SendCommand("EnableDynamicWeather"); }
         public void DisableDynamicWeather() { SendCommand("DisableDynamicWeather"); }
+
+        // Обёртки Seasons UI
+        public void SetSeasonSpring() { SendCommand("SetSeasonSpring"); }
+        public void SetSeasonSummer() { SendCommand("SetSeasonSummer"); }
+        public void SetSeasonAutumn() { SendCommand("SetSeasonAutumn"); }
+        public void SetSeasonWinter() { SendCommand("SetSeasonWinter"); }
 
         // Обёртки Exercises
         public void SendExercisesList()
