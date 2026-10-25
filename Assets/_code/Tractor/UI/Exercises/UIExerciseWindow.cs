@@ -47,6 +47,7 @@ namespace Tractor.UI
 
         ExercisesController exercisesController;
         Exercise currentExercise;
+        string selectedExerciseName = null;
 
         int currentStep = -1;
         int previousStep = -1;
@@ -54,6 +55,9 @@ namespace Tractor.UI
         CanvasPlatform platform = CanvasPlatform.Windows;
         RouterPC routerPC;
         RouterTablet routerTablet;
+        UIMainCanvas mainCanvas;
+
+        bool completeWindowSent = false;
 
         void Awake()
         {
@@ -74,20 +78,22 @@ namespace Tractor.UI
 
         void Update()
         {
-            if (!exercisesController)
-                return;
+            if (!exercisesController) return;
 
             if (exercisesController.IsCompleted)
-                OpenExerciseCompleteWindow();
+            {
+                if (!completeWindowSent)
+                {
+                    completeWindowSent = true;
+                    OnOpenExerciseCompleteWindow();
+                }
+            }
+            else
+                completeWindowSent = false;
 
-            if (!exercisesController.IsExercise())
-                return;
-
-            if (currentExercise == null)
-                return;
-
-            if (currentExercise.GetCurrentExerciseStep() == null)
-                return;
+            if (!exercisesController.IsExercise()) return;
+            if (currentExercise == null) return;
+            if (currentExercise.GetCurrentExerciseStep() == null) return;
 
             currentStep = currentExercise.GetCurrentStepId();
 
@@ -100,10 +106,11 @@ namespace Tractor.UI
         public void Init()
         {
             exercisesController = ExercisesController.Instance;
+            mainCanvas = UIMainCanvas.Instance;
 
-            if (UIMainCanvas.Instance)
+            if (mainCanvas)
             {
-                platform = UIMainCanvas.Instance.platform;
+                platform = mainCanvas.platform;
 
                 if (platform == CanvasPlatform.Windows)
                     routerPC = RouterPC.Instance;
@@ -119,13 +126,13 @@ namespace Tractor.UI
             ShowCurrentExerciseWindowCompact(false);
         }
 
+        // Exercise Preparing Window
         public void OpenPreparingWindow()
         {
             preparingWindowIsOpen = true;
             preparingWindow.SetActive(true);
 
             CloseCurrentExerciseWindow();
-            CloseExerciseCompleteWindow();
             HideShowStartExerciseButton();
 
             startExerciseButton.SetActive(true);
@@ -148,10 +155,41 @@ namespace Tractor.UI
             exercisePreparingWindowButton.SetActive(true);
         }
 
+        public void OnOpenExercisePreparingWindow()
+        {
+            OpenExercisePreparingWindow();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.OnOpenExercisePreparingWindow();
+            else
+                routerTablet?.OnOpenExercisePreparingWindow();
+        }
+
+        public void OpenExercisePreparingWindow()
+        {
+            OpenPreparingWindow();
+            routerPC?.SendExercisesList();
+        }
+
+        public void OnCloseExercisePreparingWindow()
+        {
+            CloseExercisePreparingWindow();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.OnCloseExercisePreparingWindow();
+            else
+                routerTablet?.OnCloseExercisePreparingWindow();
+        }
+
+        public void CloseExercisePreparingWindow()
+        {
+            ClosePreparingWindow();
+        }
+
+        // Current Exercise Window
         public void OpenCurrentExerciseWindow()
         {
             ClosePreparingWindow();
-            CloseExerciseCompleteWindow();
 
             currentExerciseWindowIsOpen = true;
             currentExerciseWindow.SetActive(true);
@@ -165,6 +203,58 @@ namespace Tractor.UI
             exercisePreparingWindowButton.SetActive(true);
             ShowCurrentExerciseWindowCompact(false);
         }
+        public void OnCurrentExerciseWindowCollapse()
+        {
+            CurrentExerciseWindowCollapse();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.OnCurrentExerciseWindowCollapse();
+            else
+                routerTablet?.OnCurrentExerciseWindowCollapse();
+        }
+
+        public void CurrentExerciseWindowCollapse()
+        {
+            ShowCurrentExerciseWindow(false);
+            ShowCurrentExerciseWindowCompact(true);
+        }
+
+        public void OnCurrentExerciseWindowExpand()
+        {
+            CurrentExerciseWindowExpand();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.OnCurrentExerciseWindowExpand();
+            else
+                routerTablet?.OnCurrentExerciseWindowExpand();
+        }
+
+        public void CurrentExerciseWindowExpand()
+        {
+            ShowCurrentExerciseWindow(true);
+            ShowCurrentExerciseWindowCompact(false);
+        }
+
+        void ShowCurrentExerciseWindow(bool state)
+        {
+            currentExerciseWindow.SetActive(state);
+        }
+
+        void ShowCurrentExerciseWindowCompact(bool state)
+        {
+            currentExerciseWindowCompact.SetActive(state);
+        }
+
+        // Exercise Complete Window
+        public void OnOpenExerciseCompleteWindow()
+        {
+            OpenExerciseCompleteWindow();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.OnOpenExerciseCompleteWindow();
+            else
+                routerTablet?.OnOpenExerciseCompleteWindow();
+        }
 
         public void OpenExerciseCompleteWindow()
         {
@@ -174,11 +264,24 @@ namespace Tractor.UI
             exerciseCompleteWindow.SetActive(true);
         }
 
+        public void OnCloseExerciseCompleteWindow()
+        {
+            CloseExerciseCompleteWindow();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.OnCloseExerciseCompleteWindow();
+            else
+                routerTablet?.OnCloseExerciseCompleteWindow();
+        }
+
         public void CloseExerciseCompleteWindow()
         {
             exerciseCompleteWindow.SetActive(false);
             ShowCurrentExerciseWindowCompact(false);
+            OnExerciseForceExit();
         }
+
+        // ---
 
         public void SelectExercise(Exercise exercise)
         {
@@ -234,9 +337,12 @@ namespace Tractor.UI
             }
             else
             {
+                selectedExerciseName = name;
+
                 for (int i = 0; i < exerciseButtons.Count; i++)
                     exerciseButtons[i].Select(exerciseButtons[i].ExerciseName == name);
 
+                HideShowStartExerciseButtonTablet();
                 routerTablet?.SendSelectExercise(name);
             }
         }
@@ -260,6 +366,12 @@ namespace Tractor.UI
 
             if (!exercisesController)
                 return;
+
+            if (exercisesController.GetCurrentExercise() == null)
+            {
+                Debug.LogWarning("Упражнение не выбрано — старт отменён");
+                return;
+            }
 
             exercisesController.StartExercise();
             currentExercise = exercisesController.GetCurrentExercise();
@@ -301,6 +413,12 @@ namespace Tractor.UI
                 startExerciseButton.SetActive(true);
         }
 
+        void HideShowStartExerciseButtonTablet()
+        {
+            if (startExerciseButton)
+                startExerciseButton.SetActive(!string.IsNullOrEmpty(selectedExerciseName));
+        }
+
         // Exercises Force Exit
         public void OnExerciseForceExit()
         {
@@ -317,6 +435,9 @@ namespace Tractor.UI
         {
             CloseCurrentExerciseWindow();
 
+            selectedExerciseName = null;
+            HideShowStartExerciseButtonTablet();
+
             if (!exercisesController)
                 return;
 
@@ -324,6 +445,36 @@ namespace Tractor.UI
             exercisesController.ExerciseForceExit();
             exercisesController.CurrentReport = null;
             SelectExercise(null);
+        }
+
+        public void OnOpenExerciseForceExitWindow()
+        {
+            OpenExerciseForceExitWindow();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.OnOpenExerciseForceExitWindow();
+            else
+                routerTablet?.OnOpenExerciseForceExitWindow();
+        }
+
+        public void OpenExerciseForceExitWindow()
+        {
+            exerciseForceExitWindow?.Open();
+        }
+
+        public void OnCloseExerciseForceExitWindow()
+        {
+            CloseExerciseForceExitWindow();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.OnCloseExerciseForceExitWindow();
+            else
+                routerTablet?.OnCloseExerciseForceExitWindow();
+        }
+
+        public void CloseExerciseForceExitWindow()
+        {
+            exerciseForceExitWindow?.Close();
         }
 
         // Step Texts
@@ -456,79 +607,6 @@ namespace Tractor.UI
                 else
                     exerciseStepTextsCompact[i].gameObject.SetActive(false);
             }
-        }
-
-        public void ShowCurrentExerciseWindow(bool state)
-        {
-            currentExerciseWindow.SetActive(state);
-        }
-
-        public void ShowCurrentExerciseWindowCompact(bool state)
-        {
-            currentExerciseWindowCompact.SetActive(state);
-        }
-
-        // Exercise Force Exit Window
-        public void OnOpenExerciseForceExitWindow()
-        {
-            OpenExerciseForceExitWindow();
-
-            if (platform == CanvasPlatform.Windows)
-                routerPC?.OnOpenExerciseForceExitWindow();
-            else
-                routerTablet?.OnOpenExerciseForceExitWindow();
-        }
-
-        public void OpenExerciseForceExitWindow()
-        {
-            exerciseForceExitWindow?.Open();
-        }
-
-        public void OnCloseExerciseForceExitWindow()
-        {
-            CloseExerciseForceExitWindow();
-
-            if (platform == CanvasPlatform.Windows)
-                routerPC?.OnCloseExerciseForceExitWindow();
-            else
-                routerTablet?.OnCloseExerciseForceExitWindow();
-        }
-
-        public void CloseExerciseForceExitWindow()
-        {
-            exerciseForceExitWindow?.Close();
-        }
-
-        // Exercise Preparing Window
-        public void OnOpenExercisePreparingWindow()
-        {
-            OpenExercisePreparingWindow();
-
-            if (platform == CanvasPlatform.Windows)
-                routerPC?.OnOpenExercisePreparingWindow();
-            else
-                routerTablet?.OnOpenExercisePreparingWindow();
-        }
-
-        public void OpenExercisePreparingWindow()
-        {
-            OpenPreparingWindow();
-            routerPC?.SendExercisesList();
-        }
-
-        public void OnCloseExercisePreparingWindow()
-        {
-            CloseExercisePreparingWindow();
-
-            if (platform == CanvasPlatform.Windows)
-                routerPC?.OnCloseExercisePreparingWindow();
-            else
-                routerTablet?.OnCloseExercisePreparingWindow();
-        }
-
-        public void CloseExercisePreparingWindow()
-        {
-            ClosePreparingWindow();
         }
 
         // От планшета

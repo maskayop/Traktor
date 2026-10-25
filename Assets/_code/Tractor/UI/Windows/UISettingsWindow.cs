@@ -41,7 +41,7 @@ namespace Tractor.UI
             tractorController = FindAnyObjectByType<TractorController>();
 
             if (mainCanvas)
-                ShowControlsButton(mainCanvas.showTestInfoWindow);
+                ShowControlsButton(mainCanvas.showKeyboardControls);
 
             if (!tractorController)
                 return;
@@ -191,6 +191,9 @@ namespace Tractor.UI
         {
             tractorController.tractorInput.useKeyboard = state;
             ShowControlsButton(state);
+
+            if (mainCanvas)
+                mainCanvas.showKeyboardControls = state;
         }
 
         void ShowControlsButton(bool state)

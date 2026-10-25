@@ -10,17 +10,33 @@ namespace Tractor.UI
         [SerializeField] TextMeshProUGUI nameText;
 
         bool isSelected = false;
+        public bool IsSelected { get { return isSelected; } }
 
         Report report;
         public Report Report { get { return report; } }
 
+        string reportName;
+        public string ReportName { get { return reportName; } }
+
         UIReportsWindow reportsWindow;
 
+        // Для ПК: из Report
         public void Init(UIReportsWindow INreportsWindow, Report INreport)
         {
             reportsWindow = INreportsWindow;
             report = INreport;
-            nameText.text = report.fileName;
+            reportName = INreport.fileName;
+            nameText.text = reportName;
+
+            Select(false);
+        }
+
+        // Для планшета: из имени файла
+        public void Init(UIReportsWindow INreportsWindow, string fileName)
+        {
+            reportsWindow = INreportsWindow;
+            reportName = fileName;
+            nameText.text = fileName;
 
             Select(false);
         }
@@ -28,13 +44,13 @@ namespace Tractor.UI
         public void Select(bool state)
         {
             isSelected = state;
-            selected.SetActive(isSelected);
+            if (selected) selected.SetActive(state);
         }
 
         public void SelectReport()
         {
             Select(true);
-            reportsWindow?.SelectReport(report);
+            reportsWindow?.SelectReportByName(reportName);
         }
     }
 }

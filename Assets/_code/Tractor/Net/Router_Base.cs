@@ -1,6 +1,7 @@
 using System.Globalization;
 using Tractor.UI;
 using UnityEngine;
+using Vopere;
 
 namespace Tractor.Net
 {
@@ -16,6 +17,7 @@ namespace Tractor.Net
         UIMainCanvas mainCanvas;
         UIExerciseWindow exerciseWindow;
         UITimeOfDaySettingsWindow timeOfDaySettingsWindow;
+        UIReportsWindow reportsWindow;
 
         void Start()
         {
@@ -25,6 +27,7 @@ namespace Tractor.Net
             mainCanvas = UIMainCanvas.Instance;
             exerciseWindow = UIExerciseWindow.Instance;
             timeOfDaySettingsWindow = UITimeOfDaySettingsWindow.Instance;
+            reportsWindow = UIReportsWindow.Instance;
         }
 
         public void Route(string command)
@@ -88,12 +91,6 @@ namespace Tractor.Net
                 case "CloseTimeOfDaySettingsWindow":
                     mainCanvas?.CloseTimeOfDaySettingsWindow();
                     break;
-                case "OpenReportsWindow":
-                    mainCanvas?.OpenReportsWindow();
-                    break;
-                case "CloseReportsWindow":
-                    mainCanvas?.CloseReportsWindow();
-                    break;
                 case "OpenExitToMainMenuWindow":
                     mainCanvas?.OpenExitToMainMenuWindow();
                     break;
@@ -119,6 +116,18 @@ namespace Tractor.Net
                     break;
                 case "ExerciseForceExit":
                     exerciseWindow?.ExerciseForceExit();
+                    break;
+                case "CurrentExerciseWindowCollapse":
+                    exerciseWindow?.CurrentExerciseWindowCollapse();
+                    break;
+                case "CurrentExerciseWindowExpand":
+                    exerciseWindow?.CurrentExerciseWindowExpand();
+                    break;
+                case "OpenExerciseCompleteWindow":
+                    exerciseWindow?.OpenExerciseCompleteWindow();
+                    break;
+                case "CloseExerciseCompleteWindow":
+                    exerciseWindow?.CloseExerciseCompleteWindow();
                     break;
 
                 // Time of Day UI
@@ -178,6 +187,26 @@ namespace Tractor.Net
                     timeOfDaySettingsWindow?.SetWinter();
                     break;
 
+                // Reports UI
+                case "OpenReportsWindow":
+                    mainCanvas?.OpenReportsWindow();
+                    break;
+                case "CloseReportsWindow":
+                    mainCanvas?.CloseReportsWindow();
+                    break;
+                case "OpenSelectedReportWindow":
+                    reportsWindow?.OpenSelectedReportWindow();
+                    break;
+                case "CloseSelectedReportWindow":
+                    reportsWindow?.CloseSelectedReportWindow();
+                    break;
+                case "REQ_REPORTS":
+                    reportsWindow?.LoadAllReports();
+                    break;
+                case "SaveExerciseReport":
+                    reportsWindow?.SaveExerciseReport();
+                    break;
+
                 default:
                     Debug.LogWarning($"Неизвестная команда: {command}");
                     break;
@@ -195,11 +224,20 @@ namespace Tractor.Net
                         Debug.LogWarning($"Не удалось разобрать SetHour: {param}");
                     break;
 
+                // Exercises
                 case "EXERCISE":
                     OnExerciseReceived(param);
                     break;
                 case "SELECT_EXERCISE":
                     exerciseWindow?.SelectExerciseByName(param);
+                    break;
+
+                // Reports
+                case "REPORT":
+                    OnReportReceived(param);
+                    break;
+                case "SELECT_REPORT":
+                    reportsWindow?.SelectReportByName(param);
                     break;
 
                 default:
@@ -254,8 +292,6 @@ namespace Tractor.Net
         public void OnCloseExitGameWindow() { SendCommand("CloseExitGameWindow"); }
         public void OnOpenTimeOfDaySettingsWindow() { SendCommand("OpenTimeOfDaySettingsWindow"); }
         public void OnCloseTimeOfDaySettingsWindow() { SendCommand("CloseTimeOfDaySettingsWindow"); }
-        public void OnOpenReportsWindow() { SendCommand("OpenReportsWindow"); }
-        public void OnCloseReportsWindow() { SendCommand("CloseReportsWindow"); }
         public void OnOpenExitToMainMenuWindow() { SendCommand("OpenExitToMainMenuWindow"); }
         public void OnCloseExitToMainMenuWindow() { SendCommand("CloseExitToMainMenuWindow"); }
 
@@ -266,6 +302,17 @@ namespace Tractor.Net
         public void OnCloseExercisePreparingWindow() { SendCommand("CloseExercisePreparingWindow"); }
         public void OnStartExercise() { SendCommand("StartExercise"); }
         public void OnExerciseForceExit() { SendCommand("ExerciseForceExit"); }
+        public void OnCurrentExerciseWindowCollapse() { SendCommand("CurrentExerciseWindowCollapse"); }
+        public void OnCurrentExerciseWindowExpand() { SendCommand("CurrentExerciseWindowExpand"); }
+        public void OnOpenExerciseCompleteWindow() { SendCommand("OpenExerciseCompleteWindow"); }
+        public void OnCloseExerciseCompleteWindow() { SendCommand("CloseExerciseCompleteWindow"); }
+
+        // Обёртки Reports UI
+        public void OnOpenReportsWindow() { SendCommand("OpenReportsWindow"); }
+        public void OnCloseReportsWindow() { SendCommand("CloseReportsWindow"); }
+        public void OnOpenSelectedReportWindow() { SendCommand("OpenSelectedReportWindow"); }
+        public void OnCloseSelectedReportWindow() { SendCommand("CloseSelectedReportWindow"); }
+        public void OnSaveExerciseReport() { SendCommand("SaveExerciseReport"); }
 
         // Обёртки Time of Day UI
         public void SetDayTimeMorning() { SendCommand("SetDayTimeMorning"); }
@@ -316,6 +363,38 @@ namespace Tractor.Net
         public void SendSelectExercise(string name)
         {
             SendWithParam("SELECT_EXERCISE", name);
+        }
+
+        // Reports
+        public void RequestReports()
+        {
+            SendCommand("REQ_REPORTS");
+        }
+
+        public void SendReportsList()
+        {
+            var list = ReportController.Instance?.GetAllReports();
+            if (list == null || list.Count == 0) return;
+
+            var pcServer = PCServer.Instance;
+            if (!pcServer) return;
+
+            foreach (var r in list)
+            {
+                if (r == null || string.IsNullOrEmpty(r.fileName)) continue;
+                pcServer.SendCommand("REPORT:" + r.fileName.Replace(":", "-"));
+            }
+        }
+
+        void OnReportReceived(string fileName)
+        {
+            if (isPC) return;
+            reportsWindow?.AddReportButton(fileName);
+        }
+
+        public void SendSelectReport(string fileName)
+        {
+            SendWithParam("SELECT_REPORT", fileName);
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Tractor
 
         [Header("Инфо")]
         Exercise currentExercise;
-        int currentExerciseId = -1;
+        public int currentExerciseId = -1;
         ExerciseStep currentStep;
 
         public bool isCompleted = false;
@@ -107,6 +107,12 @@ namespace Tractor
 
         public void StartExercise()
         {
+            if (currentExerciseId < 0 || currentExerciseId >= exercises.Count)
+            {
+                Debug.LogWarning($"Невозможно начать упражнение: currentExerciseId = {currentExerciseId}, exercises.Count = {exercises.Count}");
+                return;
+            }
+
             isCompleted = false;
             exercises[currentExerciseId].StartExercise();
 

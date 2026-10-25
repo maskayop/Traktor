@@ -25,7 +25,8 @@ namespace Tractor.UI
         [SerializeField] UIExitWindow exitGameWindow;
         [SerializeField] UIExitWindow exitToMainMenuWindow;
 
-        [Header("Buttons")]
+        [Header("Controls Buttons")]
+        public bool showKeyboardControls = true;
         [SerializeField] List<GameObject> controlsButtons = new List<GameObject>();
 
         [Header("Test Info Window")]

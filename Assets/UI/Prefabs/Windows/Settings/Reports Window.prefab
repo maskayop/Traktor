@@ -1054,7 +1054,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041E\u0442\u0447\u0451\u0442\u044B"
+  m_text: "\u041E\u0442\u0447\u0451\u0442"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d51ead3d0529f144eb4f9f8e6f5d3869, type: 2}
   m_sharedMaterial: {fileID: 1492261687881324058, guid: d51ead3d0529f144eb4f9f8e6f5d3869, type: 2}
@@ -2152,7 +2152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2700050209202410329, guid: 92efa705db9cf8840ad16072fee799b8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CloseSelectedReportWindow
+      value: OnCloseSelectedReportWindow
       objectReference: {fileID: 0}
     - target: {fileID: 2700050209202410329, guid: 92efa705db9cf8840ad16072fee799b8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
