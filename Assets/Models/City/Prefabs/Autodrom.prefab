@@ -71,6 +71,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ea41514ba974b354f9c50a331aff09fe, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7190187606946187708}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ea41514ba974b354f9c50a331aff09fe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5196934317160824501}
   m_SourcePrefab: {fileID: 100100000, guid: ea41514ba974b354f9c50a331aff09fe, type: 3}
 --- !u!1 &8474806443147247839 stripped
 GameObject:
@@ -99,3 +102,36 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7778372713611027369, guid: ea41514ba974b354f9c50a331aff09fe, type: 3}
+--- !u!114 &5196934317160824501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8474806443147247839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 066e1bdd9ebb49b4abdfe91300eb9fe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tractor.SeasonsMaterials
+  seasonsMaterials:
+  - name: Spring
+    materials:
+    - {fileID: 2100000, guid: f9bd1ba888ab39c4ca02bec7b5774478, type: 2}
+    - {fileID: 2100000, guid: 30312c96f3c7bfa4ba0e2911b6f66d8d, type: 2}
+    - {fileID: 2100000, guid: 7a9f125a311fcb94e8a4f60bd63f093a, type: 2}
+  - name: Summer
+    materials:
+    - {fileID: 2100000, guid: f9bd1ba888ab39c4ca02bec7b5774478, type: 2}
+    - {fileID: 2100000, guid: 30312c96f3c7bfa4ba0e2911b6f66d8d, type: 2}
+    - {fileID: 2100000, guid: 7a9f125a311fcb94e8a4f60bd63f093a, type: 2}
+  - name: Autumn
+    materials:
+    - {fileID: 2100000, guid: f9bd1ba888ab39c4ca02bec7b5774478, type: 2}
+    - {fileID: 2100000, guid: 41c5d1a939cba0343b947195bf17e917, type: 2}
+    - {fileID: 2100000, guid: 7a9f125a311fcb94e8a4f60bd63f093a, type: 2}
+  - name: Winter
+    materials:
+    - {fileID: 2100000, guid: b50519eff39f09545bd1ac4cf7c0b2e2, type: 2}
+    - {fileID: 2100000, guid: e0213fce136a0aa4692a374b6ac01e79, type: 2}
+    - {fileID: 2100000, guid: 55e7aacd428b54f4797c2961da28ccdf, type: 2}

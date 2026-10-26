@@ -433,6 +433,9 @@ namespace Tractor.UI
             environmentModule.Settings.changeSeason = false;
             environmentModule.ChangeSeason(season);
             UpdatePrecipitationForSeason();
+
+            if (SeasonsMaterialsController.Instance)
+                SeasonsMaterialsController.Instance.ChangeSeason((SeasonsMaterials.Season)(int)season);
         }
 
         void UpdatePrecipitationForSeason()

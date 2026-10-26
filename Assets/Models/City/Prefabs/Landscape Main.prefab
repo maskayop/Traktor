@@ -67,6 +67,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2c14357c134a90c43b09301b985952ba, type: 3}
       insertIndex: -1
       addedObject: {fileID: -3872532157651150212}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2c14357c134a90c43b09301b985952ba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1386803721804423446}
   m_SourcePrefab: {fileID: 100100000, guid: 2c14357c134a90c43b09301b985952ba, type: 3}
 --- !u!1 &7411047909442382462 stripped
 GameObject:
@@ -95,3 +98,28 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 679596240514246423, guid: 2c14357c134a90c43b09301b985952ba, type: 3}
+--- !u!114 &1386803721804423446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7411047909442382462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 066e1bdd9ebb49b4abdfe91300eb9fe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tractor.SeasonsMaterials
+  seasonsMaterials:
+  - name: Spring
+    materials:
+    - {fileID: 2100000, guid: 0652d5ada6277494c8bfef1994b17e04, type: 2}
+  - name: Summer
+    materials:
+    - {fileID: 2100000, guid: 0652d5ada6277494c8bfef1994b17e04, type: 2}
+  - name: Autumn
+    materials:
+    - {fileID: 2100000, guid: 41c5d1a939cba0343b947195bf17e917, type: 2}
+  - name: Winter
+    materials:
+    - {fileID: 2100000, guid: e0213fce136a0aa4692a374b6ac01e79, type: 2}
