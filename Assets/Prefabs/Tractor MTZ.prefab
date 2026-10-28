@@ -851,10 +851,8 @@ MonoBehaviour:
   range12InputName: Gear Range 1/2
   range34InputName: Gear Range 3/4
   rangeRInputName: Gear Range 1/2R
-  massInputName: Mass
   massOnInputName: Mass On
   massOffInputName: Mass Off
-  starterInputName: Starter
   starterOnInputName: Starter On
   starterOffInputName: Starter Off
   ignitionInputName: Ignition
@@ -1043,11 +1041,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.TractorCameraController
   menuCamera: {fileID: 4651720896654227027}
+  menuQuality: {fileID: 11400000, guid: 2e0aaa075bca92245a9e8300b7eace9c, type: 2}
   gameCamera: {fileID: 4235386298348881763}
   mirrorCameras:
   - {fileID: 7717159596900202394}
   - {fileID: 1048044324757721288}
   - {fileID: 1780351937775557618}
+  mirrorsQuality: {fileID: 11400000, guid: 19e1428817a4a7848a5f2c08daa6055e, type: 2}
 --- !u!1 &2014435452676515496
 GameObject:
   m_ObjectHideFlags: 0
