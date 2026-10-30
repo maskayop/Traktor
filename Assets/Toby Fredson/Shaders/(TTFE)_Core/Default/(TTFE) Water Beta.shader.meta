@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 0d1f20a2227bfc44b9a6da45bd436357
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 279757
+  packageName: The Toby Foliage Engine
+  packageVersion: 2.1.0
+  assetPath: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Shaders/Default/(TTFE)
+    Water Beta.shader
+  uploadId: 948006

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8a3989818e5cf7649868e2cc7d2e80d5
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4890085278179872738
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 279757
+  packageName: The Toby Foliage Engine
+  packageVersion: 2.1.0
+  assetPath: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Light Settings/TTFEScene_Prefabs.lighting
+  uploadId: 948006

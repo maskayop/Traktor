@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &68036127689484095
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1241434940339560118, guid: cd21ee6f697ac6c41893fc8b7d0245ba, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1241434940339560118, guid: cd21ee6f697ac6c41893fc8b7d0245ba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1241434940339560118, guid: cd21ee6f697ac6c41893fc8b7d0245ba, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1241434940339560118, guid: cd21ee6f697ac6c41893fc8b7d0245ba, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1241434940339560118, guid: cd21ee6f697ac6c41893fc8b7d0245ba, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1241434940339560118, guid: cd21ee6f697ac6c41893fc8b7d0245ba, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1241434940339560118, guid: cd21ee6f697ac6c41893fc8b7d0245ba, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1241434940339560118, guid: cd21ee6f697ac6c41893fc8b7d0245ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1241434940339560118, guid: cd21ee6f697ac6c41893fc8b7d0245ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1241434940339560118, guid: cd21ee6f697ac6c41893fc8b7d0245ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905486828149064716, guid: cd21ee6f697ac6c41893fc8b7d0245ba, type: 3}
+      propertyPath: m_Name
+      value: Juniper Bush C Dry
+      objectReference: {fileID: 0}
+    - target: {fileID: 2273358126111221428, guid: cd21ee6f697ac6c41893fc8b7d0245ba, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1fd3cd4d2ef46e74f9a45a86025aae03, type: 2}
+    - target: {fileID: 2750419633789140883, guid: cd21ee6f697ac6c41893fc8b7d0245ba, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: fc5423763cafb26479f7cb9f99fde59b, type: 2}
+    - target: {fileID: 2874574322576614994, guid: cd21ee6f697ac6c41893fc8b7d0245ba, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1fd3cd4d2ef46e74f9a45a86025aae03, type: 2}
+    - target: {fileID: 8854197553989305536, guid: cd21ee6f697ac6c41893fc8b7d0245ba, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1fd3cd4d2ef46e74f9a45a86025aae03, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cd21ee6f697ac6c41893fc8b7d0245ba, type: 3}

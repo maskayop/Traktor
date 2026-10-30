@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 6df06863e0e082f428969668f948f38f
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 193150
+  packageName: Rocky Hills Environment - Mega Pack (SRP)
+  packageVersion: 5.0.1c
+  assetPath: Assets/Toby Fredson/Rocky Hills Environment - Mega Pack/Shaders/Detail
+    Map Coverage (Tessellation).shader
+  uploadId: 960708

@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4246471519435096050
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 306482142599161226, guid: 4d496f31837c17a45bc41a9c528e65e0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 133d56086190a0e419cc3134b5aa961d, type: 2}
+    - target: {fileID: 4232004125277184459, guid: 4d496f31837c17a45bc41a9c528e65e0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f8e6f45be375e1f429c37f4e693cab84, type: 2}
+    - target: {fileID: 4386795724773285821, guid: 4d496f31837c17a45bc41a9c528e65e0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f8e6f45be375e1f429c37f4e693cab84, type: 2}
+    - target: {fileID: 6656514340903184175, guid: 4d496f31837c17a45bc41a9c528e65e0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f8e6f45be375e1f429c37f4e693cab84, type: 2}
+    - target: {fileID: 7144850612685976533, guid: 4d496f31837c17a45bc41a9c528e65e0, type: 3}
+      propertyPath: m_Name
+      value: Shrub Tree D NR Dry
+      objectReference: {fileID: 0}
+    - target: {fileID: 7494494488847469415, guid: 4d496f31837c17a45bc41a9c528e65e0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f8e6f45be375e1f429c37f4e693cab84, type: 2}
+    - target: {fileID: 7524471997893536111, guid: 4d496f31837c17a45bc41a9c528e65e0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7524471997893536111, guid: 4d496f31837c17a45bc41a9c528e65e0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7524471997893536111, guid: 4d496f31837c17a45bc41a9c528e65e0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7524471997893536111, guid: 4d496f31837c17a45bc41a9c528e65e0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7524471997893536111, guid: 4d496f31837c17a45bc41a9c528e65e0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7524471997893536111, guid: 4d496f31837c17a45bc41a9c528e65e0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7524471997893536111, guid: 4d496f31837c17a45bc41a9c528e65e0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7524471997893536111, guid: 4d496f31837c17a45bc41a9c528e65e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7524471997893536111, guid: 4d496f31837c17a45bc41a9c528e65e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7524471997893536111, guid: 4d496f31837c17a45bc41a9c528e65e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4d496f31837c17a45bc41a9c528e65e0, type: 3}

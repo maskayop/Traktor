@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3858479481899565297
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2788076406210298598, guid: 1651898aacf7dd6409292c568ab02a46, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8bbe69eeaa69ba842bbc3e20de3056e4, type: 2}
+    - target: {fileID: 3859193037250856345, guid: 1651898aacf7dd6409292c568ab02a46, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f6566b8709cd15745bf8eb127c5a2417, type: 2}
+    - target: {fileID: 7810784641982378864, guid: 1651898aacf7dd6409292c568ab02a46, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f6566b8709cd15745bf8eb127c5a2417, type: 2}
+    - target: {fileID: 8204958013533574989, guid: 1651898aacf7dd6409292c568ab02a46, type: 3}
+      propertyPath: m_Name
+      value: Shrub Bush C Season
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704661008682198719, guid: 1651898aacf7dd6409292c568ab02a46, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f6566b8709cd15745bf8eb127c5a2417, type: 2}
+    - target: {fileID: 8833262545010265591, guid: 1651898aacf7dd6409292c568ab02a46, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833262545010265591, guid: 1651898aacf7dd6409292c568ab02a46, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833262545010265591, guid: 1651898aacf7dd6409292c568ab02a46, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833262545010265591, guid: 1651898aacf7dd6409292c568ab02a46, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833262545010265591, guid: 1651898aacf7dd6409292c568ab02a46, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833262545010265591, guid: 1651898aacf7dd6409292c568ab02a46, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833262545010265591, guid: 1651898aacf7dd6409292c568ab02a46, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833262545010265591, guid: 1651898aacf7dd6409292c568ab02a46, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833262545010265591, guid: 1651898aacf7dd6409292c568ab02a46, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833262545010265591, guid: 1651898aacf7dd6409292c568ab02a46, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1651898aacf7dd6409292c568ab02a46, type: 3}

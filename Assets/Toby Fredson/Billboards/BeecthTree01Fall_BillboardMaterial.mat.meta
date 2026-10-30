@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 84a32cf6bee91244780433e8b007b176
+timeCreated: 1545749350
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 193150
+  packageName: Rocky Hills Environment - Mega Pack (SRP)
+  packageVersion: 5.0.1c
+  assetPath: Assets/Toby Fredson/Rocky Hills Environment - Whitebark Pine/RHEWP_Demo/Meshes/LODPrefabs
+    (NOT FOR USE!)/LOD_CTI Plants/BeecthTree01/BeecthTree01Fall_LOD/BeecthTree01Fall_BillboardMaterial.mat
+  uploadId: 960708

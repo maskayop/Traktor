@@ -1,0 +1,35 @@
+fileFormatVersion: 2
+guid: 6ab0e86958e0ad84b938a1ca05aad3f0
+labels:
+- cave
+- cliff
+- cti
+- details
+- environment
+- flowers
+- grass
+- helpers
+- leaves
+- nature
+- pbr
+- rocks
+- rockyhills
+- shader
+- stone
+- tress
+- twigs
+- wood
+timeCreated: 1542795584
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: materials
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 193150
+  packageName: Rocky Hills Environment - Mega Pack (SRP)
+  packageVersion: 5.0.1c
+  assetPath: Assets/Toby Fredson/Rocky Hills Environment - Mega Pack (TFS)/Materials_TFS/GenericTree_Bark
+    (Winter).mat
+  uploadId: 960708

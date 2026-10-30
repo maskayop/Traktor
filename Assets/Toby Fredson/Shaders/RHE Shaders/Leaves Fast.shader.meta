@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 8141b6e3fa3b66a4a88d4265374d0409
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 193150
+  packageName: Rocky Hills Environment - Mega Pack (SRP)
+  packageVersion: 5.0.1c
+  assetPath: Assets/Toby Fredson/Rocky Hills Environment - Mega Pack/Shaders/Leaves
+    Fast.shader
+  uploadId: 960708

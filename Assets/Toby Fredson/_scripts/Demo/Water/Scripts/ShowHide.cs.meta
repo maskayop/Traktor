@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 1ee662b8ea35845438697a8187909fa1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 193150
+  packageName: Rocky Hills Environment - Mega Pack (SRP)
+  packageVersion: 5.0.1c
+  assetPath: Assets/Toby Fredson/Juniper Pack - Toby Foliage Engine Assets/Demo/Water/Scripts/ShowHide.cs
+  uploadId: 960708

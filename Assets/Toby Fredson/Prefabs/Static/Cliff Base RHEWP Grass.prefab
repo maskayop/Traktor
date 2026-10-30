@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2037136622893892882
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1051048810653586889, guid: 5b04660ab79e80b45a4a1b51c23cb1a5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 65c8fe1237f855e49b8235c52f8e4480, type: 2}
+    - target: {fileID: 1446261352059675632, guid: 5b04660ab79e80b45a4a1b51c23cb1a5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 65c8fe1237f855e49b8235c52f8e4480, type: 2}
+    - target: {fileID: 1591743569760453862, guid: 5b04660ab79e80b45a4a1b51c23cb1a5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 65c8fe1237f855e49b8235c52f8e4480, type: 2}
+    - target: {fileID: 3538091053156236648, guid: 5b04660ab79e80b45a4a1b51c23cb1a5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 65c8fe1237f855e49b8235c52f8e4480, type: 2}
+    - target: {fileID: 5015247814275626450, guid: 5b04660ab79e80b45a4a1b51c23cb1a5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 65c8fe1237f855e49b8235c52f8e4480, type: 2}
+    - target: {fileID: 5306868080653290684, guid: 5b04660ab79e80b45a4a1b51c23cb1a5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 65c8fe1237f855e49b8235c52f8e4480, type: 2}
+    - target: {fileID: 6599394244153040371, guid: 5b04660ab79e80b45a4a1b51c23cb1a5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 65c8fe1237f855e49b8235c52f8e4480, type: 2}
+    - target: {fileID: 8508390310490843339, guid: 5b04660ab79e80b45a4a1b51c23cb1a5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508390310490843339, guid: 5b04660ab79e80b45a4a1b51c23cb1a5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508390310490843339, guid: 5b04660ab79e80b45a4a1b51c23cb1a5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508390310490843339, guid: 5b04660ab79e80b45a4a1b51c23cb1a5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508390310490843339, guid: 5b04660ab79e80b45a4a1b51c23cb1a5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508390310490843339, guid: 5b04660ab79e80b45a4a1b51c23cb1a5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508390310490843339, guid: 5b04660ab79e80b45a4a1b51c23cb1a5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508390310490843339, guid: 5b04660ab79e80b45a4a1b51c23cb1a5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508390310490843339, guid: 5b04660ab79e80b45a4a1b51c23cb1a5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508390310490843339, guid: 5b04660ab79e80b45a4a1b51c23cb1a5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8628283301659846866, guid: 5b04660ab79e80b45a4a1b51c23cb1a5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 65c8fe1237f855e49b8235c52f8e4480, type: 2}
+    - target: {fileID: 9031985841343230577, guid: 5b04660ab79e80b45a4a1b51c23cb1a5, type: 3}
+      propertyPath: m_Name
+      value: Cliff Base RHEWP Grass
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5b04660ab79e80b45a4a1b51c23cb1a5, type: 3}
