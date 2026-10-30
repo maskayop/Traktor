@@ -108,7 +108,7 @@ Material:
     - _AO: 0
     - _AlphaClip: 1
     - _AlphaToMask: 1
-    - _Alpha_Clipping: 0.3
+    - _Alpha_Clipping: 0.2
     - _BaseDetailBlender: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1

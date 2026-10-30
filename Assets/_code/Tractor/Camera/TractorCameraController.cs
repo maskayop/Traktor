@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using Enviro;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Tractor
@@ -9,11 +9,13 @@ namespace Tractor
         [SerializeField] Camera menuCamera;
         [SerializeField] EnviroQuality menuQuality;
         [SerializeField] Camera gameCamera;
+        [SerializeField] EnviroQuality gameQuality;
         [SerializeField] List<Camera> mirrorCameras = new List<Camera>();
         [SerializeField] EnviroQuality mirrorsQuality;
 
         GameController gameController;
         GameController.GameState gameState;
+        EnviroManager enviroManager;
 
         void Start()
         {
@@ -35,6 +37,7 @@ namespace Tractor
         public void Init()
         {
             gameController = GameController.Instance;
+            enviroManager = EnviroManager.instance;
 
             RegisterEnviroCameras();
             SetCameras();
@@ -62,11 +65,11 @@ namespace Tractor
 
         void RegisterEnviroCameras()
         {
-            if (EnviroManager.instance == null)
+            if (!enviroManager)
                 return;
 
             AddEnviroCamera(menuCamera, menuQuality);
-            AddEnviroCamera(gameCamera, null);
+            AddEnviroCamera(gameCamera, gameQuality);
 
             foreach (Camera camera in mirrorCameras)
                 AddEnviroCamera(camera, mirrorsQuality);
@@ -74,17 +77,21 @@ namespace Tractor
 
         void AddEnviroCamera(Camera camera, EnviroQuality quality)
         {
-            if (!camera) return;
+            if (!enviroManager)
+                return;
 
-            EnviroManager.instance.AddAdditionalCamera(camera);
+            if (!camera)
+                return;
 
-            var cameras = EnviroManager.instance.Cameras;
+            enviroManager?.AddAdditionalCamera(camera);
+
+            var cameras = enviroManager.Cameras;
 
             for (int i = 0; i < cameras.Count; i++)
             {
                 if (cameras[i].camera != camera)
                     continue;
-                    
+
                 cameras[i].quality = quality;
                 return;
             }

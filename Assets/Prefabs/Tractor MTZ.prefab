@@ -1043,6 +1043,7 @@ MonoBehaviour:
   menuCamera: {fileID: 4651720896654227027}
   menuQuality: {fileID: 11400000, guid: 2e0aaa075bca92245a9e8300b7eace9c, type: 2}
   gameCamera: {fileID: 4235386298348881763}
+  gameQuality: {fileID: 11400000, guid: 2e0aaa075bca92245a9e8300b7eace9c, type: 2}
   mirrorCameras:
   - {fileID: 7717159596900202394}
   - {fileID: 1048044324757721288}
