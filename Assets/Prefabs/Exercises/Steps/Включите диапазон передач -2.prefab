@@ -49,5 +49,6 @@ MonoBehaviour:
   variableName: currentRange
   conditionValue: -2
   comparison: 0
+  result: 0
   stepDescription: "\u0412\u043A\u043B\u044E\u0447\u0438\u0442\u0435 \u0434\u0438\u0430\u043F\u0430\u0437\u043E\u043D
-    \u043F\u0435\u0440\u0435\u0434\u0430\u0447 -2 (\u0440\u0435\u0432\u0435\u0440\u0441)"
+    \u043F\u0435\u0440\u0435\u0434\u0430\u0447 -2"

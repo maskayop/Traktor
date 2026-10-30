@@ -8,6 +8,11 @@ namespace Tractor
         {
             switch (conditionName)
             {
+                case "hornIsPlaying":
+                    if (hornIsPlaying)
+                        return 1;
+                    else
+                        return 0;
                 default:
                     Debug.LogWarning($"Неизвестное условие: {conditionName}");
                     return 0;

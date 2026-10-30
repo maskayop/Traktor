@@ -1211,7 +1211,7 @@ MonoBehaviour:
   steerSpeed: 5
   isGrounded: 0
   maxBrakeTorque: 5000
-  maxSteerAngle: 23
+  maxSteerAngle: 25
   tractionHelpedSidewaysStiffness: 1
   producedMotorTorqueNM_Left: 0
   producedMotorTorqueNM_Right: 0

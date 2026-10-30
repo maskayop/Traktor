@@ -95,6 +95,7 @@ MonoBehaviour:
   completedColor: {r: 0, g: 1, b: 0.6666667, a: 0.6}
   failedColor: {r: 1, g: 1, b: 1, a: 1}
   descriptionText: {fileID: 6449330630407174060}
+  subStepTexts: []
 --- !u!1 &3752212928232189416
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +192,7 @@ MonoBehaviour:
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 10
+  m_fontSizeMin: 5
   m_fontSizeMax: 22
   m_fontStyle: 0
   m_HorizontalAlignment: 2

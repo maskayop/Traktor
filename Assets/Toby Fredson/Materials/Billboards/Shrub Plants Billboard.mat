@@ -13,7 +13,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _SPECULARHIGHLIGHTS_OFF
-  - _WINDTYPE_STRONGWIND
+  - _WINDTYPE_WINDOFF
   m_InvalidKeywords:
   - GentleBreeze
   - _BACKFACECULLING_ON
@@ -22,13 +22,10 @@ Material:
   - _DIRECTIONALWIND_ON
   - _INVERTCOLORMASK2_ON
   - _LOLOL_ON
-  - _MASKROOTSAUTO_ON
-  - _MASKROOTS_ON
   - _MOBILESHADINGWORLDUP_ON
   - _NORMALMAPBASEDSNOW_ON
   - _RANDOMCONTRASTON_ON
   - _SEASONVERTEXCOLORR_ON
-  - _SELFSHADINGVERTEXCOLOR_ON
   - _SELFSHADING_ON
   - _SNOWMASKVERTEXR_ON
   - _SPECULARBACKFACEOCCLUSION1_ON
@@ -188,13 +185,13 @@ Material:
     - _BackfaceCulling: 2
     - _Bentamount: 0.054
     - _BranchFoldStrenght: 1
-    - _BranchFoldStrength: 1
+    - _BranchFoldStrength: 0
     - _BranchMaskR: 1
-    - _BranchMaskRadious: 0.3
-    - _BranchMaskScale: 0.1
-    - _BranchSwayPower: 4
-    - _BranchWindLarge: 1.5
-    - _BranchWindSmall: 1.5
+    - _BranchMaskRadious: 0
+    - _BranchMaskScale: 0
+    - _BranchSwayPower: 0
+    - _BranchWindLarge: 0
+    - _BranchWindSmall: 0
     - _BumpScale: 1
     - _CenterofMass: 0
     - _ColorVariation: 0
@@ -211,7 +208,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DirectionalWind: 1
     - _Directionalwind: 1
-    - _DownwardStrength: -0.5
+    - _DownwardStrength: 0
     - _DryLeavesOffset: -0.74
     - _DryLeavesScale: 1
     - _DstBlend: 0
@@ -233,20 +230,20 @@ Material:
     - _LeafFlutter: 0
     - _LightDetectBackface: 0
     - _LightDetectFrontface: 0
-    - _MaskRoots: 1
-    - _MaskRootsAuto: 1
+    - _MaskRoots: 0
+    - _MaskRootsAuto: 0
     - _Metallic: 0
     - _MobileShadingWorldUp: 1
     - _Mode: 0
-    - _MotionBendingGentleRandom: 0.1
+    - _MotionBendingGentleRandom: 0
     - _NormalBackFaceFix: 0
     - _NormalBackFaceFixBranch: 0
     - _NormalIntenisty: 1
     - _NormalMapBasedSnow: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _PivotRandomness: 1
-    - _PivotRandomnessStrength: 0.5
+    - _PivotRandomness: 0
+    - _PivotRandomnessStrength: 0
     - _QuadScatterOnlybasiccards: 0
     - _QuadscatterpowerX: 1
     - _QueueControl: 0
@@ -258,9 +255,9 @@ Material:
     - _RandomContrastOn: 1
     - _RandomContrastOnOff: 0
     - _ReceiveShadows: 1
-    - _RootsHardness: 1
-    - _RootsPosition: 1.5
-    - _RootsRadius: 4
+    - _RootsHardness: 0
+    - _RootsPosition: 0
+    - _RootsRadius: 0
     - _SEASONSETTINGS: 0
     - _SHADINGSETTINGS: 0
     - _SeasonChangeGlobal: 0
@@ -270,7 +267,7 @@ Material:
     - _SecondaryNormalIntensity: 0
     - _SecondaryNormalScale: 0
     - _SelfShading: 1
-    - _SelfShadingVertexColor: 1
+    - _SelfShadingVertexColor: 0
     - _SmoothnessIntensity: 1
     - _SmoothnessTextureChannel: 0
     - _SnowAmount: 0
@@ -308,7 +305,7 @@ Material:
     - _TranslucencyRange: 1
     - _TranslucencyTreeTangents: 1
     - _TrunkHeight: 1
-    - _TrunkHeightThickness: 0.01
+    - _TrunkHeightThickness: 1
     - _UVSec: 0
     - _VertexAo: 1
     - _VertexColorPower: 0.3
@@ -316,7 +313,7 @@ Material:
     - _VertexPositionYOff: 1
     - _VertexShadow: 0.6
     - _WINDMASKSETTINGS1: 0
-    - _WindType: 1
+    - _WindType: 2
     - _Winddirection: 1
     - _WorldFreq: 1
     - _WorldUp: 1

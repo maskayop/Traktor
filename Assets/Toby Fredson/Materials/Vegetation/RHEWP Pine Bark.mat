@@ -109,7 +109,7 @@ Material:
     - _AlphaCutoff: 0.5
     - _AoIntensity: 1
     - _Aointensity: 1
-    - _AppendageIDIntensity: 1
+    - _AppendageIDIntensity: 0
     - _AppendageIDRandomDirection: 0
     - _AppendageIDWindDirection: 0
     - _AppendageMotionIntensity: 1

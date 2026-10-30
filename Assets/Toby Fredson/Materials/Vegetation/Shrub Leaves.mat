@@ -12,7 +12,6 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _LIGHTDETECTFRONTFACE_ON
   - _MOBILESHADINGWORLDUP_ON
   - _SPECULARHIGHLIGHTS_OFF
   - _WINDTYPE_STRONGWIND
@@ -20,14 +19,12 @@ Material:
   - _BRANCHMASKR_ON
   - _FLUTTERTANGENTMODE_ON
   - _LEAFINTERACTION_ON
-  - _LIGHTDETECTBACKFACE_ON
   - _MASKROOTSAUTO_ON
   - _MASKROOTS_ON
   - _NORMALMAPBASEDSNOW_ON
   - _PHYSICSINTERACTION_ON
   - _QUADSCATTERONLYBASICCARDS_ON
   - _SEASONVERTEXCOLORR_ON
-  - _SELFSHADINGVERTEXCOLOR_ON
   - _SPECULARBACKFACEOCCLUSION_ON
   - _TBCVONUSESNOISEMAP_ON
   - _TBRCONUSESNOISEMAP_ON
@@ -422,10 +419,10 @@ Material:
     - _LeafInteraction: 1
     - _LeafSwaySway: 0.5
     - _LeavesRustAmount: 1
-    - _LightDetectBackface: 1
+    - _LightDetectBackface: 0
     - _LightDetectBackface1: 1
     - _LightDetectBackface2: 1
-    - _LightDetectFrontface: 1
+    - _LightDetectFrontface: 0
     - _LightDetectFrontface1: 0
     - _MOTIONX: 1
     - _MS: 4
@@ -547,7 +544,7 @@ Material:
     - _SelfShading: 1
     - _SelfShading1: 1
     - _SelfShadingVertexCol: 1
-    - _SelfShadingVertexColor: 1
+    - _SelfShadingVertexColor: 0
     - _SelfShadingVertexColor1: 0
     - _SimplePivotSway: 0
     - _SimplePivotSwayPower: 1
@@ -614,7 +611,7 @@ Material:
     - _TransShadow: 1
     - _Translucency: 1
     - _TranslucencyFluffiness: 0
-    - _TranslucencyPower: 2
+    - _TranslucencyPower: 1
     - _TranslucencyRange: 0
     - _TranslucencyTreeTangents: 1
     - _TrunkHeight: 0.05

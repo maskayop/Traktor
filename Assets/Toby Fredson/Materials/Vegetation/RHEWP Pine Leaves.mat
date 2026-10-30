@@ -17,7 +17,6 @@ Material:
   - _WINDTYPE_GENTLEBREEZE
   m_InvalidKeywords:
   - _BRANCHMASKR_ON
-  - _LIGHTDETECTBACKFACE_ON
   - _MASKROOTS_ON
   - _SEASONVERTEXCOLORR_ON
   - _SELFSHADINGVERTEXCOLOR_ON
@@ -194,7 +193,7 @@ Material:
     - _LeafFlutter: 1
     - _LeafInteraction: 0
     - _LeafTurbulence: 0.02
-    - _LightDetectBackface: 1
+    - _LightDetectBackface: 0
     - _LightDetectFrontface: 0
     - _MaskRoots: 1
     - _MaskRootsAuto: 0

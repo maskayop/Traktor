@@ -4,7 +4,7 @@ namespace Tractor
 {
     public class TractorController : MonoBehaviour, ICheckable
     {
-        public enum TractorBehavior { Main, Gearbox, Engine, Lights }
+        public enum TractorBehavior { Main, Gearbox, Engine, Lights, Audio }
 
         [Header("Механизмы")]
         public TractorInput tractorInput;
@@ -103,6 +103,8 @@ namespace Tractor
                     return tractorEngine;
                 case TractorBehavior.Lights:
                     return tractorLights;
+                case TractorBehavior.Audio:
+                    return tractorAudio;
                 default:
                     return null;
             }
