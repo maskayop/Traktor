@@ -32,13 +32,38 @@ namespace Tractor
 
         float currentTime = 0;
 
+        public bool HasVariable(string conditionName)
+        {
+            switch (conditionName)
+            {
+                case "onRoad":
+                case "isOffRoad":
+                case "wrongDirection":
+                case "onLane":
+                case "onCross":
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
         public float GetVariableValue(string conditionName)
         {
             switch (conditionName)
             {
+                case "onRoad":
+                    return onRoad;
+                case "isOffRoad":
+                    return onRoad == -1 ? 1f : 0f;
+                case "wrongDirection":
+                    return wrongDirection ? 1f : 0f;
+                case "onLane":
+                    return onLane ? 1f : 0f;
+                case "onCross":
+                    return onCross ? 1f : 0f;
                 default:
-                    Debug.LogWarning($"Неизвестное условие: {conditionName}");
-                    return 0;
+                    Debug.LogWarning($"RoadDetector: неизвестная переменная {conditionName}");
+                    return 0f;
             }
         }
 

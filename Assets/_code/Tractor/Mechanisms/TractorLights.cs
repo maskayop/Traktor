@@ -4,6 +4,22 @@ namespace Tractor
 {
     public class TractorLights : MonoBehaviour, ICheckable
     {
+        public bool HasVariable(string conditionName)
+        {
+            switch (conditionName)
+            {
+                case "leftTurnIsOn":
+                case "leftTurn":
+                case "rightTurnIsOn":
+                case "rightTurn":
+                case "alarmIsOn":
+                case "alarm":
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
         public float GetVariableValue(string conditionName)
         {
             switch (conditionName)

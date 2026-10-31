@@ -4,7 +4,7 @@ namespace Tractor
 {
     public class TractorController : MonoBehaviour, ICheckable
     {
-        public enum TractorBehavior { Main, Gearbox, Engine, Lights, Audio }
+        public enum TractorBehavior { Main, Gearbox, Engine, Lights, Audio, RoadDetector }
 
         [Header("Механизмы")]
         public TractorInput tractorInput;
@@ -31,6 +31,21 @@ namespace Tractor
 
         GameController gameController;
 
+        public bool HasVariable(string conditionName)
+        {
+            switch (conditionName)
+            {
+                case "speed":
+                case "RPM":
+                case "isHandbrake":
+                case "handbrake":
+                case "destinationDistance":
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
         public float GetVariableValue(string conditionName)
         {
             switch (conditionName)
@@ -50,6 +65,8 @@ namespace Tractor
                     else
                         return 0;
                 case "destinationDistance":
+                    if (destinationTransform == null)
+                        return 0f;
                     return Vector3.Distance(transform.position, destinationTransform.position);
                 default:
                     Debug.LogWarning($"Неизвестное условие: {conditionName}");
@@ -105,6 +122,8 @@ namespace Tractor
                     return tractorLights;
                 case TractorBehavior.Audio:
                     return tractorAudio;
+                case TractorBehavior.RoadDetector:
+                    return roadDetector;
                 default:
                     return null;
             }

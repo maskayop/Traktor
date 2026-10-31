@@ -4,6 +4,17 @@ namespace Tractor
 {
     public class TractorAudio : MonoBehaviour, ICheckable
     {
+        public bool HasVariable(string conditionName)
+        {
+            switch (conditionName)
+            {
+                case "hornIsPlaying":
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
         public float GetVariableValue(string conditionName)
         {
             switch (conditionName)

@@ -25,6 +25,20 @@ namespace Tractor
         RCCP_Engine engine;
         TractorGearbox tractorGearbox;
 
+        public bool HasVariable(string conditionName)
+        {
+            switch (conditionName)
+            {
+                case "mass":
+                case "starter":
+                case "ignition":
+                case "RPM":
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
         public float GetVariableValue(string conditionName)
         {
             switch (conditionName)

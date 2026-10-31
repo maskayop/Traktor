@@ -47,6 +47,20 @@ namespace Tractor
         RCCP_Engine engine;
         RCCP_Differential[] differentials;
 
+        public bool HasVariable(string conditionName)
+        {
+            switch (conditionName)
+            {
+                case "gearLevel":
+                case "isGearLevel1":
+                case "currentRange":
+                case "currentGear":
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
         public float GetVariableValue(string conditionName)
         {
             switch (conditionName)
