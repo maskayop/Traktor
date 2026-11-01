@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Tractor.UI
+namespace Tractor
 {
-    public class UISmoothNeedle : MonoBehaviour
+    public class SmoothNeedle : MonoBehaviour
     {
         [Header("Настройки плавности")]
         [Range(0f, 1f)]
@@ -14,8 +14,15 @@ namespace Tractor.UI
 
         TractorController tractorController;
 
+        public enum NeedleMode { UI, World3D }
+        public NeedleMode needleMode = NeedleMode.UI;
+
         [Header("UI Элементы")]
-        public RectTransform needleTransform;
+        public RectTransform needleTransform;      // для UI
+
+        [Header("3D Элементы")]
+        public Transform needle3DTransform;        // для 3D
+        public Vector3 rotationAxis = Vector3.forward; // ось вращения (по умолчанию Z)
 
         [Header("Диапазон стрелки")]
         public float minAngle = 0f;
@@ -44,36 +51,22 @@ namespace Tractor.UI
 
         void Update()
         {
-            if (!isInitialized || !needleTransform || targetCheckable == null)
+            if (!isInitialized || targetCheckable == null)
                 return;
 
             float targetValue;
-
             if (useDefaultValue)
             {
-                // Читаем переменную (например, "IsRunning").
-                // Если она == 1 → показываем defaultValue, иначе 0.
                 float condition = targetCheckable.GetVariableValue(variableName);
                 targetValue = condition > 0.5f ? defaultValue : minValue;
             }
             else
-            {
-                // Обычный режим: показываем саму переменную
                 targetValue = targetCheckable.GetVariableValue(variableName);
-            }
 
             currentDisplayValue = Mathf.Lerp(currentDisplayValue, targetValue, smoothSpeed);
 
-            float normalizedValue = Mathf.InverseLerp(minValue, maxValue, currentDisplayValue);
-            float angleT;
-
-            if (useCurveValue)
-                angleT = scaleCurve.Evaluate(normalizedValue);
-            else
-                angleT = normalizedValue;
-
-            float angle = Mathf.Lerp(minAngle, maxAngle, angleT);
-            needleTransform.localEulerAngles = new Vector3(0f, 0f, angle);
+            float angle = CalculateAngle(currentDisplayValue);
+            ApplyAngle(angle);
         }
 
         public void Init()
@@ -82,13 +75,12 @@ namespace Tractor.UI
                 tractorController = FindAnyObjectByType<TractorController>();
 
             if (!tractorController) return;
-            if (!needleTransform) return;
 
             MonoBehaviour targetMono = tractorController.GetMonoBehaviour(tractorBehavior);
 
             if (!targetMono)
             {
-                Debug.LogError($"UISmoothNeedle: модуль {tractorBehavior} не найден!");
+                Debug.LogError($"SmoothNeedle: модуль {tractorBehavior} не найден!");
                 return;
             }
 
@@ -96,38 +88,64 @@ namespace Tractor.UI
 
             if (targetCheckable == null)
             {
-                Debug.LogError($"UISmoothNeedle: модуль {tractorBehavior} не реализует ICheckable!");
+                Debug.LogError($"SmoothNeedle: модуль {tractorBehavior} не реализует ICheckable!");
                 return;
             }
 
             if (string.IsNullOrEmpty(variableName))
             {
-                Debug.LogError("UISmoothNeedle: variableName пустой!");
+                Debug.LogError("SmoothNeedle: variableName пустой!");
                 return;
             }
 
             if (!targetCheckable.HasVariable(variableName))
             {
-                Debug.LogError($"UISmoothNeedle: переменная '{variableName}' не найдена в модуле {tractorBehavior}!");
+                Debug.LogError($"SmoothNeedle: переменная '{variableName}' не найдена в модуле {tractorBehavior}!");
                 return;
             }
 
             if (maxValue <= minValue)
             {
                 maxValue = minValue + 0.01f;
-                Debug.LogWarning($"UISmoothNeedle: maxValue было меньше или равно minValue, исправлено на {maxValue}");
+                Debug.LogWarning($"SmoothNeedle: maxValue было меньше или равно minValue, исправлено на {maxValue}");
             }
 
             if (useCurveValue)
             {
                 if (scaleCurve == null || scaleCurve.length == 0)
                 {
-                    Debug.LogError("UISmoothNeedle: scaleCurve пустая, но useCurveValue включён!");
+                    Debug.LogError("SmoothNeedle: scaleCurve пустая, но useCurveValue включён!");
                     return;
                 }
             }
 
+            if (needleMode == NeedleMode.UI && !needleTransform)
+                return;
+            else if (needleMode == NeedleMode.World3D && !needle3DTransform)
+                return;
+
             isInitialized = true;
+        }
+
+        float CalculateAngle(float value)
+        {
+            float normalizedValue = Mathf.InverseLerp(minValue, maxValue, value);
+            float angleT = useCurveValue ? scaleCurve.Evaluate(normalizedValue) : normalizedValue;
+            return Mathf.Lerp(minAngle, maxAngle, angleT);
+        }
+
+        void ApplyAngle(float angle)
+        {
+            if (needleMode == NeedleMode.UI)
+            {
+                if (needleTransform != null)
+                    needleTransform.localEulerAngles = new Vector3(0f, 0f, angle);
+            }
+            else
+            {
+                if (needle3DTransform != null)
+                    needle3DTransform.localEulerAngles = rotationAxis * angle;
+            }
         }
     }
 }
