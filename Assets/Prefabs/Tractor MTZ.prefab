@@ -724,6 +724,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2587386006273250581}
+  - {fileID: 1525172138319929745}
   m_Father: {fileID: 3552952202464786998}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1813409246852421867
@@ -2433,6 +2434,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 855781173747354125}
+  - {fileID: 8113289908588451766}
   m_Father: {fileID: 3552952202464786998}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6156353838404038045
@@ -2518,6 +2520,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6754385973025227378}
+  - {fileID: 5485827868825377806}
   m_Father: {fileID: 3552952202464786998}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6303124848791130341
@@ -2837,6 +2840,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7359595711580856841}
+  - {fileID: 6464360427481577893}
   m_Father: {fileID: 3552952202464786998}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6466672495936999023
@@ -3688,6 +3692,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2316108845992590884, guid: 022f9a71aee0ec745a43ecc20c447b36, type: 3}
   m_PrefabInstance: {fileID: 84488868945210458}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &231031772071320844
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7515099910342213969}
+    m_Modifications:
+    - target: {fileID: 5344325797148585551, guid: 7cd9a3f61260acd4da92a70adf609baa, type: 3}
+      propertyPath: m_Name
+      value: Dashboard Lamp Indicator orange
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 7cd9a3f61260acd4da92a70adf609baa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0038
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 7cd9a3f61260acd4da92a70adf609baa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 7cd9a3f61260acd4da92a70adf609baa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0218
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 7cd9a3f61260acd4da92a70adf609baa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 7cd9a3f61260acd4da92a70adf609baa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 7cd9a3f61260acd4da92a70adf609baa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 7cd9a3f61260acd4da92a70adf609baa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 7cd9a3f61260acd4da92a70adf609baa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 7cd9a3f61260acd4da92a70adf609baa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 7cd9a3f61260acd4da92a70adf609baa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7cd9a3f61260acd4da92a70adf609baa, type: 3}
+--- !u!4 &6464360427481577893 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6522003509741773993, guid: 7cd9a3f61260acd4da92a70adf609baa, type: 3}
+  m_PrefabInstance: {fileID: 231031772071320844}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &273669974675745585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4291,6 +4357,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1250241988895149353, guid: 014837f6c61e1084cb40df5ea6f33ef0, type: 3}
   m_PrefabInstance: {fileID: 1411068836162821941}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1631249481456695463
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6368616872596266398}
+    m_Modifications:
+    - target: {fileID: 5344325797148585551, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_Name
+      value: Dashboard Lamp Indicator red
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0199
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -2.3283059e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0000000018626447
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+--- !u!4 &5485827868825377806 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+  m_PrefabInstance: {fileID: 1631249481456695463}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1886607617660227447
 PrefabInstance:
@@ -5406,6 +5534,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6476352332601382122, guid: 623b3db6a6a962b4db42389bbcfcc812, type: 3}
   m_PrefabInstance: {fileID: 2692308296087342143}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3034016078992732959
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6112803810000057623}
+    m_Modifications:
+    - target: {fileID: 5344325797148585551, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_Name
+      value: Dashboard Lamp Indicator red
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.00532
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00086
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.01878
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -2.3283059e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0000000018626447
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+--- !u!4 &8113289908588451766 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+  m_PrefabInstance: {fileID: 3034016078992732959}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3153681686192632873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6471,6 +6661,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3595d380c1bf3bb4485f67cf12eb1091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.MeshLightController
+--- !u!1001 &5740031624400307512
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5381636727871989037}
+    m_Modifications:
+    - target: {fileID: 5344325797148585551, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_Name
+      value: Dashboard Lamp Indicator red
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0173
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0002
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0077
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -2.3283059e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0000000018626447
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+--- !u!4 &1525172138319929745 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
+  m_PrefabInstance: {fileID: 5740031624400307512}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6003353628582402763
 PrefabInstance:
   m_ObjectHideFlags: 0

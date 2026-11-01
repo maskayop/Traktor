@@ -28,6 +28,9 @@ namespace Tractor
         // Двигатель реально работает (RCCP подтвердил запуск)
         public bool IsRunning => engine != null && engine.engineRunning;
 
+        // Проверочные лампочки горят, когда ключ в "I", но двигатель не работает
+        public bool ShowWarningLamp => IsKeyOn && !IsRunning;
+
         RCCP_Engine engine;
         TractorGearbox tractorGearbox;
 
@@ -41,6 +44,7 @@ namespace Tractor
                 case "RPM":
                 case "IsRunning":
                 case "IsKeyOn":
+                case "ShowWarningLamp":
                     return true;
                 default:
                     return false;
@@ -57,6 +61,7 @@ namespace Tractor
                 case "RPM": return RPM;
                 case "IsRunning": return IsRunning ? 1f : 0f;
                 case "IsKeyOn": return IsKeyOn ? 1f : 0f;
+                case "ShowWarningLamp": return ShowWarningLamp ? 1f : 0f;
                 default:
                     Debug.LogWarning($"Неизвестное условие: {conditionName}");
                     return 0f;
