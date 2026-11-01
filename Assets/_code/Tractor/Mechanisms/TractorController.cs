@@ -36,6 +36,7 @@ namespace Tractor
             switch (conditionName)
             {
                 case "speed":
+                case "speedAbs":
                 case "RPM":
                 case "isHandbrake":
                 case "handbrake":
@@ -52,25 +53,18 @@ namespace Tractor
             {
                 case "speed":
                     return speed;
+                case "speedAbs":
+                    return Mathf.Abs(speed);
                 case "RPM":
                     return RPM;
                 case "isHandbrake":
-                    if (isHandbrake)
-                        return 1;
-                    else
-                        return 0;
                 case "handbrake":
-                    if (isHandbrake)
-                        return 1;
-                    else
-                        return 0;
+                    return isHandbrake ? 1f : 0f;
                 case "destinationDistance":
-                    if (destinationTransform == null)
-                        return 0f;
-                    return Vector3.Distance(transform.position, destinationTransform.position);
+                    return destinationTransform == null ? 0f : Vector3.Distance(transform.position, destinationTransform.position);
                 default:
                     Debug.LogWarning($"Неизвестное условие: {conditionName}");
-                    return 0;
+                    return 0f;
             }
         }
 
@@ -96,16 +90,9 @@ namespace Tractor
             speed = carController.speed;
             RPM = carController.engineRPM;
 
-            if (isHandbrake)
-            {
-                carController.handbrakeInput_P = 1f;
-                carController.handbrakeInput_V = 1f;
-            }
-            else
-            {
-                carController.handbrakeInput_P = 0f;
-                carController.handbrakeInput_V = 0f;
-            }
+            float handbrakeValue = isHandbrake ? 1f : 0f;
+            carController.handbrakeInput_P = handbrakeValue;
+            carController.handbrakeInput_V = handbrakeValue;
         }
 
         public MonoBehaviour GetMonoBehaviour(TractorBehavior tractorBehavior)

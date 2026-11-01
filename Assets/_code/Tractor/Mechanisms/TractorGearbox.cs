@@ -66,22 +66,15 @@ namespace Tractor
             switch (conditionName)
             {
                 case "gearLevel":
-                    if (isGearLevel1)
-                        return 1;
-                    else
-                        return 2;
                 case "isGearLevel1":
-                    if (isGearLevel1)
-                        return 1;
-                    else
-                        return 2;
+                    return isGearLevel1 ? 1f : 2f;
                 case "currentRange":
                     return currentRange;
                 case "currentGear":
                     return gearValue;
                 default:
                     Debug.LogWarning($"Неизвестное условие: {conditionName}");
-                    return 0;
+                    return 0f;
             }
         }
 
@@ -256,12 +249,7 @@ namespace Tractor
                 return;
             }
 
-            float mSpeed = gearModifications[currentGearModification].maxSpeed;
-
-            if (mSpeed < 0)
-                engine.maximumSpeed = -gearModifications[currentGearModification].maxSpeed;
-            else
-                engine.maximumSpeed = gearModifications[currentGearModification].maxSpeed;
+            engine.maximumSpeed = Mathf.Abs(gearModifications[currentGearModification].maxSpeed);
 
             foreach (var d in differentials)
                 d.finalDriveRatio = gearModifications[currentGearModification].finalDriveOverrides[gearValue - 1];

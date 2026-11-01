@@ -22,6 +22,12 @@ namespace Tractor
 
         bool gearboxCoupling = false;
 
+        // Ключ в положении "I" — приборы запитаны, идёт проверка ламп
+        public bool IsKeyOn => mass && starter;
+
+        // Двигатель реально работает (RCCP подтвердил запуск)
+        public bool IsRunning => engine != null && engine.engineRunning;
+
         RCCP_Engine engine;
         TractorGearbox tractorGearbox;
 
@@ -33,6 +39,8 @@ namespace Tractor
                 case "starter":
                 case "ignition":
                 case "RPM":
+                case "IsRunning":
+                case "IsKeyOn":
                     return true;
                 default:
                     return false;
@@ -43,26 +51,15 @@ namespace Tractor
         {
             switch (conditionName)
             {
-                case "mass":
-                    if (mass)
-                        return 1;
-                    else
-                        return 0;
-                case "starter":
-                    if (starter)
-                        return 1;
-                    else
-                        return 0;
-                case "ignition":
-                    if (ignition)
-                        return 1;
-                    else
-                        return 0;
-                case "RPM":
-                    return RPM;
+                case "mass": return mass ? 1f : 0f;
+                case "starter": return starter ? 1f : 0f;
+                case "ignition": return ignition ? 1f : 0f;
+                case "RPM": return RPM;
+                case "IsRunning": return IsRunning ? 1f : 0f;
+                case "IsKeyOn": return IsKeyOn ? 1f : 0f;
                 default:
                     Debug.LogWarning($"Неизвестное условие: {conditionName}");
-                    return 0;
+                    return 0f;
             }
         }
 

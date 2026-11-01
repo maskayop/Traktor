@@ -125,8 +125,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UISmoothNeedle
   smoothSpeed: 0.1
-  carController: {fileID: 0}
+  tractorBehavior: 0
+  variableName: speed
   needleTransform: {fileID: 7605943980270703037}
   minAngle: 0
   maxAngle: -180
-  maxSpeed: 40
+  maxValue: 10
+  useDefaultValue: 0
+  defaultValue: 0

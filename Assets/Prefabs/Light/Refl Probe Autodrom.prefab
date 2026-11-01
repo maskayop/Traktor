@@ -50,7 +50,7 @@ ReflectionProbe:
   m_UpdateFrequency: 0
   m_BoxSize: {x: 1000, y: 1000, z: 1000}
   m_BoxOffset: {x: 0, y: 0, z: 0}
-  m_NearClip: 1
+  m_NearClip: 0.5
   m_FarClip: 50
   m_ShadowDistance: 100
   m_ClearFlags: 1
@@ -78,4 +78,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3369614e2ed7e8f419546a8bd0def44f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Vopere.Common.ReflectionProbeController
-  delay: 0.2
+  delay: 0.5
