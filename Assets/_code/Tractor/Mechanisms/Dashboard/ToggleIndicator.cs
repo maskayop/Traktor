@@ -9,9 +9,15 @@ namespace Tractor
         public string variableName = "";
 
         [Header("Объекты состояния")]
-        public GameObject onObject;     // показывается, когда переменная == 1
         public GameObject offObject;    // показывается, когда переменная == 0
+        public GameObject onObject;     // показывается, когда переменная == 1
         public bool invertCondition = false; // если true — логика меняется местами
+
+        public enum CompareMode { Boolean, EqualsTo }
+
+        [Header("Режим сравнения")]
+        public CompareMode compareMode = CompareMode.Boolean;
+        public float targetValue = 0f;   // используется только в режиме EqualsTo
 
         TractorController tractorController;
         ICheckable targetCheckable;
@@ -28,10 +34,7 @@ namespace Tractor
             if (!isInitialized || targetCheckable == null)
                 return;
 
-            bool state = targetCheckable.GetVariableValue(variableName) > 0.5f;
-
-            if (invertCondition)
-                state = !state;
+            bool state = EvaluateState();
 
             if (state != lastState)
             {
@@ -86,11 +89,25 @@ namespace Tractor
 
             isInitialized = true;
 
-            // Инициализируем начальное состояние сразу
-            bool state = targetCheckable.GetVariableValue(variableName) > 0.5f;
-            if (invertCondition) state = !state;
-            lastState = state;
-            ApplyState(state);
+            lastState = EvaluateState();
+            ApplyState(lastState);
+        }
+
+        bool EvaluateState()
+        {
+            float value = targetCheckable.GetVariableValue(variableName);
+
+            bool state;
+
+            if (compareMode == CompareMode.Boolean)
+                state = value > 0.5f;
+            else
+                state = Mathf.Approximately(value, targetValue);
+
+            if (invertCondition)
+                state = !state;
+
+            return state;
         }
     }
 }

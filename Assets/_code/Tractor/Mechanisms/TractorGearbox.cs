@@ -55,6 +55,7 @@ namespace Tractor
                 case "isGearLevel1":
                 case "currentRange":
                 case "currentGear":
+                case "isNeutralGear":
                     return true;
                 default:
                     return false;
@@ -67,11 +68,13 @@ namespace Tractor
             {
                 case "gearLevel":
                 case "isGearLevel1":
-                    return isGearLevel1 ? 1f : 2f;
+                    return isGearLevel1 ? 1f : 0f;
                 case "currentRange":
                     return currentRange;
                 case "currentGear":
                     return gearValue;
+                case "isNeutralGear":
+                    return isNeutralGear ? 1f : 0f;
                 default:
                     Debug.LogWarning($"Неизвестное условие: {conditionName}");
                     return 0f;

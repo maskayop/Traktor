@@ -137,7 +137,7 @@ MonoBehaviour:
   totalWheelTemp: 20
   bumpForce: 0
   oldForce: 0
-  drawSkid: 1
+  drawSkid: 0
   cutTractionESP: 0
   cutTractionTCS: 0
   cutBrakeABS: 0
@@ -312,7 +312,7 @@ MonoBehaviour:
   totalWheelTemp: 20
   bumpForce: 0
   oldForce: 0
-  drawSkid: 1
+  drawSkid: 0
   cutTractionESP: 0
   cutTractionTCS: 0
   cutBrakeABS: 0
@@ -826,9 +826,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RCCP_CarController
   _poweredAxles: []
-  _brakedAxles: []
-  _steeredAxles: []
-  _handbrakedAxles: []
+  _brakedAxles:
+  - {fileID: 4183952943463572194}
+  - {fileID: 160760720063605595}
+  _steeredAxles:
+  - {fileID: 4183952943463572194}
+  _handbrakedAxles:
+  - {fileID: 160760720063605595}
   checkComponents: 0
   canControl: 1
   externalControl: 0
@@ -1289,7 +1293,7 @@ MonoBehaviour:
   isHandbrake: 0
   powerMultiplier: 1
   steerMultiplier: 1
-  brakeMultiplier: 0.5
+  brakeMultiplier: 0.4
   handbrakeMultiplier: 1
   throttleInput: 0
   brakeInput: 0
@@ -1298,7 +1302,7 @@ MonoBehaviour:
   steerAngle: 0
   steerSpeed: 5
   isGrounded: 0
-  maxBrakeTorque: 5000
+  maxBrakeTorque: 10000
   maxSteerAngle: 25
   tractionHelpedSidewaysStiffness: 1
   producedMotorTorqueNM_Left: 0
@@ -1855,7 +1859,7 @@ MonoBehaviour:
   totalWheelTemp: 20
   bumpForce: 0
   oldForce: 0
-  drawSkid: 1
+  drawSkid: 0
   cutTractionESP: 0
   cutTractionTCS: 0
   cutBrakeABS: 0
@@ -2382,7 +2386,7 @@ MonoBehaviour:
   totalWheelTemp: 20
   bumpForce: 0
   oldForce: 0
-  drawSkid: 1
+  drawSkid: 0
   cutTractionESP: 0
   cutTractionTCS: 0
   cutBrakeABS: 0
@@ -3038,7 +3042,7 @@ MonoBehaviour:
   isHandbrake: 1
   powerMultiplier: 1
   steerMultiplier: 1
-  brakeMultiplier: 0.1
+  brakeMultiplier: 0.2
   handbrakeMultiplier: 1
   throttleInput: 0
   brakeInput: 0
@@ -3047,7 +3051,7 @@ MonoBehaviour:
   steerAngle: 0
   steerSpeed: 1
   isGrounded: 0
-  maxBrakeTorque: 100000
+  maxBrakeTorque: 10000
   maxSteerAngle: 40
   tractionHelpedSidewaysStiffness: 1
   producedMotorTorqueNM_Left: 0
@@ -3872,15 +3876,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6522003509741773993, guid: 7cd9a3f61260acd4da92a70adf609baa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0038
+      value: -0.00371
       objectReference: {fileID: 0}
     - target: {fileID: 6522003509741773993, guid: 7cd9a3f61260acd4da92a70adf609baa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.00141
       objectReference: {fileID: 0}
     - target: {fileID: 6522003509741773993, guid: 7cd9a3f61260acd4da92a70adf609baa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0218
+      value: 0.02189
       objectReference: {fileID: 0}
     - target: {fileID: 6522003509741773993, guid: 7cd9a3f61260acd4da92a70adf609baa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4538,15 +4542,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.006
+      value: -0.00599
       objectReference: {fileID: 0}
     - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0001
+      value: 0.00096
       objectReference: {fileID: 0}
     - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0199
+      value: 0.02004
       objectReference: {fileID: 0}
     - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5734,15 +5738,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.00532
+      value: 0.00529
       objectReference: {fileID: 0}
     - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00086
+      value: 0.00121
       objectReference: {fileID: 0}
     - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.01878
+      value: 0.01883
       objectReference: {fileID: 0}
     - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6869,7 +6873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0002
+      value: 0.0011
       objectReference: {fileID: 0}
     - target: {fileID: 6522003509741773993, guid: 270e0dd55ccdf96429881730438711ac, type: 3}
       propertyPath: m_LocalPosition.z
