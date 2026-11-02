@@ -95,6 +95,12 @@ namespace Tractor
         [SerializeField] string headLightOffInputName;
         CustomInput headLightOff_Input;
 
+        [SerializeField] string highBeamLightConstantInputName;
+        CustomInput highBeamLightConstant_Input;
+
+        [SerializeField] string highBeamLightInputName;
+        CustomInput highBeamLight_Input;
+
         [Header("Звуки")]
         [SerializeField] string hornSignalInputName;
         CustomInput hornSignal_Input;
@@ -163,6 +169,8 @@ namespace Tractor
             parkingLightOff_Input = inputController?.GetInputByName(parkingLightOffInputName);
             headLightOn_Input = inputController?.GetInputByName(headLightOnInputName);
             headLightOff_Input = inputController?.GetInputByName(headLightOffInputName);
+            highBeamLightConstant_Input = inputController?.GetInputByName(highBeamLightConstantInputName);
+            highBeamLight_Input = inputController?.GetInputByName(highBeamLightInputName);
 
             hornSignal_Input = inputController?.GetInputByName(hornSignalInputName);
         }
@@ -240,6 +248,7 @@ namespace Tractor
             SetAlarmLights();
             SetParkingLights();
             SetHeadLights();
+            SetHighBeamLights();
 
             //Звуки
             SetHornSignal();
@@ -517,6 +526,17 @@ namespace Tractor
             if (headLightOff_Input != null)
                 if (headLightOff_Input.inputValue != 0)
                     tractorLights.TurnOffHeadLights();
+        }
+
+        void SetHighBeamLights()
+        {
+            if (highBeamLight_Input != null)
+            {
+                if (highBeamLight_Input.inputValue != 0)
+                    tractorLights.TurnOnHighBeamLights();
+                else
+                    tractorLights.TurnOffHighBeamLights();
+            }
         }
 
         void SetHornSignal()

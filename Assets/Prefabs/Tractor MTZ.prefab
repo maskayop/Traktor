@@ -953,6 +953,8 @@ MonoBehaviour:
   parkingLightOffInputName: Parking Lights Off
   headLightOnInputName: Headlights On
   headLightOffInputName: Headlights Off
+  highBeamLightConstantInputName: High Beam Light Constant
+  highBeamLightInputName: High Beam Light
   hornSignalInputName: Horn Signal
 --- !u!114 &5510360152096047968
 MonoBehaviour:
@@ -1060,7 +1062,9 @@ MonoBehaviour:
   parkingLightPropertyName: _Vertex_Blue_Intensity
   parkingLightMultiplier: 3
   headLightPropertyName: _Vertex_Red_Intensity
-  headLightMultiplier: 8
+  headLightMultiplier: 7
+  highBeamLightPropertyName: _Vertex_Green_Intensity
+  highBeamLightMultiplier: 12
   lightHeadFront: {fileID: 377968324352054916}
   lightSideFrontLeft: {fileID: 8748209919484473897}
   lightSideFrontRight: {fileID: 7708323206060226675}
@@ -1073,6 +1077,7 @@ MonoBehaviour:
   brakeIsOn: 0
   parkingIsOn: 0
   headIsOn: 0
+  highBeamIsOn: 0
 --- !u!114 &791837015719757519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1571,14 +1576,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2884689254957922000}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.06975647, y: 0, z: 0, w: 0.9975641}
+  m_LocalRotation: {x: 0.078459114, y: 0, z: 0, w: 0.99691737}
   m_LocalPosition: {x: 0, y: 2.3, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5732157765574417704}
   m_Father: {fileID: 4735120449139673022}
-  m_LocalEulerAnglesHint: {x: 8, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 9, y: 0, z: 0}
 --- !u!1 &3276755407756639744
 GameObject:
   m_ObjectHideFlags: 0
@@ -2124,13 +2129,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4845784152098393494}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.9975641, z: -0.06975647, w: 0}
+  m_LocalRotation: {x: 0, y: 0.99691737, z: -0.078459114, w: 0}
   m_LocalPosition: {x: 0, y: 2.3, z: -0.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4735120449139673022}
-  m_LocalEulerAnglesHint: {x: 8, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 9, y: 180, z: 0}
 --- !u!1 &4853934125840474657
 GameObject:
   m_ObjectHideFlags: 0

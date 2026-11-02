@@ -999,6 +999,17 @@
                 },
                 {
                     "name": "",
+                    "id": "9f7a9767-0373-4125-ab29-a9c29de45f49",
+                    "path": "<Keyboard>/9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "High Beam Light",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2fce2077-0ab2-4bb9-a550-1512aefb07b4",
                     "path": "<HID::Arduino LLC Arduino Leonardo>/stick/y",
                     "interactions": "",

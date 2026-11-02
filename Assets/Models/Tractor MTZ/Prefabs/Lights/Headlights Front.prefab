@@ -34,6 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2045894280095758974}
+  - {fileID: 1332765102454337409}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8770202119045735246
@@ -129,6 +130,8 @@ MonoBehaviour:
   visuals:
   - materialPropertyName: _Vertex_Red_Intensity
     lightComponent: {fileID: 3923072571083268539}
+  - materialPropertyName: _Vertex_Green_Intensity
+    lightComponent: {fileID: 4065371097769489476}
 --- !u!1001 &7476661415200610809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -140,6 +143,10 @@ PrefabInstance:
     - target: {fileID: 7032050451457872106, guid: 7894f6440566bd04a913577e3f4ba04f, type: 3}
       propertyPath: m_Name
       value: 'Head Spot Light '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7032050451457872106, guid: 7894f6440566bd04a913577e3f4ba04f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8909833049374106503, guid: 7894f6440566bd04a913577e3f4ba04f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -195,4 +202,75 @@ Transform:
 Light:
   m_CorrespondingSourceObject: {fileID: 5887297930286200898, guid: 7894f6440566bd04a913577e3f4ba04f, type: 3}
   m_PrefabInstance: {fileID: 7476661415200610809}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7627122217476246534
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6664413196179992297}
+    m_Modifications:
+    - target: {fileID: 7032050451457872106, guid: 7250f0da166cadf44a474c35185208b8, type: 3}
+      propertyPath: m_Name
+      value: Light Far
+      objectReference: {fileID: 0}
+    - target: {fileID: 7032050451457872106, guid: 7250f0da166cadf44a474c35185208b8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909833049374106503, guid: 7250f0da166cadf44a474c35185208b8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909833049374106503, guid: 7250f0da166cadf44a474c35185208b8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1332
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909833049374106503, guid: 7250f0da166cadf44a474c35185208b8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.549
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909833049374106503, guid: 7250f0da166cadf44a474c35185208b8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909833049374106503, guid: 7250f0da166cadf44a474c35185208b8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909833049374106503, guid: 7250f0da166cadf44a474c35185208b8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909833049374106503, guid: 7250f0da166cadf44a474c35185208b8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909833049374106503, guid: 7250f0da166cadf44a474c35185208b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909833049374106503, guid: 7250f0da166cadf44a474c35185208b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909833049374106503, guid: 7250f0da166cadf44a474c35185208b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7250f0da166cadf44a474c35185208b8, type: 3}
+--- !u!4 &1332765102454337409 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8909833049374106503, guid: 7250f0da166cadf44a474c35185208b8, type: 3}
+  m_PrefabInstance: {fileID: 7627122217476246534}
+  m_PrefabAsset: {fileID: 0}
+--- !u!108 &4065371097769489476 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 5887297930286200898, guid: 7250f0da166cadf44a474c35185208b8, type: 3}
+  m_PrefabInstance: {fileID: 7627122217476246534}
   m_PrefabAsset: {fileID: 0}

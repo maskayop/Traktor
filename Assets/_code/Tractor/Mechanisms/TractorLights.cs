@@ -18,6 +18,12 @@ namespace Tractor
                 case "leftTurnBlink":
                 case "rightTurnBlink":
                 case "alarmBlink":
+                case "parkingIsOn":
+                case "parkingLight":
+                case "headIsOn":
+                case "headLight":
+                case "highBeamIsOn":
+                case "highBeamLight":
                     return true;
                 default:
                     return false;
@@ -45,6 +51,18 @@ namespace Tractor
                     return (rightTurnIsOn && turnLightsRelayValue > 0.5f) ? 1f : 0f;
                 case "alarmBlink":
                     return (alarmIsOn && turnLightsRelayValue > 0.5f) ? 1f : 0f;
+                case "parkingIsOn":
+                    return parkingIsOn ? 1f : 0f;
+                case "parkingLight":
+                    return (parkingIsOn && lightsCanWork) ? 1f : 0f;
+                case "headIsOn":
+                    return headIsOn ? 1f : 0f;
+                case "headLight":
+                    return (headIsOn && lightsCanWork) ? 1f : 0f;
+                case "highBeamIsOn":
+                    return highBeamIsOn ? 1f : 0f;
+                case "highBeamLight":
+                    return (highBeamIsOn && lightsCanWork) ? 1f : 0f;
                 default:
                     Debug.LogWarning($"Неизвестное условие: {conditionName}");
                     return 0f;
@@ -64,6 +82,8 @@ namespace Tractor
 
         [SerializeField] string headLightPropertyName;
         [SerializeField] float headLightMultiplier = 1.0f;
+        [SerializeField] string highBeamLightPropertyName;
+        [SerializeField] float highBeamLightMultiplier = 1.0f;
 
         [Header("Главные светильники")]
         [SerializeField] MeshLightController lightHeadFront;
@@ -85,6 +105,7 @@ namespace Tractor
         public bool brakeIsOn = false;
         public bool parkingIsOn = false;
         public bool headIsOn = false;
+        public bool highBeamIsOn = false;
 
         TractorEngine tractorEngine;
 
@@ -94,9 +115,6 @@ namespace Tractor
         void Update()
         {
             lightsCanWork = tractorEngine.Mass;
-
-            if (!lightsCanWork)
-                return;
 
             if (!leftTurnIsOn && !rightTurnIsOn && !alarmIsOn)
             {
@@ -108,6 +126,7 @@ namespace Tractor
             UpdateBrakeLightsMaterials();
             UpdateParkingLightsMaterials();
             UpdateHeadLightsMaterials();
+            UpdateHighBeamLightsMaterials();
         }
 
         public void Init(TractorInput INtractorInput, TractorEngine INtractorEngine)
@@ -180,10 +199,7 @@ namespace Tractor
 
         void UpdateBrakeLightsMaterials()
         {
-            if (!lightsCanWork)
-                return;
-
-            if (brakeIsOn)
+            if (brakeIsOn && lightsCanWork)
             {
                 lightSideBackLeft.UpdateVisuals(brakeLightPropertyName, brakeLightMultiplier);
                 lightSideBackRight.UpdateVisuals(brakeLightPropertyName, brakeLightMultiplier);
@@ -197,10 +213,7 @@ namespace Tractor
 
         void UpdateParkingLightsMaterials()
         {
-            if (!lightsCanWork)
-                return;
-
-            if (parkingIsOn)
+            if (parkingIsOn && lightsCanWork)
             {
                 lightSideFrontLeft.UpdateVisuals(parkingLightPropertyName, parkingLightMultiplier);
                 lightSideBackLeft.UpdateVisuals(parkingLightPropertyName, parkingLightMultiplier);
@@ -218,13 +231,18 @@ namespace Tractor
 
         void UpdateHeadLightsMaterials()
         {
-            if (!lightsCanWork)
-                return;
-
-            if (headIsOn)
+            if (headIsOn && !highBeamIsOn && lightsCanWork)
                 lightHeadFront.UpdateVisuals(headLightPropertyName, headLightMultiplier);
             else
                 lightHeadFront.UpdateVisuals(headLightPropertyName, 0);
+        }
+
+        void UpdateHighBeamLightsMaterials()
+        {
+            if (highBeamIsOn && lightsCanWork)
+                lightHeadFront.UpdateVisuals(highBeamLightPropertyName, highBeamLightMultiplier);
+            else
+                lightHeadFront.UpdateVisuals(highBeamLightPropertyName, 0);
         }
 
         public void TurnOnLeftTurnLight()
@@ -273,6 +291,16 @@ namespace Tractor
         public void TurnOffHeadLights()
         {
             headIsOn = false;
+        }
+
+        public void TurnOnHighBeamLights()
+        {
+            highBeamIsOn = true;
+        }
+
+        public void TurnOffHighBeamLights()
+        {
+            highBeamIsOn = false;
         }
     }
 }
