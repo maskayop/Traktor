@@ -13,7 +13,11 @@ namespace Tractor
                 case "rightTurnIsOn":
                 case "rightTurn":
                 case "alarmIsOn":
+                case "turnRelay":
                 case "alarm":
+                case "leftTurnBlink":
+                case "rightTurnBlink":
+                case "alarmBlink":
                     return true;
                 default:
                     return false;
@@ -25,38 +29,25 @@ namespace Tractor
             switch (conditionName)
             {
                 case "leftTurnIsOn":
-                    if (leftTurnIsOn)
-                        return 1;
-                    else
-                        return 0;
                 case "leftTurn":
-                    if (leftTurnIsOn)
-                        return 1;
-                    else
-                        return 0;
+                    return leftTurnIsOn ? 1f : 0f;
                 case "rightTurnIsOn":
-                    if (rightTurnIsOn)
-                        return 1;
-                    else
-                        return 0;
                 case "rightTurn":
-                    if (rightTurnIsOn)
-                        return 1;
-                    else
-                        return 0;
+                    return rightTurnIsOn ? 1f : 0f;
                 case "alarmIsOn":
-                    if (alarmIsOn)
-                        return 1;
-                    else
-                        return 0;
                 case "alarm":
-                    if (alarmIsOn)
-                        return 1;
-                    else
-                        return 0;
+                    return alarmIsOn ? 1f : 0f;
+                case "turnRelay":
+                    return turnLightsRelayValue;
+                case "leftTurnBlink":
+                    return (leftTurnIsOn && turnLightsRelayValue > 0.5f) ? 1f : 0f;
+                case "rightTurnBlink":
+                    return (rightTurnIsOn && turnLightsRelayValue > 0.5f) ? 1f : 0f;
+                case "alarmBlink":
+                    return (alarmIsOn && turnLightsRelayValue > 0.5f) ? 1f : 0f;
                 default:
                     Debug.LogWarning($"Неизвестное условие: {conditionName}");
-                    return 0;
+                    return 0f;
             }
         }
 
@@ -102,13 +93,16 @@ namespace Tractor
 
         void Update()
         {
-            if (!tractorEngine.Mass)
-            {
-                lightsCanWork = false;
+            lightsCanWork = tractorEngine.Mass;
+
+            if (!lightsCanWork)
                 return;
+
+            if (!leftTurnIsOn && !rightTurnIsOn && !alarmIsOn)
+            {
+                turnLightsRelayValue = 0;
+                turnLightsRelayTime = 0;
             }
-            else
-                lightsCanWork = true;
 
             UpdateTurnLightsRelay();
             UpdateBrakeLightsMaterials();

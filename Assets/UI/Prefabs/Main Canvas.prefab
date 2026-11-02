@@ -416,7 +416,7 @@ MonoBehaviour:
   controlsButtons:
   - {fileID: 589724344605675070}
   - {fileID: 7549355940005559766}
-  showTestInfoWindow: 1
+  showTestInfoWindow: 0
   testInfoWindow: {fileID: 4874045611482776698}
   versionText: {fileID: 9209098226586421615}
 --- !u!114 &5272256938219522324

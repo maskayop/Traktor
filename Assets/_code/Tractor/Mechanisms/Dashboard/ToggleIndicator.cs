@@ -45,10 +45,10 @@ namespace Tractor
 
         void ApplyState(bool state)
         {
-            if (onObject != null)
+            if (onObject)
                 onObject.SetActive(state);
 
-            if (offObject != null)
+            if (offObject)
                 offObject.SetActive(!state);
         }
 
@@ -61,29 +61,18 @@ namespace Tractor
 
             MonoBehaviour targetMono = tractorController.GetMonoBehaviour(tractorBehavior);
 
-            if (!targetMono)
-            {
-                Debug.LogError($"UIToggleIndicator: модуль {tractorBehavior} не найден!");
-                return;
-            }
+            if (!targetMono) return;
 
             targetCheckable = targetMono as ICheckable;
 
-            if (targetCheckable == null)
+            if (targetCheckable == null || string.IsNullOrEmpty(variableName) || !targetCheckable.HasVariable(variableName))
             {
-                Debug.LogError($"UIToggleIndicator: модуль {tractorBehavior} не реализует ICheckable!");
-                return;
-            }
+                if (onObject)
+                    onObject.SetActive(false);
 
-            if (string.IsNullOrEmpty(variableName))
-            {
-                Debug.LogError("UIToggleIndicator: variableName пустой!");
-                return;
-            }
+                if (offObject)
+                    offObject.SetActive(false);
 
-            if (!targetCheckable.HasVariable(variableName))
-            {
-                Debug.LogError($"UIToggleIndicator: переменная '{variableName}' не найдена в модуле {tractorBehavior}!");
                 return;
             }
 

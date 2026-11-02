@@ -23,6 +23,10 @@ namespace Tractor
         public float brake;
         public float clutch;
 
+        [Header("Ручник")]
+        public WheelCollider[] handbrakeWheels;   // задние колёса
+        public float handbrakeTorque = 50000f;    // сила ручника в Нм
+
         RCCP_CarController carController;
         public RCCP_CarController CarController { get { return carController; } }
 
@@ -89,10 +93,19 @@ namespace Tractor
 
             speed = carController.speed;
             RPM = carController.engineRPM;
+        }
 
-            float handbrakeValue = isHandbrake ? 1f : 0f;
-            carController.handbrakeInput_P = handbrakeValue;
-            carController.handbrakeInput_V = handbrakeValue;
+        void FixedUpdate()
+        {
+            if (handbrakeWheels == null) return;
+
+            float torque = isHandbrake ? handbrakeTorque : 0f;
+
+            foreach (var wheel in handbrakeWheels)
+            {
+                if (wheel != null)
+                    wheel.brakeTorque = torque;
+            }
         }
 
         public MonoBehaviour GetMonoBehaviour(TractorBehavior tractorBehavior)

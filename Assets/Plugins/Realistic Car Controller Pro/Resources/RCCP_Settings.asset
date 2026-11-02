@@ -452,7 +452,7 @@ MonoBehaviour:
     sidewaysExtremumValue_R: 2.5
     sidewaysAsymptoteSlip_R: 1
     sidewaysAsymptoteValue_R: 2.5
-  useFixedWheelColliders: 1
+  useFixedWheelColliders: 0
   autoReset: 1
   useTelemetry: 0
   useInputDebugger: 0
