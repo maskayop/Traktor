@@ -1,0 +1,474 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6422114731120591985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 448855783041765755}
+  m_Layer: 0
+  m_Name: Farm Trailer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &448855783041765755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6422114731120591985}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5253610350776799742}
+  - {fileID: 2863552187789701466}
+  - {fileID: 3698942614707157350}
+  - {fileID: 1899435553342250836}
+  - {fileID: 6918355958296720381}
+  - {fileID: 5396024796499612612}
+  - {fileID: 535985062477767198}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &358924909624747929
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 448855783041765755}
+    m_Modifications:
+    - target: {fileID: 5481930276552914535, guid: 2463b3e9792e2a144961d37f9b482dd7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481930276552914535, guid: 2463b3e9792e2a144961d37f9b482dd7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481930276552914535, guid: 2463b3e9792e2a144961d37f9b482dd7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481930276552914535, guid: 2463b3e9792e2a144961d37f9b482dd7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481930276552914535, guid: 2463b3e9792e2a144961d37f9b482dd7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481930276552914535, guid: 2463b3e9792e2a144961d37f9b482dd7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481930276552914535, guid: 2463b3e9792e2a144961d37f9b482dd7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481930276552914535, guid: 2463b3e9792e2a144961d37f9b482dd7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481930276552914535, guid: 2463b3e9792e2a144961d37f9b482dd7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481930276552914535, guid: 2463b3e9792e2a144961d37f9b482dd7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302334368652698804, guid: 2463b3e9792e2a144961d37f9b482dd7, type: 3}
+      propertyPath: m_Name
+      value: Farm Trailer Chassis
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2463b3e9792e2a144961d37f9b482dd7, type: 3}
+--- !u!4 &5253610350776799742 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5481930276552914535, guid: 2463b3e9792e2a144961d37f9b482dd7, type: 3}
+  m_PrefabInstance: {fileID: 358924909624747929}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2739179254647443437
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 448855783041765755}
+    m_Modifications:
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.76830196
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.34118283
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.0136786
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146035
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -3.5527133e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315031380245191895, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_Name
+      value: Farm Trailer Wheel BL
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 17ab98e4d85623845be9761027780236, type: 3}
+--- !u!4 &1899435553342250836 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+  m_PrefabInstance: {fileID: 2739179254647443437}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4086710679928306626
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 448855783041765755}
+    m_Modifications:
+    - target: {fileID: 2237031435696638616, guid: 802bdecb1374b8840b1c053b69a3839a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237031435696638616, guid: 802bdecb1374b8840b1c053b69a3839a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237031435696638616, guid: 802bdecb1374b8840b1c053b69a3839a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237031435696638616, guid: 802bdecb1374b8840b1c053b69a3839a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237031435696638616, guid: 802bdecb1374b8840b1c053b69a3839a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237031435696638616, guid: 802bdecb1374b8840b1c053b69a3839a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237031435696638616, guid: 802bdecb1374b8840b1c053b69a3839a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237031435696638616, guid: 802bdecb1374b8840b1c053b69a3839a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237031435696638616, guid: 802bdecb1374b8840b1c053b69a3839a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237031435696638616, guid: 802bdecb1374b8840b1c053b69a3839a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4566486311594290238, guid: 802bdecb1374b8840b1c053b69a3839a, type: 3}
+      propertyPath: m_Name
+      value: Farm Trailer Corpus
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 802bdecb1374b8840b1c053b69a3839a, type: 3}
+--- !u!4 &2863552187789701466 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2237031435696638616, guid: 802bdecb1374b8840b1c053b69a3839a, type: 3}
+  m_PrefabInstance: {fileID: 4086710679928306626}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4264785725745017511
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 448855783041765755}
+    m_Modifications:
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.7683025
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3411829
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.95191103
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.000000119209275
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 3.5527133e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.00000008146035
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315031380245191895, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_Name
+      value: Farm Trailer Wheel FR
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 17ab98e4d85623845be9761027780236, type: 3}
+--- !u!4 &535985062477767198 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+  m_PrefabInstance: {fileID: 4264785725745017511}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6165150618223063765
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 448855783041765755}
+    m_Modifications:
+    - target: {fileID: 5840341777644639045, guid: d509dd2206db4a6478d5b0f545b91a6a, type: 3}
+      propertyPath: m_Name
+      value: Farm Trailer Rotary
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411319044623272883, guid: d509dd2206db4a6478d5b0f545b91a6a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411319044623272883, guid: d509dd2206db4a6478d5b0f545b91a6a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411319044623272883, guid: d509dd2206db4a6478d5b0f545b91a6a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.95192534
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411319044623272883, guid: d509dd2206db4a6478d5b0f545b91a6a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411319044623272883, guid: d509dd2206db4a6478d5b0f545b91a6a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411319044623272883, guid: d509dd2206db4a6478d5b0f545b91a6a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411319044623272883, guid: d509dd2206db4a6478d5b0f545b91a6a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411319044623272883, guid: d509dd2206db4a6478d5b0f545b91a6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411319044623272883, guid: d509dd2206db4a6478d5b0f545b91a6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411319044623272883, guid: d509dd2206db4a6478d5b0f545b91a6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d509dd2206db4a6478d5b0f545b91a6a, type: 3}
+--- !u!4 &3698942614707157350 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7411319044623272883, guid: d509dd2206db4a6478d5b0f545b91a6a, type: 3}
+  m_PrefabInstance: {fileID: 6165150618223063765}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6655567634822374212
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 448855783041765755}
+    m_Modifications:
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.76831937
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.34118283
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.0136654
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.000000119209275
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 3.5527133e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.00000008146035
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315031380245191895, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_Name
+      value: Farm Trailer Wheel BR
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 17ab98e4d85623845be9761027780236, type: 3}
+--- !u!4 &6918355958296720381 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+  m_PrefabInstance: {fileID: 6655567634822374212}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8556034862033142653
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 448855783041765755}
+    m_Modifications:
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.76831883
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3411829
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.9518978
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146035
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -3.5527133e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315031380245191895, guid: 17ab98e4d85623845be9761027780236, type: 3}
+      propertyPath: m_Name
+      value: Farm Trailer Wheel FL
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 17ab98e4d85623845be9761027780236, type: 3}
+--- !u!4 &5396024796499612612 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4350375631982629049, guid: 17ab98e4d85623845be9761027780236, type: 3}
+  m_PrefabInstance: {fileID: 8556034862033142653}
+  m_PrefabAsset: {fileID: 0}

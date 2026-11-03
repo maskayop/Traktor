@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
   m_Fog: 0
-  m_FogColor: {r: 0.30203688, g: 0.320126, b: 0.3982669, a: 0.5446475}
+  m_FogColor: {r: 0.41231212, g: 0.47291017, b: 0.59818333, a: 0.6745022}
   m_FogMode: 2
   m_FogDensity: 0.002
   m_LinearFogStart: 0
@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 0.8050667
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 750026711}
+  m_SkyboxMaterial: {fileID: 1307454201}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -624,8 +624,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 23150356}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.057174865, y: -0.764283, z: 0.06841811, w: 0.6386873}
-  m_LocalPosition: {x: 0.9684459, y: 0.1776253, z: 0.17481922}
+  m_LocalRotation: {x: 0.32475013, y: -0.37470186, z: 0.14203599, w: 0.8567157}
+  m_LocalPosition: {x: 0.54974455, y: 0.6629169, z: -0.508254}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8006,8 +8006,8 @@ MonoBehaviour:
   showThirdParty: 0
   dayNightSwitch: 0.45
   isNight: 0
-  solarTime: 0.5446475
-  lunarTime: 0.5359255
+  solarTime: 0.6745022
+  lunarTime: 0.7179706
   notFirstFrame: 1
   removalZones: []
   sunRotationX: 0
@@ -19508,54 +19508,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7524471997893536111, guid: 4d496f31837c17a45bc41a9c528e65e0, type: 3}
   m_PrefabInstance: {fileID: 748446159}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &750026711
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Enviro/Skybox
-  m_Shader: {fileID: 4800000, guid: 34fee0a1b19b20b45aea7483b5f757da, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _GalaxyTex:
-        m_Texture: {fileID: 8900000, guid: 5734983fc81450b4187c3cfa5985edef, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MoonGlowTex:
-        m_Texture: {fileID: 2800000, guid: 6838e0810da4e49488b5d9a6ee76eb07, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MoonTex:
-        m_Texture: {fileID: 2800000, guid: c6fd9f694390e0245b6dca5812065950, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _StarsTex:
-        m_Texture: {fileID: 8900000, guid: b5a7175da0f133b4d951c19c9c2cebfc, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SunTex:
-        m_Texture: {fileID: 2800000, guid: c95bed5306e94f24ba5802d841607ac7, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats: []
-    m_Colors: []
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1 &752174612
 GameObject:
   m_ObjectHideFlags: 0
@@ -34942,6 +34894,54 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8666473599309339165, guid: 515e4aab27faa2d4b8ffc1cd3dcdef7d, type: 3}
   m_PrefabInstance: {fileID: 1306603541}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &1307454201
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Enviro/Skybox
+  m_Shader: {fileID: 4800000, guid: 34fee0a1b19b20b45aea7483b5f757da, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _GalaxyTex:
+        m_Texture: {fileID: 8900000, guid: 5734983fc81450b4187c3cfa5985edef, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MoonGlowTex:
+        m_Texture: {fileID: 2800000, guid: 6838e0810da4e49488b5d9a6ee76eb07, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MoonTex:
+        m_Texture: {fileID: 2800000, guid: c6fd9f694390e0245b6dca5812065950, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _StarsTex:
+        m_Texture: {fileID: 8900000, guid: b5a7175da0f133b4d951c19c9c2cebfc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SunTex:
+        m_Texture: {fileID: 2800000, guid: c95bed5306e94f24ba5802d841607ac7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats: []
+    m_Colors: []
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1001 &1307878658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38037,7 +38037,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1424422314}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.08230653, y: -0.58957535, z: 0.060564782, w: 0.8012231}
+  m_LocalRotation: {x: 0.29142767, y: -0.0925692, z: 0.028346911, w: 0.9516813}
   m_LocalPosition: {x: 14.555425, y: -6.115484, z: 2.5310612}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -38083,8 +38083,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 13
   m_Type: 1
-  m_Color: {r: 0.94101614, g: 0.70888966, b: 0.4606358, a: 1}
-  m_Intensity: 1.6690246
+  m_Color: {r: 0.91764706, g: 0.8047233, b: 0.68599737, a: 1}
+  m_Intensity: 1.9461236
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -43685,7 +43685,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629352855}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.1660244, y: -0.7892554, z: -0.2431671, w: -0.5388708}
+  m_LocalRotation: {x: -0.02177739, y: -0.95305276, z: -0.29363257, w: -0.07068358}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -50279,8 +50279,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898629216}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.08230653, y: -0.58957535, z: 0.060564782, w: 0.8012231}
-  m_LocalPosition: {x: 0.93479216, y: 0.20331143, z: -0.29125258}
+  m_LocalRotation: {x: 0.29142767, y: -0.0925692, z: 0.028346911, w: 0.9516813}
+  m_LocalPosition: {x: 0.15959524, y: 0.55993134, z: -0.8130229}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -60391,6 +60391,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3132775747925577998, guid: a69524bfe9d544940a92089f677f1ce6, type: 3}
   m_PrefabInstance: {fileID: 2126023075013078108}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4141343236783734792
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 448855783041765755, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3685.753
+      objectReference: {fileID: 0}
+    - target: {fileID: 448855783041765755, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448855783041765755, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3496.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 448855783041765755, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.70710385
+      objectReference: {fileID: 0}
+    - target: {fileID: 448855783041765755, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448855783041765755, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071098
+      objectReference: {fileID: 0}
+    - target: {fileID: 448855783041765755, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448855783041765755, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448855783041765755, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -270
+      objectReference: {fileID: 0}
+    - target: {fileID: 448855783041765755, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422114731120591985, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
+      propertyPath: m_Name
+      value: Farm Trailer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
 --- !u!1001 &4546917449417749877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61180,3 +61237,4 @@ SceneRoots:
   - {fileID: 5536885932821873321}
   - {fileID: 702786740}
   - {fileID: 2002965480}
+  - {fileID: 4141343236783734792}
