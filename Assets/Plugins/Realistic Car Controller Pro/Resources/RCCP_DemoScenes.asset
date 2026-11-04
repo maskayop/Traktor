@@ -26,16 +26,27 @@ MonoBehaviour:
   demo_City_AI: {fileID: 102900000, guid: 027daeb76767a314ea08b1a99a646d0e, type: 3}
   demo_CityWithTraffic: {fileID: 102900000, guid: d9cedac3b1da325439ced9b15d4b779e, type: 3}
   demo_StabilityTest: {fileID: 0}
+  demo_FeatureLab: {fileID: 102900000, guid: 4c98b47b2e3ce3c438681958e6b23bb7, type: 3}
+  demo_Replay: {fileID: 102900000, guid: 04368a76fe42f93488fe05e209128d87, type: 3}
   path_demo_protototype: Assets/Realistic Car Controller Pro/Scenes/RCCP_Scene_Blank_Prototype.unity
-  path_city_AIO: 
-  path_demo_City: 
-  path_demo_CarSelection: 
-  path_demo_APIBlank: 
-  path_demo_BlankMobile: 
-  path_demo_Damage: 
-  path_demo_Customization: 
-  path_demo_OverrideInputs: 
-  path_demo_Transport: 
+  path_city_AIO: Assets/Realistic Car Controller Pro/Addons/Installed/Demo Content/Scenes/RCCP_Scene_CityNew_AIO.unity
+  path_demo_City: Assets/Realistic Car Controller Pro/Addons/Installed/Demo Content/Scenes/RCCP_Scene_CityNew.unity
+  path_demo_CarSelection: Assets/Realistic Car Controller Pro/Addons/Installed/Demo
+    Content/Scenes/RCCP_Scene_CityNew_SelectVehicle.unity
+  path_demo_APIBlank: Assets/Realistic Car Controller Pro/Addons/Installed/Demo Content/Scenes/RCCP_Scene_Blank_API.unity
+  path_demo_BlankMobile: Assets/Realistic Car Controller Pro/Addons/Installed/Demo
+    Content/Scenes/RCCP_Scene_Blank.unity
+  path_demo_Damage: Assets/Realistic Car Controller Pro/Addons/Installed/Demo Content/Scenes/RCCP_Scene_Damage.unity
+  path_demo_Customization: Assets/Realistic Car Controller Pro/Addons/Installed/Demo
+    Content/Scenes/RCCP_Scene_Blank_Customization.unity
+  path_demo_OverrideInputs: Assets/Realistic Car Controller Pro/Addons/Installed/Demo
+    Content/Scenes/RCCP_Scene_Blank_OverrideInputs.unity
+  path_demo_Transport: Assets/Realistic Car Controller Pro/Addons/Installed/Demo
+    Content/Scenes/RCCP_Scene_Blank_Transport.unity
   path_demo_CityWithTraffic: 
-  path_demo_CityWithAI: 
+  path_demo_CityWithAI: Assets/Realistic Car Controller Pro/Addons/Installed/Demo
+    Content/Scenes/RCCP_Scene_CityNew_AI.unity
   path_demo_StabilityTest: 
+  path_demo_FeatureLab: Assets/Realistic Car Controller Pro/Addons/Installed/Demo
+    Content/Scenes/RCCP_Scene_FeatureLab.unity
+  path_demo_Replay: Assets/Realistic Car Controller Pro/Addons/Installed/Demo Content/Scenes/RCCP_Scene_Replay.unity

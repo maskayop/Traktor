@@ -7,10 +7,9 @@
 //
 //----------------------------------------------
 
-using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 /// <summary>
 /// Truck trailer has additional wheelcolliders, and now also a lighting system.
@@ -18,7 +17,8 @@ using System.Linq;
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(ConfigurableJoint))]
 [AddComponentMenu("BoneCracker Games/Realistic Car Controller Pro/Misc/RCCP Trailer Controller")]
-public class RCCP_TrailerController : RCCP_GenericComponent {
+public class RCCP_TrailerController : RCCP_GenericComponent
+{
 
     /// <summary>
     /// The car controller that will tow this trailer once attached.
@@ -31,8 +31,10 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
     /// The Rigidbody component of this trailer.
     /// Used for applying physics and adjusting center of mass.
     /// </summary>
-    private Rigidbody Rigid {
-        get {
+    private Rigidbody Rigid
+    {
+        get
+        {
             if (_Rigid == null)
                 TryGetComponent(out _Rigid);
             return _Rigid;
@@ -43,8 +45,10 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
     /// <summary>
     /// The ConfigurableJoint used to connect the trailer to a towing vehicle.
     /// </summary>
-    public ConfigurableJoint Joint {
-        get {
+    public ConfigurableJoint Joint
+    {
+        get
+        {
             if (_Joint == null)
                 TryGetComponent(out _Joint);
             return _Joint;
@@ -53,7 +57,8 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
     private ConfigurableJoint _Joint;
 
     [System.Serializable]
-    public class TrailerWheel {
+    public class TrailerWheel
+    {
 
         /// <summary>
         /// The WheelCollider associated with this wheel.
@@ -87,7 +92,8 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
         /// <summary>
         /// Applies motor torque to this wheel if it has a valid WheelCollider.
         /// </summary>
-        public void Torque(float torque) {
+        public void Torque(float torque)
+        {
             if (wheelCollider)
                 wheelCollider.motorTorque = torque;
         }
@@ -95,7 +101,8 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
         /// <summary>
         /// Applies brake torque to this wheel if it has a valid WheelCollider.
         /// </summary>
-        public void Brake(float brakeTorque) {
+        public void Brake(float brakeTorque)
+        {
             if (wheelCollider)
                 wheelCollider.brakeTorque = brakeTorque;
         }
@@ -173,7 +180,8 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
     /// <summary>
     /// Internal class for storing and restoring the joint motions of the ConfigurableJoint.
     /// </summary>
-    private class JointRestrictions {
+    private class JointRestrictions
+    {
 
         /// <summary>
         /// x-motion state of the ConfigurableJoint.
@@ -214,7 +222,8 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
         /// <summary>
         /// Retrieves the current motion values from the specified ConfigurableJoint.
         /// </summary>
-        public void Get(ConfigurableJoint configurableJoint) {
+        public void Get(ConfigurableJoint configurableJoint)
+        {
             motionX = configurableJoint.xMotion;
             motionY = configurableJoint.yMotion;
             motionZ = configurableJoint.zMotion;
@@ -226,7 +235,8 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
         /// <summary>
         /// Sets the stored motion values onto the specified ConfigurableJoint.
         /// </summary>
-        public void Set(ConfigurableJoint configurableJoint) {
+        public void Set(ConfigurableJoint configurableJoint)
+        {
             configurableJoint.xMotion = motionX;
             configurableJoint.yMotion = motionY;
             configurableJoint.zMotion = motionZ;
@@ -238,7 +248,8 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
         /// <summary>
         /// Resets all motion values to Free on the specified ConfigurableJoint.
         /// </summary>
-        public void Reset(ConfigurableJoint configurableJoint) {
+        public void Reset(ConfigurableJoint configurableJoint)
+        {
             configurableJoint.xMotion = ConfigurableJointMotion.Free;
             configurableJoint.yMotion = ConfigurableJointMotion.Free;
             configurableJoint.zMotion = ConfigurableJointMotion.Free;
@@ -270,9 +281,12 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
     /// Retrieves the position of the trailer's internal "_CenterPosition" object,
     /// which is set to the approximate bounds center of the trailer.
     /// </summary>
-    public Vector3 CenterPosition {
-        get {
-            if (_centerPosition == null) {
+    public Vector3 CenterPosition
+    {
+        get
+        {
+            if (_centerPosition == null)
+            {
                 _centerPosition = new GameObject("_CenterPosition").transform;
                 _centerPosition.transform.SetParent(transform);
                 _centerPosition.position = RCCP_GetBounds.GetBoundsCenter(transform);
@@ -283,9 +297,12 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
     }
 
     /// <summary>The transform used as the hitch/connection point for attaching to a towing vehicle.</summary>
-    public Transform TrailerConnectionPoint {
-        get {
-            if (trailerConnectionPoint == null) {
+    public Transform TrailerConnectionPoint
+    {
+        get
+        {
+            if (trailerConnectionPoint == null)
+            {
                 trailerConnectionPoint = new GameObject("RCCP_TrailerConnectionPoint").transform;
                 trailerConnectionPoint.SetParent(transform);
                 trailerConnectionPoint.localPosition = Vector3.zero;
@@ -295,7 +312,8 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
                 trailerConnectionPoint.position = attacher.transform.position;
             return trailerConnectionPoint;
         }
-        set {
+        set
+        {
             trailerConnectionPoint = value;
         }
     }
@@ -316,7 +334,8 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
     /// Unity's Start method, runs once when the script is first enabled.
     /// Initializes references and sets up the ConfigurableJoint if already connected.
     /// </summary>
-    private void Start() {
+    private void Start()
+    {
 
         jointRestrictions.Get(Joint);
 
@@ -326,10 +345,13 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
         Joint.connectedBody = null;
 
         // If a connectedBody is assigned by default, attach the trailer.
-        if (Joint.connectedBody) {
+        if (Joint.connectedBody)
+        {
             Joint.connectedBody.gameObject.TryGetComponent<RCCP_CarController>(out var connectedCar);
             AttachTrailer(connectedCar);
-        } else {
+        }
+        else
+        {
             DetachTrailer();
         }
 
@@ -340,7 +362,8 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
     /// <summary>
     /// Unity's FixedUpdate, used for applying physics-based logic, including motor and brake torques.
     /// </summary>
-    private void FixedUpdate() {
+    private void FixedUpdate()
+    {
 
         attached = (Joint.connectedBody != null);
 
@@ -351,15 +374,18 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
         if (!carController)
             return;
 
-        if (trailerWheels != null && trailerWheels.Length > 0) {
+        if (trailerWheels != null && trailerWheels.Length > 0)
+        {
             // Apply motor/ brake torque
-            for (int i = 0; i < trailerWheels.Length; i++) {
+            for (int i = 0; i < trailerWheels.Length; i++)
+            {
                 trailerWheels[i].Torque(carController.throttleInput_V * (attached ? 1f : 0f));
                 trailerWheels[i].Brake(attached ? 0f : 5000f);
             }
         }
 
-        if (carController) {
+        if (carController)
+        {
             // Get the trailer's forward in the truck's local space
             Vector3 localForward = carController.transform.InverseTransformDirection(transform.forward);
 
@@ -367,7 +393,8 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
             float angle = Mathf.Atan2(localForward.x, localForward.z) * Mathf.Rad2Deg;
 
             // If the angle exceeds the limit, apply a corrective force
-            if (Mathf.Abs(angle) > maxAngle) {
+            if (Mathf.Abs(angle) > maxAngle)
+            {
                 float correction = Mathf.Sign(angle) * (Mathf.Abs(angle) - maxAngle);
 
                 // Apply the torque around local up
@@ -385,7 +412,8 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
     /// Unity's Update, used for checking trailer sleep state, handling attach/detach timers,
     /// aligning wheels, and updating trailer lights.
     /// </summary>
-    private void Update() {
+    private void Update()
+    {
 
         // Detect if trailer is effectively sleeping
         if (Rigid.linearVelocity.sqrMagnitude < 0.01f && Mathf.Abs(Rigid.angularVelocity.sqrMagnitude) < 0.01f)
@@ -403,10 +431,13 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
         WheelAlign();
 
         // If we have a reference to the carController, bind that to the lights
-        if (carController) {
+        if (carController)
+        {
             foreach (RCCP_Light item in allLights)
                 item.CarController = carController;
-        } else {
+        }
+        else
+        {
             foreach (RCCP_Light item in allLights)
                 item.CarController = null;
         }
@@ -416,7 +447,8 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
     /// <summary>
     /// Aligning wheel model position and rotation, and applying slip-based steer offsets.
     /// </summary>
-    private void WheelAlign() {
+    private void WheelAlign()
+    {
 
         if (isSleeping)
             return;
@@ -427,7 +459,8 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
         float averageSidewaysSlip = 0f;
         int steeringWheelAmount = 0;
 
-        for (int i = 0; i < trailerWheels.Length; i++) {
+        for (int i = 0; i < trailerWheels.Length; i++)
+        {
 
             if (!trailerWheels[i].wheelModel)
                 continue;
@@ -437,7 +470,8 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
             trailerWheels[i].wheelCollider.GetWorldPose(out wheelPosition, out wheelRotation);
             trailerWheels[i].wheelModel.SetPositionAndRotation(wheelPosition, wheelRotation);
 
-            if (trailerWheels[i].steering) {
+            if (trailerWheels[i].steering)
+            {
                 WheelHit hit;
                 trailerWheels[i].wheelCollider.GetGroundHit(out hit);
                 int direction = transform.InverseTransformDirection(Rigid.linearVelocity).z > 0 ? 1 : -1;
@@ -452,8 +486,10 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
             averageSidewaysSlip /= steeringWheelAmount;
 
         // Apply steering angle offset based on the slip
-        for (int i = 0; i < trailerWheels.Length; i++) {
-            if (trailerWheels[i].steering) {
+        for (int i = 0; i < trailerWheels.Length; i++)
+        {
+            if (trailerWheels[i].steering)
+            {
                 if (trailerWheels[i].localPosition == Vector3.zero)
                     trailerWheels[i].localPosition = trailerWheels[i].wheelCollider.transform.localPosition;
 
@@ -484,7 +520,8 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
     /// Detaches the trailer from the current towing vehicle, disabling any references
     /// on the towing vehicle’s side and restoring the trailer’s joint motion to free.
     /// </summary>
-    public void DetachTrailer() {
+    public void DetachTrailer()
+    {
 
         if (carController && carController.OtherAddonsManager && carController.OtherAddonsManager.TrailAttacher)
             carController.OtherAddonsManager.TrailAttacher.attachedTrailer = null;
@@ -507,7 +544,8 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
     /// Attaches the trailer to the specified vehicle, setting up the ConfigurableJoint and
     /// referencing the car controller for torque/lights logic.
     /// </summary>
-    public void AttachTrailer(RCCP_CarController vehicle) {
+    public void AttachTrailer(RCCP_CarController vehicle)
+    {
 
         if (attached)
             return;
@@ -526,7 +564,7 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
 
         Vector3 connectionPoint = carController.transform.InverseTransformPoint(TrailerConnectionPoint.position);
         connectionPoint.x = 0f;
-        connectionPoint.y = 0f;
+        //connectionPoint.y = 0f;
 
         Joint.connectedAnchor = connectionPoint;
         jointRestrictions.Set(Joint);
@@ -541,7 +579,8 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
     /// <summary>
     /// Finds all RCCP_Light components under this vehicle and updates the manager’s lights list.
     /// </summary>
-    public void GetAllLights() {
+    public void GetAllLights()
+    {
 
         if (allLights == null)
             allLights = new List<RCCP_Light>();
@@ -556,9 +595,11 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
     /// Sets up default child objects (COM, Wheel Models, Wheel Colliders) if they are not found.
     /// Also initializes mass and other default values.
     /// </summary>
-    private void Reset() {
+    private void Reset()
+    {
 
-        if (Joint) {
+        if (Joint)
+        {
 
             Joint.axis = Vector3.right;
             Joint.secondaryAxis = Vector3.zero;
@@ -586,7 +627,8 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
         }
 
         // COM
-        if (COM == null) {
+        if (COM == null)
+        {
 
             GameObject com = new GameObject("COM");
             com.transform.SetParent(transform, false);
@@ -598,7 +640,8 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
         }
 
         // Trailer Attacher
-        if (attacher == null) {
+        if (attacher == null)
+        {
 
             attacher = new GameObject("RCCP_TrailerAttacher").AddComponent<RCCP_TrailerAttacher>();
             attacher.transform.localScale = new Vector3(1f, .5f, .1f);
@@ -617,7 +660,8 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
         TrailerConnectionPoint.position = attacher.transform.position;
 
         // Wheel Models
-        if (transform.Find("Wheel Models") == null) {
+        if (transform.Find("Wheel Models") == null)
+        {
 
             GameObject go = new GameObject("Wheel Models");
             go.transform.SetParent(transform, false);
@@ -628,7 +672,8 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
         }
 
         // Wheel Colliders
-        if (transform.Find("Wheel Colliders") == null) {
+        if (transform.Find("Wheel Colliders") == null)
+        {
 
             GameObject go = new GameObject("Wheel Colliders");
             go.transform.SetParent(transform, false);
@@ -652,7 +697,8 @@ public class RCCP_TrailerController : RCCP_GenericComponent {
     // ---------------------------------------------
     // GIZMO DRAWING
     // ---------------------------------------------
-    private void OnDrawGizmos() {
+    private void OnDrawGizmos()
+    {
 
         // Set a color for the gizmo (e.g., green).
         Gizmos.color = Color.green;
