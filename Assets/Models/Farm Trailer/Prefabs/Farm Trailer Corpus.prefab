@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 2237031435696638616}
   - component: {fileID: 5212705129409087898}
   - component: {fileID: 3945203224552157540}
+  - component: {fileID: 3184800483109212726}
   - component: {fileID: 7507485916595876716}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Farm Trailer Corpus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4566486311594290238}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -92,6 +93,28 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3184800483109212726
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4566486311594290238}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4238254289611417376, guid: 2491ff41bcf81ed41b075faf270155a1, type: 3}
 --- !u!205 &7507485916595876716
 LODGroup:
   m_ObjectHideFlags: 0
@@ -127,7 +150,7 @@ GameObject:
   - component: {fileID: 1028699439760233607}
   - component: {fileID: 7523751666382469584}
   - component: {fileID: 1721206098696778948}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Farm Trailer Corpus LOD
   m_TagString: Untagged
   m_Icon: {fileID: 0}

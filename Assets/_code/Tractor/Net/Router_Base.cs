@@ -207,6 +207,11 @@ namespace Tractor.Net
                     reportsWindow?.SaveExerciseReport();
                     break;
 
+                // Разное
+                case "DetachTrailer":
+                    mainCanvas?.DetachTrailer();
+                    break;
+
                 default:
                     Debug.LogWarning($"Неизвестная команда: {command}");
                     break;
@@ -337,6 +342,9 @@ namespace Tractor.Net
         public void SetSeasonSummer() { SendCommand("SetSeasonSummer"); }
         public void SetSeasonAutumn() { SendCommand("SetSeasonAutumn"); }
         public void SetSeasonWinter() { SendCommand("SetSeasonWinter"); }
+
+        // Разное
+        public void OnDetachTrailer() { SendCommand("DetachTrailer"); }
 
         // Обёртки Exercises
         public void SendExercisesList()

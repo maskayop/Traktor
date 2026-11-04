@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2928851926554459375}
   - component: {fileID: 1969390144760696450}
   - component: {fileID: 18215305278454298}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Farm Trailer Chassis LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,8 +99,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5481930276552914535}
+  - component: {fileID: 8487518325129003290}
   - component: {fileID: 2317555255384002469}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Farm Trailer Chassis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7302334368652698804}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -126,6 +127,28 @@ Transform:
   - {fileID: 2928851926554459375}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &8487518325129003290
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7302334368652698804}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1532758434553781161, guid: 2491ff41bcf81ed41b075faf270155a1, type: 3}
 --- !u!205 &2317555255384002469
 LODGroup:
   m_ObjectHideFlags: 0
@@ -169,7 +192,7 @@ GameObject:
   - component: {fileID: 4714791435369799611}
   - component: {fileID: 2549354324810537592}
   - component: {fileID: 7765327671072312859}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Farm Trailer Chassis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +282,7 @@ GameObject:
   - component: {fileID: 5810013252389169756}
   - component: {fileID: 3478416558525140615}
   - component: {fileID: 7873157796658258355}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Farm Trailer Chassis LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +372,7 @@ GameObject:
   - component: {fileID: 7835916263572739150}
   - component: {fileID: 8209919510532953580}
   - component: {fileID: 7051311660663043337}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Farm Trailer Chassis LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

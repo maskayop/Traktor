@@ -30,6 +30,9 @@ namespace Tractor
         RCCP_CarController carController;
         public RCCP_CarController CarController { get { return carController; } }
 
+        RCCP_TrailerController currentTrailer;
+        public RCCP_TrailerController CurrentTrailer { get { return currentTrailer; } }
+
         Transform destinationTransform;
         public Transform DestinationTransform { get { return destinationTransform; } set { destinationTransform = value; } }
 
@@ -93,6 +96,8 @@ namespace Tractor
 
             speed = carController.speed;
             RPM = carController.engineRPM;
+
+            CheckTrailer();
         }
 
         void FixedUpdate()
@@ -146,6 +151,24 @@ namespace Tractor
         public void SetHandbrake(bool state)
         {
             isHandbrake = state;
+        }
+
+        public bool HasTrailer()
+        {
+            return currentTrailer != null;
+        }
+
+        void CheckTrailer()
+        {
+            if (carController && carController.OtherAddonsManager && carController.OtherAddonsManager.TrailAttacher)
+                currentTrailer = carController.OtherAddonsManager.TrailAttacher.attachedTrailer;
+            else
+                currentTrailer = null;
+        }
+
+        public void DetachTrailer()
+        {
+            currentTrailer?.DetachTrailer();
         }
     }
 }

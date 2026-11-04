@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7556332182996707267}
   - component: {fileID: 3471389296549340584}
   - component: {fileID: 5392010882720453426}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Farm Trailer Rotary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 1914877872854849669}
   - component: {fileID: 8900166071744877414}
   - component: {fileID: 2188154102609609006}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Farm Trailer Rotary LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 5436306483323660270}
   - component: {fileID: 5153153457462149076}
   - component: {fileID: 2284223506507834018}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Farm Trailer Rotary LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,8 +279,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7411319044623272883}
+  - component: {fileID: 5845182253727204341}
   - component: {fileID: 2159588470957316596}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Farm Trailer Rotary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +296,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5840341777644639045}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.95192534}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -306,6 +307,28 @@ Transform:
   - {fileID: 2777977323774274342}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &5845182253727204341
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5840341777644639045}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3547951236051061147, guid: 2491ff41bcf81ed41b075faf270155a1, type: 3}
 --- !u!205 &2159588470957316596
 LODGroup:
   m_ObjectHideFlags: 0
@@ -314,8 +337,8 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5840341777644639045}
   serializedVersion: 3
-  m_LocalReferencePoint: {x: 0.00000011920929, y: 0.46219802, z: -0.7627233}
-  m_Size: 2.400729
+  m_LocalReferencePoint: {x: 0.000000059604645, y: 0.46219802, z: -0.76272297}
+  m_Size: 2.4007277
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
@@ -349,7 +372,7 @@ GameObject:
   - component: {fileID: 2777977323774274342}
   - component: {fileID: 1648943991611113896}
   - component: {fileID: 2801968306292700789}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Farm Trailer Rotary LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

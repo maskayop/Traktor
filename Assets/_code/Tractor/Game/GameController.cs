@@ -57,5 +57,18 @@ namespace Tractor
                 if (tractorController)
                     tractorController.PlaceTractor(mainSpawnPoint);
         }
+
+        public void DetachTrailer()
+        {
+            tractorController?.DetachTrailer();
+        }
+
+        public bool HasTrailer()
+        {
+            if (!tractorController)
+                return false;
+
+            return tractorController.HasTrailer();
+        }
     }
 }

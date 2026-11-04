@@ -36,6 +36,9 @@ namespace Tractor.UI
         [Header("Version")]
         [SerializeField] TextMeshProUGUI versionText;
 
+        [Header("Trailer")]
+        [SerializeField] GameObject trailer;
+
         GameController gameController;
         UIExerciseWindow exerciseWindow;
 
@@ -57,6 +60,15 @@ namespace Tractor.UI
         void Start()
         {
             Init();
+        }
+
+        void Update()
+        {
+            if (!gameController)
+                return;
+
+            if (trailer)
+                trailer.SetActive(gameController.HasTrailer());
         }
 
         public void Init()
@@ -358,6 +370,22 @@ namespace Tractor.UI
         public void CloseTimeOfDaySettingsWindow()
         {
             timeOfDaySettingsWindow?.Close();
+        }
+
+        // Trailer
+        public void OnDetachTrailer()
+        {
+            DetachTrailer();
+
+            if (platform == CanvasPlatform.Windows)
+                routerPC?.OnDetachTrailer();
+            else
+                routerTablet?.OnDetachTrailer();
+        }
+
+        public void DetachTrailer()
+        {
+            gameController?.DetachTrailer();
         }
     }
 }
