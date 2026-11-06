@@ -164,5 +164,10 @@ namespace Tractor
         {
             tractorTrailer?.DetachTrailer();
         }
+
+        public void ForceDetachTrailer()
+        {
+            tractorTrailer?.ForceDetachTrailer();
+        }
     }
 }

@@ -70,5 +70,28 @@ namespace Tractor
 
             return tractorController.HasTrailer();
         }
+
+        public void EndTrailerTask()
+        {
+            if (!tractorController)
+                return;
+
+            var trailer = tractorController.tractorTrailer.CurrentTrailer;
+
+            // Если CurrentTrailer null, пробуем найти через RCCP-менеджер
+            if (trailer == null && tractorController.CarController != null &&
+                tractorController.CarController.OtherAddonsManager != null &&
+                tractorController.CarController.OtherAddonsManager.TrailAttacher != null)
+            {
+                trailer = tractorController.CarController.OtherAddonsManager.TrailAttacher.attachedTrailer;
+            }
+
+            // Если прицеп найден — отцепляем и отключаем
+            if (trailer != null)
+            {
+                tractorController.ForceDetachTrailer();
+                trailer.gameObject.SetActive(false);
+            }
+        }
     }
 }

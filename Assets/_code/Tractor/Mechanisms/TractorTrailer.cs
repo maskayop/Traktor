@@ -74,5 +74,29 @@ namespace Tractor
         {
             currentTrailer?.DetachTrailer();
         }
+
+        public void ForceDetachTrailer()
+        {
+            // Сначала пробуем через currentTrailer
+            if (currentTrailer != null)
+            {
+                currentTrailer.DetachTrailer();
+                currentTrailer = null;
+                return;
+            }
+
+            // Если currentTrailer уже null, ищем через RCCP-менеджер
+            if (carController != null &&
+                carController.OtherAddonsManager != null &&
+                carController.OtherAddonsManager.TrailAttacher != null)
+            {
+                var attached = carController.OtherAddonsManager.TrailAttacher.attachedTrailer;
+                if (attached != null)
+                {
+                    attached.DetachTrailer();
+                    carController.OtherAddonsManager.TrailAttacher.attachedTrailer = null;
+                }
+            }
+        }
     }
 }

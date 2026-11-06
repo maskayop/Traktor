@@ -132,7 +132,22 @@ namespace Tractor
             currentStep = null;
 
             for (int i = 0; i < exercises.Count; i++)
+            {
+                if (exercises[i] == null) continue;
+
+                // Выключаем доп. объекты самого упражнения
                 exercises[i].EnableAdditionalGameObjects(false);
+
+                // Выключаем маркеры и доп. объекты всех шагов
+                for (int s = 0; s < exercises[i].steps.Count; s++)
+                {
+                    var step = exercises[i].steps[s];
+                    if (step == null) continue;
+
+                    step.EnableDestinationMarker(false);
+                    step.EnableAdditionalGameObjects(false);
+                }
+            }
         }
 
         public bool IsExercise()
