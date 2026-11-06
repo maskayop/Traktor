@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using TMPro;
-using Tractor.Net;
 using UnityEngine;
 using Vopere;
 using static Tractor.UI.UIMainCanvas;
@@ -32,10 +31,6 @@ namespace Tractor.UI
 
         bool isExercise = false;
 
-        CanvasPlatform platform = CanvasPlatform.Windows;
-        RouterPC routerPC;
-        RouterTablet routerTablet;
-
         protected override void OnAwake()
         {
             if (Instance != null)
@@ -65,15 +60,6 @@ namespace Tractor.UI
 
             reportController = ReportController.Instance;
             exercisesController = ExercisesController.Instance;
-
-            if (mainCanvas)
-            {
-                platform = mainCanvas.platform;
-                if (platform == CanvasPlatform.Windows)
-                    routerPC = RouterPC.Instance;
-                else
-                    routerTablet = RouterTablet.Instance;
-            }
 
             reportButtons.Clear();
             foreach (Transform t in reportButtonsContainer)

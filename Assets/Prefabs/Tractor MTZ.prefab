@@ -815,6 +815,7 @@ GameObject:
   - component: {fileID: 791837015719757519}
   - component: {fileID: 3385472217592471738}
   - component: {fileID: 5563451126285392092}
+  - component: {fileID: 8509385394280752633}
   m_Layer: 8
   m_Name: Tractor MTZ
   m_TagString: Untagged
@@ -972,6 +973,7 @@ MonoBehaviour:
   tractorAudio: {fileID: 791837015719757519}
   roadDetector: {fileID: 3385472217592471738}
   tractorCameraController: {fileID: 5563451126285392092}
+  tractorTrailer: {fileID: 8509385394280752633}
   speed: 0
   RPM: 0
   isHandbrake: 0
@@ -1219,6 +1221,19 @@ MonoBehaviour:
   - {fileID: 1780351937775557618}
   disableMirrorsIds: 0100000003000000
   mirrorsQuality: {fileID: 11400000, guid: 19e1428817a4a7848a5f2c08daa6055e, type: 2}
+--- !u!114 &8509385394280752633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813409246852421867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c27983c161f36804a8294b426f73b109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tractor.TractorTrailer
+  autoDetachAngle: 120
 --- !u!1 &2014435452676515496
 GameObject:
   m_ObjectHideFlags: 0

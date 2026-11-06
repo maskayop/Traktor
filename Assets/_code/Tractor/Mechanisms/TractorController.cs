@@ -4,7 +4,7 @@ namespace Tractor
 {
     public class TractorController : MonoBehaviour, ICheckable
     {
-        public enum TractorBehavior { Main, Gearbox, Engine, Lights, Audio, RoadDetector }
+        public enum TractorBehavior { Main, Gearbox, Engine, Lights, Audio, RoadDetector, Trailer }
 
         [Header("Механизмы")]
         public TractorInput tractorInput;
@@ -14,6 +14,7 @@ namespace Tractor
         public TractorAudio tractorAudio;
         public RoadDetector roadDetector;
         public TractorCameraController tractorCameraController;
+        public TractorTrailer tractorTrailer;
 
         [Header("Инфо")]
         public float speed;
@@ -29,9 +30,6 @@ namespace Tractor
 
         RCCP_CarController carController;
         public RCCP_CarController CarController { get { return carController; } }
-
-        RCCP_TrailerController currentTrailer;
-        public RCCP_TrailerController CurrentTrailer { get { return currentTrailer; } }
 
         Transform destinationTransform;
         public Transform DestinationTransform { get { return destinationTransform; } set { destinationTransform = value; } }
@@ -84,6 +82,7 @@ namespace Tractor
             tractorAudio.Init(tractorInput, tractorEngine);
 
             carController = tractorInput.RCCP_Vehicle;
+            tractorTrailer.Init(carController);
 
             gameController = GameController.Instance;
             gameController.SetTractorController(this);
@@ -96,8 +95,6 @@ namespace Tractor
 
             speed = carController.speed;
             RPM = carController.engineRPM;
-
-            CheckTrailer();
         }
 
         void FixedUpdate()
@@ -129,6 +126,8 @@ namespace Tractor
                     return tractorAudio;
                 case TractorBehavior.RoadDetector:
                     return roadDetector;
+                case TractorBehavior.Trailer:
+                    return tractorTrailer;
                 default:
                     return null;
             }
@@ -155,20 +154,15 @@ namespace Tractor
 
         public bool HasTrailer()
         {
-            return currentTrailer != null;
-        }
+            if (!tractorTrailer)
+                return false;
 
-        void CheckTrailer()
-        {
-            if (carController && carController.OtherAddonsManager && carController.OtherAddonsManager.TrailAttacher)
-                currentTrailer = carController.OtherAddonsManager.TrailAttacher.attachedTrailer;
-            else
-                currentTrailer = null;
+            return tractorTrailer.CurrentTrailer != null;
         }
 
         public void DetachTrailer()
         {
-            currentTrailer?.DetachTrailer();
+            tractorTrailer?.DetachTrailer();
         }
     }
 }

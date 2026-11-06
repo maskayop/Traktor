@@ -18,6 +18,7 @@ namespace Tractor.Net
         UIExerciseWindow exerciseWindow;
         UITimeOfDaySettingsWindow timeOfDaySettingsWindow;
         UIReportsWindow reportsWindow;
+        UICamerasWindow camerasWindow;
 
         void Start()
         {
@@ -28,6 +29,7 @@ namespace Tractor.Net
             exerciseWindow = UIExerciseWindow.Instance;
             timeOfDaySettingsWindow = UITimeOfDaySettingsWindow.Instance;
             reportsWindow = UIReportsWindow.Instance;
+            camerasWindow = UICamerasWindow.Instance;
         }
 
         public void Route(string command)
@@ -207,6 +209,20 @@ namespace Tractor.Net
                     reportsWindow?.SaveExerciseReport();
                     break;
 
+                // Cameras UI
+                case "SetGameCameraInFront":
+                    camerasWindow?.SetGameCameraContainer(0);
+                    break;
+                case "SetGameCameraInBack":
+                    camerasWindow?.SetGameCameraContainer(1);
+                    break;
+                case "SetGameCameraOutFront":
+                    camerasWindow?.SetGameCameraContainer(2);
+                    break;
+                case "SetGameCameraOutBack":
+                    camerasWindow?.SetGameCameraContainer(3);
+                    break;
+
                 // Разное
                 case "DetachTrailer":
                     mainCanvas?.DetachTrailer();
@@ -342,6 +358,12 @@ namespace Tractor.Net
         public void SetSeasonSummer() { SendCommand("SetSeasonSummer"); }
         public void SetSeasonAutumn() { SendCommand("SetSeasonAutumn"); }
         public void SetSeasonWinter() { SendCommand("SetSeasonWinter"); }
+
+        // Обёртки Cameras UI
+        public void OnSetGameCameraInFront() { SendCommand("SetGameCameraInFront"); }
+        public void OnSetGameCameraInBack() { SendCommand("SetGameCameraInBack"); }
+        public void OnSetGameCameraOutFront() { SendCommand("SetGameCameraOutFront"); }
+        public void OnSetGameCameraOutBack() { SendCommand("SetGameCameraOutBack"); }
 
         // Разное
         public void OnDetachTrailer() { SendCommand("DetachTrailer"); }

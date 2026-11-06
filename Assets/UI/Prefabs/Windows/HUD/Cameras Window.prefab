@@ -270,7 +270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2700050209202410329, guid: 2dda311b4444a574e88bf0af4ab94917, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2700050209202410329, guid: 2dda311b4444a574e88bf0af4ab94917, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -282,7 +282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2700050209202410329, guid: 2dda311b4444a574e88bf0af4ab94917, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetGameCameraContainer
+      value: OnSetGameCameraInFront
       objectReference: {fileID: 0}
     - target: {fileID: 2700050209202410329, guid: 2dda311b4444a574e88bf0af4ab94917, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -396,7 +396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2700050209202410329, guid: 2dda311b4444a574e88bf0af4ab94917, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2700050209202410329, guid: 2dda311b4444a574e88bf0af4ab94917, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -408,7 +408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2700050209202410329, guid: 2dda311b4444a574e88bf0af4ab94917, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetGameCameraContainer
+      value: OnSetGameCameraOutBack
       objectReference: {fileID: 0}
     - target: {fileID: 2700050209202410329, guid: 2dda311b4444a574e88bf0af4ab94917, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -522,7 +522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2700050209202410329, guid: 2dda311b4444a574e88bf0af4ab94917, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2700050209202410329, guid: 2dda311b4444a574e88bf0af4ab94917, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -534,7 +534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2700050209202410329, guid: 2dda311b4444a574e88bf0af4ab94917, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetGameCameraContainer
+      value: OnSetGameCameraOutFront
       objectReference: {fileID: 0}
     - target: {fileID: 2700050209202410329, guid: 2dda311b4444a574e88bf0af4ab94917, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -652,7 +652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2700050209202410329, guid: 2dda311b4444a574e88bf0af4ab94917, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2700050209202410329, guid: 2dda311b4444a574e88bf0af4ab94917, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -664,7 +664,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2700050209202410329, guid: 2dda311b4444a574e88bf0af4ab94917, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetGameCameraContainer
+      value: OnSetGameCameraInBack
       objectReference: {fileID: 0}
     - target: {fileID: 2700050209202410329, guid: 2dda311b4444a574e88bf0af4ab94917, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

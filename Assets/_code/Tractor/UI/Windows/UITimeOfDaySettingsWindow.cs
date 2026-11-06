@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using Enviro;
+using System.Collections.Generic;
 using TMPro;
-using Tractor.Net;
 using UnityEngine;
 using UnityEngine.UI;
 using static Tractor.UI.UIMainCanvas;
@@ -29,7 +28,8 @@ namespace Tractor.UI
         [SerializeField] int nightHour = 0;
 
         [Header("Пресеты погоды")]
-        [SerializeField] List<string> weatherPresets = new List<string>
+        [SerializeField]
+        List<string> weatherPresets = new List<string>
         {
             "Cloudy 3",
             "Rain",
@@ -40,10 +40,6 @@ namespace Tractor.UI
 
         int weatherIndex;
         bool isSynchronizing;
-
-        CanvasPlatform platform = CanvasPlatform.Windows;
-        RouterPC routerPC;
-        RouterTablet routerTablet;
 
         protected override void OnAwake()
         {
@@ -88,18 +84,7 @@ namespace Tractor.UI
                 EnviroManager.instance.OnHourPassed -= ChangeWeatherOnHour;
         }
 
-        protected override void OnInit()
-        {
-            if (!mainCanvas)
-                return;
-
-            platform = mainCanvas.platform;
-
-            if (platform == CanvasPlatform.Windows)
-                routerPC = RouterPC.Instance;
-            else
-                routerTablet = RouterTablet.Instance;
-        }
+        protected override void OnInit() { }
 
         protected override void OnUpdate()
         {
@@ -282,12 +267,14 @@ namespace Tractor.UI
                 return;
 
             var weatherTypes = weatherModule.Settings?.weatherTypes;
-            if (string.IsNullOrWhiteSpace(weather) || weatherTypes == null) 
+            if (string.IsNullOrWhiteSpace(weather) || weatherTypes == null)
                 return;
 
-            for (int i = 0; i < weatherTypes.Count; i++) {
+            for (int i = 0; i < weatherTypes.Count; i++)
+            {
                 var candidate = weatherTypes[i];
-                if (candidate != null && candidate.name == weather) {
+                if (candidate != null && candidate.name == weather)
+                {
                     if (useInstant)
                         weatherModule.ChangeWeatherInstant(candidate);
                     else
@@ -314,11 +301,16 @@ namespace Tractor.UI
             weatherIndex = Random.Range(0, weatherPresets.Count);
             var preset = weatherPresets[weatherIndex];
 
-            if (preset == "Rain" || preset == "Snow") {
-                if (TryGetEnviroEnvironmentModule(out var environmentModule)) {
-                    if (environmentModule.Settings.season == EnviroEnvironment.Seasons.Winter) {
+            if (preset == "Rain" || preset == "Snow")
+            {
+                if (TryGetEnviroEnvironmentModule(out var environmentModule))
+                {
+                    if (environmentModule.Settings.season == EnviroEnvironment.Seasons.Winter)
+                    {
                         preset = "Snow";
-                    } else {
+                    }
+                    else
+                    {
                         preset = "Rain";
                     }
                 }
@@ -335,7 +327,7 @@ namespace Tractor.UI
                 routerPC?.SetWeatherCloudy();
             else
                 routerTablet?.SetWeatherCloudy();
-        }  
+        }
 
         public void OnSetRainyWeather()
         {
@@ -387,17 +379,20 @@ namespace Tractor.UI
                 OnSetRainyWeather();
         }
 
-        public void OnSetDynamicWeather() {
+        public void OnSetDynamicWeather()
+        {
             if (!dynamicWeatherToggle) return;
 
             bool state = dynamicWeatherToggle.isOn;
             SetDynamicWeather(state);
 
-            if (platform == CanvasPlatform.Windows) {
+            if (platform == CanvasPlatform.Windows)
+            {
                 if (state) routerPC?.EnableDynamicWeather();
                 else routerPC?.DisableDynamicWeather();
             }
-            else {
+            else
+            {
                 if (state) routerTablet?.EnableDynamicWeather();
                 else routerTablet?.DisableDynamicWeather();
             }
@@ -409,7 +404,8 @@ namespace Tractor.UI
         public void SetFoggyWeather() => ApplyInstantWeatherAt(2);
         public void SetClearSkyWeather() => ApplyInstantWeatherAt(3);
         public void SetSnowyWeather() => ApplyInstantWeatherAt(4);
-        public void SetDynamicWeather(bool state) {
+        public void SetDynamicWeather(bool state)
+        {
             if (dynamicWeatherToggle)
                 dynamicWeatherToggle.SetIsOnWithoutNotify(state);
         }
@@ -417,7 +413,8 @@ namespace Tractor.UI
 
         #region Seasons
         #region Seasons Utilities
-        static bool TryGetEnviroEnvironmentModule(out EnviroEnvironmentModule environmentModule) {
+        static bool TryGetEnviroEnvironmentModule(out EnviroEnvironmentModule environmentModule)
+        {
             environmentModule = null;
 
             if (EnviroManager.instance == null || EnviroManager.instance.Environment == null)
@@ -427,7 +424,8 @@ namespace Tractor.UI
             return true;
         }
 
-        void ApplySeason(EnviroEnvironment.Seasons season) {
+        void ApplySeason(EnviroEnvironment.Seasons season)
+        {
             if (!TryGetEnviroEnvironmentModule(out var environmentModule)) return;
 
             environmentModule.Settings.changeSeason = false;
@@ -450,7 +448,8 @@ namespace Tractor.UI
         #endregion
 
         #region Seasons Events
-        public void OnSetSpring() {
+        public void OnSetSpring()
+        {
             SetSpring();
 
             if (platform == CanvasPlatform.Windows)
@@ -459,7 +458,8 @@ namespace Tractor.UI
                 routerTablet?.SetSeasonSpring();
         }
 
-        public void OnSetSummer() {
+        public void OnSetSummer()
+        {
             SetSummer();
 
             if (platform == CanvasPlatform.Windows)
@@ -467,8 +467,9 @@ namespace Tractor.UI
             else
                 routerTablet?.SetSeasonSummer();
         }
-        
-        public void OnSetAutumn() {
+
+        public void OnSetAutumn()
+        {
             SetAutumn();
 
             if (platform == CanvasPlatform.Windows)
@@ -477,7 +478,8 @@ namespace Tractor.UI
                 routerTablet?.SetSeasonAutumn();
         }
 
-        public void OnSetWinter() {
+        public void OnSetWinter()
+        {
             SetWinter();
 
             if (platform == CanvasPlatform.Windows)

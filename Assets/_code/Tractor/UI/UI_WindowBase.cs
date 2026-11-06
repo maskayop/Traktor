@@ -1,6 +1,8 @@
+using Tractor.Net;
 using UnityEngine;
 using Vopere;
 using Vopere.Common;
+using static Tractor.UI.UIMainCanvas;
 
 namespace Tractor.UI
 {
@@ -16,6 +18,9 @@ namespace Tractor.UI
         protected AudioController audioController;
         protected LightController lightController;
         protected UIMainCanvas mainCanvas;
+        protected RouterPC routerPC;
+        protected RouterTablet routerTablet;
+        protected CanvasPlatform platform = CanvasPlatform.Windows;
 
         bool isOpen = false;
         public bool IsOpen { get { return isOpen; } }
@@ -54,6 +59,18 @@ namespace Tractor.UI
             audioController = AudioController.Instance;
             lightController = LightController.Instance;
             mainCanvas = UIMainCanvas.Instance;
+            routerPC = RouterPC.Instance;
+            routerTablet = RouterTablet.Instance;
+
+            if (mainCanvas)
+            {
+                platform = mainCanvas.platform;
+
+                if (platform == CanvasPlatform.Windows)
+                    routerPC = RouterPC.Instance;
+                else
+                    routerTablet = RouterTablet.Instance;
+            }
 
             OnInit();
         }
