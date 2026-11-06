@@ -12,6 +12,15 @@ namespace Vopere.Common
         [SerializeField] int defaultGraphicsLevel = 0;
         [SerializeField] bool preventScreenSleep = true;
 
+        [Header("FPS Counter")]
+        [SerializeField] float fpsSampleDuration = 0.5f;
+
+        int fpsFrames = 0;
+        float fpsDuration = 0f;
+        float currentFPS = 0f;
+
+        public float CurrentFPS => currentFPS;
+
         bool initialized = false;
         public bool IsInitialized { get { return initialized; } }
 
@@ -61,6 +70,19 @@ namespace Vopere.Common
                 Screen.sleepTimeout = SleepTimeout.NeverSleep;
             else
                 Screen.sleepTimeout = SleepTimeout.SystemSetting;
+        }
+
+        void Update()
+        {
+            fpsFrames++;
+            fpsDuration += Time.unscaledDeltaTime;
+
+            if (fpsDuration >= Mathf.Max(0.01f, fpsSampleDuration))
+            {
+                currentFPS = fpsFrames / fpsDuration;
+                fpsFrames = 0;
+                fpsDuration = 0f;
+            }
         }
 
         public void ExitGame()

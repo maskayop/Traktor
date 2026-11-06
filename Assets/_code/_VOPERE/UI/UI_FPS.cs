@@ -1,10 +1,12 @@
 ﻿using TMPro;
 using UnityEngine;
+using Vopere.Common;
 
 namespace Vopere.UI
 {
     public class UI_FPS : MonoBehaviour
     {
+        [SerializeField] bool useAppFPS = false;
         [SerializeField] TextMeshProUGUI text;
         [SerializeField] float sampleDuration = 0.5f;
         [SerializeField] bool isRussian = true;
@@ -19,6 +21,13 @@ namespace Vopere.UI
 
         void Update()
         {
+            if (useAppFPS)
+            {
+                if (App.Instance != null)
+                    SetFps(App.Instance.CurrentFPS);
+                return;
+            }
+
             float frameDuration = Time.unscaledDeltaTime;
             frames += 1;
             duration += frameDuration;
@@ -26,7 +35,6 @@ namespace Vopere.UI
             if (duration >= sampleDuration)
             {
                 SetFps(frames / duration);
-
                 frames = 0;
                 duration = 0f;
             }
