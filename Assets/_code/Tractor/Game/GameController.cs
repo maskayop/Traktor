@@ -49,6 +49,11 @@ namespace Tractor
             SetGameState(GameState.Menu);
         }
 
+        public TractorController GetTractorController()
+        {
+            return tractorController;
+        }
+
         public void SetGameState(GameState gs)
         {
             gameState = gs;

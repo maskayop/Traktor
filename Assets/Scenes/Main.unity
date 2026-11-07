@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 0.8050667
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 1447983654}
+  m_SkyboxMaterial: {fileID: 1474783593}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -32461,10 +32461,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.ExerciseAdditionalObjects
   destinationMarker: {fileID: 0}
-  trailerObject: {fileID: 0}
-  trailerSpawnPoint: {fileID: 0}
   gameObjectsToEnable:
   - {fileID: 570828735}
+  trailerObject: {fileID: 0}
+  trailerSpawnPoint: {fileID: 0}
   additionalConditions: []
 --- !u!1001 &1169489555
 PrefabInstance:
@@ -40521,54 +40521,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8666473599309339165, guid: 515e4aab27faa2d4b8ffc1cd3dcdef7d, type: 3}
   m_PrefabInstance: {fileID: 1447144901}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1447983654
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Enviro/Skybox
-  m_Shader: {fileID: 4800000, guid: 34fee0a1b19b20b45aea7483b5f757da, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _GalaxyTex:
-        m_Texture: {fileID: 8900000, guid: 5734983fc81450b4187c3cfa5985edef, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MoonGlowTex:
-        m_Texture: {fileID: 2800000, guid: 6838e0810da4e49488b5d9a6ee76eb07, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MoonTex:
-        m_Texture: {fileID: 2800000, guid: c6fd9f694390e0245b6dca5812065950, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _StarsTex:
-        m_Texture: {fileID: 8900000, guid: b5a7175da0f133b4d951c19c9c2cebfc, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SunTex:
-        m_Texture: {fileID: 2800000, guid: c95bed5306e94f24ba5802d841607ac7, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats: []
-    m_Colors: []
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1001 &1455784009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41153,6 +41105,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94054f50b2b7fa943b1fd33b6cb7b49f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.ExerciseStep
+--- !u!21 &1474783593
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Enviro/Skybox
+  m_Shader: {fileID: 4800000, guid: 34fee0a1b19b20b45aea7483b5f757da, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _GalaxyTex:
+        m_Texture: {fileID: 8900000, guid: 5734983fc81450b4187c3cfa5985edef, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MoonGlowTex:
+        m_Texture: {fileID: 2800000, guid: 6838e0810da4e49488b5d9a6ee76eb07, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MoonTex:
+        m_Texture: {fileID: 2800000, guid: c6fd9f694390e0245b6dca5812065950, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _StarsTex:
+        m_Texture: {fileID: 8900000, guid: b5a7175da0f133b4d951c19c9c2cebfc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SunTex:
+        m_Texture: {fileID: 2800000, guid: c95bed5306e94f24ba5802d841607ac7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats: []
+    m_Colors: []
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1001 &1476555112
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52929,9 +52929,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tractor.ExerciseAdditionalObjects
   destinationMarker: {fileID: 0}
+  gameObjectsToEnable: []
   trailerObject: {fileID: 148592816}
   trailerSpawnPoint: {fileID: 744701183}
-  gameObjectsToEnable: []
   additionalConditions: []
 --- !u!1001 &1907966495
 PrefabInstance:
@@ -59787,7 +59787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 838295645721682944, guid: fc3a6a4078b63654f8057169c8d16d07, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 941046008706529966, guid: fc3a6a4078b63654f8057169c8d16d07, type: 3}
       propertyPath: m_SizeDelta.y
@@ -60491,7 +60491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2716195194722400058, guid: fc3a6a4078b63654f8057169c8d16d07, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2761284964899146960, guid: fc3a6a4078b63654f8057169c8d16d07, type: 3}
       propertyPath: m_AnchorMax.y
@@ -60663,7 +60663,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3737462633390813456, guid: fc3a6a4078b63654f8057169c8d16d07, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3789468599897589544, guid: fc3a6a4078b63654f8057169c8d16d07, type: 3}
       propertyPath: m_AnchorMax.y
@@ -60955,7 +60955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4700420383846219099, guid: fc3a6a4078b63654f8057169c8d16d07, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4780899185755424982, guid: fc3a6a4078b63654f8057169c8d16d07, type: 3}
       propertyPath: m_AnchorMax.x
@@ -61363,11 +61363,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5977679681256590274, guid: fc3a6a4078b63654f8057169c8d16d07, type: 3}
       propertyPath: m_Size
-      value: 1
+      value: 0.99999976
       objectReference: {fileID: 0}
     - target: {fileID: 5977679681256590274, guid: fc3a6a4078b63654f8057169c8d16d07, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6022198394393196240, guid: fc3a6a4078b63654f8057169c8d16d07, type: 3}
       propertyPath: m_AnchorMax.y
@@ -61463,7 +61463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6115106313511341800, guid: fc3a6a4078b63654f8057169c8d16d07, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6149880857379164640, guid: fc3a6a4078b63654f8057169c8d16d07, type: 3}
       propertyPath: m_AnchorMax.y
@@ -62111,7 +62111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7855381914523206547, guid: fc3a6a4078b63654f8057169c8d16d07, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7920227411551067345, guid: fc3a6a4078b63654f8057169c8d16d07, type: 3}
       propertyPath: m_AnchorMax.y
@@ -62774,71 +62774,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3132775747925577998, guid: a69524bfe9d544940a92089f677f1ce6, type: 3}
   m_PrefabInstance: {fileID: 2126023075013078108}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &4141343236783734792
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 448855783041765755, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3688.073
-      objectReference: {fileID: 0}
-    - target: {fileID: 448855783041765755, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 448855783041765755, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3496.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 448855783041765755, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 448855783041765755, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 448855783041765755, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 448855783041765755, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 448855783041765755, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 448855783041765755, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 448855783041765755, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422114731120591985, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
-      propertyPath: m_Name
-      value: Farm Trailer
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422114731120591985, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8013357089567496074, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
-      propertyPath: m_Anchor.x
-      value: 0.00000023841858
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1f63321adca55d14d9bace77242c7500, type: 3}
 --- !u!1001 &4546917449417749877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63628,4 +63563,3 @@ SceneRoots:
   - {fileID: 702786740}
   - {fileID: 2002965480}
   - {fileID: 5536885932821873321}
-  - {fileID: 4141343236783734792}

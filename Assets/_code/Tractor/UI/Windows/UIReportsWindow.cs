@@ -133,6 +133,10 @@ namespace Tractor.UI
 
             reportController.SetReport(currentReport);
             reportController.SaveReport();
+
+            // Сбрасываем отчёт после сохранения
+            exercisesController.CurrentReport = null;
+            currentReport = null;
         }
 
         public void OpenReportsFolder()

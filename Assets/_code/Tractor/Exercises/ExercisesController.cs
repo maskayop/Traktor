@@ -63,6 +63,8 @@ namespace Tractor
                 if (currentStep.IsCompleted())
                 {
                     currentStep.result = ExerciseStep.StepResult.Done;
+                    currentStep.SetCurrentStepTime(currentExerciseTime);
+                    AddCurrentStepReport(currentStep);
                     currentExercise.StartNextStep();
                 }
             }
@@ -108,13 +110,29 @@ namespace Tractor
         public void StartExercise()
         {
             if (currentExerciseId < 0 || currentExerciseId >= exercises.Count)
-            {
-                Debug.LogWarning($"Невозможно начать упражнение: currentExerciseId = {currentExerciseId}, exercises.Count = {exercises.Count}");
                 return;
-            }
 
             isCompleted = false;
             exercises[currentExerciseId].StartExercise();
+
+            // Сбрасываем флаг "записан" у всех шагов и под-шагов
+            for (int i = 0; i < exercises[currentExerciseId].steps.Count; i++)
+            {
+                var step = exercises[currentExerciseId].steps[i];
+                if (step == null) continue;
+
+                step.reported = false;
+
+                var additional = step.GetAdditionalObjects();
+                if (additional != null)
+                {
+                    for (int a = 0; a < additional.additionalConditions.Count; a++)
+                    {
+                        var subStep = additional.additionalConditions[a];
+                        if (subStep != null) subStep.reported = false;
+                    }
+                }
+            }
 
             currentReport = new Report();
             PrepareReport();
@@ -127,18 +145,30 @@ namespace Tractor
 
         public void ExerciseForceExit()
         {
+            ExerciseForceExitInternal(false);
+        }
+
+        public void CompleteExercise()
+        {
+            isCompleted = true;
+            ExerciseForceExitInternal(true);
+        }
+
+        void ExerciseForceExitInternal(bool keepReport)
+        {
             currentExercise = null;
             currentExerciseId = -1;
             currentStep = null;
+
+            if (!keepReport)
+                currentReport = null;
 
             for (int i = 0; i < exercises.Count; i++)
             {
                 if (exercises[i] == null) continue;
 
-                // Выключаем доп. объекты самого упражнения
                 exercises[i].EnableAdditionalGameObjects(false);
 
-                // Выключаем маркеры и доп. объекты всех шагов
                 for (int s = 0; s < exercises[i].steps.Count; s++)
                 {
                     var step = exercises[i].steps[s];
@@ -156,13 +186,6 @@ namespace Tractor
                 return true;
             else
                 return false;
-        }
-
-        public void CompleteExercise()
-        {
-            isCompleted = true;
-            CreateReport();
-            ExerciseForceExit();
         }
 
         public float GetCurrentExerciseTime()
@@ -200,24 +223,12 @@ namespace Tractor
             return string.Format("{0:00}:{1:00}", minutes, seconds);
         }
 
-        void CreateReport()
+        public void AddCurrentStepReport(ExerciseStep step)
         {
-            for (int i = 0; i < currentExercise.steps.Count; i++)
-            {
-                AddCurrentStepReport(currentExercise.steps[i]);
+            if (step == null || currentReport == null) return;
+            if (step.reported) return;
 
-                ExerciseAdditionalObjects additional = currentExercise.steps[i].GetAdditionalObjects();
-
-                if (additional)
-                    for (int a = 0; a < additional.additionalConditions.Count; a++)
-                        AddCurrentStepReport(additional.additionalConditions[a]);
-            }
-        }
-
-        void AddCurrentStepReport(ExerciseStep step)
-        {
-            if (step == null || currentReport == null)
-                return;
+            step.reported = true;
 
             currentReport.columns[0].values.Add(FormatCurrentExerciseTime(step.GetCurrentStepTime()));
             currentReport.columns[1].values.Add(GetStepResultString(step.result));
@@ -255,6 +266,34 @@ namespace Tractor
                 return ExerciseStep.StepResult.Penalty;
             else
                 return ExerciseStep.StepResult.No;
+        }
+
+        public void AddErrorToReport(ErrorDetector.ErrorState state, string message)
+        {
+            if (currentReport == null || !IsExercise()) return;
+
+            // Определяем, как записать результат: Warning / Error / Penalty
+            string resultString;
+            switch (state)
+            {
+                case ErrorDetector.ErrorState.Warning:
+                    resultString = warningResultFormat;
+                    break;
+                case ErrorDetector.ErrorState.Error:
+                    resultString = errorResultFormat;
+                    break;
+                case ErrorDetector.ErrorState.Penalty:
+                    resultString = penaltyResultFormat;
+                    break;
+                default:
+                    resultString = errorResultFormat;
+                    break;
+            }
+
+            // Добавляем строку в те же колонки, что и шаги
+            currentReport.columns[0].values.Add(FormatCurrentExerciseTime(currentExerciseTime));
+            currentReport.columns[1].values.Add(resultString);
+            currentReport.columns[2].values.Add(message);
         }
     }
 }

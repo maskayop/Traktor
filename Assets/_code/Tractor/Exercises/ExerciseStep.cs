@@ -23,6 +23,8 @@ namespace Tractor
 
         float currentStepTime = 0;
 
+        [HideInInspector] public bool reported = false;
+
         void Start()
         {
             additionalObjects = GetComponent<ExerciseAdditionalObjects>();

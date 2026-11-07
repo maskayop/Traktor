@@ -35,6 +35,7 @@ namespace Tractor.UI
 
         [Header("Окно завершения задания")]
         [SerializeField] GameObject exerciseCompleteWindow;
+        [SerializeField] GameObject saveReportButton;
 
         [Header("Окно принудительного завершения")]
         [SerializeField] UIExitWindow exerciseForceExitWindow;
@@ -262,6 +263,7 @@ namespace Tractor.UI
             CloseCurrentExerciseWindow();
 
             exerciseCompleteWindow.SetActive(true);
+            saveReportButton.SetActive(true);
         }
 
         public void OnCloseExerciseCompleteWindow()
@@ -586,6 +588,8 @@ namespace Tractor.UI
                         subStepsList[i].Step.result = ExerciseStep.StepResult.Penalty;
                         subStepsListCompact[i].Step.result = ExerciseStep.StepResult.Penalty;
                     }
+
+                    exercisesController?.AddCurrentStepReport(subStepsList[i].Step);
                 }
             }
 
@@ -627,6 +631,13 @@ namespace Tractor.UI
             UIExerciseButton eb = go.GetComponent<UIExerciseButton>();
             eb.Init(name);
             exerciseButtons.Add(eb);
+        }
+
+        // Report
+        public void SaveExerciseReport()
+        {
+            UIReportsWindow.Instance?.OnSaveExerciseReport();
+            saveReportButton.SetActive(false);
         }
     }
 }

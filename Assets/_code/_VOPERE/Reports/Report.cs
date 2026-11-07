@@ -79,9 +79,7 @@ namespace Vopere
         {
             var report = new Report { fileName = INfileName };
 
-            string[] rawLines = csvText.Split(
-                new[] { '\n', '\r' },
-                System.StringSplitOptions.RemoveEmptyEntries);
+            string[] rawLines = csvText.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
 
             if (rawLines.Length < 1) return report;
 

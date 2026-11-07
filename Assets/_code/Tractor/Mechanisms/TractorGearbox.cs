@@ -67,6 +67,7 @@ namespace Tractor
             switch (conditionName)
             {
                 case "gearLevel":
+                    return isGearLevel1 ? 1f : 2f;
                 case "isGearLevel1":
                     return isGearLevel1 ? 1f : 0f;
                 case "currentRange":
