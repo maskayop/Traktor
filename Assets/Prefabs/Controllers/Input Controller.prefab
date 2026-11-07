@@ -303,3 +303,8 @@ MonoBehaviour:
     useDeadzone: 1
     deadzone: 0.01
     inputValue: 0
+  - inputName: Detach Trailer
+    normalize: 0
+    useDeadzone: 1
+    deadzone: 0.01
+    inputValue: 0

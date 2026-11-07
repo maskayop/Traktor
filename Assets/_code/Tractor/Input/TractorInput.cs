@@ -105,6 +105,12 @@ namespace Tractor
         [SerializeField] string hornSignalInputName;
         CustomInput hornSignal_Input;
 
+        [Header("Прицеп")]
+        [SerializeField] string detachTrailerInputName;
+        CustomInput detachTrailer_Input;
+
+        // ---
+
         RCCP_CarController vehicle;
         public RCCP_CarController RCCP_Vehicle { get { return vehicle; } }
 
@@ -118,6 +124,7 @@ namespace Tractor
         TractorEngine tractorEngine;
         TractorLights tractorLights;
         TractorAudio tractorAudio;
+        TractorTrailer tractorTrailer;
 
         GameController gameController;
 
@@ -173,10 +180,12 @@ namespace Tractor
             highBeamLight_Input = inputController?.GetInputByName(highBeamLightInputName);
 
             hornSignal_Input = inputController?.GetInputByName(hornSignalInputName);
+
+            detachTrailer_Input = inputController?.GetInputByName(detachTrailerInputName);
         }
 
         public void Init(TractorController INtractorMain, TractorGearbox INtractorGearbox, TractorEngine INtractorEngine,
-            TractorLights INtractorLights, TractorAudio INtractorAudio)
+            TractorLights INtractorLights, TractorAudio INtractorAudio, TractorTrailer INtractorTrailer)
         {
             if (INtractorMain == null || INtractorGearbox == null || INtractorEngine == null || INtractorLights == null || INtractorAudio == null)
                 return;
@@ -186,6 +195,7 @@ namespace Tractor
             tractorEngine = INtractorEngine;
             tractorLights = INtractorLights;
             tractorAudio = INtractorAudio;
+            tractorTrailer = INtractorTrailer;
 
             FindVehicle();
             UseOverrides();
@@ -252,6 +262,9 @@ namespace Tractor
 
             //Звуки
             SetHornSignal();
+
+            //Прицеп
+            SetTrailer();
         }
 
         void SetSteer()
@@ -548,6 +561,13 @@ namespace Tractor
                 else
                     tractorAudio.ActivateHornSignal(false);
             }
+        }
+
+        void SetTrailer()
+        {
+            if (detachTrailer_Input != null)
+                if (detachTrailer_Input.inputValue != 0)
+                    tractorTrailer.DetachTrailer();
         }
 
         public void UseOverrides()

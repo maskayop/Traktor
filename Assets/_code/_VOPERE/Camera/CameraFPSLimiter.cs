@@ -49,7 +49,7 @@ namespace Vopere.Common
             }
         }
 
-        private void Render()
+        void Render()
         {
             targetCamera.Render();
         }

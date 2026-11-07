@@ -455,6 +455,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Detach Trailer",
+                    "type": "Button",
+                    "id": "c8430bdf-3d59-4d48-90fc-175e172a4803",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1236,6 +1245,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Headlights Off",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c95eb493-971b-404e-9c9f-c5196fe96aef",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Detach Trailer",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

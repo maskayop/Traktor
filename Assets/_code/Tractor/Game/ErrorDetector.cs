@@ -27,6 +27,8 @@ namespace Tractor
         ErrorMessage errorMessage;
         public ErrorMessage ErrorMessage { get { return errorMessage; } set { errorMessage = value; } }
 
+        public event Action<ErrorMessage> OnError;
+
         GameController gameController;
         ExercisesController exercisesController;
 
@@ -81,7 +83,6 @@ namespace Tractor
         void CheckGearbox()
         {
             if (!tractorGearbox || !tractorController) return;
-            errorMessage = null;
 
             // Проверка переключения передачи без сцепления
             if (currentGear != tractorGearbox.currentGear)
@@ -114,8 +115,7 @@ namespace Tractor
             currentRange = tractorGearbox.currentRange;
             isGearLevel1 = tractorGearbox.isGearLevel1;
 
-            if (errorMessage != null)
-                ReportError(errorMessage);
+            ReportError();
         }
 
         void OnEnable()
@@ -145,14 +145,16 @@ namespace Tractor
                 message = collisionMessage
             };
 
-            ReportError(errorMessage);
+            ReportError();
         }
 
-        void ReportError(ErrorMessage msg)
+        void ReportError()
         {
-            if (msg == null) return;
+            if (errorMessage == null) return;
 
-            exercisesController?.AddErrorToReport(msg.errorState, msg.message);
+            OnError?.Invoke(errorMessage);
+            exercisesController?.AddErrorToReport(errorMessage.errorState, errorMessage.message);
+            errorMessage = null;
         }
     }
 }

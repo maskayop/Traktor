@@ -13,7 +13,6 @@ namespace Tractor.UI
         [SerializeField] GameObject penaltyMessagePrefab;
 
         ErrorDetector errorDetector;
-        ErrorMessage errorMessage;
 
         void Awake()
         {
@@ -32,17 +31,6 @@ namespace Tractor.UI
             Init();
         }
 
-        void Update()
-        {
-            if (!errorDetector)
-                return;
-
-            if (errorMessage != errorDetector.ErrorMessage)
-                ShowErrorMessage();
-
-            errorMessage = errorDetector.ErrorMessage;
-        }
-
         public void Init()
         {
             errorDetector = ErrorDetector.Instance;
@@ -50,32 +38,42 @@ namespace Tractor.UI
             if (!errorDetector)
                 return;
 
-            errorMessage = errorDetector.ErrorMessage;
-
             foreach (Transform t in messagesContainer)
                 Destroy(t.gameObject);
         }
 
-        void ShowErrorMessage()
+        void OnEnable()
         {
-            if (errorMessage == null)
-                return;
+            if (!errorDetector)
+                errorDetector = ErrorDetector.Instance;
 
-            if (errorMessage.errorState == ErrorState.Warning)
-                CreateMessage(warningMessagePrefab);
-            else if (errorMessage.errorState == ErrorState.Error)
-                CreateMessage(errorMessagePrefab);
-            else if (errorMessage.errorState == ErrorState.Penalty)
-                CreateMessage(penaltyMessagePrefab);
-
-            errorDetector.ErrorMessage = null;
+            if (errorDetector)
+                errorDetector.OnError += ShowErrorMessage;
         }
 
-        void CreateMessage(GameObject prefab)
+        void OnDisable()
+        {
+            if (errorDetector)
+                errorDetector.OnError -= ShowErrorMessage;
+        }
+
+        void ShowErrorMessage(ErrorMessage msg)
+        {
+            if (msg == null) return;
+
+            if (msg.errorState == ErrorState.Warning)
+                CreateMessage(warningMessagePrefab, msg.message);
+            else if (msg.errorState == ErrorState.Error)
+                CreateMessage(errorMessagePrefab, msg.message);
+            else if (msg.errorState == ErrorState.Penalty)
+                CreateMessage(penaltyMessagePrefab, msg.message);
+        }
+
+        void CreateMessage(GameObject prefab, string message)
         {
             GameObject go = Instantiate(prefab, messagesContainer);
             UIMessage m = go.GetComponent<UIMessage>();
-            m.Init(errorMessage.message);
+            m.Init(message);
         }
     }
 }

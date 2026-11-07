@@ -75,7 +75,7 @@ namespace Tractor
 
         void Start()
         {
-            tractorInput.Init(this, tractorGearbox, tractorEngine, tractorLights, tractorAudio);
+            tractorInput.Init(this, tractorGearbox, tractorEngine, tractorLights, tractorAudio, tractorTrailer);
             tractorGearbox.Init(tractorInput);
             tractorEngine.Init(tractorInput, tractorGearbox);
             tractorLights.Init(tractorInput, tractorEngine);
